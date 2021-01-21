@@ -4,19 +4,6 @@
   
     
     <entry>
-      <title>烃的衍生物</title>
-      <link href="2021/01/20/%E7%83%83%E7%9A%84%E8%A1%8D%E7%94%9F%E7%89%A9/"/>
-      <url>2021/01/20/%E7%83%83%E7%9A%84%E8%A1%8D%E7%94%9F%E7%89%A9/</url>
-      
-        <content type="html"><![CDATA[<ul><li>修改about页面</li><li>标签外挂设置（yml里面，还没弄）</li><li>评论系统挂了</li><li></li></ul>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Typora+PicGo+Gitee实现markdown高效创作</title>
       <link href="2020/03/08/PicGo-Gitee%E5%AE%9E%E7%8E%B0windows%E7%AB%AFmarkdown%E9%AB%98%E6%95%88%E5%88%9B%E4%BD%9C/"/>
       <url>2020/03/08/PicGo-Gitee%E5%AE%9E%E7%8E%B0windows%E7%AB%AFmarkdown%E9%AB%98%E6%95%88%E5%88%9B%E4%BD%9C/</url>
@@ -149,9 +136,9 @@
             
             <tag> 高一下 </tag>
             
-            <tag> 知识梳理 </tag>
-            
             <tag> 化学 </tag>
+            
+            <tag> 知识梳理 </tag>
             
         </tags>
       
@@ -607,11 +594,11 @@
             
             <tag> 高一上 </tag>
             
+            <tag> 知识梳理 </tag>
+            
             <tag> 政治 </tag>
             
             <tag> 经济 </tag>
-            
-            <tag> 知识梳理 </tag>
             
         </tags>
       
