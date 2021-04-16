@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>链烃系统命名法书写举例</title>
+      <link href="2021/01/23/%E7%B3%BB%E7%BB%9F%E5%91%BD%E5%90%8D%E6%B3%95%E4%B9%A6%E5%86%99%E9%A1%BA%E5%BA%8F%E6%8E%A2%E7%A9%B6/"/>
+      <url>2021/01/23/%E7%B3%BB%E7%BB%9F%E5%91%BD%E5%90%8D%E6%B3%95%E4%B9%A6%E5%86%99%E9%A1%BA%E5%BA%8F%E6%8E%A2%E7%A9%B6/</url>
+      
+        <content type="html"><![CDATA[<div class="note warning simple"><p>以下内容均为高考设计，可能与实际有所出入，还请谅解</p></div><p>高考范围内仅要求烷烃的命名书写，并且考试频率不高，此处仅列举一小部分。</p><p>$CH_4$ <span class="hide-inline"><button type="button" class="hide-button button--animated" style="">单击以显示答案  </button><span class="hide-content">甲烷</span></span></p><p>$CH_3(CH_2)_6CH_3$  <span class="hide-inline"><button type="button" class="hide-button button--animated" style="">单击以显示答案  </button><span class="hide-content">辛烷</span></span></p><p>$CH_2ClCHClCH_3$  <span class="hide-inline"><button type="button" class="hide-button button--animated" style="background-color: 单击以显示答案;">2-二氯丙烷  </button><span class="hide-content">1</span></span></p><p>$CH_2=C(CH_3)-CH=CH_2$  <span class="hide-inline"><button type="button" class="hide-button button--animated" style="background-color: 单击以显示答案;">3-丁二烯  </button><span class="hide-content">2-甲基-1</span></span></p><p>$CH_3CH_2CHClCH(CH_3)CH_2CH_3$ <span class="hide-inline"><button type="button" class="hide-button button--animated" style="">单击以显示答案  </button><span class="hide-content">3-甲基-4-氯-己烷</span></span></p><p>（不支持多行LaTeX我也没办法）</p><p>那就鸽了吧（）</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 化学 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 化学 </tag>
+            
+            <tag> 高二上 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Typora+PicGo+Gitee实现markdown高效创作</title>
       <link href="2020/03/08/PicGo-Gitee%E5%AE%9E%E7%8E%B0windows%E7%AB%AFmarkdown%E9%AB%98%E6%95%88%E5%88%9B%E4%BD%9C/"/>
       <url>2020/03/08/PicGo-Gitee%E5%AE%9E%E7%8E%B0windows%E7%AB%AFmarkdown%E9%AB%98%E6%95%88%E5%88%9B%E4%BD%9C/</url>
