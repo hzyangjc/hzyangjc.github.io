@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>洛谷P5461的几种解法 - Andreo Y.</title><meta name="author" content="">
+<meta name="author-link" content="">
+<meta name="description" content="
+隔离在浦东的第二天，精神振奋且萎靡 :(fa-solid fa-face-meh-blank): ，百无聊赖，于是又登上洛谷开始新一次的C&#43;&#43;康复训练。
+题目本身比较简单，能够AC算法也容易想。但是正因为简单，这道题的解法拥有更强的开放性，研究起来也更加上头。
+
+原题链接：P5461 赦免战俘 - 洛谷 | 计算机科学教育新生态 (luogu.com.cn)" /><meta name="keywords" content='C&#43;&#43;, 洛谷' /><meta itemprop="name" content="洛谷P5461的几种解法">
+<meta itemprop="description" content="
+隔离在浦东的第二天，精神振奋且萎靡 :(fa-solid fa-face-meh-blank): ，百无聊赖，于是又登上洛谷开始新一次的C&#43;&#43;康复训练。
+题目本身比较简单，能够AC算法也容易想。但是正因为简单，这道题的解法拥有更强的开放性，研究起来也更加上头。
+
+原题链接：P5461 赦免战俘 - 洛谷 | 计算机科学教育新生态 (luogu.com.cn)"><meta itemprop="datePublished" content="2022-09-19T20:33:03+08:00" />
+<meta itemprop="dateModified" content="2022-09-19T20:33:03+08:00" />
+<meta itemprop="wordCount" content="1798"><meta itemprop="image" content="https://andreoy.cn/logo.png"/>
+<meta itemprop="keywords" content="C&#43;&#43;,洛谷," /><meta property="og:title" content="洛谷P5461的几种解法" />
+<meta property="og:description" content="
+隔离在浦东的第二天，精神振奋且萎靡 :(fa-solid fa-face-meh-blank): ，百无聊赖，于是又登上洛谷开始新一次的C&#43;&#43;康复训练。
+题目本身比较简单，能够AC算法也容易想。但是正因为简单，这道题的解法拥有更强的开放性，研究起来也更加上头。
+
+原题链接：P5461 赦免战俘 - 洛谷 | 计算机科学教育新生态 (luogu.com.cn)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://andreoy.cn/posts/%E6%B4%9B%E8%B0%B7p5461/" /><meta property="og:image" content="https://andreoy.cn/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-09-19T20:33:03+08:00" />
+<meta property="article:modified_time" content="2022-09-19T20:33:03+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://andreoy.cn/logo.png"/>
+
+<meta name="twitter:title" content="洛谷P5461的几种解法"/>
+<meta name="twitter:description" content="
+隔离在浦东的第二天，精神振奋且萎靡 :(fa-solid fa-face-meh-blank): ，百无聊赖，于是又登上洛谷开始新一次的C&#43;&#43;康复训练。
+题目本身比较简单，能够AC算法也容易想。但是正因为简单，这道题的解法拥有更强的开放性，研究起来也更加上头。
+
+原题链接：P5461 赦免战俘 - 洛谷 | 计算机科学教育新生态 (luogu.com.cn)"/>
+<meta name="application-name" content="Andreo Y.">
+<meta name="apple-mobile-web-app-title" content="Andreo Y."><meta name="theme-color" data-light="#ffffff" data-dark="#252627" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://andreoy.cn/posts/%E6%B4%9B%E8%B0%B7p5461/" /><link rel="prev" href="https://andreoy.cn/posts/%E6%96%B0%E7%9A%84%E5%BC%80%E5%A7%8B/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "洛谷P5461的几种解法",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/andreoy.cn\/posts\/%E6%B4%9B%E8%B0%B7p5461\/"
+    },"genre": "posts","keywords": "C\u002b\u002b, 洛谷","wordcount":  1798 ,
+    "url": "https:\/\/andreoy.cn\/posts\/%E6%B4%9B%E8%B0%B7p5461\/","datePublished": "2022-09-19T20:33:03+08:00","dateModified": "2022-09-19T20:33:03+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Andreo Y."
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Andreo Y."><img
+    class="lazyload logo"
+    src="/svg/loading.min.svg"
+    data-src="https://s2.loli.net/2022/09/16/6F5d1EWoQrmCjLA.png"
+    data-srcset="https://s2.loli.net/2022/09/16/6F5d1EWoQrmCjLA.png, https://s2.loli.net/2022/09/16/6F5d1EWoQrmCjLA.png 1.5x, https://s2.loli.net/2022/09/16/6F5d1EWoQrmCjLA.png 2x"
+    data-sizes="auto"
+    alt="Andreo Y."
+    title="Andreo Y."/><span class="header-title-text"> Andreo Y.</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item text-center">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 所有文章</a></li><li class="menu-item text-center">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-stream fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li class="menu-item text-center">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tag fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item text-center">
+              <a
+                class="menu-link"
+                href="/about/"
+                
+                
+              ><i class="fa-solid fa-user-circle fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item text-center">
+              <a
+                class="menu-link"
+                href="/friends/"
+                
+                
+              ><i class="fa-solid fa-user-friends fa-fw fa-sm" aria-hidden="true"></i> 友情链接</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="Search for everything..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Andreo Y."><img
+    class="lazyload logo"
+    src="/svg/loading.min.svg"
+    data-src="https://s2.loli.net/2022/09/16/6F5d1EWoQrmCjLA.png"
+    data-srcset="https://s2.loli.net/2022/09/16/6F5d1EWoQrmCjLA.png, https://s2.loli.net/2022/09/16/6F5d1EWoQrmCjLA.png 1.5x, https://s2.loli.net/2022/09/16/6F5d1EWoQrmCjLA.png 2x"
+    data-sizes="auto"
+    alt="https://s2.loli.net/2022/09/16/6F5d1EWoQrmCjLA.png"
+    title="https://s2.loli.net/2022/09/16/6F5d1EWoQrmCjLA.png"/><span class="header-title-text"> Andreo Y.</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="Search for everything..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item text-center"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 所有文章</a></li><li
+              class="menu-item text-center"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-stream fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li
+              class="menu-item text-center"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tag fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li
+              class="menu-item text-center"
+            ><a
+                  class="menu-link"
+                  href="/about/"
+                  
+                  
+                ><i class="fa-solid fa-user-circle fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li
+              class="menu-item text-center"
+            ><a
+                  class="menu-link"
+                  href="/friends/"
+                  
+                  
+                ><i class="fa-solid fa-user-friends fa-fw fa-sm" aria-hidden="true"></i> 友情链接</a></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container" data-page-style="narrow"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    
+</aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX">
+        <span>洛谷P5461的几种解法</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://andreoy.cn" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img
+    class="lazyload avatar"
+    src="/svg/loading.min.svg"
+    data-src="https://gravatar.loli.net/avatar/d8234597e50620ab663b4a6e7e89bf99?s=32&amp;d="
+    data-srcset="https://gravatar.loli.net/avatar/d8234597e50620ab663b4a6e7e89bf99?s=32&amp;d=, https://gravatar.loli.net/avatar/d8234597e50620ab663b4a6e7e89bf99?s=32&amp;d= 1.5x, https://gravatar.loli.net/avatar/d8234597e50620ab663b4a6e7e89bf99?s=32&amp;d= 2x"
+    data-sizes="auto"
+    alt="Andreo Y."
+    title="Andreo Y."/>&nbsp;Andreo Y.</a></span>
+          <span class="post-category">收录于 <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 程序设计</a></span></div>
+      <div class="post-meta-line"><span title=2022-09-19&#32;20:33:03><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-09-19">2022-09-19</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 1798 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 4 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="洛谷P5461的几种解法">
+              <i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
+            </span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#原题呈现-赦免战俘洛谷月赛">原题呈现 赦免战俘（洛谷月赛）</a>
+      <ul>
+        <li><a href="#题目背景">题目背景</a></li>
+        <li><a href="#题目描述">题目描述</a></li>
+        <li><a href="#输入格式">输入格式</a></li>
+        <li><a href="#输出格式">输出格式</a></li>
+        <li><a href="#样例-1">样例 #1</a></li>
+      </ul>
+    </li>
+    <li><a href="#题解">题解</a>
+      <ul>
+        <li><a href="#函数递归模拟">函数递归模拟</a></li>
+        <li><a href="#数论找规律">数论（找规律）</a></li>
+        <li><a href="#类杨辉三角转自这篇题解httpswwwluogucomcnblogliyiyuanjuruosolution-p5461">类杨辉三角（转自<a href="https://www.luogu.com.cn/blog/liyiyuanjuruo/solution-p5461">这篇题解</a>）</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div><div
+      class="content"
+      id="content"
+      
+      
+    ><blockquote>
+<p>隔离在浦东的第二天，精神振奋且萎靡 <i class="fa-solid fa-face-meh-blank" aria-hidden="true"></i>&nbsp;，百无聊赖，于是又登上洛谷开始新一次的C++康复训练。</p>
+<p>题目本身比较简单，能够AC算法也容易想。但是正因为简单，这道题的解法拥有更强的开放性，研究起来也更加上头。</p>
+</blockquote>
+<p>原题链接：<a href="https://www.luogu.com.cn/problem/solution/P5461"target="_blank" rel="external nofollow noopener noreferrer">P5461 赦免战俘 - 洛谷 | 计算机科学教育新生态 (luogu.com.cn)<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
+<h2 id="原题呈现-赦免战俘洛谷月赛">原题呈现 赦免战俘（洛谷月赛）</h2>
+<h3 id="题目背景">题目背景</h3>
+<p>借助反作弊系统，一些在月赛有抄袭作弊行为的选手被抓出来了！</p>
+<h3 id="题目描述">题目描述</h3>
+<p>现有 $2^n\times 2^n (n\le10)$ 名作弊者站成一个正方形方阵等候 kkksc03 的发落。kkksc03 决定赦免一些作弊者。他将正方形矩阵均分为 4 个更小的正方形矩阵，每个更小的矩阵的边长是原矩阵的一半。其中左上角那一个矩阵的所有作弊者都将得到赦免，剩下 3 个小矩阵中，每一个矩阵继续分为 4 个更小的矩阵，然后通过同样的方式赦免作弊者……直到矩阵无法再分下去为止。所有没有被赦免的作弊者都将被处以棕名处罚。</p>
+<p>给出 $n$，请输出每名作弊者的命运，其中 0 代表被赦免，1 代表不被赦免。</p>
+<h3 id="输入格式">输入格式</h3>
+<p>一个整数 $n$。</p>
+<h3 id="输出格式">输出格式</h3>
+<p>$2^n \times 2^n$ 的 01 矩阵，代表每个人是否被赦免。数字之间有一个空格。</p>
+<h3 id="样例-1">样例 #1</h3>
+<h4 id="样例输入-1">样例输入 #1</h4>
+<pre tabindex="0"><code>3
+</code></pre><h4 id="样例输出-1">样例输出 #1</h4>
+<pre tabindex="0"><code>0 0 0 0 0 0 0 1
+0 0 0 0 0 0 1 1
+0 0 0 0 0 1 0 1
+0 0 0 0 1 1 1 1
+0 0 0 1 0 0 0 1
+0 0 1 1 0 0 1 1
+0 1 0 1 0 1 0 1
+1 1 1 1 1 1 1 1
+</code></pre><h2 id="题解">题解</h2>
+<h3 id="函数递归模拟">函数递归模拟</h3>
+<p>常规解法，一遍AC。开O2之后时间也比较充裕。</p>
+<p><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://s2.loli.net/2022/09/19/LeV7dEJTB9ysPAl.png"
+    data-srcset="https://s2.loli.net/2022/09/19/LeV7dEJTB9ysPAl.png, https://s2.loli.net/2022/09/19/LeV7dEJTB9ysPAl.png 1.5x, https://s2.loli.net/2022/09/19/LeV7dEJTB9ysPAl.png 2x"
+    data-sizes="auto"
+    alt="image-20220919204711628"
+    title="image-20220919204711628"/></p>
+<p>很容易想到的方法就是直接从原正方形开始，每次分成四个区域，把第一个区域的值赋为0，然后依次递归另外三个区域，直到递归到的正方形边长为1为止。</p>
+<h4 id="代码">代码</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">bool</span> <span class="n">remit</span><span class="p">[</span><span class="mi">2000</span><span class="p">][</span><span class="mi">2000</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">divide</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="kt">int</span> <span class="n">x0</span><span class="p">,</span><span class="kt">int</span> <span class="n">y0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>  <span class="c1">//当不能再分的时候回退到上一层
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">a</span><span class="o">&gt;&gt;=</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">x0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">x0</span><span class="o">+</span><span class="n">a</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="n">y0</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">y0</span><span class="o">+</span><span class="n">a</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">remit</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//继续分下一层，递归
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">divide</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">x0</span><span class="o">+</span><span class="n">a</span><span class="p">,</span><span class="n">y0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">divide</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">y0</span><span class="o">+</span><span class="n">a</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">divide</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">x0</span><span class="o">+</span><span class="n">a</span><span class="p">,</span><span class="n">y0</span><span class="o">+</span><span class="n">a</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">output</span><span class="p">()</span>  <span class="c1">//繁琐的输出，不想写进主函数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">            <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">remit</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span><span class="p">(</span><span class="n">j</span><span class="o">&lt;</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="sc">&#39; &#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">memset</span><span class="p">(</span><span class="n">remit</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="k">sizeof</span><span class="p">(</span><span class="n">remit</span><span class="p">));</span>  <span class="c1">//初始化整个数组为1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">divide</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">output</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="数论找规律">数论（找规律）</h3>
+<p>从时间消耗和空间占用来看，这个算法应该是三个算法中最佳的。由于只和i和j的值有关，内存占用来到了惊人的371B。</p>
+<p><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://s2.loli.net/2022/09/19/tsrG1XnumbBohlZ.png"
+    data-srcset="https://s2.loli.net/2022/09/19/tsrG1XnumbBohlZ.png, https://s2.loli.net/2022/09/19/tsrG1XnumbBohlZ.png 1.5x, https://s2.loli.net/2022/09/19/tsrG1XnumbBohlZ.png 2x"
+    data-sizes="auto"
+    alt="image-20220919225849420"
+    title="image-20220919225849420"/></p>
+<p>注意到，这个输出的正方形一定是对称的。<strong>对称性是通向数学巧解的钥匙</strong>。我们标出每个战俘对应的行号和列号，再来观察一下这个输出：</p>
+<table>
+<thead>
+<tr>
+<th>remit[][]</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>6</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>7</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>似乎还是不太明显 <i class="fa-solid fa-face-frown-open" aria-hidden="true"></i></p>
+<p>由于这个题目条件和<strong>2的乘方</strong>有很大关联，我们不妨试试吧行列号写成二进制：</p>
+<table>
+<thead>
+<tr>
+<th>remit[][]</th>
+<th>000</th>
+<th>001</th>
+<th>010</th>
+<th>011</th>
+<th>100</th>
+<th>101</th>
+<th>110</th>
+<th>111</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>000</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>001</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>010</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>011</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>100</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>101</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>110</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>111</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>既然是二进制了，那就躲不开<strong>位运算</strong>。适当观察，可以发现，<code>remit[i][j]</code>的值由i和j决定。当<code>i|j==111</code>，也就是<code>i|j==2^n-1</code>，那么<code>remit[i][j]=1</code>，否则为0。</p>
+<p>这个通过找规律观察出来的结论用数论证明也不难。<del>读者自证</del> 还是写一下，权当练习证明逻辑性罢 <i class="fa-solid fa-face-grin-squint-tears" aria-hidden="true"></i></p>
+<h4 id="数学说明">数学说明</h4>
+<p>欲证，即证$i|j$有任何一位为0时，<code>remit[i][j]</code>即为0。</p>
+<div class="fi-row">$(i,j)$在边长为$2^k$的正方形（任意位置）的左上部分$\Leftrightarrow [(i\% (2^k))/2^{k-1}]=0$且$[(j\% (2^k))/2^{k-1}]=0$，其中$\%$代表前者对后者取余数。</div>
+<div class="fi-row">而i的二进制表示中，$[(i\% (2^k))/2^{k-1}]$表示的恰恰就是权值为$2^{k-1}$的那位。而$ [(i\% (2^k))/2^{k-1}]=0$且$[(j\% (2^k))/2^{k-1}]=0\Leftrightarrow i|j$在这一位上是0。</div>
+<p>所以，只需对每一个k都判断一遍该位是否i和j都为零即可。</p>
+<p>反过来，当没有0时，就有$i|j=2^n-1$，根据这个式子判断，不需要循环，更加优美。</p>
+<h4 id="代码-1">代码</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="n">n</span><span class="p">;</span>  <span class="c1">//预先处理n的值，简化后续代码 因此注意后续代码中n就是原来的2^n-1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		    <span class="kt">bool</span> <span class="n">tmp</span><span class="o">=</span><span class="p">(</span><span class="n">i</span><span class="o">|</span><span class="n">j</span><span class="p">)</span><span class="o">!=</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">?</span><span class="mi">0</span><span class="o">:</span><span class="mi">1</span><span class="p">;</span>  <span class="c1">//用一下单行if XD 看着更简洁点
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		    <span class="k">if</span><span class="p">(</span><span class="n">j</span><span class="o">&lt;</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">tmp</span><span class="o">&lt;&lt;</span><span class="sc">&#39; &#39;</span><span class="p">;</span>   <span class="c1">//听说洛谷现在已经不查行末空格的问题了，不知道是不是真的
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		    <span class="k">else</span> <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">tmp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="类杨辉三角转自这篇题解httpswwwluogucomcnblogliyiyuanjuruosolution-p5461">类杨辉三角（转自<a href="https://www.luogu.com.cn/blog/liyiyuanjuruo/solution-p5461"target="_blank" rel="external nofollow noopener noreferrer">这篇题解<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>）</h3>
+<p>时间复杂度和法二几乎一样，但是相比法二空间占用更大，需要开数组。</p>
+<p><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://s2.loli.net/2022/09/19/FOjRsS8kurKMVXo.png"
+    data-srcset="https://s2.loli.net/2022/09/19/FOjRsS8kurKMVXo.png, https://s2.loli.net/2022/09/19/FOjRsS8kurKMVXo.png 1.5x, https://s2.loli.net/2022/09/19/FOjRsS8kurKMVXo.png 2x"
+    data-sizes="auto"
+    alt="image-20220919225726332"
+    title="image-20220919225726332"/></p>
+<p>其实和法二的核心是一样的，只是用一个更常见的模型套了一下，可能会更好理解和运用。</p>
+<p>每一个数字都是它上方数字加上右上方数字再模2。</p>
+<p>其实就是不进位加法，异或一下就好了。</p>
+<h4 id="代码经过微调">代码（经过微调）</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define re register
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="mi">1234</span><span class="p">][</span><span class="mi">1234</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">n</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="n">n</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="n">re</span> <span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span><span class="p">(</span><span class="n">re</span> <span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="o">++</span><span class="n">j</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">^</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">            <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d &#34;</span><span class="p">,</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">printf</span><span class="p">(</span><span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title=2022-09-19&#32;20:33:03>更新于 2022-09-19&nbsp;</span>
+      </div><div class="post-info-license">
+          <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+        </div></div>
+    <div class="post-info-line">
+      <div class="post-info-md"></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://andreoy.cn/posts/%E6%B4%9B%E8%B0%B7p5461/" data-title="洛谷P5461的几种解法" data-hashtags="C&#43;&#43;,洛谷"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://andreoy.cn/posts/%E6%B4%9B%E8%B0%B7p5461/" data-hashtag="C&#43;&#43;"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Linkedin" data-sharer="linkedin" data-url="https://andreoy.cn/posts/%E6%B4%9B%E8%B0%B7p5461/"><i class="fa-brands fa-linkedin fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Tumblr" data-sharer="tumblr" data-url="https://andreoy.cn/posts/%E6%B4%9B%E8%B0%B7p5461/" data-title="洛谷P5461的几种解法" data-tags="C&#43;&#43;,洛谷"><i class="fa-brands fa-tumblr fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Reddit" data-sharer="reddit" data-url="https://andreoy.cn/posts/%E6%B4%9B%E8%B0%B7p5461/"><i class="fa-brands fa-reddit fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://andreoy.cn/posts/%E6%B4%9B%E8%B0%B7p5461/" data-title="洛谷P5461的几种解法"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://andreoy.cn/posts/%E6%B4%9B%E8%B0%B7p5461/" data-title="洛谷P5461的几种解法" data-description=""><i class="fa-brands fa-blogger fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://andreoy.cn/posts/%E6%B4%9B%E8%B0%B7p5461/" data-title="洛谷P5461的几种解法"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Skype" data-sharer="skype" data-url="https://andreoy.cn/posts/%E6%B4%9B%E8%B0%B7p5461/" data-title="洛谷P5461的几种解法"><i class="fa-brands fa-skype fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Trello" data-sharer="trello" data-url="https://andreoy.cn/posts/%E6%B4%9B%E8%B0%B7p5461/" data-title="洛谷P5461的几种解法" data-description=""><i class="fa-brands fa-trello fa-fw" aria-hidden="true"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/c&#43;&#43;/">C&#43;&#43;</a>,&nbsp;<a href="/tags/%E6%B4%9B%E8%B0%B7/">洛谷</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/posts/%E6%96%B0%E7%9A%84%E5%BC%80%E5%A7%8B/" class="prev" rel="prev" title="新的开始"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>新的开始</a></div>
+</div>
+<div id="comments"><div id="giscus">
+          <script
+            src="https://giscus.app/client.js"
+            data-repo="hzyangjc/hzyangjc.github.io"
+            data-repo-id="R_kgDOIAWwEQ"
+            data-category="Announcements"
+            data-category-id="DIC_kwDOIAWwEc4CRdaC"
+            data-mapping="pathname"
+            
+            data-theme="preferred_color_scheme"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-lang="zh-CN"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async
+            defer
+          ></script>
+          <noscript>
+            Please enable JavaScript to view the comments powered by <a href="https://giscus.app/" rel="external nofollow noopener noreferrer">giscus</a>.
+          </noscript>
+        </div></div></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.101.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.16-RC"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">
+              <a href="/"></a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"></div><div class="footer-line ibruce">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/lunr/lunr.min.js" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script src="/lib/lunr/lunr.zh.min.js" defer></script><script src="/lib/lazysizes/lazysizes.min.js" async defer></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="/lib/pangu/pangu.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":50},"comment":{"enable":true,"giscus":{"darkTheme":"transparent_dark","lightTheme":"light"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"enablePangu":true,"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":30,"type":"lunr"}};</script><script src="/js/theme.min.js" defer></script></body>
+</html>
