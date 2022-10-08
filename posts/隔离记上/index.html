@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>隔离记（上） - Andreo Y.</title><meta name="author" content="">
+<meta name="author-link" content="">
+<meta name="description" content="9月13日，上海交通大学正式开学。早八的线性代数，十点的体育网课，一切都看起来非常对劲，作为新生，我们也准备好了正式学习的开始。
+没有想到，这节早八是九月的最后一节线下课。" /><meta name="keywords" content='疫情, 隔离' /><meta itemprop="name" content="隔离记（上）">
+<meta itemprop="description" content="9月13日，上海交通大学正式开学。早八的线性代数，十点的体育网课，一切都看起来非常对劲，作为新生，我们也准备好了正式学习的开始。
+没有想到，这节早八是九月的最后一节线下课。"><meta itemprop="datePublished" content="2022-09-20T13:49:25+08:00" />
+<meta itemprop="dateModified" content="2022-09-20T13:49:25+08:00" />
+<meta itemprop="wordCount" content="957"><meta itemprop="image" content="https://andreoy.cn/logo.png"/>
+<meta itemprop="keywords" content="疫情,隔离," /><meta property="og:title" content="隔离记（上）" />
+<meta property="og:description" content="9月13日，上海交通大学正式开学。早八的线性代数，十点的体育网课，一切都看起来非常对劲，作为新生，我们也准备好了正式学习的开始。
+没有想到，这节早八是九月的最后一节线下课。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://andreoy.cn/posts/%E9%9A%94%E7%A6%BB%E8%AE%B0%E4%B8%8A/" /><meta property="og:image" content="https://andreoy.cn/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-09-20T13:49:25+08:00" />
+<meta property="article:modified_time" content="2022-09-20T13:49:25+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://andreoy.cn/logo.png"/>
+
+<meta name="twitter:title" content="隔离记（上）"/>
+<meta name="twitter:description" content="9月13日，上海交通大学正式开学。早八的线性代数，十点的体育网课，一切都看起来非常对劲，作为新生，我们也准备好了正式学习的开始。
+没有想到，这节早八是九月的最后一节线下课。"/>
+<meta name="application-name" content="Andreo Y.&#39;s Space">
+<meta name="apple-mobile-web-app-title" content="Andreo Y.&#39;s Space"><meta name="theme-color" data-light="#ffffff" data-dark="#252627" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://andreoy.cn/posts/%E9%9A%94%E7%A6%BB%E8%AE%B0%E4%B8%8A/" /><link rel="prev" href="https://andreoy.cn/posts/%E6%B4%9B%E8%B0%B7p5461/" /><link rel="next" href="https://andreoy.cn/posts/%E9%9A%94%E7%A6%BB%E8%AE%B0%E4%B8%8B/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><meta name="baidu-site-verification" content="code-NEqykcuT3x" /><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "隔离记（上）",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/andreoy.cn\/posts\/%E9%9A%94%E7%A6%BB%E8%AE%B0%E4%B8%8A\/"
+    },"genre": "posts","keywords": "疫情, 隔离","wordcount":  957 ,
+    "url": "https:\/\/andreoy.cn\/posts\/%E9%9A%94%E7%A6%BB%E8%AE%B0%E4%B8%8A\/","datePublished": "2022-09-20T13:49:25+08:00","dateModified": "2022-09-20T13:49:25+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Andreo Y."
+      },"description": ""
+  }
+  </script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3263382266976949"
+     crossorigin="anonymous"></script>
+
+  </head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Andreo Y."><img
+    class="lazyload logo"
+    src="/svg/loading.min.svg"
+    data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png"
+    data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png 2x"
+    data-sizes="auto"
+    alt="Andreo Y."
+    title="Andreo Y."/><span class="header-title-text"> Andreo Y.&#39;s Space</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item text-center">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 所有文章</a></li><li class="menu-item text-center">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-stream fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li class="menu-item text-center">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tag fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item text-center">
+              <a
+                class="menu-link"
+                href="/about/"
+                
+                
+              ><i class="fa-solid fa-user-circle fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item text-center">
+              <a
+                class="menu-link"
+                href="/friends/"
+                
+                
+              ><i class="fa-solid fa-user-friends fa-fw fa-sm" aria-hidden="true"></i> 友情链接</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="Search for everything..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Andreo Y."><img
+    class="lazyload logo"
+    src="/svg/loading.min.svg"
+    data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png"
+    data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png 2x"
+    data-sizes="auto"
+    alt="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png"
+    title="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png"/><span class="header-title-text"> Andreo Y.&#39;s Space</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="Search for everything..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item text-center"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 所有文章</a></li><li
+              class="menu-item text-center"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-stream fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li
+              class="menu-item text-center"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tag fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li
+              class="menu-item text-center"
+            ><a
+                  class="menu-link"
+                  href="/about/"
+                  
+                  
+                ><i class="fa-solid fa-user-circle fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li
+              class="menu-item text-center"
+            ><a
+                  class="menu-link"
+                  href="/friends/"
+                  
+                  
+                ><i class="fa-solid fa-user-friends fa-fw fa-sm" aria-hidden="true"></i> 友情链接</a></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container" data-page-style="narrow"><aside class="toc" id="toc-auto"></aside>
+
+  <aside class="aside-custom">
+    
+</aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX">
+        <span>隔离记（上）</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://andreoy.cn" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img
+    class="lazyload avatar"
+    src="/svg/loading.min.svg"
+    data-src="https://gravatar.loli.net/avatar/d8234597e50620ab663b4a6e7e89bf99?s=32&amp;d="
+    data-srcset="https://gravatar.loli.net/avatar/d8234597e50620ab663b4a6e7e89bf99?s=32&amp;d=, https://gravatar.loli.net/avatar/d8234597e50620ab663b4a6e7e89bf99?s=32&amp;d= 1.5x, https://gravatar.loli.net/avatar/d8234597e50620ab663b4a6e7e89bf99?s=32&amp;d= 2x"
+    data-sizes="auto"
+    alt="Andreo Y."
+    title="Andreo Y."/>&nbsp;Andreo Y.</a></span>
+          <span class="post-category">收录于 <a href="/categories/%E6%97%A5%E5%B8%B8/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 日常</a></span></div>
+      <div class="post-meta-line"><span title=2022-09-20&#32;13:49:25><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-09-20">2022-09-20</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 957 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 2 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="隔离记（上）">
+              <i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
+            </span>&nbsp;</div>
+    </div><div class="featured-image"><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/8f700e89509117448ca5e0bde78762f.jpg"
+    data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/8f700e89509117448ca5e0bde78762f.jpg, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/8f700e89509117448ca5e0bde78762f.jpg 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/8f700e89509117448ca5e0bde78762f.jpg 2x"
+    data-sizes="auto"
+    alt="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/8f700e89509117448ca5e0bde78762f.jpg"
+    title="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/8f700e89509117448ca5e0bde78762f.jpg"/></div><div
+      class="content"
+      id="content"
+      
+      
+    ><p>9月13日，上海交通大学正式开学。早八的线性代数，十点的体育网课，一切都看起来非常对劲，作为新生，我们也准备好了正式学习的开始。</p>
+<p>没有想到，这节早八是九月的最后一节线下课。</p>
+<!-- raw HTML omitted -->
+<p>中午，我和隔壁2226班的负责人一起前往教材科结清了教材的款项，并冒着小雨步行来到了上院，准备上军事理论课。到达之后，发现里面空无一人，疑惑地坐下之后，打开微信，方才意识到问题所在。</p>
+<a class="lightgallery" href="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img%2FIMG_1210.PNG" data-thumbnail="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img%2FIMG_1210.PNG" data-sub-html="<h2>https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img%2FIMG_1210.PNG</h2><p>第一个紧急通知</p>">
+    <img
+      class="lazyload"
+      src="/svg/loading.min.svg"
+      data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img%2FIMG_1210.PNG"
+      data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img%2FIMG_1210.PNG, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img%2FIMG_1210.PNG 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img%2FIMG_1210.PNG 2x"
+      data-sizes="auto"
+      alt="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img%2FIMG_1210.PNG"
+      title="第一个紧急通知" width="30%"/>
+  </a>
+<p>新疆返沪，隐瞒病情，进校后核酸检测显阳性。</p>
+<p>我们继续在上院听课，但一小时之后，便有老师来把我们叫回了寝室。</p>
+<p>没有人在听课，路上或是匆匆离开的校外人员，或是排队囤货的同学老师，秋雨绵绵，颇有末日来临前的光景。</p>
+<p>寝室里的食物不多，于是我和隔壁几个寝室的同学前去购买物资。大部分商店的库存已经在前几个小时内被扫荡一空，陈同学介绍的隐蔽的罗森虽然还有不少存货，品种却所剩无几。买完之后，小雨已经变成了大雨，我们一路踏着水坑，狼狈地回到了寝室。</p>
+<p>从那之后，14天，我再没了自由。</p>
+<hr>
+<p>刚开始的隔离可谓坐牢。紧急情况方才开始，隔离餐不及时，物资匮乏，餐食堪称极差。通知说封控两天，但两天后就变成了七天。</p>
+<p>前两天的饭点甚至都非常离谱，最晚的午饭时间一度达到2点多。</p>
+<p>我们在寝室里上着网课，除了刷视频和打游戏好像就再没了别的乐趣。刚刚认识不久的室友，也不像相处很久的兄弟一样能放开玩、彻夜聊天。</p>
+<p>与此同时，每天都有密接被转运到隔离酒店，以及这些人所在寝室不断被封控。实际上，最终，只有一个寝室楼自始至终没有封控。我的不少同学和朋友也被转运，看到他们酒店里优越的住宿环境，我当时还一度有些羡慕。</p>
+<p>与此同时，台风“梅花”强势在上海二次登陆。宿舍楼在暴风骤雨中岿然不动，但同学们的心态却愈发摇摇欲坠。</p>
+<a class="lightgallery" href="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/IMG_1119.PNG" data-thumbnail="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/IMG_1119.PNG" data-sub-html="<h2>https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/IMG_1119.PNG</h2><p>我的睡眠状态</p>">
+    <img
+      class="lazyload"
+      src="/svg/loading.min.svg"
+      data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/IMG_1119.PNG"
+      data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/IMG_1119.PNG, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/IMG_1119.PNG 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/IMG_1119.PNG 2x"
+      data-sizes="auto"
+      alt="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/IMG_1119.PNG"
+      title="我的睡眠状态" height="100px" width="30%"/>
+  </a>
+<p>台风吹倒了楼下的一棵大树，砍树的声音在第二天把所有人吵醒。</p>
+<p>这一天是9月15日，疯狂星期四，但是v不了50。</p>
+<hr>
+<p>9月16日晚，封傻了的同学们在寝室楼间大声赞美复旦大学、同济大学、上海财经大学、华东师范大学等院校，并唱起歌曲。我拍下了这段视频：</p>
+<div class="bilibili"><iframe src="//player.bilibili.com/player.html?bvid=BV1Ke4y1y7kb&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe></div>
+<p>视频拍摄于22:36,，18分钟后，也就是22:54，我接到了转运通知。这首《奇迹再现》仿佛是为我送行的绝唱。</p>
+<a class="lightgallery" href="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/IMG_1139.PNG" data-thumbnail="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/IMG_1139.PNG" data-sub-html="<h2>https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/IMG_1139.PNG</h2><p>转运通知</p>">
+    <img
+      class="lazyload"
+      src="/svg/loading.min.svg"
+      data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/IMG_1139.PNG"
+      data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/IMG_1139.PNG, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/IMG_1139.PNG 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/IMG_1139.PNG 2x"
+      data-sizes="auto"
+      alt="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/IMG_1139.PNG"
+      title="转运通知" height="100px" width="30%"/>
+  </a>
+<p>为了预防马上转运，我很快收拾好了所有行李，然后躺在床上等通知，然而0点也没有电话打来，于是我准备先在寝室过了今晚。</p>
+<p>第二天早上，我意料之中地看到了难得一见的红码。</p>
+<a class="lightgallery" href="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/IMG_1141.PNG" data-thumbnail="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/IMG_1141.PNG" data-sub-html="<h2>https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/IMG_1141.PNG</h2><p>红码</p>">
+    <img
+      class="lazyload"
+      src="/svg/loading.min.svg"
+      data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/IMG_1141.PNG"
+      data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/IMG_1141.PNG, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/IMG_1141.PNG 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/IMG_1141.PNG 2x"
+      data-sizes="auto"
+      alt="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/IMG_1141.PNG"
+      title="红码" height="200px" width="30%"/>
+  </a></div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title=2022-09-20&#32;13:49:25>更新于 2022-09-20&nbsp;</span>
+      </div><div class="post-info-license">
+          <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+        </div></div>
+    <div class="post-info-line">
+      <div class="post-info-md"></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://andreoy.cn/posts/%E9%9A%94%E7%A6%BB%E8%AE%B0%E4%B8%8A/" data-title="隔离记（上）" data-hashtags="疫情,隔离"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://andreoy.cn/posts/%E9%9A%94%E7%A6%BB%E8%AE%B0%E4%B8%8A/" data-hashtag="疫情"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Linkedin" data-sharer="linkedin" data-url="https://andreoy.cn/posts/%E9%9A%94%E7%A6%BB%E8%AE%B0%E4%B8%8A/"><i class="fa-brands fa-linkedin fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Tumblr" data-sharer="tumblr" data-url="https://andreoy.cn/posts/%E9%9A%94%E7%A6%BB%E8%AE%B0%E4%B8%8A/" data-title="隔离记（上）" data-tags="疫情,隔离"><i class="fa-brands fa-tumblr fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Reddit" data-sharer="reddit" data-url="https://andreoy.cn/posts/%E9%9A%94%E7%A6%BB%E8%AE%B0%E4%B8%8A/"><i class="fa-brands fa-reddit fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://andreoy.cn/posts/%E9%9A%94%E7%A6%BB%E8%AE%B0%E4%B8%8A/" data-title="隔离记（上）" data-image="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/8f700e89509117448ca5e0bde78762f.jpg"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://andreoy.cn/posts/%E9%9A%94%E7%A6%BB%E8%AE%B0%E4%B8%8A/" data-title="隔离记（上）" data-description=""><i class="fa-brands fa-blogger fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://andreoy.cn/posts/%E9%9A%94%E7%A6%BB%E8%AE%B0%E4%B8%8A/" data-title="隔离记（上）"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Skype" data-sharer="skype" data-url="https://andreoy.cn/posts/%E9%9A%94%E7%A6%BB%E8%AE%B0%E4%B8%8A/" data-title="隔离记（上）"><i class="fa-brands fa-skype fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Trello" data-sharer="trello" data-url="https://andreoy.cn/posts/%E9%9A%94%E7%A6%BB%E8%AE%B0%E4%B8%8A/" data-title="隔离记（上）" data-description=""><i class="fa-brands fa-trello fa-fw" aria-hidden="true"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/%E7%96%AB%E6%83%85/">疫情</a>,&nbsp;<a href="/tags/%E9%9A%94%E7%A6%BB/">隔离</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/posts/%E6%B4%9B%E8%B0%B7p5461/" class="prev" rel="prev" title="洛谷P5461的几种解法"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>洛谷P5461的几种解法</a>
+      <a href="/posts/%E9%9A%94%E7%A6%BB%E8%AE%B0%E4%B8%8B/" class="next" rel="next" title="隔离记（下）">隔离记（下）<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="giscus">
+          <script
+            src="https://giscus.app/client.js"
+            data-repo="hzyangjc/hzyangjc.github.io"
+            data-repo-id="R_kgDOIAWwEQ"
+            data-category="Announcements"
+            data-category-id="DIC_kwDOIAWwEc4CRdaC"
+            data-mapping="pathname"
+            
+            data-theme="preferred_color_scheme"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-lang="zh-CN"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async
+            defer
+          ></script>
+          <noscript>
+            Please enable JavaScript to view the comments powered by <a href="https://giscus.app/" rel="external nofollow noopener noreferrer">giscus</a>.
+          </noscript>
+        </div></div></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.101.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.16-RC"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">
+              <a href="/"></a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中 ...'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i>&nbsp;<span class="run-times">网站运行中 ...</span></span></div><div class="footer-line ibruce">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/lunr/lunr.min.js" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script src="/lib/lunr/lunr.zh.min.js" defer></script><script src="/lib/lazysizes/lazysizes.min.js" async defer></script><script src="/lib/twemoji/twemoji.min.js" defer></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="/lib/pangu/pangu.min.js" defer></script><script src="/lib/crypto-js/core.min.js" defer></script><script src="/lib/crypto-js/enc-base64.min.js" defer></script><script src="/lib/crypto-js/md5.min.js" defer></script><script src="/lib/crypto-js/sha256.min.js" defer></script><script src="/js/fixit-decryptor.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":50},"comment":{"enable":true,"giscus":{"darkTheme":"transparent_dark","lightTheme":"light"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"enablePangu":true,"encryption":{"all":false,"shortcode":true},"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":30,"type":"lunr"},"siteTime":"2022-09-16T09:30:34+08:00","twemoji":true};</script><script src="/js/theme.min.js" defer></script><script>
+      window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+      gtag('config', 'G-SWE55VZ73Q');
+    </script><script src="https://www.googletagmanager.com/gtag/js?id=G-SWE55VZ73Q" async></script></body>
+</html>
