@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>Todosync:利用Github Actions自动将Canvas内容同步至Microsoft Todo - Andreo Y.</title><meta name="author" content="">
+<meta name="author-link" content="">
+<meta name="description" content="
+不想错过DDL？Canvas LMS的邮件推送功能不够直观？
+Microsoft Todo和Canvas的联动或许是你的不二之选。
+" /><meta name="keywords" content='学业, 工具' /><meta itemprop="name" content="Todosync:利用Github Actions自动将Canvas内容同步至Microsoft Todo">
+<meta itemprop="description" content="
+不想错过DDL？Canvas LMS的邮件推送功能不够直观？
+Microsoft Todo和Canvas的联动或许是你的不二之选。
+"><meta itemprop="datePublished" content="2022-10-13T08:23:33+08:00" />
+<meta itemprop="dateModified" content="2022-10-13T08:23:33+08:00" />
+<meta itemprop="wordCount" content="2197"><meta itemprop="image" content="https://andreoy.cn/logo.png"/>
+<meta itemprop="keywords" content="学业,工具," /><meta property="og:title" content="Todosync:利用Github Actions自动将Canvas内容同步至Microsoft Todo" />
+<meta property="og:description" content="
+不想错过DDL？Canvas LMS的邮件推送功能不够直观？
+Microsoft Todo和Canvas的联动或许是你的不二之选。
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://andreoy.cn/posts/%E5%88%A9%E7%94%A8github-actions%E8%87%AA%E5%8A%A8%E5%B0%86canvas%E5%86%85%E5%AE%B9%E5%90%8C%E6%AD%A5%E8%87%B3microsoft-todo/" /><meta property="og:image" content="https://andreoy.cn/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-10-13T08:23:33+08:00" />
+<meta property="article:modified_time" content="2022-10-13T08:23:33+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://andreoy.cn/logo.png"/>
+
+<meta name="twitter:title" content="Todosync:利用Github Actions自动将Canvas内容同步至Microsoft Todo"/>
+<meta name="twitter:description" content="
+不想错过DDL？Canvas LMS的邮件推送功能不够直观？
+Microsoft Todo和Canvas的联动或许是你的不二之选。
+"/>
+<meta name="application-name" content="Andreo Y.&#39;s Space">
+<meta name="apple-mobile-web-app-title" content="Andreo Y.&#39;s Space"><meta name="theme-color" data-light="#ffffff" data-dark="#252627" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://andreoy.cn/posts/%E5%88%A9%E7%94%A8github-actions%E8%87%AA%E5%8A%A8%E5%B0%86canvas%E5%86%85%E5%AE%B9%E5%90%8C%E6%AD%A5%E8%87%B3microsoft-todo/" /><link rel="prev" href="https://andreoy.cn/posts/%E4%BA%A4%E5%A4%A7%E4%BC%A0%E6%89%BF%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><meta name="baidu-site-verification" content="code-NEqykcuT3x" /><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Todosync:利用Github Actions自动将Canvas内容同步至Microsoft Todo",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/andreoy.cn\/posts\/%E5%88%A9%E7%94%A8github-actions%E8%87%AA%E5%8A%A8%E5%B0%86canvas%E5%86%85%E5%AE%B9%E5%90%8C%E6%AD%A5%E8%87%B3microsoft-todo\/"
+    },"genre": "posts","keywords": "学业, 工具","wordcount":  2197 ,
+    "url": "https:\/\/andreoy.cn\/posts\/%E5%88%A9%E7%94%A8github-actions%E8%87%AA%E5%8A%A8%E5%B0%86canvas%E5%86%85%E5%AE%B9%E5%90%8C%E6%AD%A5%E8%87%B3microsoft-todo\/","datePublished": "2022-10-13T08:23:33+08:00","dateModified": "2022-10-13T08:23:33+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Andreo Y."
+      },"description": ""
+  }
+  </script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3263382266976949"
+     crossorigin="anonymous"></script>
+
+  </head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Andreo Y."><img
+    class="lazyload logo"
+    src="/svg/loading.min.svg"
+    data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png"
+    data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png 2x"
+    data-sizes="auto"
+    alt="Andreo Y."
+    title="Andreo Y."/><span class="header-title-text"> Andreo Y.&#39;s Space</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item text-center">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 所有文章</a></li><li class="menu-item text-center">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-stream fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li class="menu-item text-center">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tag fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item text-center">
+              <a
+                class="menu-link"
+                href="/about/"
+                
+                
+              ><i class="fa-solid fa-user-circle fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item text-center">
+              <a
+                class="menu-link"
+                href="/friends/"
+                
+                
+              ><i class="fa-solid fa-user-friends fa-fw fa-sm" aria-hidden="true"></i> 友情链接</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="Search for everything..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Andreo Y."><img
+    class="lazyload logo"
+    src="/svg/loading.min.svg"
+    data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png"
+    data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png 2x"
+    data-sizes="auto"
+    alt="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png"
+    title="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png"/><span class="header-title-text"> Andreo Y.&#39;s Space</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="Search for everything..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item text-center"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 所有文章</a></li><li
+              class="menu-item text-center"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-stream fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li
+              class="menu-item text-center"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tag fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li
+              class="menu-item text-center"
+            ><a
+                  class="menu-link"
+                  href="/about/"
+                  
+                  
+                ><i class="fa-solid fa-user-circle fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li
+              class="menu-item text-center"
+            ><a
+                  class="menu-link"
+                  href="/friends/"
+                  
+                  
+                ><i class="fa-solid fa-user-friends fa-fw fa-sm" aria-hidden="true"></i> 友情链接</a></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container" data-page-style="narrow"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    
+</aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX">
+        <span>Todosync:利用Github Actions自动将Canvas内容同步至Microsoft Todo</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://andreoy.cn" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img
+    class="lazyload avatar"
+    src="/svg/loading.min.svg"
+    data-src="https://gravatar.loli.net/avatar/d8234597e50620ab663b4a6e7e89bf99?s=32&amp;d="
+    data-srcset="https://gravatar.loli.net/avatar/d8234597e50620ab663b4a6e7e89bf99?s=32&amp;d=, https://gravatar.loli.net/avatar/d8234597e50620ab663b4a6e7e89bf99?s=32&amp;d= 1.5x, https://gravatar.loli.net/avatar/d8234597e50620ab663b4a6e7e89bf99?s=32&amp;d= 2x"
+    data-sizes="auto"
+    alt="Andreo Y."
+    title="Andreo Y."/>&nbsp;Andreo Y.</a></span>
+          <span class="post-category">收录于 <a href="/categories/%E8%B5%84%E6%BA%90/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 资源</a></span></div>
+      <div class="post-meta-line"><span title=2022-10-13&#32;08:23:33><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-10-13">2022-10-13</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 2197 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 5 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Todosync:利用Github Actions自动将Canvas内容同步至Microsoft Todo">
+              <i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
+            </span>&nbsp;</div>
+    </div><div class="featured-image"><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://shuiyuan.sjtu.edu.cn/uploads/default/original/3X/3/9/39ee7eb4a0369ec5721743f5e3358ec54968722f.png"
+    data-srcset="https://shuiyuan.sjtu.edu.cn/uploads/default/original/3X/3/9/39ee7eb4a0369ec5721743f5e3358ec54968722f.png, https://shuiyuan.sjtu.edu.cn/uploads/default/original/3X/3/9/39ee7eb4a0369ec5721743f5e3358ec54968722f.png 1.5x, https://shuiyuan.sjtu.edu.cn/uploads/default/original/3X/3/9/39ee7eb4a0369ec5721743f5e3358ec54968722f.png 2x"
+    data-sizes="auto"
+    alt="https://shuiyuan.sjtu.edu.cn/uploads/default/original/3X/3/9/39ee7eb4a0369ec5721743f5e3358ec54968722f.png"
+    title="https://shuiyuan.sjtu.edu.cn/uploads/default/original/3X/3/9/39ee7eb4a0369ec5721743f5e3358ec54968722f.png"/></div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#使用教程">使用教程</a>
+      <ul>
+        <li><a href="#注册github账号已有可跳过">注册Github账号（已有可跳过）</a></li>
+        <li><a href="#配置canvas-token">配置Canvas Token</a></li>
+        <li><a href="#配置graph-token">配置Graph Token</a></li>
+        <li><a href="#启动定时任务github-actions">启动定时任务（Github Actions）</a></li>
+      </ul>
+    </li>
+    <li><a href="#常见问题">常见问题</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div><div
+      class="content"
+      id="content"
+      
+      
+    ><blockquote>
+<p>不想错过DDL？Canvas LMS的邮件推送功能不够直观？</p>
+<p>Microsoft Todo和Canvas的联动或许是你的不二之选。</p>
+</blockquote>
+<h2 id="前言">前言</h2>
+<p>在了解到这个工具之前，我一直受canvas反馈功能不够全面的困扰。虽然有日历馈送，但并不是每个老师每个作业都会设置DDL，而且完成之后也没法在日历上删除。直到有一天，我在水源社区刷到了这个帖：</p>
+<a href="https://shuiyuan.sjtu.edu.cn/t/topic/91891" title="原帖链接"target="_blank" rel="external nofollow noopener noreferrer">【TodoSync】自动将 Canvas 的作业、公告等同步到 Microsoft Todo<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>
+<p><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://shuiyuan.sjtu.edu.cn/uploads/default/original/3X/5/3/530e03969302cc4264af826e18d91d652d872b03.png"
+    data-srcset="https://shuiyuan.sjtu.edu.cn/uploads/default/original/3X/5/3/530e03969302cc4264af826e18d91d652d872b03.png, https://shuiyuan.sjtu.edu.cn/uploads/default/original/3X/5/3/530e03969302cc4264af826e18d91d652d872b03.png 1.5x, https://shuiyuan.sjtu.edu.cn/uploads/default/original/3X/5/3/530e03969302cc4264af826e18d91d652d872b03.png 2x"
+    data-sizes="auto"
+    alt="https://shuiyuan.sjtu.edu.cn/uploads/default/original/3X/5/3/530e03969302cc4264af826e18d91d652d872b03.png"
+    title="https://shuiyuan.sjtu.edu.cn/uploads/default/original/3X/5/3/530e03969302cc4264af826e18d91d652d872b03.png"/></p>
+<hr>
+<p><strong>我超这可太牛逼了。</strong></p>
+<p>我本人一直是Todolist的重度使用者，感觉失去了Todolist就没有了方向。在使用了iOS系统的大量app，甚至氪了近200买一些app的会员之后，我负责任地说Microsoft Todo，不仅免费，而且用起来最顺手。而这款Todosync对我来说，简直就是专业对口。</p>
+<h2 id="使用教程">使用教程</h2>
+<div class="details admonition tip open">
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-lightbulb fa-fw" aria-hidden="true"></i>Tip<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content">本教程供电脑小白食用，有基础可直接移步<a href="https://github.com/1357310795/TodoSync/blob/master/docs/actions-persis.md"target="_blank" rel="external nofollow noopener noreferrer">原教程<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>。本教程部分截图资源来自原教程。</div>
+    </div>
+  </div>
+<div class="details admonition warning open">
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-exclamation-triangle fa-fw" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content">本教程仅适用于Windows10或11系统</div>
+    </div>
+  </div>
+<h3 id="注册github账号已有可跳过">注册Github账号（已有可跳过）</h3>
+<p><del>都2022年了不会还有人没注册Gayhub罢</del></p>
+<p>前往<a href="https://github.com"target="_blank" rel="external nofollow noopener noreferrer">Github官网<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>，点击首页的``Sign up for Github`，然后依次输入你的<strong>邮件地址</strong>，<strong>创建密码</strong>，<strong>创建用户名</strong>，最后y/n是是否接收邮件推送。</p>
+<p>然后完成邮箱验证，就注册成功了。</p>
+<h3 id="配置canvas-token">配置Canvas Token</h3>
+<h4 id="创建fork">创建Fork</h4>
+<p>前往<a href="https://github.com/1357310795/TodoSync"target="_blank" rel="external nofollow noopener noreferrer">Todosync的仓库<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>，点击右上角的Fork复制整个仓库</p>
+<p>然后会进入下图这个界面（本教程采用小号演示，add-verb不是我的常用Github账号）</p>
+<div class="details admonition warning open">
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-exclamation-triangle fa-fw" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content">记得取消勾选<code>Copy the master branch only</code></div>
+    </div>
+  </div>
+<p>取消勾选后即可<code>Create fork</code></p>
+<p><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20221013085923967.png"
+    data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20221013085923967.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20221013085923967.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20221013085923967.png 2x"
+    data-sizes="auto"
+    alt="image-20221013085923967"
+    title="image-20221013085923967"/></p>
+<h4 id="生成canvas许可证">生成Canvas许可证</h4>
+<ul>
+<li>
+<p>登录canvas，进入<a href="https://oc.sjtu.edu.cn/profile/settings"target="_blank" rel="external nofollow noopener noreferrer"><strong>账户-设置</strong><i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
+</li>
+<li>
+<p>点击“创建新访问许可证”</p>
+<p><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20221013090333303.png"
+    data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20221013090333303.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20221013090333303.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20221013090333303.png 2x"
+    data-sizes="auto"
+    alt="image-20221013090333303"
+    title="image-20221013090333303"/></p>
+</li>
+<li>
+<p>“用途”随意填写，“过期”留空，这样不需要重新创建</p>
+<p><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20221013090535952.png"
+    data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20221013090535952.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20221013090535952.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20221013090535952.png 2x"
+    data-sizes="auto"
+    alt="image-20221013090535952"
+    title="image-20221013090535952"/></p>
+</li>
+<li>
+<p>点击“生成令牌“，然后复制那一串令牌。</p>
+<p><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://camo.githubusercontent.com/f20e44578ebcbff47866af3c90394a169b2c3cf7e23931fb4766694bf3fc8127/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30382f32312f4579656a3935765933634373565a542e706e67"
+    data-srcset="https://camo.githubusercontent.com/f20e44578ebcbff47866af3c90394a169b2c3cf7e23931fb4766694bf3fc8127/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30382f32312f4579656a3935765933634373565a542e706e67, https://camo.githubusercontent.com/f20e44578ebcbff47866af3c90394a169b2c3cf7e23931fb4766694bf3fc8127/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30382f32312f4579656a3935765933634373565a542e706e67 1.5x, https://camo.githubusercontent.com/f20e44578ebcbff47866af3c90394a169b2c3cf7e23931fb4766694bf3fc8127/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30382f32312f4579656a3935765933634373565a542e706e67 2x"
+    data-sizes="auto"
+    alt="https://camo.githubusercontent.com/f20e44578ebcbff47866af3c90394a169b2c3cf7e23931fb4766694bf3fc8127/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30382f32312f4579656a3935765933634373565a542e706e67"
+    title="https://camo.githubusercontent.com/f20e44578ebcbff47866af3c90394a169b2c3cf7e23931fb4766694bf3fc8127/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30382f32312f4579656a3935765933634373565a542e706e67"/></p>
+</li>
+</ul>
+<h4 id="创建action-secret">创建Action Secret</h4>
+<div class="details admonition tip open">
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-lightbulb fa-fw" aria-hidden="true"></i>Tip<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content">此部分在刚才fork的仓库进行。请进入你复制的仓库，而不是作者原来的仓库。</div>
+    </div>
+  </div>
+<ul>
+<li>
+<p>来到你自己的仓库，这时你的仓库标题下应该会有一行小字<code>forked from 1357310795/TodoSync</code></p>
+</li>
+<li>
+<p>进入Settings</p>
+<p><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20221013091241186.png"
+    data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20221013091241186.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20221013091241186.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20221013091241186.png 2x"
+    data-sizes="auto"
+    alt="image-20221013091241186"
+    title="image-20221013091241186"/></p>
+</li>
+<li>
+<p>选择“Secrets - Actions”，点击“New repository secret”	<img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://camo.githubusercontent.com/b79cd58d3c03c6a1320d31fe076888bd671ac9eacb9974e4f639a9509b1da42f/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30382f32312f4661764d4b6a70346c4759496836672e706e67"
+    data-srcset="https://camo.githubusercontent.com/b79cd58d3c03c6a1320d31fe076888bd671ac9eacb9974e4f639a9509b1da42f/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30382f32312f4661764d4b6a70346c4759496836672e706e67, https://camo.githubusercontent.com/b79cd58d3c03c6a1320d31fe076888bd671ac9eacb9974e4f639a9509b1da42f/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30382f32312f4661764d4b6a70346c4759496836672e706e67 1.5x, https://camo.githubusercontent.com/b79cd58d3c03c6a1320d31fe076888bd671ac9eacb9974e4f639a9509b1da42f/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30382f32312f4661764d4b6a70346c4759496836672e706e67 2x"
+    data-sizes="auto"
+    alt="https://camo.githubusercontent.com/b79cd58d3c03c6a1320d31fe076888bd671ac9eacb9974e4f639a9509b1da42f/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30382f32312f4661764d4b6a70346c4759496836672e706e67"
+    title="https://camo.githubusercontent.com/b79cd58d3c03c6a1320d31fe076888bd671ac9eacb9974e4f639a9509b1da42f/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30382f32312f4661764d4b6a70346c4759496836672e706e67"/></p>
+</li>
+<li>
+<p><code>Name</code>为<code>CANVAS_TOKEN</code>，<code>Value</code>为刚才复制的令牌，完成后点击<code>Add Secret</code></p>
+<p><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://camo.githubusercontent.com/f80054bae5b7b773739657bd89efed42b01f1529cd8011ac971f0012e8e3c43c/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30382f32312f6c4e6f4b7876445a674658576b79412e706e67"
+    data-srcset="https://camo.githubusercontent.com/f80054bae5b7b773739657bd89efed42b01f1529cd8011ac971f0012e8e3c43c/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30382f32312f6c4e6f4b7876445a674658576b79412e706e67, https://camo.githubusercontent.com/f80054bae5b7b773739657bd89efed42b01f1529cd8011ac971f0012e8e3c43c/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30382f32312f6c4e6f4b7876445a674658576b79412e706e67 1.5x, https://camo.githubusercontent.com/f80054bae5b7b773739657bd89efed42b01f1529cd8011ac971f0012e8e3c43c/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30382f32312f6c4e6f4b7876445a674658576b79412e706e67 2x"
+    data-sizes="auto"
+    alt="img"
+    title="img"/></p>
+</li>
+<li>
+<p>完成后如图所示</p>
+<p><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://camo.githubusercontent.com/971fa0482033cec6f634e92b591832e1873917c4d7bc7dcac2a2ba1930d31426/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30382f32312f6b554c704a627278766745477a43512e706e67"
+    data-srcset="https://camo.githubusercontent.com/971fa0482033cec6f634e92b591832e1873917c4d7bc7dcac2a2ba1930d31426/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30382f32312f6b554c704a627278766745477a43512e706e67, https://camo.githubusercontent.com/971fa0482033cec6f634e92b591832e1873917c4d7bc7dcac2a2ba1930d31426/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30382f32312f6b554c704a627278766745477a43512e706e67 1.5x, https://camo.githubusercontent.com/971fa0482033cec6f634e92b591832e1873917c4d7bc7dcac2a2ba1930d31426/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30382f32312f6b554c704a627278766745477a43512e706e67 2x"
+    data-sizes="auto"
+    alt="img"
+    title="img"/></p>
+</li>
+</ul>
+<h3 id="配置graph-token">配置Graph Token</h3>
+<ul>
+<li>下载这个生成工具。此链接是1.0版本，需要最新版本请前往<a href="https://github.com/1357310795/TodoSync/releases"target="_blank" rel="external nofollow noopener noreferrer">Releases界面<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>下载。浏览器可能会提示软件不安全，那就坚持保留。我们要相信学长。</li>
+</ul>
+<a href="https://github.com/1357310795/TodoSync/releases/download/v1.0/TodoSynchronizer.QuickTool.exe" title="前往下载"target="_blank" rel="external nofollow noopener noreferrer" class="card-link"><span class="cl-backdrop" style="--cl-bg-url: url(/fixit.min.svg);"></span>
+    <span class="cl-content">
+      <span class="cl-text">
+        <span class="cl-title">令牌生成工具</span>
+        <span class="cl-meta">
+          <svg class="cl-icon-link" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path d="M574 665.4c-3.1-3.1-8.2-3.1-11.3 0L446.5 781.6c-53.8 53.8-144.6 59.5-204 0-59.5-59.5-53.8-150.2 0-204l116.2-116.2c3.1-3.1 3.1-8.2 0-11.3l-39.8-39.8c-3.1-3.1-8.2-3.1-11.3 0L191.4 526.5c-84.6 84.6-84.6 221.5 0 306s221.5 84.6 306 0l116.2-116.2c3.1-3.1 3.1-8.2 0-11.3L574 665.4zM832.6 191.4c-84.6-84.6-221.5-84.6-306 0L410.3 307.6c-3.1 3.1-3.1 8.2 0 11.3l39.7 39.7c3.1 3.1 8.2 3.1 11.3 0l116.2-116.2c53.8-53.8 144.6-59.5 204 0 59.5 59.5 53.8 150.2 0 204L665.3 562.6c-3.1 3.1-3.1 8.2 0 11.3l39.8 39.8c3.1 3.1 8.2 3.1 11.3 0l116.2-116.2c84.5-84.6 84.5-221.5 0-306.1z" fill="#a9a9b3"></path><path d="M610.1 372.3c-3.1-3.1-8.2-3.1-11.3 0L372.3 598.7c-3.1 3.1-3.1 8.2 0 11.3l39.6 39.6c3.1 3.1 8.2 3.1 11.3 0l226.4-226.4c3.1-3.1 3.1-8.2 0-11.3l-39.5-39.6z" fill="#a9a9b3"></path></svg>
+          <span class="cl-url">https://github.com/1357310795/TodoSync/releases/download/v1.0/TodoSynchronizer.QuickTool.exe</span>
+        </span>
+      </span><svg class="cl-icon-globe" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="64" height="64"><path d="M960 512c0 249.408-203.2 448-448 448-244.778667 0-448-198.592-448-448S262.592 64 512 64s448 198.592 448 448" fill="#2196F3"></path><path d="M507.52 718.08c0-8.96-4.48-13.44-13.44-17.92-26.88-8.96-53.76-8.96-76.16-31.381333-4.48-8.96-4.48-17.92-8.96-26.88-8.96-8.96-31.36-13.44-44.8-17.92h-89.6c-13.44-4.48-22.4-22.4-31.36-35.84 0-4.48 0-13.461333-8.96-13.461334-8.96-4.458667-17.92 4.501333-26.88 0-4.48-4.458667-4.48-8.96-4.48-13.418666 0-13.461333 8.96-26.901333 17.92-35.861334 13.44-8.96 26.88 4.48 40.32 4.48 4.48 0 4.48 0 8.96 4.48 13.44 4.48 17.92 22.4 17.92 35.861334v8.96c0 4.48 4.48 4.48 8.96 4.48 4.48-22.4 4.48-44.821333 8.96-67.2 0-26.88 26.88-53.781333 49.28-62.72 8.96-4.458667 13.44 4.501333 22.4 0 26.88-8.96 94.08-35.84 80.64-71.658667-8.96-31.381333-35.84-62.698667-71.68-58.24-8.96 4.501333-13.44 8.96-22.4 13.461333-13.44 8.96-40.32 35.84-53.76 35.84-22.4-4.48-22.4-35.84-17.92-49.301333 4.48-17.92 44.8-76.138667 71.68-67.178667l17.92 17.92c8.96 4.48 22.4 4.48 35.84 4.48 4.48 0 8.96 0 13.44-4.48 4.48-4.48 4.48-4.48 4.48-8.96 0-13.44-13.44-26.901333-22.4-35.861333s-22.4-17.92-35.84-22.378667c-44.8-13.461333-116.48 4.458667-152.32 35.84-35.84 31.36-62.72 85.12-80.64 129.92-8.96 26.88-17.92 62.698667-22.4 94.08-4.48 22.4-8.96 40.32 4.48 62.698667 13.44 26.88 40.32 53.781333 67.2 71.68 17.92 13.44 53.76 13.44 71.68 35.84 13.44 17.941333 8.96 40.32 8.96 62.72 0 26.88 17.92 49.28 26.88 71.658667 4.48 13.461333 8.96 31.381333 13.44 44.821333 0 4.48 4.48 31.36 4.48 35.84 26.88 13.44 49.28 26.901333 80.64 35.861333 4.48 0 22.4-26.901333 22.4-31.381333 13.44-13.44 22.4-31.36 35.84-40.32 8.96-4.48 17.92-8.96 26.88-17.941333 8.96-8.96 13.44-26.88 17.92-40.32 4.48-8.938667 8.96-26.858667 4.48-40.298667M516.48 305.92c4.48 0 8.96-4.48 17.92-8.96 13.44-8.96 26.901333-22.4 40.32-31.36 13.461333-8.96 26.901333-22.4 35.861333-31.36 13.44-8.96 22.4-26.88 26.88-40.341333 4.48-8.96 17.941333-26.88 13.44-40.32-4.48-8.96-26.88-13.44-35.84-17.92C579.2 126.698667 547.84 122.24 512 122.24c-13.44 0-31.36 4.458667-35.84 17.92-4.48 22.4 13.44 17.92 31.36 22.4 0 0 4.48 35.84 4.48 40.32 4.48 22.421333-8.96 35.84-8.96 58.24 0 13.44 0 35.84 8.96 44.8h4.48zM892.8 619.52c4.501333-8.96 4.501333-22.4 8.96-31.36 4.501333-22.421333 4.501333-44.8 4.501333-67.2 0-44.8-4.501333-89.578667-17.92-129.92-8.96-13.44-13.461333-26.88-17.941333-40.341333-8.96-22.378667-22.4-44.8-40.32-62.698667-17.92-22.4-40.341333-85.12-80.64-67.2-13.44 4.501333-22.4 22.421333-31.36 31.381333l-26.88 40.32c-4.501333 4.48-8.96 13.44-4.501333 17.92 0 4.48 4.501333 4.48 8.96 4.48 8.96 4.501333 13.461333 4.501333 22.421333 8.96 4.48 0 8.96 4.501333 4.48 8.96 0 0 0 4.501333-4.48 4.501334-22.421333 22.4-44.8 40.32-67.2 62.698666-4.48 4.48-8.96 13.44-8.96 17.92s4.48 4.48 4.48 8.96c0 4.501333-4.48 4.501333-8.96 8.96-8.96 4.501333-17.92 8.96-22.4 13.461334-4.48 8.96 0 22.4-4.48 31.36-4.48 22.4-17.941333 40.32-26.901333 62.72-8.96 13.418667-13.418667 26.88-22.378667 40.32 0 17.92-4.501333 31.36 4.458667 44.8 22.421333 31.36 62.72 13.44 94.08 26.901333 8.96 4.458667 17.92 4.458667 22.421333 13.418667 13.418667 13.461333 13.418667 35.861333 17.92 49.301333 4.458667 17.92 8.96 35.84 17.92 53.76 4.48 22.421333 13.44 44.821333 17.92 62.72 40.341333-31.36 76.16-67.178667 103.04-112 26.88-31.424 40.341333-67.242667 53.76-103.104" fill="#CDDC39"></path></svg></span></a>
+<ul>
+<li>
+<p>打开下载的工具，点击“获取 Graph 认证”，跳转到浏览器</p>
+</li>
+<li>
+<p>授权 MyTodoApp。如果浏览器没有登录Microsoft账号，可能需要先登录。</p>
+</li>
+</ul>
+<div class="details admonition tip open">
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-lightbulb fa-fw" aria-hidden="true"></i>Tip<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content">请务必核对权限与下图是否一致，以及Microsoft账号是否与Microsoft Todo使用的账号相同。</div>
+    </div>
+  </div>
+<p><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://camo.githubusercontent.com/a1a3d3bb9680ecd41ff20a15ab94d93d0a852d2bfa640b5394f2082f8d7ab188/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30382f32312f4a69596e434d5550736863355247642e706e67"
+    data-srcset="https://camo.githubusercontent.com/a1a3d3bb9680ecd41ff20a15ab94d93d0a852d2bfa640b5394f2082f8d7ab188/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30382f32312f4a69596e434d5550736863355247642e706e67, https://camo.githubusercontent.com/a1a3d3bb9680ecd41ff20a15ab94d93d0a852d2bfa640b5394f2082f8d7ab188/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30382f32312f4a69596e434d5550736863355247642e706e67 1.5x, https://camo.githubusercontent.com/a1a3d3bb9680ecd41ff20a15ab94d93d0a852d2bfa640b5394f2082f8d7ab188/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30382f32312f4a69596e434d5550736863355247642e706e67 2x"
+    data-sizes="auto"
+    alt="img"
+    title="img"/></p>
+<ul>
+<li>
+<p>完成后，回到程序，系统会自动生成秘钥，点击确定即可。<strong>完成后不要关闭程序</strong></p>
+<p><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://camo.githubusercontent.com/0497ca2549ff0368566043aa4dc91ff15a4aaf3559498a19f37b879dc4e1be37/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30392f31352f4648385478494367706f76646873372e706e67"
+    data-srcset="https://camo.githubusercontent.com/0497ca2549ff0368566043aa4dc91ff15a4aaf3559498a19f37b879dc4e1be37/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30392f31352f4648385478494367706f76646873372e706e67, https://camo.githubusercontent.com/0497ca2549ff0368566043aa4dc91ff15a4aaf3559498a19f37b879dc4e1be37/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30392f31352f4648385478494367706f76646873372e706e67 1.5x, https://camo.githubusercontent.com/0497ca2549ff0368566043aa4dc91ff15a4aaf3559498a19f37b879dc4e1be37/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30392f31352f4648385478494367706f76646873372e706e67 2x"
+    data-sizes="auto"
+    alt="img"
+    title="img"/></p>
+</li>
+<li>
+<p>前往<strong>自己fork的仓库</strong>，如图所示切换到graphtoken分支</p>
+<p><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://camo.githubusercontent.com/3a4d70187f3c345c355b06013ea3d664b9434afc43377e57bd5a910f02aeb2cd/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30382f32312f4e7a4a52653445354c536c595647622e706e67"
+    data-srcset="https://camo.githubusercontent.com/3a4d70187f3c345c355b06013ea3d664b9434afc43377e57bd5a910f02aeb2cd/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30382f32312f4e7a4a52653445354c536c595647622e706e67, https://camo.githubusercontent.com/3a4d70187f3c345c355b06013ea3d664b9434afc43377e57bd5a910f02aeb2cd/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30382f32312f4e7a4a52653445354c536c595647622e706e67 1.5x, https://camo.githubusercontent.com/3a4d70187f3c345c355b06013ea3d664b9434afc43377e57bd5a910f02aeb2cd/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30382f32312f4e7a4a52653445354c536c595647622e706e67 2x"
+    data-sizes="auto"
+    alt="img"
+    title="img"/></p>
+</li>
+<li>
+<p>编辑 graphtoken.asc 文件</p>
+<p><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://camo.githubusercontent.com/113772773adaa622afd9a9ea1a9188eafa92149ee6b52b15ec3f5bd9c87e4a2b/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30392f31342f36444c677a376d48516456536e5a322e706e67"
+    data-srcset="https://camo.githubusercontent.com/113772773adaa622afd9a9ea1a9188eafa92149ee6b52b15ec3f5bd9c87e4a2b/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30392f31342f36444c677a376d48516456536e5a322e706e67, https://camo.githubusercontent.com/113772773adaa622afd9a9ea1a9188eafa92149ee6b52b15ec3f5bd9c87e4a2b/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30392f31342f36444c677a376d48516456536e5a322e706e67 1.5x, https://camo.githubusercontent.com/113772773adaa622afd9a9ea1a9188eafa92149ee6b52b15ec3f5bd9c87e4a2b/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30392f31342f36444c677a376d48516456536e5a322e706e67 2x"
+    data-sizes="auto"
+    alt="img"
+    title="img"/></p>
+</li>
+<li>
+<p>复制程序中的<strong>一大串非中文字符</strong>，粘贴进来（把原先的<strong>覆盖</strong>掉，注意不要有多余的换行），直接Commit Changes</p>
+</li>
+</ul>
+<div class="details admonition tip open">
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-lightbulb fa-fw" aria-hidden="true"></i>Tip<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content">注意和下一步区分中文字符串和非中文字符串，两处填写内容不同，此处为凭证，下面是秘钥。</div>
+    </div>
+  </div>
+<p><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://camo.githubusercontent.com/a55ff2db10d5be68adede1174136181caaeffb98d4edd89864ce0492e5198910/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30382f32312f6664477170744e7934465a6339567a2e706e67"
+    data-srcset="https://camo.githubusercontent.com/a55ff2db10d5be68adede1174136181caaeffb98d4edd89864ce0492e5198910/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30382f32312f6664477170744e7934465a6339567a2e706e67, https://camo.githubusercontent.com/a55ff2db10d5be68adede1174136181caaeffb98d4edd89864ce0492e5198910/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30382f32312f6664477170744e7934465a6339567a2e706e67 1.5x, https://camo.githubusercontent.com/a55ff2db10d5be68adede1174136181caaeffb98d4edd89864ce0492e5198910/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30382f32312f6664477170744e7934465a6339567a2e706e67 2x"
+    data-sizes="auto"
+    alt="img"
+    title="img"/></p>
+<ul>
+<li>
+<p>再次到Settings的“Secrets”里，创建一个新条目，“Name”为“KEY”，“Value”为程序中的<strong>一串中文字符</strong></p>
+<p><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://camo.githubusercontent.com/12c0995bf5c4bfadb30b9cf1da0093c9d0c0c97c14dc4652b7f2e5da16856d09/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30392f31342f34616b47514f7a564c48376e5976432e706e67"
+    data-srcset="https://camo.githubusercontent.com/12c0995bf5c4bfadb30b9cf1da0093c9d0c0c97c14dc4652b7f2e5da16856d09/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30392f31342f34616b47514f7a564c48376e5976432e706e67, https://camo.githubusercontent.com/12c0995bf5c4bfadb30b9cf1da0093c9d0c0c97c14dc4652b7f2e5da16856d09/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30392f31342f34616b47514f7a564c48376e5976432e706e67 1.5x, https://camo.githubusercontent.com/12c0995bf5c4bfadb30b9cf1da0093c9d0c0c97c14dc4652b7f2e5da16856d09/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30392f31342f34616b47514f7a564c48376e5976432e706e67 2x"
+    data-sizes="auto"
+    alt="img"
+    title="img"/></p>
+</li>
+<li>
+<p>点击Add secret，完成Graph Token的创建</p>
+</li>
+</ul>
+<h3 id="启动定时任务github-actions">启动定时任务（Github Actions）</h3>
+<ul>
+<li>
+<p>在<strong>自己fork的仓库</strong>，点击<code>Actions</code>选项卡，点击绿色按钮启用。</p>
+<p><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://camo.githubusercontent.com/fe16b61342457189d9a66bfc4630c3bbab028f2f6c0c9981c31b8622a58b3d38/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30382f32312f7174436e4b6470505752464e62674d2e706e67"
+    data-srcset="https://camo.githubusercontent.com/fe16b61342457189d9a66bfc4630c3bbab028f2f6c0c9981c31b8622a58b3d38/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30382f32312f7174436e4b6470505752464e62674d2e706e67, https://camo.githubusercontent.com/fe16b61342457189d9a66bfc4630c3bbab028f2f6c0c9981c31b8622a58b3d38/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30382f32312f7174436e4b6470505752464e62674d2e706e67 1.5x, https://camo.githubusercontent.com/fe16b61342457189d9a66bfc4630c3bbab028f2f6c0c9981c31b8622a58b3d38/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30382f32312f7174436e4b6470505752464e62674d2e706e67 2x"
+    data-sizes="auto"
+    alt="img"
+    title="img"/></p>
+</li>
+<li>
+<p>在左侧选择“TodoSync”，右侧点击“Run workflow”</p>
+<p><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://camo.githubusercontent.com/ab1977f329cc35e7d27f193a2b86613dbd8607bed9d16111e2731ebdb11e46d4/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30382f32312f326b6358554279544f616f4c4969762e706e67"
+    data-srcset="https://camo.githubusercontent.com/ab1977f329cc35e7d27f193a2b86613dbd8607bed9d16111e2731ebdb11e46d4/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30382f32312f326b6358554279544f616f4c4969762e706e67, https://camo.githubusercontent.com/ab1977f329cc35e7d27f193a2b86613dbd8607bed9d16111e2731ebdb11e46d4/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30382f32312f326b6358554279544f616f4c4969762e706e67 1.5x, https://camo.githubusercontent.com/ab1977f329cc35e7d27f193a2b86613dbd8607bed9d16111e2731ebdb11e46d4/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30382f32312f326b6358554279544f616f4c4969762e706e67 2x"
+    data-sizes="auto"
+    alt="img"
+    title="img"/></p>
+</li>
+<li>
+<p>此时workflow已经开始运行，一分钟左右就能在你的Microsoft Todo里面看到Canvas的待办事项了。</p>
+</li>
+<li>
+<p>刷新页面后可以进入Action查看程序运行详情，如果遇到报错，可以在评论区交流。</p>
+</li>
+<li>
+<p>编辑仓库根目录下的 <code>config.yaml</code> 文件，可以调整同步程序设置</p>
+<p><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://camo.githubusercontent.com/3e32ee2739dfffd8c558be1339b043e3c8a1ca9c5c0109c6a0f6b1292821d6f0/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30382f32322f6d634b35616644685258535543564d2e706e67"
+    data-srcset="https://camo.githubusercontent.com/3e32ee2739dfffd8c558be1339b043e3c8a1ca9c5c0109c6a0f6b1292821d6f0/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30382f32322f6d634b35616644685258535543564d2e706e67, https://camo.githubusercontent.com/3e32ee2739dfffd8c558be1339b043e3c8a1ca9c5c0109c6a0f6b1292821d6f0/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30382f32322f6d634b35616644685258535543564d2e706e67 1.5x, https://camo.githubusercontent.com/3e32ee2739dfffd8c558be1339b043e3c8a1ca9c5c0109c6a0f6b1292821d6f0/68747470733a2f2f73322e6c6f6c692e6e65742f323032322f30382f32322f6d634b35616644685258535543564d2e706e67 2x"
+    data-sizes="auto"
+    alt="img"
+    title="img"/></p>
+</li>
+</ul>
+<h2 id="常见问题">常见问题</h2>
+<div class="details admonition tip open">
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-lightbulb fa-fw" aria-hidden="true"></i>Tip<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content">转自<a href="https://github.com/1357310795/TodoSync/blob/master/docs/actions-persis.md"target="_blank" rel="external nofollow noopener noreferrer">原教程<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>，真的有问题还是要去找原作者。</div>
+    </div>
+  </div>
+<h4 id="fork-的仓库能不能设置为-private">Fork 的仓库能不能设置为 Private？</h4>
+<p>对于公开仓库，GitHub Actions 是免费的；而对于私有仓库，GitHub Actions 每个月有 2000 分钟的免费额度，超出会有巨额收费（在<a href="https://github.com/settings/billing"target="_blank" rel="external nofollow noopener noreferrer">这里<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>看用量）。本项目每次运行大约需要 2min，也就是说每个月顶多能运行 1000 次，可能不够用。<strong>强烈建议保持仓库为公开状态</strong>。</p>
+<h4 id="为什么步骤这么复杂我的账号token-安全吗">为什么步骤这么复杂？我的账号、Token 安全吗？</h4>
+<p>复杂的配置步骤就是为了保证账号和令牌的安全性。Canvas Token 的安全性由 GitHub 保证，Graph Token 的安全性由 AES 算法保证。</p>
+<h4 id="为什么不直接把-graph-的-accesstokenrefreshtoken-保存到-secrets像-canvas-token-那样">为什么不直接把 Graph 的 AccessToken/RefreshToken 保存到 Secrets，像 Canvas Token 那样？</h4>
+<p>AccessToken 的有效期只有 1 小时，RefreshToken 的有效期可能是 90 天（参考<a href="https://docs.microsoft.com/zh-cn/azure/active-directory/develop/active-directory-configurable-token-lifetimes#refresh-and-session-token-lifetime-policy-properties"target="_blank" rel="external nofollow noopener noreferrer">这里<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>，我看不明白）。为确保令牌永不过期，需要在每次运行时更新令牌。Secrets 不支持使用 Action 操作更新，故只能将令牌加密后保存到存储库的 graphtoken 分支，密钥保存在 Secrets 内。</p>
+<h4 id="授权-mytodoapp-有什么风险如何取消此授权">授权 MyTodoApp 有什么风险？如何取消此授权？</h4>
+<p>正如授权时显示的应用权限所示，“创建、读取、更新和删除你的任务和计划”和“保持对已向 MyTodoApp 授予访问权限的数据的访问权限”是应用正常运行必须的权限，“读取您的个人资料”用于验证登录。程序不会也不可能索要您的敏感信息。在<a href="https://account.live.com/consent/Manage"target="_blank" rel="external nofollow noopener noreferrer">这里<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>可以管理连接到 Microsoft 账户的应用。</p>
+<h4 id="无法登录微软账号该-microsoft-帐户不存在">无法登录微软账号？该 Microsoft 帐户不存在？</h4>
+<p>换用个人邮箱注册的账号，不要用学校/机构的账号。</p>
+<h4 id="github-action-运行失败">GitHub Action 运行失败？</h4>
+<p>如果不明白为什么失败，到原仓库提交 issue</p>
+<h4 id="如果仓库设置为-public如何隐藏我的课程信息">如果仓库设置为 Public，如何隐藏我的课程信息？</h4>
+<p>编辑<code>config.yaml</code>文件，把<code>VerboseMode</code>改成<code>false</code></p></div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title=2022-10-13&#32;08:23:33>更新于 2022-10-13&nbsp;</span>
+      </div><div class="post-info-license">
+          <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+        </div></div>
+    <div class="post-info-line">
+      <div class="post-info-md"></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://andreoy.cn/posts/%E5%88%A9%E7%94%A8github-actions%E8%87%AA%E5%8A%A8%E5%B0%86canvas%E5%86%85%E5%AE%B9%E5%90%8C%E6%AD%A5%E8%87%B3microsoft-todo/" data-title="Todosync:利用Github Actions自动将Canvas内容同步至Microsoft Todo" data-hashtags="学业,工具"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://andreoy.cn/posts/%E5%88%A9%E7%94%A8github-actions%E8%87%AA%E5%8A%A8%E5%B0%86canvas%E5%86%85%E5%AE%B9%E5%90%8C%E6%AD%A5%E8%87%B3microsoft-todo/" data-hashtag="学业"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Linkedin" data-sharer="linkedin" data-url="https://andreoy.cn/posts/%E5%88%A9%E7%94%A8github-actions%E8%87%AA%E5%8A%A8%E5%B0%86canvas%E5%86%85%E5%AE%B9%E5%90%8C%E6%AD%A5%E8%87%B3microsoft-todo/"><i class="fa-brands fa-linkedin fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Tumblr" data-sharer="tumblr" data-url="https://andreoy.cn/posts/%E5%88%A9%E7%94%A8github-actions%E8%87%AA%E5%8A%A8%E5%B0%86canvas%E5%86%85%E5%AE%B9%E5%90%8C%E6%AD%A5%E8%87%B3microsoft-todo/" data-title="Todosync:利用Github Actions自动将Canvas内容同步至Microsoft Todo" data-tags="学业,工具"><i class="fa-brands fa-tumblr fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Reddit" data-sharer="reddit" data-url="https://andreoy.cn/posts/%E5%88%A9%E7%94%A8github-actions%E8%87%AA%E5%8A%A8%E5%B0%86canvas%E5%86%85%E5%AE%B9%E5%90%8C%E6%AD%A5%E8%87%B3microsoft-todo/"><i class="fa-brands fa-reddit fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://andreoy.cn/posts/%E5%88%A9%E7%94%A8github-actions%E8%87%AA%E5%8A%A8%E5%B0%86canvas%E5%86%85%E5%AE%B9%E5%90%8C%E6%AD%A5%E8%87%B3microsoft-todo/" data-title="Todosync:利用Github Actions自动将Canvas内容同步至Microsoft Todo" data-image="https://shuiyuan.sjtu.edu.cn/uploads/default/original/3X/3/9/39ee7eb4a0369ec5721743f5e3358ec54968722f.png"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://andreoy.cn/posts/%E5%88%A9%E7%94%A8github-actions%E8%87%AA%E5%8A%A8%E5%B0%86canvas%E5%86%85%E5%AE%B9%E5%90%8C%E6%AD%A5%E8%87%B3microsoft-todo/" data-title="Todosync:利用Github Actions自动将Canvas内容同步至Microsoft Todo" data-description=""><i class="fa-brands fa-blogger fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://andreoy.cn/posts/%E5%88%A9%E7%94%A8github-actions%E8%87%AA%E5%8A%A8%E5%B0%86canvas%E5%86%85%E5%AE%B9%E5%90%8C%E6%AD%A5%E8%87%B3microsoft-todo/" data-title="Todosync:利用Github Actions自动将Canvas内容同步至Microsoft Todo"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Skype" data-sharer="skype" data-url="https://andreoy.cn/posts/%E5%88%A9%E7%94%A8github-actions%E8%87%AA%E5%8A%A8%E5%B0%86canvas%E5%86%85%E5%AE%B9%E5%90%8C%E6%AD%A5%E8%87%B3microsoft-todo/" data-title="Todosync:利用Github Actions自动将Canvas内容同步至Microsoft Todo"><i class="fa-brands fa-skype fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Trello" data-sharer="trello" data-url="https://andreoy.cn/posts/%E5%88%A9%E7%94%A8github-actions%E8%87%AA%E5%8A%A8%E5%B0%86canvas%E5%86%85%E5%AE%B9%E5%90%8C%E6%AD%A5%E8%87%B3microsoft-todo/" data-title="Todosync:利用Github Actions自动将Canvas内容同步至Microsoft Todo" data-description=""><i class="fa-brands fa-trello fa-fw" aria-hidden="true"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/%E5%AD%A6%E4%B8%9A/">学业</a>,&nbsp;<a href="/tags/%E5%B7%A5%E5%85%B7/">工具</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/posts/%E4%BA%A4%E5%A4%A7%E4%BC%A0%E6%89%BF%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/" class="prev" rel="prev" title="交大传承资料分享"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>交大传承资料分享</a></div>
+</div>
+<div id="comments"><div id="giscus">
+          <script
+            src="https://giscus.app/client.js"
+            data-repo="hzyangjc/hzyangjc.github.io"
+            data-repo-id="R_kgDOIAWwEQ"
+            data-category="Announcements"
+            data-category-id="DIC_kwDOIAWwEc4CRdaC"
+            data-mapping="pathname"
+            
+            data-theme="preferred_color_scheme"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-lang="zh-CN"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async
+            defer
+          ></script>
+          <noscript>
+            Please enable JavaScript to view the comments powered by <a href="https://giscus.app/" rel="external nofollow noopener noreferrer">giscus</a>.
+          </noscript>
+        </div></div></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.101.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.16-RC"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">
+              <a href="/"></a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中 ...'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i>&nbsp;<span class="run-times">网站运行中 ...</span></span></div><div class="footer-line ibruce">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/lunr/lunr.min.js" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script src="/lib/lunr/lunr.zh.min.js" defer></script><script src="/lib/lazysizes/lazysizes.min.js" async defer></script><script src="/lib/twemoji/twemoji.min.js" defer></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="/lib/pangu/pangu.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":50},"comment":{"enable":true,"giscus":{"darkTheme":"transparent_dark","lightTheme":"light"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"enablePangu":true,"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":30,"type":"lunr"},"siteTime":"2022-09-16T09:30:34+08:00","twemoji":true};</script><script src="/js/theme.min.js" defer></script><script>
+      window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+      gtag('config', 'G-SWE55VZ73Q');
+    </script><script src="https://www.googletagmanager.com/gtag/js?id=G-SWE55VZ73Q" async></script></body>
+</html>

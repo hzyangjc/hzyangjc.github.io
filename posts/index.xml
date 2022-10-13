@@ -3,7 +3,20 @@
     <title>所有文章 - Andreo Y.</title>
     <link>https://andreoy.cn/posts/</link>
     <description>所有文章 | Andreo Y.</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 11 Oct 2022 22:38:41 &#43;0800</lastBuildDate><atom:link href="https://andreoy.cn/posts/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 13 Oct 2022 08:23:33 &#43;0800</lastBuildDate><atom:link href="https://andreoy.cn/posts/" rel="self" type="application/rss+xml" /><item>
+  <title>Todosync:利用Github Actions自动将Canvas内容同步至Microsoft Todo</title>
+  <link>https://andreoy.cn/posts/%E5%88%A9%E7%94%A8github-actions%E8%87%AA%E5%8A%A8%E5%B0%86canvas%E5%86%85%E5%AE%B9%E5%90%8C%E6%AD%A5%E8%87%B3microsoft-todo/</link>
+  <pubDate>Thu, 13 Oct 2022 08:23:33 &#43;0800</pubDate>
+  <author>Andreo Y.</author>
+  <guid>https://andreoy.cn/posts/%E5%88%A9%E7%94%A8github-actions%E8%87%AA%E5%8A%A8%E5%B0%86canvas%E5%86%85%E5%AE%B9%E5%90%8C%E6%AD%A5%E8%87%B3microsoft-todo/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://shuiyuan.sjtu.edu.cn/uploads/default/original/3X/3/9/39ee7eb4a0369ec5721743f5e3358ec54968722f.png" referrerpolicy="no-referrer">
+      </div><blockquote>
+<p>不想错过DDL？Canvas LMS的邮件推送功能不够直观？</p>
+<p>Microsoft Todo和Canvas的联动或许是你的不二之选。</p>
+</blockquote>]]></description>
+</item>
+<item>
   <title>交大传承资料分享</title>
   <link>https://andreoy.cn/posts/%E4%BA%A4%E5%A4%A7%E4%BC%A0%E6%89%BF%E8%B5%84%E6%96%99%E5%88%86%E4%BA%AB/</link>
   <pubDate>Tue, 11 Oct 2022 22:38:41 &#43;0800</pubDate>
