@@ -1,0 +1,25 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>笔记 - 标签 - Andreo Y.</title>
+    <link>https://andreoy.cn/tags/%E7%AC%94%E8%AE%B0/</link>
+    <description>笔记 - 标签 - Andreo Y.</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 15 Oct 2022 09:14:35 &#43;0800</lastBuildDate><atom:link href="https://andreoy.cn/tags/%E7%AC%94%E8%AE%B0/" rel="self" type="application/rss+xml" /><item>
+  <title>极限与连续</title>
+  <link>https://andreoy.cn/posts/%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/</link>
+  <pubDate>Sat, 15 Oct 2022 09:14:35 &#43;0800</pubDate>
+  <author>Andreo Y.</author>
+  <guid>https://andreoy.cn/posts/%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20221015092104645.png" referrerpolicy="no-referrer">
+      </div><p>《微积分》第二章极限与连续的若干定理与一些理解。</p>
+<div class="details admonition tip open">
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-lightbulb fa-fw" aria-hidden="true"></i>关于<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content">本文并非完整的知识梳理，而是复习过程中对不太熟悉的内容的再认识。为自用之需。</div>
+    </div>
+  </div>]]></description>
+</item>
+</channel>
+</rss>
