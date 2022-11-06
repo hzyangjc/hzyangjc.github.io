@@ -5,70 +5,38 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
-    <title>极限与连续 - Andreo Y.</title><meta name="author" content="">
+    <title>导数与微分 - Andreo Y.</title><meta name="author" content="">
 <meta name="author-link" content="">
-<meta name="description" content="《微积分》第二章极限与连续的若干定理与一些理解。
-
-    
-      关于
-    
-    
-      本文并非完整的知识梳理，而是复习过程中对不太熟悉的内容的再认识。为自用之需。
-    
-  " /><meta name="keywords" content='学业, 笔记, 微积分' /><meta itemprop="name" content="极限与连续">
-<meta itemprop="description" content="《微积分》第二章极限与连续的若干定理与一些理解。
-
-    
-      关于
-    
-    
-      本文并非完整的知识梳理，而是复习过程中对不太熟悉的内容的再认识。为自用之需。
-    
-  "><meta itemprop="datePublished" content="2022-10-15T09:14:35+08:00" />
-<meta itemprop="dateModified" content="2022-10-15T09:14:35+08:00" />
-<meta itemprop="wordCount" content="1637"><meta itemprop="image" content="https://andreoy.cn/logo.png"/>
-<meta itemprop="keywords" content="学业,笔记,微积分," /><meta property="og:title" content="极限与连续" />
-<meta property="og:description" content="《微积分》第二章极限与连续的若干定理与一些理解。
-
-    
-      关于
-    
-    
-      本文并非完整的知识梳理，而是复习过程中对不太熟悉的内容的再认识。为自用之需。
-    
-  " />
+<meta name="description" content="《微积分》第三章导数与微分的若干定理与一些理解。" /><meta name="keywords" content='学业, 笔记, 微积分' /><meta itemprop="name" content="导数与微分">
+<meta itemprop="description" content="《微积分》第三章导数与微分的若干定理与一些理解。"><meta itemprop="datePublished" content="2022-11-06T09:46:47+08:00" />
+<meta itemprop="dateModified" content="2022-11-06T09:46:47+08:00" />
+<meta itemprop="wordCount" content="1885"><meta itemprop="image" content="https://andreoy.cn/logo.png"/>
+<meta itemprop="keywords" content="学业,笔记,微积分," /><meta property="og:title" content="导数与微分" />
+<meta property="og:description" content="《微积分》第三章导数与微分的若干定理与一些理解。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://andreoy.cn/posts/%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/" /><meta property="og:image" content="https://andreoy.cn/logo.png"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-10-15T09:14:35+08:00" />
-<meta property="article:modified_time" content="2022-10-15T09:14:35+08:00" />
+<meta property="og:url" content="https://andreoy.cn/posts/%E5%AF%BC%E6%95%B0%E4%B8%8E%E5%BE%AE%E5%88%86/" /><meta property="og:image" content="https://andreoy.cn/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-11-06T09:46:47+08:00" />
+<meta property="article:modified_time" content="2022-11-06T09:46:47+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://andreoy.cn/logo.png"/>
 
-<meta name="twitter:title" content="极限与连续"/>
-<meta name="twitter:description" content="《微积分》第二章极限与连续的若干定理与一些理解。
-
-    
-      关于
-    
-    
-      本文并非完整的知识梳理，而是复习过程中对不太熟悉的内容的再认识。为自用之需。
-    
-  "/>
+<meta name="twitter:title" content="导数与微分"/>
+<meta name="twitter:description" content="《微积分》第三章导数与微分的若干定理与一些理解。"/>
 <meta name="application-name" content="Andreo Y.&#39;s Space">
 <meta name="apple-mobile-web-app-title" content="Andreo Y.&#39;s Space"><meta name="theme-color" data-light="#ffffff" data-dark="#252627" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://andreoy.cn/posts/%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/" /><link rel="prev" href="https://andreoy.cn/posts/%E5%88%A9%E7%94%A8github-actions%E8%87%AA%E5%8A%A8%E5%B0%86canvas%E5%86%85%E5%AE%B9%E5%90%8C%E6%AD%A5%E8%87%B3microsoft-todo/" /><link rel="next" href="https://andreoy.cn/posts/%E5%AF%BC%E6%95%B0%E4%B8%8E%E5%BE%AE%E5%88%86/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><meta name="baidu-site-verification" content="code-NEqykcuT3x" /><script type="application/ld+json">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://andreoy.cn/posts/%E5%AF%BC%E6%95%B0%E4%B8%8E%E5%BE%AE%E5%88%86/" /><link rel="prev" href="https://andreoy.cn/posts/%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><meta name="baidu-site-verification" content="code-NEqykcuT3x" /><script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
-    "headline": "极限与连续",
+    "headline": "导数与微分",
     "inLanguage": "zh-CN",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https:\/\/andreoy.cn\/posts\/%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD\/"
-    },"genre": "posts","keywords": "学业, 笔记, 微积分","wordcount":  1637 ,
-    "url": "https:\/\/andreoy.cn\/posts\/%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD\/","datePublished": "2022-10-15T09:14:35+08:00","dateModified": "2022-10-15T09:14:35+08:00","publisher": {
+      "@id": "https:\/\/andreoy.cn\/posts\/%E5%AF%BC%E6%95%B0%E4%B8%8E%E5%BE%AE%E5%88%86\/"
+    },"genre": "posts","keywords": "学业, 笔记, 微积分","wordcount":  1885 ,
+    "url": "https:\/\/andreoy.cn\/posts\/%E5%AF%BC%E6%95%B0%E4%B8%8E%E5%BE%AE%E5%88%86\/","datePublished": "2022-11-06T09:46:47+08:00","dateModified": "2022-11-06T09:46:47+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -225,7 +193,7 @@
 
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX">
-        <span>极限与连续</span>
+        <span>导数与微分</span>
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><a href="https://andreoy.cn" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img
     class="lazyload avatar"
@@ -236,26 +204,31 @@
     alt="Andreo Y."
     title="Andreo Y."/>&nbsp;Andreo Y.</a></span>
           <span class="post-category">收录于 <a href="/categories/%E6%95%B0%E5%AD%A6/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 数学</a></span></div>
-      <div class="post-meta-line"><span title=2022-10-15&#32;09:14:35><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-10-15">2022-10-15</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 1637 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 4 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="极限与连续">
+      <div class="post-meta-line"><span title=2022-11-06&#32;09:46:47><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-11-06">2022-11-06</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 1885 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 4 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="导数与微分">
               <i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
             </span>&nbsp;</div>
     </div><div class="featured-image"><img
     class="lazyload"
     src="/svg/loading.min.svg"
-    data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20221015092104645.png"
-    data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20221015092104645.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20221015092104645.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20221015092104645.png 2x"
+    data-src="https://pic3.zhimg.com/v2-d841bf8c321173fb55cc1cb41b892f82_r.jpg"
+    data-srcset="https://pic3.zhimg.com/v2-d841bf8c321173fb55cc1cb41b892f82_r.jpg, https://pic3.zhimg.com/v2-d841bf8c321173fb55cc1cb41b892f82_r.jpg 1.5x, https://pic3.zhimg.com/v2-d841bf8c321173fb55cc1cb41b892f82_r.jpg 2x"
     data-sizes="auto"
-    alt="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20221015092104645.png"
-    title="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20221015092104645.png"/></div><div class="details toc" id="toc-static" data-kept="false">
+    alt="https://pic3.zhimg.com/v2-d841bf8c321173fb55cc1cb41b892f82_r.jpg"
+    title="https://pic3.zhimg.com/v2-d841bf8c321173fb55cc1cb41b892f82_r.jpg"/></div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span>
           <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
         </div>
         <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#数列极限">数列极限</a></li>
-    <li><a href="#函数极限">函数极限</a></li>
-    <li><a href="#连续函数">连续函数</a></li>
+    <li><a href="#注意事项">注意事项</a></li>
+    <li><a href="#概念">概念</a></li>
+    <li><a href="#基本运算法则">基本运算法则</a></li>
+    <li><a href="#不太基本求导方法">不太基本求导方法</a></li>
+    <li><a href="#微分中值定理">微分中值定理</a></li>
+    <li><a href="#洛必达法则">洛必达法则</a></li>
+    <li><a href="#泰勒展开">泰勒展开</a></li>
+    <li><a href="#利用导数研究函数性态">利用导数研究函数性态</a></li>
   </ul>
 </nav></div>
       </div><div
@@ -263,7 +236,7 @@
       id="content"
       
       
-    ><p>《微积分》第二章极限与连续的若干定理与一些理解。</p>
+    ><p>《微积分》第三章导数与微分的若干定理与一些理解。</p>
 <div class="details admonition tip open">
     <div class="details-summary admonition-title">
       <i class="icon fa-solid fa-lightbulb fa-fw" aria-hidden="true"></i>关于<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
@@ -272,114 +245,218 @@
       <div class="admonition-content">本文并非完整的知识梳理，而是复习过程中对不太熟悉的内容的再认识。为自用之需。</div>
     </div>
   </div>
-<h2 id="数列极限">数列极限</h2>
+<h2 id="注意事项">注意事项</h2>
+<div class="details admonition danger open">
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-skull-crossbones fa-fw" aria-hidden="true"></i>常数<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content">不要把常数带着求导</div>
+    </div>
+  </div>
+<div class="details admonition danger open">
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-skull-crossbones fa-fw" aria-hidden="true"></i>n!和k^n<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content">不要漏各处的n!，以及x前系数的n次方</div>
+    </div>
+  </div>
+<div class="details admonition danger open">
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-skull-crossbones fa-fw" aria-hidden="true"></i>C<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content">用莱布尼茨公式不要忘了组合数系数</div>
+    </div>
+  </div>
+<h2 id="概念">概念</h2>
+<blockquote>
+<p>在题目比较奇怪的时候就用概念，概念总是不会错。特别是在未知能否求导的时候</p>
+</blockquote>
 <ul>
-<li>有界数列：既有上界又有下界（函数与此相同）</li>
-<li><strong>用定义证明数列极限</strong>：对$|数列-极限|$往大放缩，得到较简单的关于n的式子，使其小于$\varepsilon$，得到形如$n&gt;f(\varepsilon)$的式子，根据放缩时n的条件，去$N=\max(放缩条件最小值，[f(\varepsilon)])$，则n&gt;N时必有$|数列-极限|&lt;\varepsilon$</li>
-<li>无穷小量简称无穷小，不是数，而是数列或函数。同理有无穷大。</li>
-<li>唯一性：如果一个数列的极限可以用A或B表示，则A=B</li>
-<li>保序性：如果a数列的极限大于b数列，那么在n足够大时，$a_n&gt;b_n$</li>
-<li><strong>保号性</strong>：如果a数列的极限为A，那么在n足够大时，$|a_n|&gt;|\frac{A}{2}|$（两者同号）；n足够大时，$a_n$的符号可以决定A的符号。
-<ul>
-<li>有界性和归并性我不知道它在干啥。其实保序性、保号性和唯一性也是，莫名其妙，显然的东西一定要搞得很复杂，还自认为是严谨。</li>
-</ul>
-</li>
-<li><strong>数列极限存在判定</strong>：
-<ul>
-<li>夹逼定理（可求极限）：分别往大和往小放缩，得到的两个数列极限相同，那么该数列极限就是这个极限。</li>
-<li>单调有界数列极限存在定理（用于判定极限存在）：单调增（减）+有上（下）界=收敛。这里的证明经常会用到放缩、数归等高中方法。</li>
-</ul>
-</li>
-<li>区间套定理：等价于确界存在定理和单调有界数列极限存在定理，对一般证明没什么用</li>
-</ul>
-<h2 id="函数极限">函数极限</h2>
-<ul>
 <li>
-<p>极限的定义是去心邻域中无限接近的值</p>
+<p>微商==导数；可导$\Leftrightarrow$可微</p>
 </li>
 <li>
-<p>左极限和右极限都为A$\Leftrightarrow$该处极限为A</p>
+<p><strong>导数的定义</strong>：$$\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}=\lim_{\Delta x \to 0} \frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}$$$$或$$$$\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}=\lim_{\Delta x \to 0} \frac{f(x)-f(x_0)}{x-x_0}$$</p>
 </li>
 <li>
-<p>用定义证明函数在$x_0$处的极限A：对任意正数$\varepsilon$，尝试找到一个用$\varepsilon$表示的$\delta$，取$0&lt;|x-x_0|&lt;\delta$，使得$|f(x)-A|$通过放大后得到的g(x)在$|x-x_0|=\delta$处恰好等于$\varepsilon$。简单来说就是把$|f(x)-A|$往大的放缩，让得到的式子仍然是无穷小，只是通过一个$\delta$来控制x的取值（逼近$x_0$）。</p>
+<p>在某处可导=<strong>左右导数存在且相等</strong></p>
 </li>
 <li>
-<p>$\lim_{x \to \infty} =A\ 代表\ \lim_{x \to +\infty} =A\ 且\ \lim_{x \to -\infty} =A$</p>
+<p>左右导数：</p>
+<p>$$f_-&rsquo;(x_0)=\lim_{\Delta x\to 0^-}\frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}$$</p>
+<p>$$f_+&rsquo;(x_0)=\lim_{\Delta x\to 0^+}\frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}$$</p>
 </li>
 <li>
-<p><strong>海涅定理</strong>：f(x)在a处极限为A$\Leftrightarrow$对极限为a的数列$x_n$，$f(x_n)$的极限为A。有点难用。好像经常用于带三角函数的时候。</p>
-<ul>
-<li>可用于证明极限不存在或函数发散，只需找到一个数列，使得其极限落在a(或$\infty$)处，再把数列代入函数，证明其无穷大即可；或者找到两个数列极限落在a处，证明其极限不相等。</li>
-<li>其他应用场景限于个人能力尚不明确</li>
-</ul>
-</li>
-<li>
-<p>唯一性同数列</p>
-</li>
-<li>
-<p>局部有界性，局部保序性，局部保号性都是针对函数在a的邻域处的性质，内容基本同数列</p>
-</li>
-<li>
-<p>同样有针对无穷的保序性、保号性，不知道能不能直接用</p>
-</li>
-<li>
-<p>夹逼定理、单调有界函数单侧极限存在定理同数列</p>
-</li>
-<li>
-<p><strong>求极限常用到的两个重要极限</strong>：$$\lim_{x \to 0}\frac{\sin x}{x}=1\ ;\ \lim_{x \to 0}(1+\frac{1}{x})^x=e$$</p>
-</li>
-<li>
-<p>常见等价无穷小：<strong>（注意x→0的前提！）</strong></p>
-<p>$$\sin x\sim x,\ \tan x\sim x,\ 1-\cos x\sim \frac{1}{2}x^2$$</p>
-<p>$$\ln(1+x)\sim x,\ e^x-1\sim x,\ (1+x)^\alpha-1\sim \alpha x$$</p>
-<p>$$\arcsin x\sim x,\ \arctan x\sim x$$</p>
-<p>$$x-\sin x\sim \arcsin x-x\sim \frac{1}{6}x^3$$</p>
-<p>$$\tan x-x \sim x - \arctan x\sim \frac{1}{3}x^3$$</p>
-</li>
-<li>
-<p>无穷小的计算时要注意<strong>相减时主部不能相消</strong></p>
+<p><strong>微分的定义</strong>：$\Delta y=A\cdot \Delta x+o(\Delta x)$中的$A\cdot \Delta x$，dy是$\Delta y$ 的线性主部</p>
 </li>
 </ul>
-<h2 id="连续函数">连续函数</h2>
+<h2 id="基本运算法则">基本运算法则</h2>
+<blockquote>
+<p>微分和导数的运算法则几乎完全一致，就是微分算完之后记得加上dx</p>
+</blockquote>
 <ul>
-<li>在$x_0$处连续：$f(x_0)$存在，$\lim_{x\to x_0}f(x)$存在，且两者相等。据此证明函数连续。</li>
-<li><strong>初等函数都连续</strong>，可以直接用。</li>
-<li>左连续、右连续：包含该点。<strong>左连续&amp;&amp;右连续$\Leftrightarrow$连续</strong></li>
-<li><strong>间断点分类</strong>：
+<li>
+<p><strong>反函数求导法则</strong>：</p>
+<p>$$(f^{-1})&rsquo;(x)=\frac{1}{f&rsquo;(y)}$$</p>
+</li>
+<li>
+<p>求反函数需要求到哪一步？dx/dy还是f-1(x)还是y也要代掉？好像只要到dx/dy。</p>
+</li>
+<li>
+<p><strong>对数求导法</strong>，特别是针对幂指函数（当然也可以exp）</p>
+</li>
+<li>
+<p>{<strong>基本导数/微分公式表</strong>}\{浙江高考考纲要求}(csc和sec狗都不用)</p>
+<p>$$(\cot x)&rsquo;=-\frac{1}{sin^2x}$$</p>
+<p>$$(\frac {1} {\sin x})&rsquo;=-\frac{1}{\tan x\sin x}$$</p>
+<p>$$(\frac {1} {\cos x})&rsquo;=\frac{\tan x}{\cos x}$$</p>
+<p>$$(\arcsin x)&rsquo;=\frac{1}{\sqrt{1-x^2}}$$</p>
+<p>$$(\arccos x)&rsquo;=-\frac{1}{\sqrt{1-x^2}}$$</p>
+<p>$$(\arctan x)&rsquo;=\frac{1}{1+x^2}$$</p>
+</li>
+</ul>
+<h2 id="不太基本求导方法">不太基本求导方法</h2>
 <ul>
-<li>第一类间断点（左右极限均存在）：可去间断点（左右相等但中间未定义），可移间断点（左右相等但中间跳跃），跳跃间断点（左右不等）</li>
-<li>第二类间断点：无穷间断点，振荡间断点（字面意思）</li>
+<li>
+<p><strong>隐函数求导</strong>：就把y看成关于x的函数，然后求就完事了。最后用别的东西表示y’，也不用把y什么的代掉。</p>
+</li>
+<li>
+<p><strong>参数方程函数求导</strong>：</p>
+<p>$$\frac{dy}{dx}={\frac{\frac{dy}{dt}}{\frac{dx}{dt}}}$$</p>
+</li>
+<li>
+<p>高阶导数</p>
+<ul>
+<li>
+<p><strong>莱布尼茨公式</strong>：</p>
+<p>$$[u(x)v(x)]^{(n)}=\sum_{k=0}^{n} C_{n}^{k}u^{(k)}(x)v^{(n-k)}(x) $$</p>
+</li>
+<li>
+<p>隐函数高阶导数：</p>
+<p>和一般隐函数求导一样，就硬导，注意每个y或者y’都是关于x的函数就行</p>
+</li>
+<li>
+<p><strong>参数方程二阶导数</strong>：</p>
+<p>$$\frac{d^2y}{dx^2}=\frac{x&rsquo;(t)y&rsquo;&rsquo;(t)-x&rsquo;&rsquo;(t)y&rsquo;(t)}{[x&rsquo;(t)]^3}$$</p>
+</li>
 </ul>
 </li>
-<li>闭区间上连续函数的性质：
-<ul>
-<li>有界性：闭区间，连续，则有界（离谱）</li>
-<li>最大值最小值定理：闭区间内肯定能选出最大和最小值（显然）</li>
-<li><strong>零点存在定理</strong></li>
-<li>介值定理：闭区间[a,b]上，对$\forall c\in [f(a),f(b)],\ \exists \xi\in[a,b]$ ，使得$f(\xi)=c$</li>
 </ul>
+<h2 id="微分中值定理">微分中值定理</h2>
+<ul>
+<li><strong>费马定理</strong>：极值+可导$\Rightarrow$导数为零</li>
+<li>费马定理推论：最值+可导$\Rightarrow$导数为零</li>
+<li><strong>罗尔定理</strong>：闭区间连续+开区间可导+两端点函数值相等$\Rightarrow$区间内有导函数零点
+<ul>
+<li>广义罗尔定理：开区间连续可导+（左端点右极限==右端点左极限）$\Rightarrow$区间内有导函数零点。其中，极限也可以是$\pm \infty$</li>
+<li>罗尔定理可用于解决函数零点个数问题，或通过构造原函数解决中值问题</li>
+</ul>
+</li>
+<li><strong>拉格朗日中值定理</strong>：闭区间连续+开区间可导$\Rightarrow \exist \xi\in(a,b), s.t. f&rsquo;(\xi)=\frac{f(b)-f(a)}{b-a}$
+<ul>
+<li>推论：区间内可导+导数为零$\Rightarrow$区间内常函数</li>
+<li>常用于<strong>证明不等式或判断特殊点存在</strong>，非常<strong>强大</strong>（胡郝音），忏悔，感恩，相信！</li>
+</ul>
+</li>
+<li><strong>柯西中值定理</strong>：f和g闭区间连续+开区间可导且g导数不为零$\Rightarrow \exist \xi\in(a,b), s.t. \frac{f(b)-f(a)}{g(b)-g(a)}=\frac{f&rsquo;(\xi)}{g&rsquo;(\xi)}$
+<ul>
+<li>实质是拉格朗日中值定理的推广</li>
+<li>可以对一个函数去$\xi$，然后对另一个采用构造的方法，求导后得到所需的式子（说不清</li>
+</ul>
+</li>
+<li><strong>达布定理</strong>：闭区间可导，左端右导数&lt;右端左导数$\Rightarrow$介值定理（只需要原函数可导，不要求导函数连续）</li>
+<li><strong>导函数的极限</strong>：导函数的左（右）极限=A$\Rightarrow$左（右）导数=A
+<ul>
+<li>推论1：邻域内连续，去心邻域可导，导函数左右极限相等，则该点可导且导数值等于极限
+<ul>
+<li>用来说明一些分段函数的分段处可导</li>
+</ul>
+</li>
+<li>推论2：<strong>可导区间内，导函数只能有振荡间断点</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="洛必达法则">洛必达法则</h2>
+<p><strong>注意一定要$\frac 0 0 $或者$\frac {任意} \infty$</strong></p>
+<p>虽然极限不存在时不能用，但是既然要求，极限一般存在（如果真的不存在就把洛必达全部划掉）</p>
+<h2 id="泰勒展开">泰勒展开</h2>
+<ul>
+<li>
+<p>前提是n阶导数存在，不要随便展</p>
+</li>
+<li>
+<p><strong>展开公式</strong>：$$f(x)=f(x_0)+f&rsquo;(x_0)(x-x_0)+\cdots +\frac{f^{(n)}(x_0)}{n!}(x-x_0)^n+余项$$</p>
+<ul>
+<li>
+<p><strong>皮亚诺型余项</strong>：$$o((x-x_0)^n)$$</p>
+</li>
+<li>
+<p><strong>拉格朗日型余项</strong>：$$\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^{n+1}$$其实就是再写一项，但是求导的位置变成x和x0之间的一处($\xi$)</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>常用麦克劳林公式</strong>（$x_0=0$时的展开式），其余项的$\xi$常用$\theta x$表示，其中$\theta\in(0,1)$，要注意余项书写常会多一项与θ有关的系数</p>
+<p>​	$$e^x=1+\frac x {1!}+\frac{x^2}{2!}+\cdots+\frac{x^n}{n!}+\frac{e^{\theta x}x^{n+1}}{(n+1)!}$$</p>
+<p>​	$$ \sin x=x-\frac{x^{3}}{3 !}+\frac{x^{5}}{5 !}-\cdots+(-1)^{n-1} \frac{x^{2 n-1}}{(2 n-1) !}+(-1)^{n} \frac{\cos \theta x}{(2 n+1) !} x^{2 n+1}$$</p>
+<p>​	$$\cos x=1-\frac{x^{2}}{2 !}+\frac{x^{4}}{4 !}-\cdots+(-1)^{n} \frac{x^{2 n}}{(2 n) !}+(-1)^{n+1} \frac{\cos \theta x}{(2 n+2) !} x^{2 n+2}$$</p>
+<p>​	$$\ln (1+x)=x-\frac{1}{2} x^{2}+\frac{1}{3} x^{3}-\cdots+(-1)^{n-1} \frac{1}{n} x^{n}+(-1)^{n} \frac{1}{(n+1)(1+\theta x)^{n+1}} x^{n+1}$$</p>
+<p>​	$$(1+x)^{\alpha}=1+\alpha x+\frac{\alpha(\alpha-1)}{2 !} x^{2}+\cdots+\frac{\alpha(\alpha-1) \cdots(\alpha-n+1)}{n !} x^{n}+ $$
+$$\frac{1}{(n+1) !} \alpha(\alpha-1)(\alpha-2) \cdots(\alpha-n)(1+\theta x)^{\alpha-n-1} x^{n+1}$$</p>
+<p>​	$$\frac{1}{1+x}=1-x+x^{2}+\cdots+(-1)^{n} x^{n}+\frac{(-1)^{n+1}}{(1+\theta x)^{n+2}} x^{n+1}$$</p>
+<p>​	$$\arctan x=x-\frac{1}{3} x^{3}+\frac{1}{5} {x}^{5}-\cdots+(-1)^{{n}} \frac{{x}^{2 {n}+1}}{2 {n}+1}+余项不太好写 \quad(-1 \leqslant {x} \leqslant 1)$$</p>
+</li>
+<li>
+<p>应用：近似计算，研究函数性态，<strong>求极限，证明不等式</strong>等</p>
+</li>
+</ul>
+<h2 id="利用导数研究函数性态">利用导数研究函数性态</h2>
+<ul>
+<li>极值判定方法
+<ul>
+<li>邻域连续，去心邻域可导，两侧导数异号</li>
+<li>导数为零，看凹凸性；<strong>不能判定不可导点</strong>，需要额外讨论</li>
+</ul>
+</li>
+<li>凹凸性判定方法
+<ul>
+<li>一阶导数的单调性</li>
+<li>二阶导数正负性，仅存在二阶导数时可用</li>
+</ul>
+</li>
+<li>渐近线：铅直渐近线，水平渐近线，斜渐近线</li>
+<li><strong>讨论函数性态</strong>：
+<ol>
+<li><strong>定义域</strong>，奇偶性，周期性，特殊点</li>
+<li>一阶导，二阶导，驻点，拐点，<strong>列表</strong></li>
+<li>渐近线，所有渐近线<strong>都要用极限证明一遍</strong></li>
+<li>作图</li>
+</ol>
 </li>
 </ul></div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title=2022-10-15&#32;09:14:35>更新于 2022-10-15&nbsp;</span>
+        <span title=2022-11-06&#32;09:46:47>更新于 2022-11-06&nbsp;</span>
       </div><div class="post-info-license">
           <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
         </div></div>
     <div class="post-info-line">
       <div class="post-info-md"></div>
       <div class="post-info-share">
-        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://andreoy.cn/posts/%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/" data-title="极限与连续" data-hashtags="学业,笔记,微积分"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://andreoy.cn/posts/%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/" data-hashtag="学业"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Linkedin" data-sharer="linkedin" data-url="https://andreoy.cn/posts/%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/"><i class="fa-brands fa-linkedin fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Tumblr" data-sharer="tumblr" data-url="https://andreoy.cn/posts/%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/" data-title="极限与连续" data-tags="学业,笔记,微积分"><i class="fa-brands fa-tumblr fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Reddit" data-sharer="reddit" data-url="https://andreoy.cn/posts/%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/"><i class="fa-brands fa-reddit fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://andreoy.cn/posts/%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/" data-title="极限与连续" data-image="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20221015092104645.png"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://andreoy.cn/posts/%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/" data-title="极限与连续" data-description=""><i class="fa-brands fa-blogger fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://andreoy.cn/posts/%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/" data-title="极限与连续"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Skype" data-sharer="skype" data-url="https://andreoy.cn/posts/%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/" data-title="极限与连续"><i class="fa-brands fa-skype fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Trello" data-sharer="trello" data-url="https://andreoy.cn/posts/%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/" data-title="极限与连续" data-description=""><i class="fa-brands fa-trello fa-fw" aria-hidden="true"></i></a>
+        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://andreoy.cn/posts/%E5%AF%BC%E6%95%B0%E4%B8%8E%E5%BE%AE%E5%88%86/" data-title="导数与微分" data-hashtags="学业,笔记,微积分"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://andreoy.cn/posts/%E5%AF%BC%E6%95%B0%E4%B8%8E%E5%BE%AE%E5%88%86/" data-hashtag="学业"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Linkedin" data-sharer="linkedin" data-url="https://andreoy.cn/posts/%E5%AF%BC%E6%95%B0%E4%B8%8E%E5%BE%AE%E5%88%86/"><i class="fa-brands fa-linkedin fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Tumblr" data-sharer="tumblr" data-url="https://andreoy.cn/posts/%E5%AF%BC%E6%95%B0%E4%B8%8E%E5%BE%AE%E5%88%86/" data-title="导数与微分" data-tags="学业,笔记,微积分"><i class="fa-brands fa-tumblr fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Reddit" data-sharer="reddit" data-url="https://andreoy.cn/posts/%E5%AF%BC%E6%95%B0%E4%B8%8E%E5%BE%AE%E5%88%86/"><i class="fa-brands fa-reddit fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://andreoy.cn/posts/%E5%AF%BC%E6%95%B0%E4%B8%8E%E5%BE%AE%E5%88%86/" data-title="导数与微分" data-image="https://pic3.zhimg.com/v2-d841bf8c321173fb55cc1cb41b892f82_r.jpg"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://andreoy.cn/posts/%E5%AF%BC%E6%95%B0%E4%B8%8E%E5%BE%AE%E5%88%86/" data-title="导数与微分" data-description=""><i class="fa-brands fa-blogger fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://andreoy.cn/posts/%E5%AF%BC%E6%95%B0%E4%B8%8E%E5%BE%AE%E5%88%86/" data-title="导数与微分"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Skype" data-sharer="skype" data-url="https://andreoy.cn/posts/%E5%AF%BC%E6%95%B0%E4%B8%8E%E5%BE%AE%E5%88%86/" data-title="导数与微分"><i class="fa-brands fa-skype fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Trello" data-sharer="trello" data-url="https://andreoy.cn/posts/%E5%AF%BC%E6%95%B0%E4%B8%8E%E5%BE%AE%E5%88%86/" data-title="导数与微分" data-description=""><i class="fa-brands fa-trello fa-fw" aria-hidden="true"></i></a>
   </span>
       </div>
     </div>
@@ -392,8 +469,7 @@
     </section>
   </div>
 
-  <div class="post-nav"><a href="/posts/%E5%88%A9%E7%94%A8github-actions%E8%87%AA%E5%8A%A8%E5%B0%86canvas%E5%86%85%E5%AE%B9%E5%90%8C%E6%AD%A5%E8%87%B3microsoft-todo/" class="prev" rel="prev" title="Todosync:利用Github Actions自动将Canvas内容同步至Microsoft Todo"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Todosync:利用Github Actions自动将Canvas内容同步至Microsoft Todo</a>
-      <a href="/posts/%E5%AF%BC%E6%95%B0%E4%B8%8E%E5%BE%AE%E5%88%86/" class="next" rel="next" title="导数与微分">导数与微分<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+  <div class="post-nav"><a href="/posts/%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/" class="prev" rel="prev" title="极限与连续"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>极限与连续</a></div>
 </div>
 <div id="comments"><div id="giscus">
           <script
