@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>求斐波那契数列的通项（线代大作业） - Andreo Y.</title><meta name="author" content="">
+<meta name="author-link" content="">
+<meta name="description" content="交大版《线性代数》软件应用练习题10
+斐波那契数列于1200年左右被发现，在现代物理、准晶体结构、化学等领域都有直接的应用，它把0和1作为初始项$F_0$和$F_1$，以后每一项作为前两项的和，$F_{k&#43;2}=F_{k&#43;1}&#43;F_{k}$，于是得到数列1,1,2,3,5,83,1,21,$\cdots$. 求出斐波那契数列的通项." /><meta name="keywords" content='学业, 作业, 线性代数' /><meta itemprop="name" content="求斐波那契数列的通项（线代大作业）">
+<meta itemprop="description" content="交大版《线性代数》软件应用练习题10
+斐波那契数列于1200年左右被发现，在现代物理、准晶体结构、化学等领域都有直接的应用，它把0和1作为初始项$F_0$和$F_1$，以后每一项作为前两项的和，$F_{k&#43;2}=F_{k&#43;1}&#43;F_{k}$，于是得到数列1,1,2,3,5,83,1,21,$\cdots$. 求出斐波那契数列的通项."><meta itemprop="datePublished" content="2022-12-24T19:46:33+08:00" />
+<meta itemprop="dateModified" content="2022-12-24T19:46:33+08:00" />
+<meta itemprop="wordCount" content="843"><meta itemprop="image" content="https://andreoy.cn/logo.png"/>
+<meta itemprop="keywords" content="学业,作业,线性代数," /><meta property="og:title" content="求斐波那契数列的通项（线代大作业）" />
+<meta property="og:description" content="交大版《线性代数》软件应用练习题10
+斐波那契数列于1200年左右被发现，在现代物理、准晶体结构、化学等领域都有直接的应用，它把0和1作为初始项$F_0$和$F_1$，以后每一项作为前两项的和，$F_{k&#43;2}=F_{k&#43;1}&#43;F_{k}$，于是得到数列1,1,2,3,5,83,1,21,$\cdots$. 求出斐波那契数列的通项." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://andreoy.cn/posts/%E6%B1%82%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%E7%9A%84%E9%80%9A%E9%A1%B9%E7%BA%BF%E4%BB%A3%E5%A4%A7%E4%BD%9C%E4%B8%9A/" /><meta property="og:image" content="https://andreoy.cn/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-12-24T19:46:33+08:00" />
+<meta property="article:modified_time" content="2022-12-24T19:46:33+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://andreoy.cn/logo.png"/>
+
+<meta name="twitter:title" content="求斐波那契数列的通项（线代大作业）"/>
+<meta name="twitter:description" content="交大版《线性代数》软件应用练习题10
+斐波那契数列于1200年左右被发现，在现代物理、准晶体结构、化学等领域都有直接的应用，它把0和1作为初始项$F_0$和$F_1$，以后每一项作为前两项的和，$F_{k&#43;2}=F_{k&#43;1}&#43;F_{k}$，于是得到数列1,1,2,3,5,83,1,21,$\cdots$. 求出斐波那契数列的通项."/>
+<meta name="application-name" content="Andreo Y.&#39;s Space">
+<meta name="apple-mobile-web-app-title" content="Andreo Y.&#39;s Space"><meta name="theme-color" data-light="#ffffff" data-dark="#252627" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://andreoy.cn/posts/%E6%B1%82%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%E7%9A%84%E9%80%9A%E9%A1%B9%E7%BA%BF%E4%BB%A3%E5%A4%A7%E4%BD%9C%E4%B8%9A/" /><link rel="prev" href="https://andreoy.cn/posts/%E9%87%8D%E6%96%B0%E7%90%86%E8%A7%A3%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><meta name="baidu-site-verification" content="code-NEqykcuT3x" /><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "求斐波那契数列的通项（线代大作业）",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/andreoy.cn\/posts\/%E6%B1%82%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%E7%9A%84%E9%80%9A%E9%A1%B9%E7%BA%BF%E4%BB%A3%E5%A4%A7%E4%BD%9C%E4%B8%9A\/"
+    },"genre": "posts","keywords": "学业, 作业, 线性代数","wordcount":  843 ,
+    "url": "https:\/\/andreoy.cn\/posts\/%E6%B1%82%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%E7%9A%84%E9%80%9A%E9%A1%B9%E7%BA%BF%E4%BB%A3%E5%A4%A7%E4%BD%9C%E4%B8%9A\/","datePublished": "2022-12-24T19:46:33+08:00","dateModified": "2022-12-24T19:46:33+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Andreo Y."
+      },"description": ""
+  }
+  </script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3263382266976949"
+     crossorigin="anonymous"></script>
+
+  </head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Andreo Y."><img
+    class="lazyload logo"
+    src="/svg/loading.min.svg"
+    data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png"
+    data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png 2x"
+    data-sizes="auto"
+    alt="Andreo Y."
+    title="Andreo Y."/><span class="header-title-text"> Andreo Y.&#39;s Space</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item text-center">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 所有文章</a></li><li class="menu-item text-center">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-stream fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li class="menu-item text-center">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tag fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item text-center">
+              <a
+                class="menu-link"
+                href="/about/"
+                
+                
+              ><i class="fa-solid fa-user-circle fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item text-center">
+              <a
+                class="menu-link"
+                href="/friends/"
+                
+                
+              ><i class="fa-solid fa-user-friends fa-fw fa-sm" aria-hidden="true"></i> 友情链接</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="Search for everything..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Andreo Y."><img
+    class="lazyload logo"
+    src="/svg/loading.min.svg"
+    data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png"
+    data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png 2x"
+    data-sizes="auto"
+    alt="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png"
+    title="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png"/><span class="header-title-text"> Andreo Y.&#39;s Space</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="Search for everything..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item text-center"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 所有文章</a></li><li
+              class="menu-item text-center"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-stream fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li
+              class="menu-item text-center"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tag fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li
+              class="menu-item text-center"
+            ><a
+                  class="menu-link"
+                  href="/about/"
+                  
+                  
+                ><i class="fa-solid fa-user-circle fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li
+              class="menu-item text-center"
+            ><a
+                  class="menu-link"
+                  href="/friends/"
+                  
+                  
+                ><i class="fa-solid fa-user-friends fa-fw fa-sm" aria-hidden="true"></i> 友情链接</a></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container" data-page-style="narrow"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    
+</aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX">
+        <span>求斐波那契数列的通项（线代大作业）</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://andreoy.cn" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img
+    class="lazyload avatar"
+    src="/svg/loading.min.svg"
+    data-src="https://gravatar.loli.net/avatar/d8234597e50620ab663b4a6e7e89bf99?s=32&amp;d="
+    data-srcset="https://gravatar.loli.net/avatar/d8234597e50620ab663b4a6e7e89bf99?s=32&amp;d=, https://gravatar.loli.net/avatar/d8234597e50620ab663b4a6e7e89bf99?s=32&amp;d= 1.5x, https://gravatar.loli.net/avatar/d8234597e50620ab663b4a6e7e89bf99?s=32&amp;d= 2x"
+    data-sizes="auto"
+    alt="Andreo Y."
+    title="Andreo Y."/>&nbsp;Andreo Y.</a></span>
+          <span class="post-category">收录于 <a href="/categories/%E6%95%B0%E5%AD%A6/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 数学</a></span></div>
+      <div class="post-meta-line"><span title=2022-12-24&#32;19:46:33><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-12-24">2022-12-24</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 843 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 2 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="求斐波那契数列的通项（线代大作业）">
+              <i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
+            </span>&nbsp;</div>
+    </div><div class="featured-image"><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://img-blog.csdnimg.cn/img_convert/59abcfd4849c76e0b98528d8a79858f6.png"
+    data-srcset="https://img-blog.csdnimg.cn/img_convert/59abcfd4849c76e0b98528d8a79858f6.png, https://img-blog.csdnimg.cn/img_convert/59abcfd4849c76e0b98528d8a79858f6.png 1.5x, https://img-blog.csdnimg.cn/img_convert/59abcfd4849c76e0b98528d8a79858f6.png 2x"
+    data-sizes="auto"
+    alt="https://img-blog.csdnimg.cn/img_convert/59abcfd4849c76e0b98528d8a79858f6.png"
+    title="https://img-blog.csdnimg.cn/img_convert/59abcfd4849c76e0b98528d8a79858f6.png"/></div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#直接用库函数">直接用库函数</a></li>
+    <li><a href="#递推">递推</a>
+      <ul>
+        <li><a href="#matlab">MATLAB</a></li>
+        <li><a href="#c">C++</a></li>
+      </ul>
+    </li>
+    <li><a href="#递归">递归</a>
+      <ul>
+        <li><a href="#matlab-1">MATLAB</a></li>
+        <li><a href="#c-1">C++</a></li>
+      </ul>
+    </li>
+    <li><a href="#运用矩阵">运用矩阵</a>
+      <ul>
+        <li><a href="#matlab-2">MATLAB</a></li>
+      </ul>
+    </li>
+    <li><a href="#运用高中数学">运用高中数学</a></li>
+  </ul>
+</nav></div>
+      </div><div
+      class="content"
+      id="content"
+      
+      
+    ><p><strong>交大版《线性代数》软件应用练习题10</strong></p>
+<p>斐波那契数列于1200年左右被发现，在现代物理、准晶体结构、化学等领域都有直接的应用，它把0和1作为初始项$F_0$和$F_1$，以后每一项作为前两项的和，$F_{k+2}=F_{k+1}+F_{k}$，于是得到数列1,1,2,3,5,83,1,21,$\cdots$. 求出斐波那契数列的通项.</p>
+<p>既然作业要求是用MATLAB，那就先用一下。但是用计算机程序求通项公式好像不在我们的能力范围内，所以以下内容都是用程序求特定项，再用数学方法求出通项。</p>
+<p>这个作业本来就很奇怪，真是让我不知道怎么理解才对。那就这么理解吧。</p>
+<h2 id="直接用库函数">直接用库函数</h2>
+<p>注意到，MATLAB本身就提供了<a href="https://ww2.mathworks.cn/help/symbolic/fibonacci.html?searchHighlight=fibonacci"target="_blank" rel="external nofollow noopener noreferrer">fibonacci函数<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a>，用来计算斐波那契数列的第n项。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="cl"><span class="n">clc</span> 
+</span></span><span class="line"><span class="cl"><span class="n">clear</span> <span class="n">all</span>
+</span></span><span class="line"><span class="cl"><span class="n">X</span><span class="p">=</span><span class="n">sprintf</span><span class="p">(</span>&#34;<span class="c">%d&#34;,fibonacci(114514));</span>
+</span></span><span class="line"><span class="cl"><span class="nb">disp</span><span class="p">(</span><span class="n">X</span><span class="p">);</span>
+</span></span></code></pre></div><p>那还写啥呢？</p>
+<h2 id="递推">递推</h2>
+<p>无解析，因为没有什么必要。</p>
+<h3 id="matlab">MATLAB</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="cl"><span class="k">function</span><span class="w"> </span>[Y]<span class="p">=</span><span class="nf">f1bonacci</span><span class="p">(</span>n<span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">X</span><span class="p">=</span><span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">Y</span><span class="p">=</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="nb">i</span><span class="p">=</span><span class="mi">2</span><span class="p">:</span><span class="n">n</span>
+</span></span><span class="line"><span class="cl">    <span class="n">t</span><span class="p">=</span><span class="n">Y</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Y</span><span class="p">=</span><span class="n">X</span><span class="o">+</span><span class="n">Y</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">X</span><span class="p">=</span><span class="n">t</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span></code></pre></div><h3 id="c">C++</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="kt">long</span> <span class="kt">long</span> <span class="nf">fibonacci</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">long</span> <span class="kt">long</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">tmp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">tmp</span><span class="o">=</span><span class="n">y</span><span class="p">;</span><span class="n">y</span><span class="o">=</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">;</span><span class="n">x</span><span class="o">=</span><span class="n">tmp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">y</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="递归">递归</h2>
+<p>同上</p>
+<h3 id="matlab-1">MATLAB</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="cl"><span class="k">function</span><span class="w"> </span>[Y]<span class="p">=</span><span class="nf">f1bonacci</span><span class="p">(</span>n<span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">if</span><span class="p">(</span><span class="n">n</span><span class="o">==</span><span class="mi">1</span><span class="o">||</span><span class="n">n</span><span class="o">==</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Y</span><span class="p">=</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Y</span><span class="p">=</span><span class="n">f1bonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">f1bonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span></code></pre></div><h3 id="c-1">C++</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C++" data-lang="C++"><span class="line"><span class="cl"><span class="kt">long</span> <span class="kt">long</span> <span class="nf">fibonacci</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">n</span><span class="o">==</span><span class="mi">1</span><span class="o">||</span><span class="n">n</span><span class="o">==</span><span class="mi">2</span><span class="p">)</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="运用矩阵">运用矩阵</h2>
+<p>不喜欢运用矩阵。根本就是同样的东西，写成矩阵无非是更加装逼罢了。</p>
+<blockquote>
+<p>It is my experience that proofs involving matrices can be shortened by 50% out</p>
+<p>if one throws the matrices out.</p>
+<p>—— Emil Artin</p>
+</blockquote>
+<h3 id="matlab-2">MATLAB</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="cl"><span class="k">function</span><span class="w"> </span>[Y]<span class="p">=</span><span class="nf">f1bonacci</span><span class="p">(</span>n<span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">M</span><span class="p">=[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">;</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Init</span><span class="p">=[</span><span class="mi">1</span><span class="p">;</span><span class="mi">1</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Res</span><span class="p">=(</span><span class="n">M</span>^<span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">))</span><span class="o">*</span><span class="n">Init</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Y</span><span class="p">=</span><span class="n">Res</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span></code></pre></div><h2 id="运用高中数学">运用高中数学</h2>
+<p>因为我比较笨（懒），不会用（懒得证）特征根法，所以就写一下等比数列的方法好了。</p>
+<p>假设原递推式能变形为$a_{n}+A a_{n-1}=B\left(a_{n-1}+A a_{n-2}\right)$，记为$*$式</p>
+<p>于是有$a_{n}=(B-A) a_{n-1}+A B a_{n-2}=a_{n-1}+a_{n-2}$</p>
+<p>所以</p>
+<p><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20221224204702725.png"
+    data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20221224204702725.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20221224204702725.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20221224204702725.png 2x"
+    data-sizes="auto"
+    alt="image-20221224204702725"
+    title="image-20221224204702725"/></p>
+<p>所以为什么fixit兼容性这么差 这个方程组只能帖图片了</p>
+<p>后面的那些公式块也没法换行，太逊了。</p>
+<p>解得</p>
+<p>$$
+A=\frac{-1 \pm \sqrt{5}}{2}
+$$
+再结合$*$式得
+$$
+\begin{aligned}
+a_{n}+A a_{n-1} &amp; =B\left(a_{n-1}+A a_{n-2}\right) \
+&amp; =B^{2}\left(a_{n-2}+A a_{n-3}\right) \
+&amp; \cdots \
+&amp; =B^{n-2}\left(a_{n-(n-2)}+A a_{n-(n-1)}\right) \
+&amp; =B^{n-2}\left(a_{2}+A a_{1}\right) \
+&amp; =B^{n-2}(1+A) \
+&amp; =B^{n-1}
+\end{aligned}
+$$
+这样就得到了一个一阶线性递推式。</p>
+<p>由于$a_{n}=-A a_{n-1}+B^{n-1}$</p>
+<p>再次待定系数，假设$a_{n}+C B^{n}=-A\left(a_{n-1}+C B^{n-1}\right)$</p>
+<p>由以上两式可得
+$$
+a_{n}=-A a_{n-1}-C A B^{n-1}-C B^{n}=-A a_{n-1}+B^{n-1}
+$$
+即
+$$
+-C A-C B=1 \Rightarrow C=\frac{-1}{A+B} 
+$$
+代回原式得
+$$
+\begin{aligned}
+a_{n}+C B^{n}
+= &amp; (-A)^{n-1}\left(a_{n-(n-1)}+C B^{n-(n-1)}\right) \
+= &amp; (-A)^{n-1}(1+C B) \
+a_{n}= &amp; (-A)^{n-1}(1+C B)-C B^{n} \
+= &amp; (-A)^{n-1}\left(1-\frac{B}{A+B}\right)+\frac{B^{n}}{A+B} \
+= &amp; \frac{(-A)^{n-1} A+B^{n}}{A+B} \
+= &amp; \frac{B^{n}-(-A)^{n}}{A+B}
+\end{aligned}
+$$
+此时再代入前面得到的A和B的值，即得最终的通项公式：
+$$
+a_{n}=\frac{1}{\sqrt{5}}\left[\left(\frac{1+\sqrt{5}}{2}\right)^{n}-\left(\frac{1-\sqrt{5}}{2}\right)^{n}\right]
+$$
+所以，在这个问题中，MATLAB到底能帮我什么呢？真是一个值得思考的问题。</p></div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title=2022-12-24&#32;19:46:33>更新于 2022-12-24&nbsp;</span>
+      </div><div class="post-info-license">
+          <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+        </div></div>
+    <div class="post-info-line">
+      <div class="post-info-md"></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://andreoy.cn/posts/%E6%B1%82%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%E7%9A%84%E9%80%9A%E9%A1%B9%E7%BA%BF%E4%BB%A3%E5%A4%A7%E4%BD%9C%E4%B8%9A/" data-title="求斐波那契数列的通项（线代大作业）" data-hashtags="学业,作业,线性代数"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://andreoy.cn/posts/%E6%B1%82%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%E7%9A%84%E9%80%9A%E9%A1%B9%E7%BA%BF%E4%BB%A3%E5%A4%A7%E4%BD%9C%E4%B8%9A/" data-hashtag="学业"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Linkedin" data-sharer="linkedin" data-url="https://andreoy.cn/posts/%E6%B1%82%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%E7%9A%84%E9%80%9A%E9%A1%B9%E7%BA%BF%E4%BB%A3%E5%A4%A7%E4%BD%9C%E4%B8%9A/"><i class="fa-brands fa-linkedin fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Tumblr" data-sharer="tumblr" data-url="https://andreoy.cn/posts/%E6%B1%82%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%E7%9A%84%E9%80%9A%E9%A1%B9%E7%BA%BF%E4%BB%A3%E5%A4%A7%E4%BD%9C%E4%B8%9A/" data-title="求斐波那契数列的通项（线代大作业）" data-tags="学业,作业,线性代数"><i class="fa-brands fa-tumblr fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Reddit" data-sharer="reddit" data-url="https://andreoy.cn/posts/%E6%B1%82%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%E7%9A%84%E9%80%9A%E9%A1%B9%E7%BA%BF%E4%BB%A3%E5%A4%A7%E4%BD%9C%E4%B8%9A/"><i class="fa-brands fa-reddit fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://andreoy.cn/posts/%E6%B1%82%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%E7%9A%84%E9%80%9A%E9%A1%B9%E7%BA%BF%E4%BB%A3%E5%A4%A7%E4%BD%9C%E4%B8%9A/" data-title="求斐波那契数列的通项（线代大作业）" data-image="https://img-blog.csdnimg.cn/img_convert/59abcfd4849c76e0b98528d8a79858f6.png"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://andreoy.cn/posts/%E6%B1%82%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%E7%9A%84%E9%80%9A%E9%A1%B9%E7%BA%BF%E4%BB%A3%E5%A4%A7%E4%BD%9C%E4%B8%9A/" data-title="求斐波那契数列的通项（线代大作业）" data-description=""><i class="fa-brands fa-blogger fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://andreoy.cn/posts/%E6%B1%82%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%E7%9A%84%E9%80%9A%E9%A1%B9%E7%BA%BF%E4%BB%A3%E5%A4%A7%E4%BD%9C%E4%B8%9A/" data-title="求斐波那契数列的通项（线代大作业）"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Skype" data-sharer="skype" data-url="https://andreoy.cn/posts/%E6%B1%82%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%E7%9A%84%E9%80%9A%E9%A1%B9%E7%BA%BF%E4%BB%A3%E5%A4%A7%E4%BD%9C%E4%B8%9A/" data-title="求斐波那契数列的通项（线代大作业）"><i class="fa-brands fa-skype fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Trello" data-sharer="trello" data-url="https://andreoy.cn/posts/%E6%B1%82%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%E7%9A%84%E9%80%9A%E9%A1%B9%E7%BA%BF%E4%BB%A3%E5%A4%A7%E4%BD%9C%E4%B8%9A/" data-title="求斐波那契数列的通项（线代大作业）" data-description=""><i class="fa-brands fa-trello fa-fw" aria-hidden="true"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/%E5%AD%A6%E4%B8%9A/">学业</a>,&nbsp;<a href="/tags/%E4%BD%9C%E4%B8%9A/">作业</a>,&nbsp;<a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/posts/%E9%87%8D%E6%96%B0%E7%90%86%E8%A7%A3%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" class="prev" rel="prev" title="对线性代数的另一种认识"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>对线性代数的另一种认识</a></div>
+</div>
+<div id="comments"><div id="giscus">
+          <script
+            src="https://giscus.app/client.js"
+            data-repo="hzyangjc/hzyangjc.github.io"
+            data-repo-id="R_kgDOIAWwEQ"
+            data-category="Announcements"
+            data-category-id="DIC_kwDOIAWwEc4CRdaC"
+            data-mapping="pathname"
+            
+            data-theme="preferred_color_scheme"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-lang="zh-CN"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async
+            defer
+          ></script>
+          <noscript>
+            Please enable JavaScript to view the comments powered by <a href="https://giscus.app/" rel="external nofollow noopener noreferrer">giscus</a>.
+          </noscript>
+        </div></div></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.101.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.16-RC"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">
+              <a href="/"></a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中 ...'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i>&nbsp;<span class="run-times">网站运行中 ...</span></span></div><div class="footer-line ibruce">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/lunr/lunr.min.js" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script src="/lib/lunr/lunr.zh.min.js" defer></script><script src="/lib/lazysizes/lazysizes.min.js" async defer></script><script src="/lib/twemoji/twemoji.min.js" defer></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="/lib/pangu/pangu.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":50},"comment":{"enable":true,"giscus":{"darkTheme":"transparent_dark","lightTheme":"light"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"enablePangu":true,"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":30,"type":"lunr"},"siteTime":"2022-09-16T09:30:34+08:00","twemoji":true};</script><script src="/js/theme.min.js" defer></script><script>
+      window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+      gtag('config', 'G-SWE55VZ73Q');
+    </script><script src="https://www.googletagmanager.com/gtag/js?id=G-SWE55VZ73Q" async></script></body>
+</html>

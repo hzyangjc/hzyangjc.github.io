@@ -5,38 +5,42 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
-    <title>导数与微分 - Andreo Y.</title><meta name="author" content="">
+    <title>对线性代数的另一种认识 - Andreo Y.</title><meta name="author" content="">
 <meta name="author-link" content="">
-<meta name="description" content="《微积分》第三章 导数与微分，第四章 微分中值定理与导数的应用 的若干定理与一些理解。" /><meta name="keywords" content='学业, 笔记, 微积分' /><meta itemprop="name" content="导数与微分">
-<meta itemprop="description" content="《微积分》第三章 导数与微分，第四章 微分中值定理与导数的应用 的若干定理与一些理解。"><meta itemprop="datePublished" content="2022-11-06T09:46:47+08:00" />
-<meta itemprop="dateModified" content="2022-11-06T09:46:47+08:00" />
-<meta itemprop="wordCount" content="1901"><meta itemprop="image" content="https://andreoy.cn/logo.png"/>
-<meta itemprop="keywords" content="学业,笔记,微积分," /><meta property="og:title" content="导数与微分" />
-<meta property="og:description" content="《微积分》第三章 导数与微分，第四章 微分中值定理与导数的应用 的若干定理与一些理解。" />
+<meta name="description" content="交大的线代课本不知道是怎么编的，竟然从方程组讲起，过半了才将向量空间。我们处在空间中，应该从具象化的角度切入，去认识任何一个概念，而非从抽象的数字开始——即使我们之前学过方程组。
+作为一个偏激的几何斗士，我将尽我可能，用具象化的语言，秉承几何生万物的精神，借鉴@3Blue1Brown的理论，完全推翻交大课本构建的线代体系，转而用另一个完全自洽的几何理论体系去解释这一切。当然，由于课本是以纯代数的角度出发进行编写的，里面有不少举例或概念是纯理论而没有任何实际意义的，对于这些内容，我只能说，这不是几何的缺陷，而是魔怔了的编写者脱离了实际。生产实际中，我们运用线性代数，绝大部分时候都可以从几何角度去解释。" /><meta name="keywords" content='学业, 笔记, 线性代数' /><meta itemprop="name" content="对线性代数的另一种认识">
+<meta itemprop="description" content="交大的线代课本不知道是怎么编的，竟然从方程组讲起，过半了才将向量空间。我们处在空间中，应该从具象化的角度切入，去认识任何一个概念，而非从抽象的数字开始——即使我们之前学过方程组。
+作为一个偏激的几何斗士，我将尽我可能，用具象化的语言，秉承几何生万物的精神，借鉴@3Blue1Brown的理论，完全推翻交大课本构建的线代体系，转而用另一个完全自洽的几何理论体系去解释这一切。当然，由于课本是以纯代数的角度出发进行编写的，里面有不少举例或概念是纯理论而没有任何实际意义的，对于这些内容，我只能说，这不是几何的缺陷，而是魔怔了的编写者脱离了实际。生产实际中，我们运用线性代数，绝大部分时候都可以从几何角度去解释。"><meta itemprop="datePublished" content="2022-12-10T15:09:11+08:00" />
+<meta itemprop="dateModified" content="2022-12-10T15:09:11+08:00" />
+<meta itemprop="wordCount" content="554"><meta itemprop="image" content="https://andreoy.cn/logo.png"/>
+<meta itemprop="keywords" content="学业,笔记,线性代数," /><meta property="og:title" content="对线性代数的另一种认识" />
+<meta property="og:description" content="交大的线代课本不知道是怎么编的，竟然从方程组讲起，过半了才将向量空间。我们处在空间中，应该从具象化的角度切入，去认识任何一个概念，而非从抽象的数字开始——即使我们之前学过方程组。
+作为一个偏激的几何斗士，我将尽我可能，用具象化的语言，秉承几何生万物的精神，借鉴@3Blue1Brown的理论，完全推翻交大课本构建的线代体系，转而用另一个完全自洽的几何理论体系去解释这一切。当然，由于课本是以纯代数的角度出发进行编写的，里面有不少举例或概念是纯理论而没有任何实际意义的，对于这些内容，我只能说，这不是几何的缺陷，而是魔怔了的编写者脱离了实际。生产实际中，我们运用线性代数，绝大部分时候都可以从几何角度去解释。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://andreoy.cn/posts/%E5%AF%BC%E6%95%B0%E4%B8%8E%E5%BE%AE%E5%88%86/" /><meta property="og:image" content="https://andreoy.cn/logo.png"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-11-06T09:46:47+08:00" />
-<meta property="article:modified_time" content="2022-11-06T09:46:47+08:00" />
+<meta property="og:url" content="https://andreoy.cn/posts/%E9%87%8D%E6%96%B0%E7%90%86%E8%A7%A3%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" /><meta property="og:image" content="https://andreoy.cn/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-12-10T15:09:11+08:00" />
+<meta property="article:modified_time" content="2022-12-10T15:09:11+08:00" />
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://andreoy.cn/logo.png"/>
 
-<meta name="twitter:title" content="导数与微分"/>
-<meta name="twitter:description" content="《微积分》第三章 导数与微分，第四章 微分中值定理与导数的应用 的若干定理与一些理解。"/>
+<meta name="twitter:title" content="对线性代数的另一种认识"/>
+<meta name="twitter:description" content="交大的线代课本不知道是怎么编的，竟然从方程组讲起，过半了才将向量空间。我们处在空间中，应该从具象化的角度切入，去认识任何一个概念，而非从抽象的数字开始——即使我们之前学过方程组。
+作为一个偏激的几何斗士，我将尽我可能，用具象化的语言，秉承几何生万物的精神，借鉴@3Blue1Brown的理论，完全推翻交大课本构建的线代体系，转而用另一个完全自洽的几何理论体系去解释这一切。当然，由于课本是以纯代数的角度出发进行编写的，里面有不少举例或概念是纯理论而没有任何实际意义的，对于这些内容，我只能说，这不是几何的缺陷，而是魔怔了的编写者脱离了实际。生产实际中，我们运用线性代数，绝大部分时候都可以从几何角度去解释。"/>
 <meta name="application-name" content="Andreo Y.&#39;s Space">
 <meta name="apple-mobile-web-app-title" content="Andreo Y.&#39;s Space"><meta name="theme-color" data-light="#ffffff" data-dark="#252627" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://andreoy.cn/posts/%E5%AF%BC%E6%95%B0%E4%B8%8E%E5%BE%AE%E5%88%86/" /><link rel="prev" href="https://andreoy.cn/posts/%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/" /><link rel="next" href="https://andreoy.cn/posts/%E9%87%8D%E6%96%B0%E7%90%86%E8%A7%A3%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><meta name="baidu-site-verification" content="code-NEqykcuT3x" /><script type="application/ld+json">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://andreoy.cn/posts/%E9%87%8D%E6%96%B0%E7%90%86%E8%A7%A3%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" /><link rel="prev" href="https://andreoy.cn/posts/%E5%AF%BC%E6%95%B0%E4%B8%8E%E5%BE%AE%E5%88%86/" /><link rel="next" href="https://andreoy.cn/posts/%E6%B1%82%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%E7%9A%84%E9%80%9A%E9%A1%B9%E7%BA%BF%E4%BB%A3%E5%A4%A7%E4%BD%9C%E4%B8%9A/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><meta name="baidu-site-verification" content="code-NEqykcuT3x" /><script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
-    "headline": "导数与微分",
+    "headline": "对线性代数的另一种认识",
     "inLanguage": "zh-CN",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https:\/\/andreoy.cn\/posts\/%E5%AF%BC%E6%95%B0%E4%B8%8E%E5%BE%AE%E5%88%86\/"
-    },"genre": "posts","keywords": "学业, 笔记, 微积分","wordcount":  1901 ,
-    "url": "https:\/\/andreoy.cn\/posts\/%E5%AF%BC%E6%95%B0%E4%B8%8E%E5%BE%AE%E5%88%86\/","datePublished": "2022-11-06T09:46:47+08:00","dateModified": "2022-11-06T09:46:47+08:00","publisher": {
+      "@id": "https:\/\/andreoy.cn\/posts\/%E9%87%8D%E6%96%B0%E7%90%86%E8%A7%A3%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0\/"
+    },"genre": "posts","keywords": "学业, 笔记, 线性代数","wordcount":  554 ,
+    "url": "https:\/\/andreoy.cn\/posts\/%E9%87%8D%E6%96%B0%E7%90%86%E8%A7%A3%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0\/","datePublished": "2022-12-10T15:09:11+08:00","dateModified": "2022-12-10T15:09:11+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -193,7 +197,7 @@
 
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX">
-        <span>导数与微分</span>
+        <span>对线性代数的另一种认识</span>
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><a href="https://andreoy.cn" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img
     class="lazyload avatar"
@@ -204,31 +208,24 @@
     alt="Andreo Y."
     title="Andreo Y."/>&nbsp;Andreo Y.</a></span>
           <span class="post-category">收录于 <a href="/categories/%E6%95%B0%E5%AD%A6/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 数学</a></span></div>
-      <div class="post-meta-line"><span title=2022-11-06&#32;09:46:47><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-11-06">2022-11-06</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 1901 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 4 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="导数与微分">
+      <div class="post-meta-line"><span title=2022-12-10&#32;15:09:11><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-12-10">2022-12-10</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 554 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 2 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="对线性代数的另一种认识">
               <i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
             </span>&nbsp;</div>
     </div><div class="featured-image"><img
     class="lazyload"
     src="/svg/loading.min.svg"
-    data-src="https://pic3.zhimg.com/v2-d841bf8c321173fb55cc1cb41b892f82_r.jpg"
-    data-srcset="https://pic3.zhimg.com/v2-d841bf8c321173fb55cc1cb41b892f82_r.jpg, https://pic3.zhimg.com/v2-d841bf8c321173fb55cc1cb41b892f82_r.jpg 1.5x, https://pic3.zhimg.com/v2-d841bf8c321173fb55cc1cb41b892f82_r.jpg 2x"
+    data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-11-13%20151634.png"
+    data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-11-13%20151634.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-11-13%20151634.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-11-13%20151634.png 2x"
     data-sizes="auto"
-    alt="https://pic3.zhimg.com/v2-d841bf8c321173fb55cc1cb41b892f82_r.jpg"
-    title="https://pic3.zhimg.com/v2-d841bf8c321173fb55cc1cb41b892f82_r.jpg"/></div><div class="details toc" id="toc-static" data-kept="false">
+    alt="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-11-13%20151634.png"
+    title="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-11-13%20151634.png"/></div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>目录</span>
           <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
         </div>
         <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#注意事项">注意事项</a></li>
-    <li><a href="#概念">概念</a></li>
-    <li><a href="#基本运算法则">基本运算法则</a></li>
-    <li><a href="#不太基本求导方法">不太基本求导方法</a></li>
-    <li><a href="#微分中值定理">微分中值定理</a></li>
-    <li><a href="#洛必达法则">洛必达法则</a></li>
-    <li><a href="#泰勒展开">泰勒展开</a></li>
-    <li><a href="#利用导数研究函数性态">利用导数研究函数性态</a></li>
+    <li><a href="#引入">引入</a></li>
   </ul>
 </nav></div>
       </div><div
@@ -236,241 +233,72 @@
       id="content"
       
       
-    ><p>《微积分》第三章 导数与微分，第四章 微分中值定理与导数的应用 的若干定理与一些理解。</p>
-<div class="details admonition tip open">
+    ><p>交大的线代课本不知道是怎么编的，竟然从方程组讲起，过半了才将向量空间。我们处在空间中，应该从具象化的角度切入，去认识任何一个概念，而非从抽象的数字开始——即使我们之前学过方程组。</p>
+<p>作为一个偏激的几何斗士，我将尽我可能，用具象化的语言，秉承几何生万物的精神，借鉴@3Blue1Brown的理论，完全推翻交大课本构建的线代体系，转而用另一个完全自洽的几何理论体系去解释这一切。当然，由于课本是以纯代数的角度出发进行编写的，里面有不少举例或概念是纯理论而没有任何实际意义的，对于这些内容，我只能说，这不是几何的缺陷，而是魔怔了的编写者脱离了实际。生产实际中，我们运用线性代数，绝大部分时候都可以从几何角度去解释。</p>
+<div class="details admonition tip">
     <div class="details-summary admonition-title">
-      <i class="icon fa-solid fa-lightbulb fa-fw" aria-hidden="true"></i>关于<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+      <i class="icon fa-solid fa-lightbulb fa-fw" aria-hidden="true"></i>温馨提示<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
     </div>
     <div class="details-content">
-      <div class="admonition-content">本文并非完整的知识梳理，而是复习过程中对不太熟悉的内容的再认识。为自用之需。</div>
+      <div class="admonition-content">不喜欢几何的出门右拐，慢走不送。</div>
     </div>
   </div>
-<h2 id="注意事项">注意事项</h2>
-<div class="details admonition danger open">
+<div class="details admonition warning open">
     <div class="details-summary admonition-title">
-      <i class="icon fa-solid fa-skull-crossbones fa-fw" aria-hidden="true"></i>常数<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+      <i class="icon fa-solid fa-exclamation-triangle fa-fw" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
     </div>
     <div class="details-content">
-      <div class="admonition-content">不要把常数带着求导</div>
+      <div class="admonition-content"><p>此内容不是教材/教程，最多算是一个导论，是对自己思维成果的一个整理。</p>
+<p>如果想要更深入地研究或者有更好的理解，欢迎以任何方式与作者联系探讨。</p>
+</div>
     </div>
   </div>
-<div class="details admonition danger open">
-    <div class="details-summary admonition-title">
-      <i class="icon fa-solid fa-skull-crossbones fa-fw" aria-hidden="true"></i>n!和k^n<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
-    </div>
-    <div class="details-content">
-      <div class="admonition-content">不要漏各处的n!，以及x前系数的n次方</div>
-    </div>
-  </div>
-<div class="details admonition danger open">
-    <div class="details-summary admonition-title">
-      <i class="icon fa-solid fa-skull-crossbones fa-fw" aria-hidden="true"></i>C<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
-    </div>
-    <div class="details-content">
-      <div class="admonition-content">用莱布尼茨公式不要忘了组合数系数</div>
-    </div>
-  </div>
-<h2 id="概念">概念</h2>
-<blockquote>
-<p>在题目比较奇怪的时候就用概念，概念总是不会错。特别是在未知能否求导的时候</p>
+<h2 id="引入">引入</h2>
+<p>就简单地用一句话引入罢。</p>
+<blockquote class="blockquote-center">
+  <p>It is my experience that proofs involving matrices can be shortened by 50% out</p>
+<p>if one throws the matrices out.</p>
+<p>- Emil Artin</p>
+
 </blockquote>
-<ul>
-<li>
-<p>微商==导数；可导$\Leftrightarrow$可微</p>
-</li>
-<li>
-<p><strong>导数的定义</strong>：$$\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}=\lim_{\Delta x \to 0} \frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}$$$$或$$$$\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}=\lim_{\Delta x \to 0} \frac{f(x)-f(x_0)}{x-x_0}$$</p>
-</li>
-<li>
-<p>在某处可导=<strong>左右导数存在且相等</strong></p>
-</li>
-<li>
-<p>左右导数：</p>
-<p>$$f_-&rsquo;(x_0)=\lim_{\Delta x\to 0^-}\frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}$$</p>
-<p>$$f_+&rsquo;(x_0)=\lim_{\Delta x\to 0^+}\frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}$$</p>
-</li>
-<li>
-<p><strong>微分的定义</strong>：$\Delta y=A\cdot \Delta x+o(\Delta x)$中的$A\cdot \Delta x$，dy是$\Delta y$ 的线性主部</p>
-</li>
-</ul>
-<h2 id="基本运算法则">基本运算法则</h2>
-<blockquote>
-<p>微分和导数的运算法则几乎完全一致，就是微分算完之后记得加上dx</p>
-</blockquote>
-<ul>
-<li>
-<p><strong>反函数求导法则</strong>：</p>
-<p>$$(f^{-1})&rsquo;(x)=\frac{1}{f&rsquo;(y)}$$</p>
-</li>
-<li>
-<p>求反函数需要求到哪一步？dx/dy还是f-1(x)还是y也要代掉？好像只要到dx/dy。</p>
-</li>
-<li>
-<p><strong>对数求导法</strong>，特别是针对幂指函数（当然也可以exp）</p>
-</li>
-<li>
-<p>{<strong>基本导数/微分公式表</strong>}\{浙江高考考纲要求}(csc和sec狗都不用)</p>
-<p>$$(\cot x)&rsquo;=-\frac{1}{sin^2x}$$</p>
-<p>$$(\frac {1} {\sin x})&rsquo;=-\frac{1}{\tan x\sin x}$$</p>
-<p>$$(\frac {1} {\cos x})&rsquo;=\frac{\tan x}{\cos x}$$</p>
-<p>$$(\arcsin x)&rsquo;=\frac{1}{\sqrt{1-x^2}}$$</p>
-<p>$$(\arccos x)&rsquo;=-\frac{1}{\sqrt{1-x^2}}$$</p>
-<p>$$(\arctan x)&rsquo;=\frac{1}{1+x^2}$$</p>
-</li>
-</ul>
-<h2 id="不太基本求导方法">不太基本求导方法</h2>
-<ul>
-<li>
-<p><strong>隐函数求导</strong>：就把y看成关于x的函数，然后求就完事了。最后用别的东西表示y’，也不用把y什么的代掉。</p>
-</li>
-<li>
-<p><strong>参数方程函数求导</strong>：</p>
-<p>$$\frac{dy}{dx}={\frac{\frac{dy}{dt}}{\frac{dx}{dt}}}$$</p>
-</li>
-<li>
-<p>高阶导数</p>
-<ul>
-<li>
-<p><strong>莱布尼茨公式</strong>：</p>
-<p>$$[u(x)v(x)]^{(n)}=\sum_{k=0}^{n} C_{n}^{k}u^{(k)}(x)v^{(n-k)}(x) $$</p>
-</li>
-<li>
-<p>隐函数高阶导数：</p>
-<p>和一般隐函数求导一样，就硬导，注意每个y或者y’都是关于x的函数就行</p>
-</li>
-<li>
-<p><strong>参数方程二阶导数</strong>：</p>
-<p>$$\frac{d^2y}{dx^2}=\frac{x&rsquo;(t)y&rsquo;&rsquo;(t)-x&rsquo;&rsquo;(t)y&rsquo;(t)}{[x&rsquo;(t)]^3}$$</p>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="微分中值定理">微分中值定理</h2>
-<ul>
-<li><strong>费马定理</strong>：极值+可导$\Rightarrow$导数为零</li>
-<li>费马定理推论：最值+可导$\Rightarrow$导数为零</li>
-<li><strong>罗尔定理</strong>：闭区间连续+开区间可导+两端点函数值相等$\Rightarrow$区间内有导函数零点
-<ul>
-<li>广义罗尔定理：开区间连续可导+（左端点右极限==右端点左极限）$\Rightarrow$区间内有导函数零点。其中，极限也可以是$\pm \infty$</li>
-<li>罗尔定理可用于解决函数零点个数问题，或通过构造原函数解决中值问题</li>
-</ul>
-</li>
-<li><strong>拉格朗日中值定理</strong>：闭区间连续+开区间可导$\Rightarrow \exist \xi\in(a,b), s.t. f&rsquo;(\xi)=\frac{f(b)-f(a)}{b-a}$
-<ul>
-<li>推论：区间内可导+导数为零$\Rightarrow$区间内常函数</li>
-<li>常用于<strong>证明不等式或判断特殊点存在</strong>，非常<strong>强大</strong>（胡郝音），忏悔，感恩，相信！</li>
-</ul>
-</li>
-<li><strong>柯西中值定理</strong>：f和g闭区间连续+开区间可导且g导数不为零$\Rightarrow \exist \xi\in(a,b), s.t. \frac{f(b)-f(a)}{g(b)-g(a)}=\frac{f&rsquo;(\xi)}{g&rsquo;(\xi)}$
-<ul>
-<li>实质是拉格朗日中值定理的推广</li>
-<li>可以对一个函数去$\xi$，然后对另一个采用构造的方法，求导后得到所需的式子（说不清</li>
-</ul>
-</li>
-<li><strong>达布定理</strong>：闭区间可导，左端右导数&lt;右端左导数$\Rightarrow$介值定理（只需要原函数可导，不要求导函数连续）</li>
-<li><strong>导函数的极限</strong>：导函数的左（右）极限=A$\Rightarrow$左（右）导数=A
-<ul>
-<li>推论1：邻域内连续，去心邻域可导，导函数左右极限相等，则该点可导且导数值等于极限
-<ul>
-<li>用来说明一些分段函数的分段处可导</li>
-</ul>
-</li>
-<li>推论2：<strong>可导区间内，导函数只能有振荡间断点</strong></li>
-</ul>
-</li>
-</ul>
-<h2 id="洛必达法则">洛必达法则</h2>
-<p><strong>注意一定要$\frac 0 0 $或者$\frac {任意} \infty$</strong></p>
-<p>虽然极限不存在时不能用，但是既然要求，极限一般存在（如果真的不存在就把洛必达全部划掉）</p>
-<h2 id="泰勒展开">泰勒展开</h2>
-<ul>
-<li>
-<p>前提是n阶导数存在，不要随便展</p>
-</li>
-<li>
-<p><strong>展开公式</strong>：$$f(x)=f(x_0)+f&rsquo;(x_0)(x-x_0)+\cdots +\frac{f^{(n)}(x_0)}{n!}(x-x_0)^n+余项$$</p>
-<ul>
-<li>
-<p><strong>皮亚诺型余项</strong>：$$o((x-x_0)^n)$$</p>
-</li>
-<li>
-<p><strong>拉格朗日型余项</strong>：$$\frac{f^{(n+1)}(\xi)}{(n+1)!}(x-x_0)^{n+1}$$其实就是再写一项，但是求导的位置变成x和x0之间的一处($\xi$)</p>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>常用麦克劳林公式</strong>（$x_0=0$时的展开式），其余项的$\xi$常用$\theta x$表示，其中$\theta\in(0,1)$，要注意余项书写常会多一项与θ有关的系数</p>
-<p>​	$$e^x=1+\frac x {1!}+\frac{x^2}{2!}+\cdots+\frac{x^n}{n!}+\frac{e^{\theta x}x^{n+1}}{(n+1)!}$$</p>
-<p>​	$$ \sin x=x-\frac{x^{3}}{3 !}+\frac{x^{5}}{5 !}-\cdots+(-1)^{n-1} \frac{x^{2 n-1}}{(2 n-1) !}+(-1)^{n} \frac{\cos \theta x}{(2 n+1) !} x^{2 n+1}$$</p>
-<p>​	$$\cos x=1-\frac{x^{2}}{2 !}+\frac{x^{4}}{4 !}-\cdots+(-1)^{n} \frac{x^{2 n}}{(2 n) !}+(-1)^{n+1} \frac{\cos \theta x}{(2 n+2) !} x^{2 n+2}$$</p>
-<p>​	$$\ln (1+x)=x-\frac{1}{2} x^{2}+\frac{1}{3} x^{3}-\cdots+(-1)^{n-1} \frac{1}{n} x^{n}+(-1)^{n} \frac{1}{(n+1)(1+\theta x)^{n+1}} x^{n+1}$$</p>
-<p>​	$$(1+x)^{\alpha}=1+\alpha x+\frac{\alpha(\alpha-1)}{2 !} x^{2}+\cdots+\frac{\alpha(\alpha-1) \cdots(\alpha-n+1)}{n !} x^{n}+ $$
-$$\frac{1}{(n+1) !} \alpha(\alpha-1)(\alpha-2) \cdots(\alpha-n)(1+\theta x)^{\alpha-n-1} x^{n+1}$$</p>
-<p>​	$$\frac{1}{1+x}=1-x+x^{2}+\cdots+(-1)^{n} x^{n}+\frac{(-1)^{n+1}}{(1+\theta x)^{n+2}} x^{n+1}$$</p>
-<p>​	$$\arctan x=x-\frac{1}{3} x^{3}+\frac{1}{5} {x}^{5}-\cdots+(-1)^{{n}} \frac{{x}^{2 {n}+1}}{2 {n}+1}+余项不太好写 \quad(-1 \leqslant {x} \leqslant 1)$$</p>
-</li>
-<li>
-<p>应用：近似计算，研究函数性态，<strong>求极限，证明不等式</strong>等</p>
-</li>
-</ul>
-<h2 id="利用导数研究函数性态">利用导数研究函数性态</h2>
-<ul>
-<li>极值判定方法
-<ul>
-<li>邻域连续，去心邻域可导，两侧导数异号</li>
-<li>导数为零，看凹凸性；<strong>不能判定不可导点</strong>，需要额外讨论</li>
-</ul>
-</li>
-<li>凹凸性判定方法
-<ul>
-<li>一阶导数的单调性</li>
-<li>二阶导数正负性，仅存在二阶导数时可用</li>
-</ul>
-</li>
-<li>渐近线：铅直渐近线，水平渐近线，斜渐近线</li>
-<li><strong>讨论函数性态</strong>：
-<ol>
-<li><strong>定义域</strong>，奇偶性，周期性，特殊点</li>
-<li>一阶导，二阶导，驻点，拐点，<strong>列表</strong></li>
-<li>渐近线，所有渐近线<strong>都要用极限证明一遍</strong></li>
-<li>作图</li>
-</ol>
-</li>
-</ul></div><div class="post-footer" id="post-footer">
+<p>埃米尔·阿廷说过的一句名言。换句话说就是，大部分涉及矩阵的证明都是几何上非常直观的，根本就不需要证明。</p>
+<p>我们将从n维空间中的向量谈起，看看如何从教材的第四章开始，逐渐往前，直到打通整个课本。</p>
+<hr>
+<p>寒假再更新，希望我不要弃坑。最近期末事情太多了根本没时间研究。</p></div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title=2022-11-06&#32;09:46:47>更新于 2022-11-06&nbsp;</span>
+        <span title=2022-12-10&#32;15:09:11>更新于 2022-12-10&nbsp;</span>
       </div><div class="post-info-license">
           <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
         </div></div>
     <div class="post-info-line">
       <div class="post-info-md"></div>
       <div class="post-info-share">
-        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://andreoy.cn/posts/%E5%AF%BC%E6%95%B0%E4%B8%8E%E5%BE%AE%E5%88%86/" data-title="导数与微分" data-hashtags="学业,笔记,微积分"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://andreoy.cn/posts/%E5%AF%BC%E6%95%B0%E4%B8%8E%E5%BE%AE%E5%88%86/" data-hashtag="学业"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Linkedin" data-sharer="linkedin" data-url="https://andreoy.cn/posts/%E5%AF%BC%E6%95%B0%E4%B8%8E%E5%BE%AE%E5%88%86/"><i class="fa-brands fa-linkedin fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Tumblr" data-sharer="tumblr" data-url="https://andreoy.cn/posts/%E5%AF%BC%E6%95%B0%E4%B8%8E%E5%BE%AE%E5%88%86/" data-title="导数与微分" data-tags="学业,笔记,微积分"><i class="fa-brands fa-tumblr fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Reddit" data-sharer="reddit" data-url="https://andreoy.cn/posts/%E5%AF%BC%E6%95%B0%E4%B8%8E%E5%BE%AE%E5%88%86/"><i class="fa-brands fa-reddit fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://andreoy.cn/posts/%E5%AF%BC%E6%95%B0%E4%B8%8E%E5%BE%AE%E5%88%86/" data-title="导数与微分" data-image="https://pic3.zhimg.com/v2-d841bf8c321173fb55cc1cb41b892f82_r.jpg"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://andreoy.cn/posts/%E5%AF%BC%E6%95%B0%E4%B8%8E%E5%BE%AE%E5%88%86/" data-title="导数与微分" data-description=""><i class="fa-brands fa-blogger fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://andreoy.cn/posts/%E5%AF%BC%E6%95%B0%E4%B8%8E%E5%BE%AE%E5%88%86/" data-title="导数与微分"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Skype" data-sharer="skype" data-url="https://andreoy.cn/posts/%E5%AF%BC%E6%95%B0%E4%B8%8E%E5%BE%AE%E5%88%86/" data-title="导数与微分"><i class="fa-brands fa-skype fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Trello" data-sharer="trello" data-url="https://andreoy.cn/posts/%E5%AF%BC%E6%95%B0%E4%B8%8E%E5%BE%AE%E5%88%86/" data-title="导数与微分" data-description=""><i class="fa-brands fa-trello fa-fw" aria-hidden="true"></i></a>
+        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://andreoy.cn/posts/%E9%87%8D%E6%96%B0%E7%90%86%E8%A7%A3%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" data-title="对线性代数的另一种认识" data-hashtags="学业,笔记,线性代数"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://andreoy.cn/posts/%E9%87%8D%E6%96%B0%E7%90%86%E8%A7%A3%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" data-hashtag="学业"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Linkedin" data-sharer="linkedin" data-url="https://andreoy.cn/posts/%E9%87%8D%E6%96%B0%E7%90%86%E8%A7%A3%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"><i class="fa-brands fa-linkedin fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Tumblr" data-sharer="tumblr" data-url="https://andreoy.cn/posts/%E9%87%8D%E6%96%B0%E7%90%86%E8%A7%A3%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" data-title="对线性代数的另一种认识" data-tags="学业,笔记,线性代数"><i class="fa-brands fa-tumblr fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Reddit" data-sharer="reddit" data-url="https://andreoy.cn/posts/%E9%87%8D%E6%96%B0%E7%90%86%E8%A7%A3%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"><i class="fa-brands fa-reddit fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://andreoy.cn/posts/%E9%87%8D%E6%96%B0%E7%90%86%E8%A7%A3%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" data-title="对线性代数的另一种认识" data-image="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-11-13%20151634.png"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://andreoy.cn/posts/%E9%87%8D%E6%96%B0%E7%90%86%E8%A7%A3%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" data-title="对线性代数的另一种认识" data-description=""><i class="fa-brands fa-blogger fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://andreoy.cn/posts/%E9%87%8D%E6%96%B0%E7%90%86%E8%A7%A3%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" data-title="对线性代数的另一种认识"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Skype" data-sharer="skype" data-url="https://andreoy.cn/posts/%E9%87%8D%E6%96%B0%E7%90%86%E8%A7%A3%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" data-title="对线性代数的另一种认识"><i class="fa-brands fa-skype fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Trello" data-sharer="trello" data-url="https://andreoy.cn/posts/%E9%87%8D%E6%96%B0%E7%90%86%E8%A7%A3%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" data-title="对线性代数的另一种认识" data-description=""><i class="fa-brands fa-trello fa-fw" aria-hidden="true"></i></a>
   </span>
       </div>
     </div>
   </div>
 
   <div class="post-info-more">
-    <section class="post-tags"><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/%E5%AD%A6%E4%B8%9A/">学业</a>,&nbsp;<a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>,&nbsp;<a href="/tags/%E5%BE%AE%E7%A7%AF%E5%88%86/">微积分</a></section>
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/%E5%AD%A6%E4%B8%9A/">学业</a>,&nbsp;<a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>,&nbsp;<a href="/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">线性代数</a></section>
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
     </section>
   </div>
 
-  <div class="post-nav"><a href="/posts/%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/" class="prev" rel="prev" title="极限与连续"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>极限与连续</a>
-      <a href="/posts/%E9%87%8D%E6%96%B0%E7%90%86%E8%A7%A3%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" class="next" rel="next" title="对线性代数的另一种认识">对线性代数的另一种认识<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+  <div class="post-nav"><a href="/posts/%E5%AF%BC%E6%95%B0%E4%B8%8E%E5%BE%AE%E5%88%86/" class="prev" rel="prev" title="导数与微分"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>导数与微分</a>
+      <a href="/posts/%E6%B1%82%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97%E7%9A%84%E9%80%9A%E9%A1%B9%E7%BA%BF%E4%BB%A3%E5%A4%A7%E4%BD%9C%E4%B8%9A/" class="next" rel="next" title="求斐波那契数列的通项（线代大作业）">求斐波那契数列的通项（线代大作业）<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 <div id="comments"><div id="giscus">
           <script
