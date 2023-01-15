@@ -3,9 +3,19 @@
     <title>Andreo Y.</title>
     <link>https://andreoy.cn/</link>
     <description>To sail beyond the sunset.</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 14 Jan 2023 10:45:44 &#43;0800</lastBuildDate>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 14 Jan 2023 11:29:58 &#43;0800</lastBuildDate>
       <atom:link href="https://andreoy.cn/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>CTFHub笔记-Web章节</title>
+  <link>https://andreoy.cn/posts/ctfhub%E7%AC%94%E8%AE%B0-web/</link>
+  <pubDate>Sat, 14 Jan 2023 11:29:58 &#43;0800</pubDate>
+  <author>Andreo Y.</author>
+  <guid>https://andreoy.cn/posts/ctfhub%E7%AC%94%E8%AE%B0-web/</guid>
+  <description><![CDATA[<div class="featured-image">
+        <img src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20230115185002636.png" referrerpolicy="no-referrer">
+      </div>学习CTFHub的一些记录和备忘，用于日后复习查询]]></description>
+</item>
+<item>
   <title>粉色的西柚慕斯蛋糕</title>
   <link>https://andreoy.cn/posts/%E7%B2%89%E8%89%B2%E7%9A%84%E8%A5%BF%E6%9F%9A%E6%85%95%E6%96%AF%E8%9B%8B%E7%B3%95/</link>
   <pubDate>Sat, 14 Jan 2023 10:45:44 &#43;0800</pubDate>
@@ -105,17 +115,6 @@
   <description><![CDATA[<div class="featured-image">
         <img src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/IMG_1312.PNG" referrerpolicy="no-referrer">
       </div>密接隔离期间的一些意识流]]></description>
-</item>
-<item>
-  <title>隔离记（上）</title>
-  <link>https://andreoy.cn/posts/%E9%9A%94%E7%A6%BB%E8%AE%B0%E4%B8%8A/</link>
-  <pubDate>Tue, 20 Sep 2022 13:49:25 &#43;0800</pubDate>
-  <author>Andreo Y.</author>
-  <guid>https://andreoy.cn/posts/%E9%9A%94%E7%A6%BB%E8%AE%B0%E4%B8%8A/</guid>
-  <description><![CDATA[<div class="featured-image">
-        <img src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/8f700e89509117448ca5e0bde78762f.jpg" referrerpolicy="no-referrer">
-      </div><p>9月13日，上海交通大学正式开学。早八的线性代数，十点的体育网课，一切都看起来非常对劲，作为新生，我们也准备好了正式学习的开始。</p>
-<p>没有想到，这节早八是九月的最后一节线下课。</p>]]></description>
 </item>
 </channel>
 </rss>
