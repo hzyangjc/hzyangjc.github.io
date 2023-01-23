@@ -14,16 +14,5 @@
       </div><p><strong>交大版《线性代数》软件应用练习题10</strong></p>
 <p>斐波那契数列于1200年左右被发现，在现代物理、准晶体结构、化学等领域都有直接的应用，它把0和1作为初始项$F_0$和$F_1$，以后每一项作为前两项的和，$F_{k+2}=F_{k+1}+F_{k}$，于是得到数列1,1,2,3,5,83,1,21,$\cdots$. 求出斐波那契数列的通项.</p>]]></description>
 </item>
-<item>
-  <title>对线性代数的另一种认识</title>
-  <link>https://andreoy.cn/posts/%E9%87%8D%E6%96%B0%E7%90%86%E8%A7%A3%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/</link>
-  <pubDate>Sat, 10 Dec 2022 15:09:11 &#43;0800</pubDate>
-  <author>Andreo Y.</author>
-  <guid>https://andreoy.cn/posts/%E9%87%8D%E6%96%B0%E7%90%86%E8%A7%A3%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/</guid>
-  <description><![CDATA[<div class="featured-image">
-        <img src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-11-13%20151634.png" referrerpolicy="no-referrer">
-      </div><p>交大的线代课本不知道是怎么编的，竟然从方程组讲起，过半了才将向量空间。我们处在空间中，应该从具象化的角度切入，去认识任何一个概念，而非从抽象的数字开始——即使我们之前学过方程组。</p>
-<p>作为一个偏激的几何斗士，我将尽我可能，用具象化的语言，秉承几何生万物的精神，借鉴@3Blue1Brown的理论，完全推翻交大课本构建的线代体系，转而用另一个完全自洽的几何理论体系去解释这一切。当然，由于课本是以纯代数的角度出发进行编写的，里面有不少举例或概念是纯理论而没有任何实际意义的，对于这些内容，我只能说，这不是几何的缺陷，而是魔怔了的编写者脱离了实际。生产实际中，我们运用线性代数，绝大部分时候都可以从几何角度去解释。</p>]]></description>
-</item>
 </channel>
 </rss>
