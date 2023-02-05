@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>HCTF - 标签 - Andreo Y.</title>
+    <link>https://andreoy.cn/tags/hctf/</link>
+    <description>HCTF - 标签 - Andreo Y.</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 05 Feb 2023 18:57:44 &#43;0800</lastBuildDate><atom:link href="https://andreoy.cn/tags/hctf/" rel="self" type="application/rss+xml" /><item>
+  <title>2018-HCTF-Web-warmup</title>
+  <link>https://andreoy.cn/posts/2018-hctf-web-warmup/</link>
+  <pubDate>Sun, 05 Feb 2023 18:57:44 &#43;0800</pubDate>
+  <author>Andreo Y.</author>
+  <guid>https://andreoy.cn/posts/2018-hctf-web-warmup/</guid>
+  <description><![CDATA[HCTF的一道热身题，但是难度不太热身]]></description>
+</item>
+</channel>
+</rss>

