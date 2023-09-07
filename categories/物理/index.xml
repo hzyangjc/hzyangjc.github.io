@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>物理 - 分类 - Andreo Y.</title>
+    <link>https://andreoy.cn/categories/%E7%89%A9%E7%90%86/</link>
+    <description>物理 - 分类 - Andreo Y.</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 05 Sep 2023 18:42:56 &#43;0800</lastBuildDate><atom:link href="https://andreoy.cn/categories/%E7%89%A9%E7%90%86/" rel="self" type="application/rss+xml" /><item>
+  <title>大学物理缓考突击</title>
+  <link>https://andreoy.cn/posts/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86%E7%BC%93%E8%80%83%E7%AA%81%E5%87%BB/</link>
+  <pubDate>Tue, 05 Sep 2023 18:42:56 &#43;0800</pubDate>
+  <author>Andreo Y.</author>
+  <guid>https://andreoy.cn/posts/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86%E7%BC%93%E8%80%83%E7%AA%81%E5%87%BB/</guid>
+  <description><![CDATA[基于真题卷的突击，遇到不会的就攻，直到能够独立解该题，不考虑做题速度。 2011-2012-2 T7 转动惯量 角动量守恒 常见物体的转动惯量 基本原理：$J=\sum m_i]]></description>
+</item>
+</channel>
+</rss>

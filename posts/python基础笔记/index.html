@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>Python基础笔记 - Andreo Y.</title><meta name="author" content="">
+<meta name="author-link" content="">
+<meta name="description" content="暑假前在咖啡厅速通python的历史记录" /><meta name="keywords" content='笔记, Python' /><meta itemprop="name" content="Python基础笔记">
+<meta itemprop="description" content="暑假前在咖啡厅速通python的历史记录"><meta itemprop="datePublished" content="2023-06-23T19:29:41+08:00" />
+<meta itemprop="dateModified" content="2023-06-23T19:29:41+08:00" />
+<meta itemprop="wordCount" content="3007"><meta itemprop="image" content="https://andreoy.cn/logo.png"/>
+<meta itemprop="keywords" content="笔记,Python," /><meta property="og:title" content="Python基础笔记" />
+<meta property="og:description" content="暑假前在咖啡厅速通python的历史记录" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://andreoy.cn/posts/python%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/" /><meta property="og:image" content="https://andreoy.cn/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-06-23T19:29:41+08:00" />
+<meta property="article:modified_time" content="2023-06-23T19:29:41+08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://andreoy.cn/logo.png"/>
+
+<meta name="twitter:title" content="Python基础笔记"/>
+<meta name="twitter:description" content="暑假前在咖啡厅速通python的历史记录"/>
+<meta name="application-name" content="Andreo Y.&#39;s Space">
+<meta name="apple-mobile-web-app-title" content="Andreo Y.&#39;s Space"><meta name="theme-color" data-light="#ffffff" data-dark="#252627" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://andreoy.cn/posts/python%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/" /><link rel="prev" href="https://andreoy.cn/posts/sjtuctf2023-writeup/" /><link rel="next" href="https://andreoy.cn/posts/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86%E7%BC%93%E8%80%83%E7%AA%81%E5%87%BB/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><meta name="baidu-site-verification" content="code-NEqykcuT3x" /><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Python基础笔记",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/andreoy.cn\/posts\/python%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0\/"
+    },"genre": "posts","keywords": "笔记, Python","wordcount":  3007 ,
+    "url": "https:\/\/andreoy.cn\/posts\/python%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0\/","datePublished": "2023-06-23T19:29:41+08:00","dateModified": "2023-06-23T19:29:41+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Andreo Y."
+      },"description": ""
+  }
+  </script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3263382266976949"
+     crossorigin="anonymous"></script>
+
+  </head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Andreo Y."><img
+    class="lazyload logo"
+    src="/svg/loading.min.svg"
+    data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png"
+    data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png 2x"
+    data-sizes="auto"
+    alt="Andreo Y."
+    title="Andreo Y."/><span class="header-title-text"> Andreo Y.&#39;s Space</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item text-center">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 所有文章</a></li><li class="menu-item text-center">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-stream fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li class="menu-item text-center">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tag fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item text-center">
+              <a
+                class="menu-link"
+                href="/about/"
+                
+                
+              ><i class="fa-solid fa-user-circle fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item text-center">
+              <a
+                class="menu-link"
+                href="/friends/"
+                
+                
+              ><i class="fa-solid fa-user-friends fa-fw fa-sm" aria-hidden="true"></i> 友情链接</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="Search for everything..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Andreo Y."><img
+    class="lazyload logo"
+    src="/svg/loading.min.svg"
+    data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png"
+    data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png 2x"
+    data-sizes="auto"
+    alt="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png"
+    title="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png"/><span class="header-title-text"> Andreo Y.&#39;s Space</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="Search for everything..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item text-center"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 所有文章</a></li><li
+              class="menu-item text-center"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-stream fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li
+              class="menu-item text-center"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tag fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li
+              class="menu-item text-center"
+            ><a
+                  class="menu-link"
+                  href="/about/"
+                  
+                  
+                ><i class="fa-solid fa-user-circle fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li
+              class="menu-item text-center"
+            ><a
+                  class="menu-link"
+                  href="/friends/"
+                  
+                  
+                ><i class="fa-solid fa-user-friends fa-fw fa-sm" aria-hidden="true"></i> 友情链接</a></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container" data-page-style="narrow"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    
+</aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX">
+        <span>Python基础笔记</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://andreoy.cn" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img
+    class="lazyload avatar"
+    src="/svg/loading.min.svg"
+    data-src="https://gravatar.loli.net/avatar/d8234597e50620ab663b4a6e7e89bf99?s=32&amp;d="
+    data-srcset="https://gravatar.loli.net/avatar/d8234597e50620ab663b4a6e7e89bf99?s=32&amp;d=, https://gravatar.loli.net/avatar/d8234597e50620ab663b4a6e7e89bf99?s=32&amp;d= 1.5x, https://gravatar.loli.net/avatar/d8234597e50620ab663b4a6e7e89bf99?s=32&amp;d= 2x"
+    data-sizes="auto"
+    alt="Andreo Y."
+    title="Andreo Y."/>&nbsp;Andreo Y.</a></span>
+          <span class="post-category">收录于 <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 程序设计</a></span></div>
+      <div class="post-meta-line"><span title=2023-06-23&#32;19:29:41><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-06-23">2023-06-23</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 3007 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 7 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Python基础笔记">
+              <i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
+            </span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#运算符">运算符</a>
+      <ul>
+        <li><a href="#数学">数学</a></li>
+        <li><a href="#逻辑">逻辑</a></li>
+      </ul>
+    </li>
+    <li><a href="#字符串">字符串</a></li>
+    <li><a href="#列表">列表</a>
+      <ul>
+        <li><a href="#基本操作">基本操作</a></li>
+        <li><a href="#遍历">遍历</a></li>
+        <li><a href="#统计">统计</a></li>
+        <li><a href="#切片">切片</a></li>
+      </ul>
+    </li>
+    <li><a href="#元组">元组</a></li>
+    <li><a href="#代码格式">代码格式</a></li>
+    <li><a href="#if">IF</a>
+      <ul>
+        <li><a href="#基本用法">基本用法</a></li>
+        <li><a href="#检查是否在内">检查是否在内</a></li>
+      </ul>
+    </li>
+    <li><a href="#字典">字典</a>
+      <ul>
+        <li><a href="#基本操作-1">基本操作</a></li>
+        <li><a href="#get">get()</a></li>
+        <li><a href="#遍历-1">遍历</a></li>
+      </ul>
+    </li>
+    <li><a href="#集合">集合</a></li>
+    <li><a href="#嵌套">嵌套</a></li>
+    <li><a href="#用户输入">用户输入</a>
+      <ul>
+        <li><a href="#一般输入">一般输入</a></li>
+        <li><a href="#数值输入">数值输入</a></li>
+      </ul>
+    </li>
+    <li><a href="#while循环">while循环</a></li>
+    <li><a href="#函数">函数</a>
+      <ul>
+        <li><a href="#默认值">默认值</a></li>
+        <li><a href="#传递列表">传递列表</a></li>
+        <li><a href="#传递任意数量的参数">传递任意数量的参数</a></li>
+        <li><a href="#传递任意数量的带键值参数">传递任意数量的带键值参数</a></li>
+      </ul>
+    </li>
+    <li><a href="#模块化编程">模块化编程</a>
+      <ul>
+        <li><a href="#as">as</a></li>
+      </ul>
+    </li>
+    <li><a href="#类">类</a>
+      <ul>
+        <li><a href="#继承">继承</a></li>
+        <li><a href="#导入类">导入类</a></li>
+      </ul>
+    </li>
+    <li><a href="#操作文件">操作文件</a>
+      <ul>
+        <li><a href="#读取文件">读取文件</a></li>
+        <li><a href="#逐行读取">逐行读取</a></li>
+        <li><a href="#写入文件">写入文件</a></li>
+        <li><a href="#附加到文件">附加到文件</a></li>
+      </ul>
+    </li>
+    <li><a href="#异常处理">异常处理</a></li>
+  </ul>
+</nav></div>
+      </div><div
+      class="content"
+      id="content"
+      
+      
+    ><div class="details admonition warning open">
+    <div class="details-summary admonition-title">
+      <i class="icon fa-solid fa-exclamation-triangle fa-fw" aria-hidden="true"></i>注意<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+      <div class="admonition-content">并非完整的python基础内容，基于本人基础知识，且部分内容错误，此处未做更新</div>
+    </div>
+  </div>
+<h2 id="运算符">运算符</h2>
+<h3 id="数学">数学</h3>
+<p>加减乘，<code>+-*</code>，有浮点就返回浮点</p>
+<p>除，<code>/</code>返回浮点值，即使整除</p>
+<p>整除，<code>//</code>返回整数向下取整</p>
+<p>乘方，<code>**</code>，有浮点就返回浮点</p>
+<p>取模，<code>%</code></p>
+<h3 id="逻辑">逻辑</h3>
+<p><code>35&gt;=23 and 24*4==96</code> true</p>
+<p><code>1+2==3 and (1+1==2 or 2*4==10) </code>true</p>
+<h2 id="字符串">字符串</h2>
+<p><code>'字符串'</code>是字符串，<code>“字符串”</code>是字符串，可以用<code>\</code></p>
+<p><code>f+字符串</code>可以让字符串中包含变量，如<code>f'I have a {tool}'</code>，其中tool是一个变量</p>
+<p><code>lstrip</code>去除左边的空余（空格，\t，\n），<code>rstrip</code>右边，<code>strip</code>全部</p>
+<p><code>string[a:b]</code>字符串切片，拓展用法见列表/切片</p>
+<p><code>split()</code>返回一个字符串中所有“单词”的列表（去掉空格缩进换行，分隔）。</p>
+<p><code>len(sample_string)</code>返回strlen</p>
+<h2 id="列表">列表</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">tools</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;pickaxe&#39;</span><span class="p">,</span><span class="s1">&#39;axe&#39;</span><span class="p">,</span><span class="s1">&#39;shovel&#39;</span><span class="p">,</span><span class="s1">&#39;hoe&#39;</span><span class="p">]</span>
+</span></span></code></pre></div><h3 id="基本操作">基本操作</h3>
+<p><code>tools[-1]='hoe'</code></p>
+<p><code>tools.append('flint and steel')</code>，则在最后加上打火石</p>
+<p><code>tools.insert(1,'flint and steel')</code>，则在镐子后面插入打火石</p>
+<p><code>del tools[1]</code>，则斧头没了</p>
+<p><code>print(tools.pop())</code>，则锄头没了，输出<code>hoe</code>；pop也可以有参数，执行<code>print(tools.pop(2))</code>，则铲子没了，输出<code>shovel</code></p>
+<p><code>print(tools.remove(&quot;axe&quot;))</code>，则斧头没了。如果有好几个斧头，则只会remove第一个</p>
+<p><code>tools.sort()</code>，则斧头锄头镐子铲子；<code>tools.sorted()</code>会临时返回排序后的列表，但本身不变</p>
+<p><code>tools.reverse()</code>，反转列表</p>
+<p><code>len(tools)</code>是4</p>
+<h3 id="遍历">遍历</h3>
+<p>如下，记得冒号</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">tool</span> <span class="ow">in</span> <span class="n">tools</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">print</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
+</span></span></code></pre></div><p><code>range(a,b)</code>，指的是<code>[a,b)</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">numbers</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+</span></span></code></pre></div><p>输出<code>[1,2,3,4,5]</code></p>
+<p><code>range(1,10,2)</code>就是<code>1,3,5,7,9</code></p>
+<h3 id="统计">统计</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">nums</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">11</span><span class="p">]</span>
+</span></span></code></pre></div><p><code>min(nums)</code>返回2；max，11；sum，28</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">value</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)]</span> <span class="c1"># 返回1-10的平方的list</span>
+</span></span></code></pre></div><h3 id="切片">切片</h3>
+<p><code>tools[1:3]</code>返回<code>['axe','shovel']</code>，同为左开右闭；<code>[:3]</code>就是<code>[0:3]</code>，<code>[1:]</code>就是<code>[1,4]</code></p>
+<p>列表复制的切片方法（如果直接赋值是指针操作）：<code>thetools=tools[:]</code></p>
+<p>设定步长（每隔几个提取）：<code>sometools=tools[-4::2]</code>，则sometools里是镐子和铲子</p>
+<h2 id="元组">元组</h2>
+<p>不能修改内容的列表，但是可以整个一起修改</p>
+<p>其他操作和列表几乎相同，包括遍历、统计、切片等</p>
+<h2 id="代码格式">代码格式</h2>
+<p>PEP（Python Enhancement Proposal）规定：一行不要超过80个字符，缩进是4个空格，不要过多空行</p>
+<p>运算符边上最好都空一格，但是我从来不空，而且已经改不掉了</p>
+<h2 id="if">IF</h2>
+<h3 id="基本用法">基本用法</h3>
+<p>例：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">tool</span> <span class="ow">in</span> <span class="n">tools</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">tool</span><span class="o">==</span><span class="s2">&#34;shovel&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">tool</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;yes sir!&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="n">tool</span><span class="o">==</span><span class="s2">&#34;axe&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">tool</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span>
+</span></span><span class="line"><span class="cl">    	<span class="nb">print</span><span class="p">(</span><span class="n">tool</span><span class="o">.</span><span class="n">title</span><span class="p">())</span>
+</span></span></code></pre></div><h3 id="检查是否在内">检查是否在内</h3>
+<p>对列表或元组有效</p>
+<p><code>'pickaxe' in tools</code> true</p>
+<p><code>'shovel' not in tools</code> false</p>
+<h2 id="字典">字典</h2>
+<p>简单理解为索引为任意类型的列表，其实就是哈希表，也可以用作结构体</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">steve</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;health&#39;</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="s1">&#39;saturation&#39;</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span><span class="s1">&#39;potion_effect&#39;</span><span class="o">=</span><span class="mi">1</span><span class="p">}</span>
+</span></span></code></pre></div><h3 id="基本操作-1">基本操作</h3>
+<p>修改：<code>steve['health']=19</code>，史蒂夫被仙人掌扎了一下；如果字典内没有health键，则会添加</p>
+<p>删除：<code>del steve['potion_effect']</code>，药水效果这个就没了</p>
+<h3 id="get">get()</h3>
+<p><code>steve.get('speed','No point value assigned')</code>，则如果steve里面有speed就输出对应的值。如果没有就输出后面那段</p>
+<p>如果直接输出<code>steve['speed']</code>，会报错</p>
+<h3 id="遍历-1">遍历</h3>
+<p>遍历键和键值：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">key</span><span class="p">,</span><span class="n">value</span> <span class="ow">in</span> <span class="n">steve</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">key</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span></code></pre></div><p>遍历键：（两种是一样，默认遍历键）</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">steve</span>
+</span></span><span class="line"><span class="cl">	<span class="n">something</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">steve</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</span></span></code></pre></div><p>遍历键值：上面的keys改成value即可</p>
+<h2 id="集合">集合</h2>
+<p>显然，不能有相同元素</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">tools</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;pickaxe&#39;</span><span class="p">,</span><span class="s1">&#39;axe&#39;</span><span class="p">,</span><span class="s1">&#39;shovel&#39;</span><span class="p">,</span><span class="s1">&#39;hoe&#39;</span><span class="p">}</span>
+</span></span></code></pre></div><p>创建时输入相同元素，会保留第一个</p>
+<h2 id="嵌套">嵌套</h2>
+<p>字典，列表，元组，集合等都可以互相嵌套，即N维数组</p>
+<p>比较合理，没有笔记必要</p>
+<h2 id="用户输入">用户输入</h2>
+<h3 id="一般输入">一般输入</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">name</span><span class="o">=</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Please enter your name:&#34;</span><span class="p">)</span> <span class="c1"># 用户可以在这句话之后输入，并存入message</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Hello, </span><span class="si">{</span><span class="n">name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s1">!&#39;</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="数值输入">数值输入</h3>
+<p>直接输入字符串之后，用<code>int(message)</code>强制转换，例如：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">age</span><span class="o">=</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;your age:&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">age</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>
+</span></span></code></pre></div><p>python中，用int()强制转换字符串会直接把整一串转换为数值。体现了python的新手友好、脱离本质、编程高效、运行低效。我乱叫的。</p>
+<h2 id="while循环">while循环</h2>
+<p>例如：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">while</span> <span class="n">message</span><span class="o">!=</span><span class="s2">&#34;quit&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">message</span><span class="o">=</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;I will repeat after you until you enter &#39;quit&#39;.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">message</span><span class="o">!=</span><span class="s2">&#34;quit&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</span></span></code></pre></div><p>（以下内容同C/C++</p>
+<p>退出循环：<code>break</code></p>
+<p>进入下一轮：<code>continue</code></p>
+<p><code>while True:</code>也可以实现无限循环</p>
+<h2 id="函数">函数</h2>
+<p>在python中，函数不分类型，如果写了return就是有返回值</p>
+<p>除了用冒号代替花括号之外，函数的大部分基础操作与C/C++并无二致</p>
+<h3 id="默认值">默认值</h3>
+<p>和C++差不多，但是Pistol的这部分C++并没有学好，可能是因为平时用不到：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">build_person</span><span class="p">(</span><span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span> <span class="c1"># 默认值部分一定要在后面</span>
+</span></span><span class="line"><span class="cl">    <span class="n">person</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;first&#39;</span><span class="p">:</span> <span class="n">first_name</span><span class="p">,</span> <span class="s1">&#39;last&#39;</span><span class="p">:</span> <span class="n">last_name</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">age</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">person</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">age</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">person</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">musician</span> <span class="o">=</span> <span class="n">build_person</span><span class="p">(</span><span class="s1">&#39;jimi&#39;</span><span class="p">,</span> <span class="s1">&#39;hendrix&#39;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">27</span><span class="p">)</span> <span class="c1"># age这里不写&#39;age=&#39;也可以</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">musician</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">musician</span> <span class="o">=</span> <span class="n">build_person</span><span class="p">(</span><span class="s1">&#39;Koji&#39;</span><span class="p">,</span> <span class="s1">&#39;Tabosh&#39;</span><span class="p">)</span>          <span class="c1"># 田所浩二年龄显然是24歲，所以不用写</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">musician</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="传递列表">传递列表</h3>
+<p>和C++一样，传递的是头指针，所以函数中对列表的操作会对列表产生永久影响。</p>
+<p>要避免修改，需要用切片表示法：<code>sample_function(list1[:])</code></p>
+<h3 id="传递任意数量的参数">传递任意数量的参数</h3>
+<p>使用星号+形参的格式，可以让传入的参数形成一个元组，在函数中，可以用处理元组的方式处理这些数据。如果除了这个元组之外还有其他参数，需要让其他普通形参放在前面（显然）。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">make_pizza</span><span class="p">(</span><span class="o">*</span><span class="n">toppings</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Making a pizza with the following toppings:&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">topping</span> <span class="ow">in</span> <span class="n">toppings</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;- </span><span class="si">{</span><span class="n">topping</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">make_pizza</span><span class="p">(</span><span class="s1">&#39;pepperoni&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">make_pizza</span><span class="p">(</span><span class="s1">&#39;mushrooms&#39;</span><span class="p">,</span> <span class="s1">&#39;green peppers&#39;</span><span class="p">,</span> <span class="s1">&#39;extra cheese&#39;</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="传递任意数量的带键值参数">传递任意数量的带键值参数</h3>
+<p>类似上面的，但是用两个星号+形参名，形成一个字典。</p>
+<h2 id="模块化编程">模块化编程</h2>
+<p>例如：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># player.py</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">mining</span><span class="p">(</span><span class="n">pickaxe_value</span><span class="p">,</span> <span class="n">haste_level</span><span class="p">,</span> <span class="n">efficiency_level</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">speed</span><span class="o">=</span><span class="n">pickaxe_value</span><span class="o">*</span><span class="p">(</span><span class="n">efficiency_level</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">haste_level</span><span class="o">*</span><span class="mf">0.2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">speed</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">attack_damage</span><span class="p">(</span><span class="n">weapon_value</span><span class="p">,</span> <span class="n">strength_level</span><span class="p">,</span> <span class="n">sharpness_level</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">damage</span><span class="o">=</span><span class="mi">114514</span> <span class="c1"># 懒得查力量和锋利的计算函数了</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">damage</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">player</span> <span class="kn">import</span> <span class="n">mining</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 于是可以使用player中的mining函数，这里是直接调用，多个函数用逗号分隔</span>
+</span></span><span class="line"><span class="cl"><span class="n">spd</span><span class="o">=</span><span class="n">mining</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">player</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 于是可以使用player中的所有函数，但是需要声明模块名</span>
+</span></span><span class="line"><span class="cl"><span class="n">spd</span><span class="o">=</span><span class="n">player</span><span class="o">.</span><span class="n">mining</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># 和C/C++一样的调用方式</span>
+</span></span></code></pre></div><p>非常清晰，但是注意区分两种导入方式的调用方法</p>
+<p>也可以用<code>from player import *</code>一键导入所有函数且不带模块名使用</p>
+<h3 id="as">as</h3>
+<p>一种define而已。例如：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">player</span> <span class="kn">import</span> <span class="n">mining</span> <span class="k">as</span> <span class="n">mn</span>
+</span></span><span class="line"><span class="cl"><span class="n">spd</span><span class="o">=</span><span class="n">mn</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">player</span> <span class="k">as</span> <span class="nn">plyr</span>
+</span></span><span class="line"><span class="cl"><span class="n">spd</span><span class="o">=</span><span class="n">plyr</span><span class="o">.</span><span class="n">mining</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+</span></span></code></pre></div><h2 id="类">类</h2>
+<p>创建类：和C++几乎一样，括号换成冒号，构造函数名字换成<code>__init__</code>，并且只要声明函数，变量开箱即用。</p>
+<p>创建实例和C++完全一样，调用函数和C++完全一样。</p>
+<p>python没有private，所以代码安全性比C++要垃圾不少。</p>
+<h3 id="继承">继承</h3>
+<p>用不到，先不学了。和C++一个逻辑，就是写法有少许区别</p>
+<h3 id="导入类">导入类</h3>
+<p>和前面的导入函数没有区别。一点都没有。</p>
+<p>python有很多很牛逼的标准库，以及一大堆社区提供的库。python除了这一点之外比C++烂多了，但是就因为这一点，在很多时候比C++牛逼。</p>
+<h2 id="操作文件">操作文件</h2>
+<h3 id="读取文件">读取文件</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;1.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_object</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">contents</span> <span class="o">=</span> <span class="n">file_object</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">contents</span><span class="o">.</span><span class="n">rstrip</span><span class="p">())</span>
+</span></span></code></pre></div><p>使用<code>read()</code>的时候，末尾会多出一个空行，故使用<code>rstrip()</code>去掉。</p>
+<p>文件路径默认同一个目录的相对路径，绝对路径就开头斜杠。（这有什么好说的，全球统一</p>
+<p>虽然windows用反斜杠表示路径关系，但是不影响在代码中使用斜杠表示。</p>
+<h4 id="读取数组">读取数组</h4>
+<p>使用JSON存储的数组文件，但是我不会。要用再学。</p>
+<h3 id="逐行读取">逐行读取</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;1.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">list1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">())</span>
+</span></span></code></pre></div><p>上面的方法更适合对每一行进行操作，如果只是要创建列表，也可以直接用<code>readlines</code>：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">lines</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+</span></span></code></pre></div><p>注意，用以上方法生成的列表，每一个字符串的末尾都有换行。</p>
+<h3 id="写入文件">写入文件</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;programming.txt&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_object</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">file_object</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;I love programming.</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">file_object</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;I love creating new games.</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p><code>write()</code>函数不带换行，这个print的默认值不同。</p>
+<p><code>open()</code>的第二个位置：默认只读，&lsquo;r&rsquo;只读，&lsquo;w&rsquo;写入，&lsquo;a&rsquo;附加，&lsquo;r+&lsquo;读写</p>
+<p>注意，写入只支持字符串（与C不同），写入数值需要先用<code>str()</code>转换。</p>
+<h3 id="附加到文件">附加到文件</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;programming.txt&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_object</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">file_object</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;I love programming.</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">file_object</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;I love creating new games.</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>与上面写入的程序只有open的参数不同，不过在此程序运行后，只会在<code>programming.txt</code>后面添加这两行，而不是整个文件只有这两行。</p>
+<h2 id="异常处理">异常处理</h2>
+<p>算了，暂时没用。和C++差不多。</p>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title=2023-06-23&#32;19:29:41>更新于 2023-06-23&nbsp;</span>
+      </div><div class="post-info-license">
+          <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+        </div></div>
+    <div class="post-info-line">
+      <div class="post-info-md"></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://andreoy.cn/posts/python%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/" data-title="Python基础笔记" data-hashtags="笔记,Python"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://andreoy.cn/posts/python%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/" data-hashtag="笔记"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Linkedin" data-sharer="linkedin" data-url="https://andreoy.cn/posts/python%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/"><i class="fa-brands fa-linkedin fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Tumblr" data-sharer="tumblr" data-url="https://andreoy.cn/posts/python%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/" data-title="Python基础笔记" data-tags="笔记,Python"><i class="fa-brands fa-tumblr fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Reddit" data-sharer="reddit" data-url="https://andreoy.cn/posts/python%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/"><i class="fa-brands fa-reddit fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://andreoy.cn/posts/python%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/" data-title="Python基础笔记"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://andreoy.cn/posts/python%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/" data-title="Python基础笔记" data-description=""><i class="fa-brands fa-blogger fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://andreoy.cn/posts/python%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/" data-title="Python基础笔记"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Skype" data-sharer="skype" data-url="https://andreoy.cn/posts/python%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/" data-title="Python基础笔记"><i class="fa-brands fa-skype fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Trello" data-sharer="trello" data-url="https://andreoy.cn/posts/python%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/" data-title="Python基础笔记" data-description=""><i class="fa-brands fa-trello fa-fw" aria-hidden="true"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>,&nbsp;<a href="/tags/python/">Python</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/posts/sjtuctf2023-writeup/" class="prev" rel="prev" title="SJTU CTF 2023-WriteUp"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>SJTU CTF 2023-WriteUp</a>
+      <a href="/posts/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86%E7%BC%93%E8%80%83%E7%AA%81%E5%87%BB/" class="next" rel="next" title="大学物理缓考突击">大学物理缓考突击<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="giscus">
+          <script
+            src="https://giscus.app/client.js"
+            data-repo="hzyangjc/hzyangjc.github.io"
+            data-repo-id="R_kgDOIAWwEQ"
+            data-category="Announcements"
+            data-category-id="DIC_kwDOIAWwEc4CRdaC"
+            data-mapping="pathname"
+            
+            data-theme="preferred_color_scheme"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-lang="zh-CN"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async
+            defer
+          ></script>
+          <noscript>
+            Please enable JavaScript to view the comments powered by <a href="https://giscus.app/" rel="external nofollow noopener noreferrer">giscus</a>.
+          </noscript>
+        </div></div></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.101.0">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.16-RC"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">
+              <a href="/"></a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中 ...'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i>&nbsp;<span class="run-times">网站运行中 ...</span></span></div><div class="footer-line ibruce">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/lunr/lunr.min.js" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script src="/lib/lunr/lunr.zh.min.js" defer></script><script src="/lib/lazysizes/lazysizes.min.js" async defer></script><script src="/lib/twemoji/twemoji.min.js" defer></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="/lib/pangu/pangu.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":50},"comment":{"enable":true,"giscus":{"darkTheme":"transparent_dark","lightTheme":"light"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"enablePangu":true,"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":30,"type":"lunr"},"siteTime":"2022-09-16T09:30:34+08:00","twemoji":true};</script><script src="/js/theme.min.js" defer></script><script>
+      window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+      gtag('config', 'G-SWE55VZ73Q');
+    </script><script src="https://www.googletagmanager.com/gtag/js?id=G-SWE55VZ73Q" async></script></body>
+</html>

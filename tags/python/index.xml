@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Python - 标签 - Andreo Y.</title>
+    <link>https://andreoy.cn/tags/python/</link>
+    <description>Python - 标签 - Andreo Y.</description>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 23 Jun 2023 19:29:41 &#43;0800</lastBuildDate><atom:link href="https://andreoy.cn/tags/python/" rel="self" type="application/rss+xml" /><item>
+  <title>Python基础笔记</title>
+  <link>https://andreoy.cn/posts/python%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/</link>
+  <pubDate>Fri, 23 Jun 2023 19:29:41 &#43;0800</pubDate>
+  <author>Andreo Y.</author>
+  <guid>https://andreoy.cn/posts/python%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/</guid>
+  <description><![CDATA[暑假前在咖啡厅速通python的历史记录]]></description>
+</item>
+</channel>
+</rss>
