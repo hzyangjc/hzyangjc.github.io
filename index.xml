@@ -3,9 +3,17 @@
     <title>Andreo Y.</title>
     <link>https://andreoy.cn/</link>
     <description>To sail beyond the sunset.</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 13 Sep 2023 13:15:49 &#43;0800</lastBuildDate>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 17 Sep 2023 15:54:05 &#43;0800</lastBuildDate>
       <atom:link href="https://andreoy.cn/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>中秋路演-丹桂栗子塔食谱</title>
+  <link>https://andreoy.cn/posts/%E4%B8%AD%E7%A7%8B%E8%B7%AF%E6%BC%94-%E4%B8%B9%E6%A1%82%E6%A0%97%E5%AD%90%E5%A1%94%E9%A3%9F%E8%B0%B1/</link>
+  <pubDate>Sun, 17 Sep 2023 15:54:05 &#43;0800</pubDate>
+  <author>Andreo Y.</author>
+  <guid>https://andreoy.cn/posts/%E4%B8%AD%E7%A7%8B%E8%B7%AF%E6%BC%94-%E4%B8%B9%E6%A1%82%E6%A0%97%E5%AD%90%E5%A1%94%E9%A3%9F%E8%B0%B1/</guid>
+  <description><![CDATA[显然桂花风味用法式慕斯呈现是更好的，但是中秋路演的售卖方式所限，就做成卡仕达酱好了。由于是脑子里想想的，没有实操过，材料设置可能偏多（好像是]]></description>
+</item>
+<item>
   <title>模拟电子技术-绪论及第一章 常用半导体器件</title>
   <link>https://andreoy.cn/posts/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF-%E7%BB%AA%E8%AE%BA%E5%8F%8A%E7%AC%AC%E4%B8%80%E7%AB%A0%E5%B8%B8%E7%94%A8%E5%8D%8A%E5%AF%BC%E4%BD%93%E5%99%A8%E4%BB%B6/</link>
   <pubDate>Wed, 13 Sep 2023 13:15:49 &#43;0800</pubDate>
@@ -80,16 +88,6 @@
   <author>Andreo Y.</author>
   <guid>https://andreoy.cn/posts/%E8%BF%94%E6%A0%A1%E5%AE%A3%E8%AE%B2%E5%A4%A7%E7%BA%B2/</guid>
   <description><![CDATA[上海交大-杭州二中宣讲电源部分大纲]]></description>
-</item>
-<item>
-  <title>CTFHub笔记-Web章节</title>
-  <link>https://andreoy.cn/posts/ctfhub%E7%AC%94%E8%AE%B0-web/</link>
-  <pubDate>Sat, 14 Jan 2023 11:29:58 &#43;0800</pubDate>
-  <author>Andreo Y.</author>
-  <guid>https://andreoy.cn/posts/ctfhub%E7%AC%94%E8%AE%B0-web/</guid>
-  <description><![CDATA[<div class="featured-image">
-        <img src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20230115185002636.png" referrerpolicy="no-referrer">
-      </div>学习CTFHub的一些记录和备忘，用于日后复习查询]]></description>
 </item>
 </channel>
 </rss>
