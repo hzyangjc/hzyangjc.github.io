@@ -10,7 +10,7 @@
 <meta name="description" content="绪论 由于听说模电难度很大，且有实验课配套，故特地为其创立文集。 分配的老师不尽人意，乃转向郑益慧老师的网课，并在此记录和整理。 基于历史顺序的教" /><meta name="keywords" content='学业, 笔记, 模拟电子技术' /><meta itemprop="name" content="模拟电子技术-绪论及第一章 常用半导体器件">
 <meta itemprop="description" content="绪论 由于听说模电难度很大，且有实验课配套，故特地为其创立文集。 分配的老师不尽人意，乃转向郑益慧老师的网课，并在此记录和整理。 基于历史顺序的教"><meta itemprop="datePublished" content="2023-09-13T13:15:49+08:00" />
 <meta itemprop="dateModified" content="2023-09-13T13:15:49+08:00" />
-<meta itemprop="wordCount" content="1643"><meta itemprop="image" content="https://andreoy.cn/logo.png"/>
+<meta itemprop="wordCount" content="2770"><meta itemprop="image" content="https://andreoy.cn/logo.png"/>
 <meta itemprop="keywords" content="学业,笔记,模拟电子技术," /><meta property="og:title" content="模拟电子技术-绪论及第一章 常用半导体器件" />
 <meta property="og:description" content="绪论 由于听说模电难度很大，且有实验课配套，故特地为其创立文集。 分配的老师不尽人意，乃转向郑益慧老师的网课，并在此记录和整理。 基于历史顺序的教" />
 <meta property="og:type" content="article" />
@@ -34,7 +34,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/andreoy.cn\/posts\/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF-%E7%BB%AA%E8%AE%BA%E5%8F%8A%E7%AC%AC%E4%B8%80%E7%AB%A0%E5%B8%B8%E7%94%A8%E5%8D%8A%E5%AF%BC%E4%BD%93%E5%99%A8%E4%BB%B6\/"
-    },"genre": "posts","keywords": "学业, 笔记, 模拟电子技术","wordcount":  1643 ,
+    },"genre": "posts","keywords": "学业, 笔记, 模拟电子技术","wordcount":  2770 ,
     "url": "https:\/\/andreoy.cn\/posts\/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF-%E7%BB%AA%E8%AE%BA%E5%8F%8A%E7%AC%AC%E4%B8%80%E7%AB%A0%E5%B8%B8%E7%94%A8%E5%8D%8A%E5%AF%BC%E4%BD%93%E5%99%A8%E4%BB%B6\/","datePublished": "2023-09-13T13:15:49+08:00","dateModified": "2023-09-13T13:15:49+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -211,7 +211,7 @@
     alt="Andreo Y."
     title="Andreo Y."/>&nbsp;Andreo Y.</a></span>
           <span class="post-category">收录于 <a href="/categories/%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 电子技术</a></span></div>
-      <div class="post-meta-line"><span title=2023-09-13&#32;13:15:49><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-09-13">2023-09-13</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 1643 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 4 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="模拟电子技术-绪论及第一章 常用半导体器件">
+      <div class="post-meta-line"><span title=2023-09-13&#32;13:15:49><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-09-13">2023-09-13</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 2770 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 6 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="模拟电子技术-绪论及第一章 常用半导体器件">
               <i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
             </span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
@@ -234,6 +234,14 @@
         <li><a href="#温度的影响">温度的影响</a></li>
         <li><a href="#二极管的主要参数">二极管的主要参数</a></li>
         <li><a href="#二极管的等效电路">二极管的等效电路</a></li>
+        <li><a href="#稳压二极管">稳压二极管</a></li>
+        <li><a href="#发光二极管">发光二极管</a></li>
+      </ul>
+    </li>
+    <li><a href="#晶体三极管">晶体三极管</a>
+      <ul>
+        <li><a href="#构成方式">构成方式</a></li>
+        <li><a href="#电流放大作用">电流放大作用</a></li>
       </ul>
     </li>
   </ul>
@@ -302,6 +310,7 @@
 <p>反向电压足够大，直接把电子从共价键中拉出来。掺杂浓度高，所以PN结短，电压增加时，电场强度增加得尤其快。但由于PN结窄，撞击概率不高。</p>
 <p>击穿之后，由于过量发热，PN结很可能会损坏。但是控制温度，即可实现在反向击穿状态工作（稳压二极管）</p>
 <p>温度越高，越难雪崩击穿，越容易齐纳击穿</p>
+<p>一般6V以下齐纳击穿多，以上雪崩击穿多</p>
 <h4 id="pn结的电容效应">PN结的电容效应</h4>
 <p>势垒电容：反向导通</p>
 <p>扩散电容：正向导通</p>
@@ -336,6 +345,7 @@
 <li>$f_M$，最高工作频率，过高就变成$\frac1{j\omega C}$了</li>
 </ol>
 <h3 id="二极管的等效电路">二极管的等效电路</h3>
+<h4 id="二极管的简单等效">二极管的简单等效</h4>
 <p>等效电路：用线性元件近似，伏安特性折线化</p>
 <p>以下是三种直流电路中的拟合模型：</p>
 <a class="lightgallery" href="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/214ab2cfb38aebd34299a37a53bd571.jpg" data-thumbnail="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/214ab2cfb38aebd34299a37a53bd571.jpg" data-sub-html="<h2>https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/214ab2cfb38aebd34299a37a53bd571.jpg</h2>">
@@ -350,6 +360,65 @@
   </a>
 <p>其中，中间不贯穿的二极管是理想二极管的符号。<strong>最常用的是中间这种</strong>。</p>
 <div id="id-2"><em>end of 2023.9.15</em></div>
+<h4 id="二极管的微变等效">二极管的微变等效</h4>
+<p>用直流环境确定$I_D$，进而推出二极管在该点处的$r_D$，二极管于是等效为一个阻值为$r_D$的纯电阻，用该纯电阻进行交流部分的分析。注意进行交流部分的分析时需要忽略电路中的直流源，之后再加回来。类似电路理论的正弦稳态电路分析方法。</p>
+<p>其中，等效电阻的计算公式为</p>
+<p>$$r_D=\frac{\Delta u_D}{\Delta i_D}=\frac{U_T}{I_D}$$</p>
+<p>即导数。</p>
+<h3 id="稳压二极管">稳压二极管</h3>
+<p>散热更好的二极管，可以在反向击穿区域稳定工作</p>
+<p>伏安特性曲线形状和普通二极管完全一致</p>
+<p>双向稳压二极管：两个背靠背的稳压二极管，三种情况（A导通B击穿，B稳压；AB截止；B导通A击穿，A稳压）</p>
+<p>主要参数：温度系数$\alpha$（稳定电压受温度的影响程度），稳定电压$U_Z$，稳定电流$I_Z$，额定功耗$P_{ZM}$，动态电阻 $r_Z$。其中：</p>
+<p>$$P_{ZM}=U_Z\cdot I_Z,r_Z=\frac{\Delta U_Z}{\Delta I_Z}$$</p>
+<p>在进行稳压二极管相关计算时，要注意假设是否击穿。不击穿的时候一般不考虑电流，认为是断路</p>
+<h3 id="发光二极管">发光二极管</h3>
+<p>红色压降1.6-1.8V，绿色2V</p>
+<h2 id="晶体三极管">晶体三极管</h2>
+<p>晶体三极管，即双极晶体管（BJT，bipolar transistor）</p>
+<h3 id="构成方式">构成方式</h3>
+<a class="lightgallery" href="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/d3f1e5bfb96079da677c121b7150c14.jpg" data-thumbnail="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/d3f1e5bfb96079da677c121b7150c14.jpg" data-sub-html="<h2>https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/d3f1e5bfb96079da677c121b7150c14.jpg</h2>">
+    <img
+      class="lazyload"
+      src="/svg/loading.min.svg"
+      data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/d3f1e5bfb96079da677c121b7150c14.jpg"
+      data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/d3f1e5bfb96079da677c121b7150c14.jpg, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/d3f1e5bfb96079da677c121b7150c14.jpg 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/d3f1e5bfb96079da677c121b7150c14.jpg 2x"
+      data-sizes="auto"
+      alt="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/d3f1e5bfb96079da677c121b7150c14.jpg"
+      title="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/d3f1e5bfb96079da677c121b7150c14.jpg" width="400"/>
+  </a>
+<p>发射区的掺杂浓度远大于集电区和基区，基区在中间，非常薄。符号相关略，来自浙江技术选考。</p>
+<h3 id="电流放大作用">电流放大作用</h3>
+<p>截止：都反偏</p>
+<p>放大：e正偏，c反偏</p>
+<p>饱和导通：都正偏</p>
+<p>正偏，即PN结正向导通；反偏即反向截止</p>
+<h4 id="内部载流子的运动">内部载流子的运动</h4>
+<p>以NPN三极管为例，集电区和发射区的载流子是自由电子，基区的载流子是空穴。</p>
+<a class="lightgallery" href="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/e3dca9c4240752b73c13ccd4a6f0818.jpg" data-thumbnail="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/e3dca9c4240752b73c13ccd4a6f0818.jpg" data-sub-html="<h2>https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/e3dca9c4240752b73c13ccd4a6f0818.jpg</h2>">
+    <img
+      class="lazyload"
+      src="/svg/loading.min.svg"
+      data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/e3dca9c4240752b73c13ccd4a6f0818.jpg"
+      data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/e3dca9c4240752b73c13ccd4a6f0818.jpg, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/e3dca9c4240752b73c13ccd4a6f0818.jpg 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/e3dca9c4240752b73c13ccd4a6f0818.jpg 2x"
+      data-sizes="auto"
+      alt="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/e3dca9c4240752b73c13ccd4a6f0818.jpg"
+      title="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/e3dca9c4240752b73c13ccd4a6f0818.jpg" width="600"/>
+  </a>
+<p>对发射结：正偏导通，基区的空穴向发射区扩散，发射区的自由电子向基区扩散，而由于发射区的掺杂浓度大得多，空穴的扩散量几乎可以忽略。由于基区的空穴太少，湮灭的自由电子很少，所以相当一部分来自发射区的自由电子继续向集电区扩散。基区的宽度和掺杂浓度决定了在基区吸收的自由电子比例</p>
+<p>对集电结：反偏，直接把基区未吸收的电子全部抽到集电区。保证了电子交通的完整性，确保比例固定。</p>
+<h4 id="放大系数">放大系数</h4>
+<p>对上述的各种过程，忽略基区扩散和基区和集电区之间的漂移运动，可以得到如下关系：</p>
+<p>$$直流放大系数\overline{\beta}\approx\frac{I_C}{I_B}$$</p>
+<p>$$交流放大系数\beta\approx\frac{\Delta I_C}{\Delta I_B}$$</p>
+<p>但是数值上没什么区别，所以直接全用$\beta$了</p>
+<p>除了共射的放大系数，另有共基的$\alpha$</p>
+<p>$$共基直流放大系数\overline\alpha\approx\frac{I_C}{I_B}=\frac{\overline\beta}{1+\overline\beta}$$</p>
+<p>交流的同理</p>
+<h4 id="穿透电流">穿透电流</h4>
+<p>放大状态下，基极开路时，集电极和发射极之间并非完全断路。此时通过的电流为穿透电流$I_{CEO}$</p>
+<p>同样地，发射极开路时有$I_{CBO}$，如上图。</p>
+<div id="id-3"><em>end of 2023.9.17</em></div>
 </div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
@@ -418,7 +487,7 @@
         </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
     <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
   </noscript>
-</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><link rel="stylesheet" href="/css/0a30a3.min.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/lunr/lunr.min.js" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script src="/lib/lunr/lunr.zh.min.js" defer></script><script src="/lib/lazysizes/lazysizes.min.js" async defer></script><script src="/lib/twemoji/twemoji.min.js" defer></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="/lib/pangu/pangu.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":50},"comment":{"enable":true,"giscus":{"darkTheme":"transparent_dark","lightTheme":"light"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"enablePangu":true,"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":30,"type":"lunr"},"siteTime":"2022-09-16T09:30:34+08:00","twemoji":true};</script><script src="/js/theme.min.js" defer></script><script>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><link rel="stylesheet" href="/css/98f51d.min.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/lunr/lunr.min.js" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script src="/lib/lunr/lunr.zh.min.js" defer></script><script src="/lib/lazysizes/lazysizes.min.js" async defer></script><script src="/lib/twemoji/twemoji.min.js" defer></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="/lib/pangu/pangu.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":50},"comment":{"enable":true,"giscus":{"darkTheme":"transparent_dark","lightTheme":"light"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"enablePangu":true,"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":30,"type":"lunr"},"siteTime":"2022-09-16T09:30:34+08:00","twemoji":true};</script><script src="/js/theme.min.js" defer></script><script>
       window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
       gtag('config', 'G-SWE55VZ73Q');
     </script><script src="https://www.googletagmanager.com/gtag/js?id=G-SWE55VZ73Q" async></script></body>
