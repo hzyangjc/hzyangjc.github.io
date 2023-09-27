@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>模拟电子技术-第二章 基本放大电路 - Andreo Y.</title><meta name="author" content="">
+<meta name="author-link" content="">
+<meta name="description" content="放大电路的构成 放大的概念 特征：功率放大 本质：能量的控制、转换 必要条件：有源元件（含电源元件） 前提：保真 测试信号：正弦波 如何构建基本放大电路 让" /><meta name="keywords" content='学业, 笔记, 模拟电子技术' /><meta itemprop="name" content="模拟电子技术-第二章 基本放大电路">
+<meta itemprop="description" content="放大电路的构成 放大的概念 特征：功率放大 本质：能量的控制、转换 必要条件：有源元件（含电源元件） 前提：保真 测试信号：正弦波 如何构建基本放大电路 让"><meta itemprop="datePublished" content="2023-09-27T14:35:00+08:00" />
+<meta itemprop="dateModified" content="2023-09-27T14:35:00+08:00" />
+<meta itemprop="wordCount" content="588"><meta itemprop="image" content="https://andreoy.cn/logo.png"/>
+<meta itemprop="keywords" content="学业,笔记,模拟电子技术," /><meta property="og:title" content="模拟电子技术-第二章 基本放大电路" />
+<meta property="og:description" content="放大电路的构成 放大的概念 特征：功率放大 本质：能量的控制、转换 必要条件：有源元件（含电源元件） 前提：保真 测试信号：正弦波 如何构建基本放大电路 让" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://andreoy.cn/posts/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF-%E7%AC%AC%E4%BA%8C%E7%AB%A0%E5%9F%BA%E6%9C%AC%E6%94%BE%E5%A4%A7%E7%94%B5%E8%B7%AF/" /><meta property="og:image" content="https://andreoy.cn/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-09-27T14:35:00+08:00" />
+<meta property="article:modified_time" content="2023-09-27T14:35:00+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://andreoy.cn/logo.png"/>
+
+<meta name="twitter:title" content="模拟电子技术-第二章 基本放大电路"/>
+<meta name="twitter:description" content="放大电路的构成 放大的概念 特征：功率放大 本质：能量的控制、转换 必要条件：有源元件（含电源元件） 前提：保真 测试信号：正弦波 如何构建基本放大电路 让"/>
+<meta name="application-name" content="Andreo Y.">
+<meta name="apple-mobile-web-app-title" content="Andreo Y."><meta name="theme-color" data-light="#ffffff" data-dark="#252627" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://andreoy.cn/posts/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF-%E7%AC%AC%E4%BA%8C%E7%AB%A0%E5%9F%BA%E6%9C%AC%E6%94%BE%E5%A4%A7%E7%94%B5%E8%B7%AF/" /><link rel="prev" href="https://andreoy.cn/posts/%E7%94%B5%E5%9C%BA%E5%BC%BA%E5%BA%A6%E5%92%8C%E7%94%B5%E5%8A%BF/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><meta name="baidu-site-verification" content="code-NEqykcuT3x" /><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "模拟电子技术-第二章 基本放大电路",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/andreoy.cn\/posts\/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF-%E7%AC%AC%E4%BA%8C%E7%AB%A0%E5%9F%BA%E6%9C%AC%E6%94%BE%E5%A4%A7%E7%94%B5%E8%B7%AF\/"
+    },"genre": "posts","keywords": "学业, 笔记, 模拟电子技术","wordcount":  588 ,
+    "url": "https:\/\/andreoy.cn\/posts\/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF-%E7%AC%AC%E4%BA%8C%E7%AB%A0%E5%9F%BA%E6%9C%AC%E6%94%BE%E5%A4%A7%E7%94%B5%E8%B7%AF\/","datePublished": "2023-09-27T14:35:00+08:00","dateModified": "2023-09-27T14:35:00+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Andreo Y."
+      },"description": ""
+  }
+  </script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3263382266976949"
+     crossorigin="anonymous"></script>
+
+  </head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Andreo Y."><img
+    class="lazyload logo"
+    src="/svg/loading.min.svg"
+    data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png"
+    data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png 2x"
+    data-sizes="auto"
+    alt="Andreo Y."
+    title="Andreo Y."/><span class="header-title-text"> Andreo Y.&#39;s Space</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item text-center">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 所有文章</a></li><li class="menu-item text-center">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-stream fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li class="menu-item text-center">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tag fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item text-center">
+              <a
+                class="menu-link"
+                href="/about/"
+                
+                
+              ><i class="fa-solid fa-user-circle fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item text-center">
+              <a
+                class="menu-link"
+                href="/friends/"
+                
+                
+              ><i class="fa-solid fa-user-friends fa-fw fa-sm" aria-hidden="true"></i> 友情链接</a></li><li class="menu-item delimiter"></li><li class="menu-item language">
+            <span role="button" aria-label="选择语言" title="选择语言"><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </span>
+            <ul class="sub-menu"><li class="menu-item">没有更多翻译</li></ul>
+          </li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="Search for everything..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Andreo Y."><img
+    class="lazyload logo"
+    src="/svg/loading.min.svg"
+    data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png"
+    data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png 2x"
+    data-sizes="auto"
+    alt="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png"
+    title="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png"/><span class="header-title-text"> Andreo Y.&#39;s Space</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="Search for everything..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item text-center"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 所有文章</a></li><li
+              class="menu-item text-center"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-stream fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li
+              class="menu-item text-center"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tag fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li
+              class="menu-item text-center"
+            ><a
+                  class="menu-link"
+                  href="/about/"
+                  
+                  
+                ><i class="fa-solid fa-user-circle fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li
+              class="menu-item text-center"
+            ><a
+                  class="menu-link"
+                  href="/friends/"
+                  
+                  
+                ><i class="fa-solid fa-user-friends fa-fw fa-sm" aria-hidden="true"></i> 友情链接</a></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li><li class="menu-item language">
+            <span role="button" aria-label="选择语言" title="选择语言"><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </span>
+            <select class="language-select" onchange="location = this.value;"><option disabled>没有更多翻译</option></select>
+          </li></ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container" data-page-style="narrow"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    
+</aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX">
+        <span>模拟电子技术-第二章 基本放大电路</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://andreoy.cn" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img
+    class="lazyload avatar"
+    src="/svg/loading.min.svg"
+    data-src="https://gravatar.loli.net/avatar/d8234597e50620ab663b4a6e7e89bf99?s=32&amp;d="
+    data-srcset="https://gravatar.loli.net/avatar/d8234597e50620ab663b4a6e7e89bf99?s=32&amp;d=, https://gravatar.loli.net/avatar/d8234597e50620ab663b4a6e7e89bf99?s=32&amp;d= 1.5x, https://gravatar.loli.net/avatar/d8234597e50620ab663b4a6e7e89bf99?s=32&amp;d= 2x"
+    data-sizes="auto"
+    alt="Andreo Y."
+    title="Andreo Y."/>&nbsp;Andreo Y.</a></span>
+          <span class="post-category">收录于 <a href="/categories/%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 电子技术</a></span></div>
+      <div class="post-meta-line"><span title=2023-09-27&#32;14:35:00><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-09-27">2023-09-27</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 588 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 2 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="模拟电子技术-第二章 基本放大电路">
+              <i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
+            </span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#放大电路的构成">放大电路的构成</a>
+      <ul>
+        <li><a href="#放大的概念">放大的概念</a></li>
+        <li><a href="#如何构建基本放大电路">如何构建基本放大电路</a></li>
+        <li><a href="#两种放大电路">两种放大电路</a></li>
+      </ul>
+    </li>
+    <li><a href="#性能指标">性能指标</a>
+      <ul>
+        <li><a href="#放大电路的示意图">放大电路的示意图</a></li>
+        <li><a href="#输入输出电阻">输入输出电阻</a></li>
+        <li><a href="#放大倍数">放大倍数</a></li>
+        <li><a href="#频率指标通频带">频率指标（通频带）</a></li>
+        <li><a href="#非线性失真">非线性失真</a></li>
+        <li><a href="#最大不失真输出电压">最大不失真输出电压</a></li>
+        <li><a href="#最大输出功率与效率">最大输出功率与效率</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div><div
+      class="content"
+      id="content"
+      
+      
+    ><h2 id="放大电路的构成">放大电路的构成</h2>
+<h3 id="放大的概念">放大的概念</h3>
+<p>特征：功率放大</p>
+<p>本质：能量的控制、转换</p>
+<p>必要条件：有源元件（含电源元件）</p>
+<p>前提：保真</p>
+<p>测试信号：正弦波</p>
+<h3 id="如何构建基本放大电路">如何构建基本放大电路</h3>
+<p>让三极管工作在放大状态，即让发射结正偏，集电结反偏即可。通过在基极设置合适的直流电源来达到此目的。</p>
+<p>在此基础上，加入正弦信号，并用合理的方式输出（用$R_C$将电流信号转化为电压信号）</p>
+<a class="lightgallery" href="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6d5dee6c3544fcef0ded01a265d7720.jpg" data-thumbnail="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6d5dee6c3544fcef0ded01a265d7720.jpg" data-sub-html="<h2>https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6d5dee6c3544fcef0ded01a265d7720.jpg</h2>">
+    <img
+      class="lazyload"
+      src="/svg/loading.min.svg"
+      data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6d5dee6c3544fcef0ded01a265d7720.jpg"
+      data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6d5dee6c3544fcef0ded01a265d7720.jpg, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6d5dee6c3544fcef0ded01a265d7720.jpg 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6d5dee6c3544fcef0ded01a265d7720.jpg 2x"
+      data-sizes="auto"
+      alt="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6d5dee6c3544fcef0ded01a265d7720.jpg"
+      title="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6d5dee6c3544fcef0ded01a265d7720.jpg" width="400"/>
+  </a>
+<p>上图的电路加上电容即可实现$u_i$输入纯正弦波形时，$u_o$输出纯正弦波形（无直流分量）。含容电路在后面。</p>
+<h3 id="两种放大电路">两种放大电路</h3>
+<ul>
+<li>
+<p><strong>直接耦合共射放大电路</strong></p>
+<a class="lightgallery" href="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/d4d4a7ef2d20ecbb132be43970a5118.jpg" data-thumbnail="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/d4d4a7ef2d20ecbb132be43970a5118.jpg" data-sub-html="<h2>https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/d4d4a7ef2d20ecbb132be43970a5118.jpg</h2>">
+        <img
+          class="lazyload"
+          src="/svg/loading.min.svg"
+          data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/d4d4a7ef2d20ecbb132be43970a5118.jpg"
+          data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/d4d4a7ef2d20ecbb132be43970a5118.jpg, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/d4d4a7ef2d20ecbb132be43970a5118.jpg 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/d4d4a7ef2d20ecbb132be43970a5118.jpg 2x"
+          data-sizes="auto"
+          alt="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/d4d4a7ef2d20ecbb132be43970a5118.jpg"
+          title="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/d4d4a7ef2d20ecbb132be43970a5118.jpg" width="400"/>
+      </a>
+<p>什么是直接耦合：输入输出都是从放大电路直接连出来，没有进行处理。这样不能得到纯正弦的波形（$u_{ce}$恒正）</p>
+</li>
+<li>
+<p><strong>阻容耦合共射放大电路</strong></p>
+<a class="lightgallery" href="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/d668fb22e04657e484428682bdcdc88.jpg" data-thumbnail="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/d668fb22e04657e484428682bdcdc88.jpg" data-sub-html="<h2>https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/d668fb22e04657e484428682bdcdc88.jpg</h2>">
+        <img
+          class="lazyload"
+          src="/svg/loading.min.svg"
+          data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/d668fb22e04657e484428682bdcdc88.jpg"
+          data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/d668fb22e04657e484428682bdcdc88.jpg, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/d668fb22e04657e484428682bdcdc88.jpg 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/d668fb22e04657e484428682bdcdc88.jpg 2x"
+          data-sizes="auto"
+          alt="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/d668fb22e04657e484428682bdcdc88.jpg"
+          title="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/d668fb22e04657e484428682bdcdc88.jpg" width="600"/>
+      </a>
+<p>使用电容阻断输入输出的直流分量，从而实现纯正弦波形的输出。注意电容对波形的相变，即输出会比输入落后半个周期。</p>
+</li>
+</ul>
+<h2 id="性能指标">性能指标</h2>
+<h3 id="放大电路的示意图">放大电路的示意图</h3>
+<p><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/bec9c2906bc0cf8b706c0ef33a6d4ab.jpg"
+    data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/bec9c2906bc0cf8b706c0ef33a6d4ab.jpg, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/bec9c2906bc0cf8b706c0ef33a6d4ab.jpg 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/bec9c2906bc0cf8b706c0ef33a6d4ab.jpg 2x"
+    data-sizes="auto"
+    alt="bec9c2906bc0cf8b706c0ef33a6d4ab"
+    title="bec9c2906bc0cf8b706c0ef33a6d4ab"/></p>
+<p>对输入和输出的端口来说，放大电路只是一个电阻。当输入是电压时，$R_i$越大越好（减小内阻电压损耗），$R_o$也是越大越好</p>
+<h3 id="输入输出电阻">输入输出电阻</h3>
+<p>如上，有$R_i,R_o$两个参数</p>
+<h3 id="放大倍数">放大倍数</h3>
+<p>四种参数，$A_{uu},A_{ui},A_{iu},A_{ii}$，即字面意思</p>
+<h3 id="频率指标通频带">频率指标（通频带）</h3>
+<p>只有在通频带内才能实现稳定放大，不然电容会出问题</p>
+<h3 id="非线性失真">非线性失真</h3>
+<p>由于晶体管非线性的特性，会导致一定程度的失真。失真越少越好</p>
+<h3 id="最大不失真输出电压">最大不失真输出电压</h3>
+<p>字面意思</p>
+<h3 id="最大输出功率与效率">最大输出功率与效率</h3>
+<p>字面意思</p>
+<div id="id-1"><em>end of 2023.9.27</em></div>
+</div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title=2023-09-27&#32;14:35:00>更新于 2023-09-27&nbsp;</span>
+      </div><div class="post-info-license">
+          <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+        </div></div>
+    <div class="post-info-line">
+      <div class="post-info-md"></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://andreoy.cn/posts/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF-%E7%AC%AC%E4%BA%8C%E7%AB%A0%E5%9F%BA%E6%9C%AC%E6%94%BE%E5%A4%A7%E7%94%B5%E8%B7%AF/" data-title="模拟电子技术-第二章 基本放大电路" data-hashtags="学业,笔记,模拟电子技术"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://andreoy.cn/posts/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF-%E7%AC%AC%E4%BA%8C%E7%AB%A0%E5%9F%BA%E6%9C%AC%E6%94%BE%E5%A4%A7%E7%94%B5%E8%B7%AF/" data-hashtag="学业"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Linkedin" data-sharer="linkedin" data-url="https://andreoy.cn/posts/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF-%E7%AC%AC%E4%BA%8C%E7%AB%A0%E5%9F%BA%E6%9C%AC%E6%94%BE%E5%A4%A7%E7%94%B5%E8%B7%AF/"><i class="fa-brands fa-linkedin fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Tumblr" data-sharer="tumblr" data-url="https://andreoy.cn/posts/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF-%E7%AC%AC%E4%BA%8C%E7%AB%A0%E5%9F%BA%E6%9C%AC%E6%94%BE%E5%A4%A7%E7%94%B5%E8%B7%AF/" data-title="模拟电子技术-第二章 基本放大电路" data-tags="学业,笔记,模拟电子技术"><i class="fa-brands fa-tumblr fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Reddit" data-sharer="reddit" data-url="https://andreoy.cn/posts/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF-%E7%AC%AC%E4%BA%8C%E7%AB%A0%E5%9F%BA%E6%9C%AC%E6%94%BE%E5%A4%A7%E7%94%B5%E8%B7%AF/"><i class="fa-brands fa-reddit fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://andreoy.cn/posts/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF-%E7%AC%AC%E4%BA%8C%E7%AB%A0%E5%9F%BA%E6%9C%AC%E6%94%BE%E5%A4%A7%E7%94%B5%E8%B7%AF/" data-title="模拟电子技术-第二章 基本放大电路"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://andreoy.cn/posts/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF-%E7%AC%AC%E4%BA%8C%E7%AB%A0%E5%9F%BA%E6%9C%AC%E6%94%BE%E5%A4%A7%E7%94%B5%E8%B7%AF/" data-title="模拟电子技术-第二章 基本放大电路" data-description=""><i class="fa-brands fa-blogger fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://andreoy.cn/posts/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF-%E7%AC%AC%E4%BA%8C%E7%AB%A0%E5%9F%BA%E6%9C%AC%E6%94%BE%E5%A4%A7%E7%94%B5%E8%B7%AF/" data-title="模拟电子技术-第二章 基本放大电路"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Skype" data-sharer="skype" data-url="https://andreoy.cn/posts/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF-%E7%AC%AC%E4%BA%8C%E7%AB%A0%E5%9F%BA%E6%9C%AC%E6%94%BE%E5%A4%A7%E7%94%B5%E8%B7%AF/" data-title="模拟电子技术-第二章 基本放大电路"><i class="fa-brands fa-skype fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Trello" data-sharer="trello" data-url="https://andreoy.cn/posts/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF-%E7%AC%AC%E4%BA%8C%E7%AB%A0%E5%9F%BA%E6%9C%AC%E6%94%BE%E5%A4%A7%E7%94%B5%E8%B7%AF/" data-title="模拟电子技术-第二章 基本放大电路" data-description=""><i class="fa-brands fa-trello fa-fw" aria-hidden="true"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/%E5%AD%A6%E4%B8%9A/">学业</a>,&nbsp;<a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>,&nbsp;<a href="/tags/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/">模拟电子技术</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/posts/%E7%94%B5%E5%9C%BA%E5%BC%BA%E5%BA%A6%E5%92%8C%E7%94%B5%E5%8A%BF/" class="prev" rel="prev" title="电场强度和电势"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>电场强度和电势</a></div>
+</div>
+<div id="comments"><div id="giscus">
+          <script
+            src="https://giscus.app/client.js"
+            data-repo="hzyangjc/hzyangjc.github.io"
+            data-repo-id="R_kgDOIAWwEQ"
+            data-category="Announcements"
+            data-category-id="DIC_kwDOIAWwEc4CRdaC"
+            data-mapping="pathname"
+            
+            data-theme="preferred_color_scheme"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-lang="zh-CN"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async
+            defer
+          ></script>
+          <noscript>
+            Please enable JavaScript to view the comments powered by <a href="https://giscus.app/" rel="external nofollow noopener noreferrer">giscus</a>.
+          </noscript>
+        </div></div></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.118.2">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.16-RC"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">
+              <a href="/"></a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中 ...'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i>&nbsp;<span class="run-times">网站运行中 ...</span></span></div><div class="footer-line ibruce">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><link rel="stylesheet" href="/css/2672ed.min.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/lunr/lunr.min.js" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script src="/lib/lunr/lunr.zh.min.js" defer></script><script src="/lib/lazysizes/lazysizes.min.js" async defer></script><script src="/lib/twemoji/twemoji.min.js" defer></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="/lib/pangu/pangu.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":50},"comment":{"enable":true,"giscus":{"darkTheme":"transparent_dark","lightTheme":"light"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"enablePangu":true,"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":30,"type":"lunr"},"siteTime":"2022-09-16T09:30:34+08:00","twemoji":true};</script><script src="/js/theme.min.js" defer></script><script>
+      window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+      gtag('config', 'G-SWE55VZ73Q');
+    </script><script src="https://www.googletagmanager.com/gtag/js?id=G-SWE55VZ73Q" async></script></body>
+</html>

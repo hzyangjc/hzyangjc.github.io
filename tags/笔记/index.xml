@@ -3,7 +3,23 @@
     <title>笔记 - 标签 - Andreo Y.</title>
     <link>https://andreoy.cn/tags/%E7%AC%94%E8%AE%B0/</link>
     <description>笔记 - 标签 - Andreo Y.</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 13 Sep 2023 13:15:49 &#43;0800</lastBuildDate><atom:link href="https://andreoy.cn/tags/%E7%AC%94%E8%AE%B0/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 27 Sep 2023 14:35:00 &#43;0800</lastBuildDate><atom:link href="https://andreoy.cn/tags/%E7%AC%94%E8%AE%B0/" rel="self" type="application/rss+xml" /><item>
+  <title>模拟电子技术-第二章 基本放大电路</title>
+  <link>https://andreoy.cn/posts/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF-%E7%AC%AC%E4%BA%8C%E7%AB%A0%E5%9F%BA%E6%9C%AC%E6%94%BE%E5%A4%A7%E7%94%B5%E8%B7%AF/</link>
+  <pubDate>Wed, 27 Sep 2023 14:35:00 &#43;0800</pubDate>
+  <author>Andreo Y.</author>
+  <guid>https://andreoy.cn/posts/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF-%E7%AC%AC%E4%BA%8C%E7%AB%A0%E5%9F%BA%E6%9C%AC%E6%94%BE%E5%A4%A7%E7%94%B5%E8%B7%AF/</guid>
+  <description><![CDATA[放大电路的构成 放大的概念 特征：功率放大 本质：能量的控制、转换 必要条件：有源元件（含电源元件） 前提：保真 测试信号：正弦波 如何构建基本放大电路 让]]></description>
+</item>
+<item>
+  <title>电场强度和电势</title>
+  <link>https://andreoy.cn/posts/%E7%94%B5%E5%9C%BA%E5%BC%BA%E5%BA%A6%E5%92%8C%E7%94%B5%E5%8A%BF/</link>
+  <pubDate>Sun, 24 Sep 2023 19:02:11 &#43;0800</pubDate>
+  <author>Andreo Y.</author>
+  <guid>https://andreoy.cn/posts/%E7%94%B5%E5%9C%BA%E5%BC%BA%E5%BA%A6%E5%92%8C%E7%94%B5%E5%8A%BF/</guid>
+  <description><![CDATA[一些常见均匀带电几何体在常见位置的电场强度和电势 电场强度 点电荷 圆环 线段 圆盘 球 无限平面 球壳 电势 点电荷 带电量q，距离r $$\frac{q}{4\pi \varepsilon_0r}$$ 球壳 带电量q，半径R 内]]></description>
+</item>
+<item>
   <title>模拟电子技术-绪论及第一章 常用半导体器件</title>
   <link>https://andreoy.cn/posts/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF-%E7%BB%AA%E8%AE%BA%E5%8F%8A%E7%AC%AC%E4%B8%80%E7%AB%A0%E5%B8%B8%E7%94%A8%E5%8D%8A%E5%AF%BC%E4%BD%93%E5%99%A8%E4%BB%B6/</link>
   <pubDate>Wed, 13 Sep 2023 13:15:49 &#43;0800</pubDate>
@@ -70,34 +86,6 @@
   <description><![CDATA[<div class="featured-image">
         <img src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20230115185002636.png" referrerpolicy="no-referrer">
       </div>学习CTFHub的一些记录和备忘，用于日后复习查询]]></description>
-</item>
-<item>
-  <title>导数与微分</title>
-  <link>https://andreoy.cn/posts/%E5%AF%BC%E6%95%B0%E4%B8%8E%E5%BE%AE%E5%88%86/</link>
-  <pubDate>Sun, 06 Nov 2022 09:46:47 &#43;0800</pubDate>
-  <author>Andreo Y.</author>
-  <guid>https://andreoy.cn/posts/%E5%AF%BC%E6%95%B0%E4%B8%8E%E5%BE%AE%E5%88%86/</guid>
-  <description><![CDATA[<div class="featured-image">
-        <img src="https://pic3.zhimg.com/v2-d841bf8c321173fb55cc1cb41b892f82_r.jpg" referrerpolicy="no-referrer">
-      </div><p>《微积分》第三章 导数与微分，第四章 微分中值定理与导数的应用 的若干定理与一些理解。</p>]]></description>
-</item>
-<item>
-  <title>极限与连续</title>
-  <link>https://andreoy.cn/posts/%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/</link>
-  <pubDate>Sat, 15 Oct 2022 09:14:35 &#43;0800</pubDate>
-  <author>Andreo Y.</author>
-  <guid>https://andreoy.cn/posts/%E6%9E%81%E9%99%90%E4%B8%8E%E8%BF%9E%E7%BB%AD/</guid>
-  <description><![CDATA[<div class="featured-image">
-        <img src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20221015092104645.png" referrerpolicy="no-referrer">
-      </div><p>《微积分》第二章极限与连续的若干定理与一些理解。</p>
-<div class="details admonition tip open">
-    <div class="details-summary admonition-title">
-      <i class="icon fa-solid fa-lightbulb fa-fw" aria-hidden="true"></i>关于<i class="details-icon fa-solid fa-angle-right fa-fw" aria-hidden="true"></i>
-    </div>
-    <div class="details-content">
-      <div class="admonition-content">本文并非完整的知识梳理，而是复习过程中对不太熟悉的内容的再认识。为自用之需。</div>
-    </div>
-  </div>]]></description>
 </item>
 </channel>
 </rss>

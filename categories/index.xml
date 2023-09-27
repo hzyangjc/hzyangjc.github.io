@@ -3,18 +3,10 @@
     <title>Categories - 分类 - Andreo Y.</title>
     <link>https://andreoy.cn/categories/</link>
     <description>Categories - 分类 - Andreo Y.</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 17 Sep 2023 15:54:05 &#43;0800</lastBuildDate><atom:link href="https://andreoy.cn/categories/" rel="self" type="application/rss+xml" /><item>
-  <title>校内工作</title>
-  <link>https://andreoy.cn/categories/%E6%A0%A1%E5%86%85%E5%B7%A5%E4%BD%9C/</link>
-  <pubDate>Sun, 17 Sep 2023 15:54:05 &#43;0800</pubDate>
-  <author>作者</author>
-  <guid>https://andreoy.cn/categories/%E6%A0%A1%E5%86%85%E5%B7%A5%E4%BD%9C/</guid>
-  <description><![CDATA[]]></description>
-</item>
-<item>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 27 Sep 2023 14:35:00 &#43;0800</lastBuildDate><atom:link href="https://andreoy.cn/categories/" rel="self" type="application/rss+xml" /><item>
   <title>电子技术</title>
   <link>https://andreoy.cn/categories/%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/</link>
-  <pubDate>Wed, 13 Sep 2023 13:15:49 &#43;0800</pubDate>
+  <pubDate>Wed, 27 Sep 2023 14:35:00 &#43;0800</pubDate>
   <author>作者</author>
   <guid>https://andreoy.cn/categories/%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/</guid>
   <description><![CDATA[]]></description>
@@ -22,9 +14,17 @@
 <item>
   <title>物理</title>
   <link>https://andreoy.cn/categories/%E7%89%A9%E7%90%86/</link>
-  <pubDate>Tue, 05 Sep 2023 18:42:56 &#43;0800</pubDate>
+  <pubDate>Sun, 24 Sep 2023 19:02:11 &#43;0800</pubDate>
   <author>作者</author>
   <guid>https://andreoy.cn/categories/%E7%89%A9%E7%90%86/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>校内工作</title>
+  <link>https://andreoy.cn/categories/%E6%A0%A1%E5%86%85%E5%B7%A5%E4%BD%9C/</link>
+  <pubDate>Sun, 17 Sep 2023 15:54:05 &#43;0800</pubDate>
+  <author>作者</author>
+  <guid>https://andreoy.cn/categories/%E6%A0%A1%E5%86%85%E5%B7%A5%E4%BD%9C/</guid>
   <description><![CDATA[]]></description>
 </item>
 <item>

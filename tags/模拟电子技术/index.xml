@@ -3,7 +3,15 @@
     <title>模拟电子技术 - 标签 - Andreo Y.</title>
     <link>https://andreoy.cn/tags/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/</link>
     <description>模拟电子技术 - 标签 - Andreo Y.</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 13 Sep 2023 13:15:49 &#43;0800</lastBuildDate><atom:link href="https://andreoy.cn/tags/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 27 Sep 2023 14:35:00 &#43;0800</lastBuildDate><atom:link href="https://andreoy.cn/tags/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/" rel="self" type="application/rss+xml" /><item>
+  <title>模拟电子技术-第二章 基本放大电路</title>
+  <link>https://andreoy.cn/posts/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF-%E7%AC%AC%E4%BA%8C%E7%AB%A0%E5%9F%BA%E6%9C%AC%E6%94%BE%E5%A4%A7%E7%94%B5%E8%B7%AF/</link>
+  <pubDate>Wed, 27 Sep 2023 14:35:00 &#43;0800</pubDate>
+  <author>Andreo Y.</author>
+  <guid>https://andreoy.cn/posts/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF-%E7%AC%AC%E4%BA%8C%E7%AB%A0%E5%9F%BA%E6%9C%AC%E6%94%BE%E5%A4%A7%E7%94%B5%E8%B7%AF/</guid>
+  <description><![CDATA[放大电路的构成 放大的概念 特征：功率放大 本质：能量的控制、转换 必要条件：有源元件（含电源元件） 前提：保真 测试信号：正弦波 如何构建基本放大电路 让]]></description>
+</item>
+<item>
   <title>模拟电子技术-绪论及第一章 常用半导体器件</title>
   <link>https://andreoy.cn/posts/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF-%E7%BB%AA%E8%AE%BA%E5%8F%8A%E7%AC%AC%E4%B8%80%E7%AB%A0%E5%B8%B8%E7%94%A8%E5%8D%8A%E5%AF%BC%E4%BD%93%E5%99%A8%E4%BB%B6/</link>
   <pubDate>Wed, 13 Sep 2023 13:15:49 &#43;0800</pubDate>
