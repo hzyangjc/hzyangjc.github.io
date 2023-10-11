@@ -10,7 +10,7 @@
 <meta name="description" content="放大电路的构成 放大的概念 特征：功率放大 本质：能量的控制、转换 必要条件：有源元件（含电源元件） 前提：保真 测试信号：正弦波 如何构建基本放大电路 让" /><meta name="keywords" content='学业, 笔记, 模拟电子技术' /><meta itemprop="name" content="模拟电子技术-第二章 基本放大电路">
 <meta itemprop="description" content="放大电路的构成 放大的概念 特征：功率放大 本质：能量的控制、转换 必要条件：有源元件（含电源元件） 前提：保真 测试信号：正弦波 如何构建基本放大电路 让"><meta itemprop="datePublished" content="2023-09-27T14:35:00+08:00" />
 <meta itemprop="dateModified" content="2023-09-27T14:35:00+08:00" />
-<meta itemprop="wordCount" content="588"><meta itemprop="image" content="https://andreoy.cn/logo.png"/>
+<meta itemprop="wordCount" content="2591"><meta itemprop="image" content="https://andreoy.cn/logo.png"/>
 <meta itemprop="keywords" content="学业,笔记,模拟电子技术," /><meta property="og:title" content="模拟电子技术-第二章 基本放大电路" />
 <meta property="og:description" content="放大电路的构成 放大的概念 特征：功率放大 本质：能量的控制、转换 必要条件：有源元件（含电源元件） 前提：保真 测试信号：正弦波 如何构建基本放大电路 让" />
 <meta property="og:type" content="article" />
@@ -34,7 +34,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/andreoy.cn\/posts\/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF-%E7%AC%AC%E4%BA%8C%E7%AB%A0%E5%9F%BA%E6%9C%AC%E6%94%BE%E5%A4%A7%E7%94%B5%E8%B7%AF\/"
-    },"genre": "posts","keywords": "学业, 笔记, 模拟电子技术","wordcount":  588 ,
+    },"genre": "posts","keywords": "学业, 笔记, 模拟电子技术","wordcount":  2591 ,
     "url": "https:\/\/andreoy.cn\/posts\/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF-%E7%AC%AC%E4%BA%8C%E7%AB%A0%E5%9F%BA%E6%9C%AC%E6%94%BE%E5%A4%A7%E7%94%B5%E8%B7%AF\/","datePublished": "2023-09-27T14:35:00+08:00","dateModified": "2023-09-27T14:35:00+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -211,7 +211,7 @@
     alt="Andreo Y."
     title="Andreo Y."/>&nbsp;Andreo Y.</a></span>
           <span class="post-category">收录于 <a href="/categories/%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 电子技术</a></span></div>
-      <div class="post-meta-line"><span title=2023-09-27&#32;14:35:00><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-09-27">2023-09-27</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 588 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 2 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="模拟电子技术-第二章 基本放大电路">
+      <div class="post-meta-line"><span title=2023-09-27&#32;14:35:00><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-09-27">2023-09-27</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 2591 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 6 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="模拟电子技术-第二章 基本放大电路">
               <i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
             </span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
@@ -237,6 +237,20 @@
         <li><a href="#非线性失真">非线性失真</a></li>
         <li><a href="#最大不失真输出电压">最大不失真输出电压</a></li>
         <li><a href="#最大输出功率与效率">最大输出功率与效率</a></li>
+      </ul>
+    </li>
+    <li><a href="#分析方法">分析方法</a>
+      <ul>
+        <li><a href="#直流通路与交流通路">直流通路与交流通路</a></li>
+        <li><a href="#图解法">图解法</a></li>
+        <li><a href="#等效电路法">等效电路法</a></li>
+      </ul>
+    </li>
+    <li><a href="#放大电路静态工作点的稳定">放大电路静态工作点的稳定</a>
+      <ul>
+        <li><a href="#必要性">必要性</a></li>
+        <li><a href="#典型的静态工作点稳定电路">典型的静态工作点稳定电路</a></li>
+        <li><a href="#稳定静态工作点的措施">稳定静态工作点的措施</a></li>
       </ul>
     </li>
   </ul>
@@ -322,6 +336,233 @@
 <h3 id="最大输出功率与效率">最大输出功率与效率</h3>
 <p>字面意思</p>
 <div id="id-1"><em>end of 2023.9.27</em></div>
+<h2 id="分析方法">分析方法</h2>
+<h3 id="直流通路与交流通路">直流通路与交流通路</h3>
+<p>直流通路：电容断路，电感短路，交流电源置零（电流源断路，电压源短路）</p>
+<p>交流通路：直流源置零（包括Vcc，需要接地），电容短路，电感断路（频率需要足够高）</p>
+<p>以阻容耦合放大电路为例，直流通路和交流通路如下：</p>
+<p><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/c521d063372cccd83c34e79de320d39.jpg"
+    data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/c521d063372cccd83c34e79de320d39.jpg, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/c521d063372cccd83c34e79de320d39.jpg 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/c521d063372cccd83c34e79de320d39.jpg 2x"
+    data-sizes="auto"
+    alt="c521d063372cccd83c34e79de320d39"
+    title="c521d063372cccd83c34e79de320d39"/></p>
+<h3 id="图解法">图解法</h3>
+<blockquote>
+<p>由于听课效率较低，现在开始改为看书自学</p>
+</blockquote>
+<ul>
+<li>
+<p><strong>求解静态工作点</strong>：</p>
+<a class="lightgallery" href="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231008184335362.png" data-thumbnail="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231008184335362.png" data-sub-html="<h2>https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231008184335362.png</h2>">
+        <img
+          class="lazyload"
+          src="/svg/loading.min.svg"
+          data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231008184335362.png"
+          data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231008184335362.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231008184335362.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231008184335362.png 2x"
+          data-sizes="auto"
+          alt="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231008184335362.png"
+          title="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231008184335362.png" width="600"/>
+      </a>
+<p>如图所示，考虑输入回路（基极）和输出回路，即可通过作图法得到静态工作点。高中物理实验题一种很常考的方法。</p>
+<p>常将直流分量的下标后面加个Q</p>
+</li>
+<li>
+<p>求解电压放大倍数：</p>
+<p>在上图中，利用输入特性曲线，作出$V_{BB}+\Delta u_1$时对应的另一条直线，两个交点的$\Delta y$即为$\Delta i_B$。注意不是用放大倍数直接求出$\Delta i_C$，而是在右图中先作出$I_B+\Delta i_B$对应的输出特性曲线，再得到新的交点，用两个交点的纵坐标差得到$\Delta i_C$，此时$\Delta x$即为$\Delta u_{CE}$（输出电压），电压放大倍数为</p>
+<p>$$A_u=\frac{\Delta u_{CE}}{\Delta u_1}$$</p>
+<p>用图像表示：</p>
+<a class="lightgallery" href="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231008185626969.png" data-thumbnail="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231008185626969.png" data-sub-html="<h2>https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231008185626969.png</h2>">
+        <img
+          class="lazyload"
+          src="/svg/loading.min.svg"
+          data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231008185626969.png"
+          data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231008185626969.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231008185626969.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231008185626969.png 2x"
+          data-sizes="auto"
+          alt="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231008185626969.png"
+          title="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231008185626969.png" width="600"/>
+      </a>
+<p>但是该方法求解误差较大，只是为了更好理解。</p>
+</li>
+<li>
+<p><strong>非线性失真的分析</strong>：</p>
+<ol>
+<li>
+<p><strong>截止失真</strong>，即基极电压过低导致在波谷低于开启电压，造成失真。增加$V_{BB}$可以消除。</p>
+<a class="lightgallery" href="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231008190946698.png" data-thumbnail="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231008190946698.png" data-sub-html="<h2>https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231008190946698.png</h2>">
+            <img
+              class="lazyload"
+              src="/svg/loading.min.svg"
+              data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231008190946698.png"
+              data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231008190946698.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231008190946698.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231008190946698.png 2x"
+              data-sizes="auto"
+              alt="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231008190946698.png"
+              title="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231008190946698.png" width="600"/>
+          </a>
+</li>
+<li>
+<p><strong>饱和失真</strong>，即基极电压过高导致波峰进入饱和区，造成失真。可以增大基极电阻，或减小基极电阻，或减小放大倍数。</p>
+<a class="lightgallery" href="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231008191816500.png" data-thumbnail="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231008191816500.png" data-sub-html="<h2>https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231008191816500.png</h2>">
+            <img
+              class="lazyload"
+              src="/svg/loading.min.svg"
+              data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231008191816500.png"
+              data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231008191816500.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231008191816500.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231008191816500.png 2x"
+              data-sizes="auto"
+              alt="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231008191816500.png"
+              title="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231008191816500.png" width="600"/>
+          </a>
+</li>
+</ol>
+</li>
+<li>
+<p>直流负载线和交流负载线</p>
+<p>即输出特性曲线上过直流工作点的两条在第一象限的线段，其中直流负载线的斜率为$-\frac 1 {R_c}$，交流负载线的斜率为$-\frac{1}{R_c//R_L}$，其中$R_c,R_L$分别为集电极电阻和负载电阻</p>
+</li>
+<li>
+<p>图解法多适用于分析输出幅值比较大而工作频率不太高时的情况。在实际应用中，多用于分析O点位置、最大不失真输出电压和失真情况等。</p>
+</li>
+</ul>
+<h3 id="等效电路法">等效电路法</h3>
+<ul>
+<li>
+<p>晶体管的直流模型</p>
+<p>考虑一个稳定工作于放大状态的理想三极管。认为：$U_{BE}$恒为开启电压，与输入电流无关，而集电极电流永远是$I_C=\beta I_B$，与$U_{CE}$无关。非常傻逼的受控源模型，简约但是可读性一坨屎，就跟线性代数一样。byd后面也一样，受控源很好玩是吧</p>
+<a class="lightgallery" href="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231008195221412.png" data-thumbnail="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231008195221412.png" data-sub-html="<h2>https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231008195221412.png</h2>">
+        <img
+          class="lazyload"
+          src="/svg/loading.min.svg"
+          data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231008195221412.png"
+          data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231008195221412.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231008195221412.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231008195221412.png 2x"
+          data-sizes="auto"
+          alt="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231008195221412.png"
+          title="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231008195221412.png" width="400"/>
+      </a>
+</li>
+</ul>
+<div id="id-2"><em>end of 2023.10.8</em></div>
+<ul>
+<li>
+<p>晶体管共射h参数等效模型</p>
+<p>即用h参数矩阵表示的晶体三极管输入输出。</p>
+<p>方程组：</p>
+<p>$$\dot U_{be}=h_{11e}\dot I_b+h_{12e}\dot U_{ce}$$
+$$\dot I_{e}=h_{21e}\dot I_b+h_{22e}\dot U_{ce}$$</p>
+<p>其中，电压电流均用相量表示。下标e表示共发射极接法。由上式，可以得到如下微分表达式：</p>
+<p>$$\left.h_{11e}=\frac{\partial u_{BE}}{\partial i_B}\right |{U_{CE}=\mathrm{const}}$$</p>
+<p>另外三个同理，不赘述。</p>
+<p>关于符号区分：</p>
+<ul>
+<li>$i_B$，直流+交流的瞬时量，在上面的偏导中使用</li>
+<li>$I_B$，直流分量</li>
+<li>$\dot I_b$，（正弦交流时）交流相量，在H参数方程组中使用</li>
+<li>$i_b$，交流分量</li>
+<li>$I_b$，交流有效值</li>
+</ul>
+<p>对应地，可以作出如下等效电路图：（低频小信号）</p>
+<a class="lightgallery" href="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011132201503.png" data-thumbnail="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011132201503.png" data-sub-html="<h2>https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011132201503.png</h2>">
+        <img
+          class="lazyload"
+          src="/svg/loading.min.svg"
+          data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011132201503.png"
+          data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011132201503.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011132201503.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011132201503.png 2x"
+          data-sizes="auto"
+          alt="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011132201503.png"
+          title="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011132201503.png" width="400"/>
+      </a>
+<p>各个参数的物理意义：</p>
+<ol>
+<li>$h_{11e}$即直流分量对应的输入特性曲线上静态工作点的导数（动态电阻）的倒数，即$r_{be}$</li>
+<li>$h_{12e}$即$U_{CE}$对$U_{BE}$的影响大小。在$U_{CE}\gt1V$时，这个值非常小（&lt;0.01），可以忽略</li>
+<li>$h_{21e}$即$\beta$</li>
+<li>$h_{22e}$输出特性曲线上静态工作点的导数。理想情况下，认为放大状态下$i_C$不变，即该参数为0。</li>
+</ol>
+<p>综上所述，可以忽略其中两个参数，于是得到简化的h参数模型，等效电路如下：</p>
+<a class="lightgallery" href="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011140252173.png" data-thumbnail="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011140252173.png" data-sub-html="<h2>https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011140252173.png</h2>">
+        <img
+          class="lazyload"
+          src="/svg/loading.min.svg"
+          data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011140252173.png"
+          data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011140252173.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011140252173.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011140252173.png 2x"
+          data-sizes="auto"
+          alt="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011140252173.png"
+          title="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011140252173.png" width="400"/>
+      </a>
+<p>其中，针对$r_{be}$，可以由下式近似计算：</p>
+<p>$$r_{be}\approx r_{bb&rsquo;}+(1+\beta)\frac{U_T}{I_{EQ}}\text{或}r_{be}\approx r_{bb&rsquo;}+\frac{U_T}{I_{BQ}}$$</p>
+<p>$r_{bb&rsquo;}$仅由三极管内部结构决定，$U_T$就是第一章PN结里面的那个，受温度影响，常温下26mV。</p>
+</li>
+<li>
+<p>共射放大电路动态参数的分析</p>
+<a class="lightgallery" href="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011145218644.png" data-thumbnail="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011145218644.png" data-sub-html="<h2>https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011145218644.png</h2>">
+        <img
+          class="lazyload"
+          src="/svg/loading.min.svg"
+          data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011145218644.png"
+          data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011145218644.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011145218644.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011145218644.png 2x"
+          data-sizes="auto"
+          alt="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011145218644.png"
+          title="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011145218644.png" width="400"/>
+      </a>
+<p>如图是交流等效电路。</p>
+<p>容易得到：$\dot U_i=\dot I_b(R_b+r_{be}),\dot U_o=-\beta \dot I_bR_c$</p>
+<ol>
+<li>电压放大倍数$\dot A_u=\frac{\dot U_o}{\dot U_i}$</li>
+<li>输入电阻$R_i=R_b+r_{be}$</li>
+<li>输出电阻$R_u=R_c$，这里可以用戴维南和诺顿的等效替代</li>
+</ol>
+</li>
+</ul>
+<h2 id="放大电路静态工作点的稳定">放大电路静态工作点的稳定</h2>
+<h3 id="必要性">必要性</h3>
+<p>不同的静态工作点代表着不同的H参数矩阵，进而影响众多输入输出关系。其中，温度对晶体管参数的影响是最主要的。</p>
+<p>一般有直流负反馈和温度补偿两种方式。</p>
+<h3 id="典型的静态工作点稳定电路">典型的静态工作点稳定电路</h3>
+<p><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011173258025.png"
+    data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011173258025.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011173258025.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011173258025.png 2x"
+    data-sizes="auto"
+    alt="image-20231011173258025"
+    title="image-20231011173258025"/></p>
+<p>如上图是典型的Q点稳定电路，从左至右分别为直接耦合、阻容耦合和它们共同的直流通路。</p>
+<p>该电路可以实现直流负反馈：</p>
+<p><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011173855250.png"
+    data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011173855250.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011173855250.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011173855250.png 2x"
+    data-sizes="auto"
+    alt="image-20231011173855250"
+    title="image-20231011173855250"/></p>
+<p>估算静态工作点时，一般基于两个假设：$I_1\gg I_{BQ},I_{CQ}\approx I_{EQ}$。剩下的推导随手推。</p>
+<p>对于动态参数，两种电路都可以等效为以下电路，并可以如下计算：</p>
+<a class="lightgallery" href="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011180033585.png" data-thumbnail="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011180033585.png" data-sub-html="<h2>https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011180033585.png</h2>">
+    <img
+      class="lazyload"
+      src="/svg/loading.min.svg"
+      data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011180033585.png"
+      data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011180033585.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011180033585.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011180033585.png 2x"
+      data-sizes="auto"
+      alt="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011180033585.png"
+      title="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011180033585.png" width="400"/>
+  </a>
+<h3 id="稳定静态工作点的措施">稳定静态工作点的措施</h3>
+<p>可以用热敏元件实现温度补偿。</p>
+<p><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011181314410.png"
+    data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011181314410.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011181314410.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231011181314410.png 2x"
+    data-sizes="auto"
+    alt="image-20231011181314410"
+    title="image-20231011181314410"/></p>
+<p>（a）中利用二极管的反向特性，温度升高时引起$I_C$和$I_R$（二极管反向电流）同时增大，由于通过$R_b$的电流几乎不变（$\frac{V_{CC}-R_{BQ}}{R_b}$），故$I_B$减小，从而$I_C$减小。参数调整合适时，增大和减小的值可以抵消，从而实现补偿。</p>
+<p>（b）中则是温度补偿和直流负反馈的结合。同理，不再赘述。</p>
+<div id="id-3"><em>end of 2023.10.11</em></div>
 </div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
@@ -391,7 +632,7 @@
         </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
     <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
   </noscript>
-</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><link rel="stylesheet" href="/css/2672ed.min.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/lunr/lunr.min.js" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script src="/lib/lunr/lunr.zh.min.js" defer></script><script src="/lib/lazysizes/lazysizes.min.js" async defer></script><script src="/lib/twemoji/twemoji.min.js" defer></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="/lib/pangu/pangu.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":50},"comment":{"enable":true,"giscus":{"darkTheme":"transparent_dark","lightTheme":"light"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"enablePangu":true,"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":30,"type":"lunr"},"siteTime":"2022-09-16T09:30:34+08:00","twemoji":true};</script><script src="/js/theme.min.js" defer></script><script>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><link rel="stylesheet" href="/css/98f51d.min.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/lunr/lunr.min.js" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script src="/lib/lunr/lunr.zh.min.js" defer></script><script src="/lib/lazysizes/lazysizes.min.js" async defer></script><script src="/lib/twemoji/twemoji.min.js" defer></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="/lib/pangu/pangu.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":50},"comment":{"enable":true,"giscus":{"darkTheme":"transparent_dark","lightTheme":"light"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"enablePangu":true,"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":30,"type":"lunr"},"siteTime":"2022-09-16T09:30:34+08:00","twemoji":true};</script><script src="/js/theme.min.js" defer></script><script>
       window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
       gtag('config', 'G-SWE55VZ73Q');
     </script><script src="https://www.googletagmanager.com/gtag/js?id=G-SWE55VZ73Q" async></script></body>
