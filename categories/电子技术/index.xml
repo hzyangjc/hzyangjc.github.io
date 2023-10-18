@@ -3,7 +3,15 @@
     <title>电子技术 - 分类 - Andreo Y.</title>
     <link>https://andreoy.cn/categories/%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/</link>
     <description>电子技术 - 分类 - Andreo Y.</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 27 Sep 2023 14:35:00 &#43;0800</lastBuildDate><atom:link href="https://andreoy.cn/categories/%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 18 Oct 2023 18:05:33 &#43;0800</lastBuildDate><atom:link href="https://andreoy.cn/categories/%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/" rel="self" type="application/rss+xml" /><item>
+  <title>模拟电子技术-第三章 集成运算放大电路</title>
+  <link>https://andreoy.cn/posts/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF-%E7%AC%AC%E4%B8%89%E7%AB%A0%E9%9B%86%E6%88%90%E8%BF%90%E7%AE%97%E6%94%BE%E5%A4%A7%E7%94%B5%E8%B7%AF/</link>
+  <pubDate>Wed, 18 Oct 2023 18:05:33 &#43;0800</pubDate>
+  <author>Andreo Y.</author>
+  <guid>https://andreoy.cn/posts/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF-%E7%AC%AC%E4%B8%89%E7%AB%A0%E9%9B%86%E6%88%90%E8%BF%90%E7%AE%97%E6%94%BE%E5%A4%A7%E7%94%B5%E8%B7%AF/</guid>
+  <description><![CDATA[多极放大电路的耦合方式 耦合方式，即不同级放大电路之间如何连接 直接耦合 缺点：零点漂移、调试非常困难、静态工作点难稳定 优点：低频特性好、易于集成]]></description>
+</item>
+<item>
   <title>模拟电子技术-第二章 基本放大电路</title>
   <link>https://andreoy.cn/posts/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF-%E7%AC%AC%E4%BA%8C%E7%AB%A0%E5%9F%BA%E6%9C%AC%E6%94%BE%E5%A4%A7%E7%94%B5%E8%B7%AF/</link>
   <pubDate>Wed, 27 Sep 2023 14:35:00 &#43;0800</pubDate>

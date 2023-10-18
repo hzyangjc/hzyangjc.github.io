@@ -10,7 +10,7 @@
 <meta name="description" content="放大电路的构成 放大的概念 特征：功率放大 本质：能量的控制、转换 必要条件：有源元件（含电源元件） 前提：保真 测试信号：正弦波 如何构建基本放大电路 让" /><meta name="keywords" content='学业, 笔记, 模拟电子技术' /><meta itemprop="name" content="模拟电子技术-第二章 基本放大电路">
 <meta itemprop="description" content="放大电路的构成 放大的概念 特征：功率放大 本质：能量的控制、转换 必要条件：有源元件（含电源元件） 前提：保真 测试信号：正弦波 如何构建基本放大电路 让"><meta itemprop="datePublished" content="2023-09-27T14:35:00+08:00" />
 <meta itemprop="dateModified" content="2023-09-27T14:35:00+08:00" />
-<meta itemprop="wordCount" content="2591"><meta itemprop="image" content="https://andreoy.cn/logo.png"/>
+<meta itemprop="wordCount" content="3661"><meta itemprop="image" content="https://andreoy.cn/logo.png"/>
 <meta itemprop="keywords" content="学业,笔记,模拟电子技术," /><meta property="og:title" content="模拟电子技术-第二章 基本放大电路" />
 <meta property="og:description" content="放大电路的构成 放大的概念 特征：功率放大 本质：能量的控制、转换 必要条件：有源元件（含电源元件） 前提：保真 测试信号：正弦波 如何构建基本放大电路 让" />
 <meta property="og:type" content="article" />
@@ -34,7 +34,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/andreoy.cn\/posts\/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF-%E7%AC%AC%E4%BA%8C%E7%AB%A0%E5%9F%BA%E6%9C%AC%E6%94%BE%E5%A4%A7%E7%94%B5%E8%B7%AF\/"
-    },"genre": "posts","keywords": "学业, 笔记, 模拟电子技术","wordcount":  2591 ,
+    },"genre": "posts","keywords": "学业, 笔记, 模拟电子技术","wordcount":  3661 ,
     "url": "https:\/\/andreoy.cn\/posts\/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF-%E7%AC%AC%E4%BA%8C%E7%AB%A0%E5%9F%BA%E6%9C%AC%E6%94%BE%E5%A4%A7%E7%94%B5%E8%B7%AF\/","datePublished": "2023-09-27T14:35:00+08:00","dateModified": "2023-09-27T14:35:00+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -211,7 +211,7 @@
     alt="Andreo Y."
     title="Andreo Y."/>&nbsp;Andreo Y.</a></span>
           <span class="post-category">收录于 <a href="/categories/%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 电子技术</a></span></div>
-      <div class="post-meta-line"><span title=2023-09-27&#32;14:35:00><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-09-27">2023-09-27</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 2591 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 6 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="模拟电子技术-第二章 基本放大电路">
+      <div class="post-meta-line"><span title=2023-09-27&#32;14:35:00><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-09-27">2023-09-27</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 3661 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 8 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="模拟电子技术-第二章 基本放大电路">
               <i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
             </span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
@@ -251,6 +251,26 @@
         <li><a href="#必要性">必要性</a></li>
         <li><a href="#典型的静态工作点稳定电路">典型的静态工作点稳定电路</a></li>
         <li><a href="#稳定静态工作点的措施">稳定静态工作点的措施</a></li>
+      </ul>
+    </li>
+    <li><a href="#晶体管单管放大电路的三种基本解法">晶体管单管放大电路的三种基本解法</a>
+      <ul>
+        <li><a href="#基本共集放大电路">基本共集放大电路</a></li>
+        <li><a href="#基本共基放大电路">基本共基放大电路</a></li>
+        <li><a href="#三种接法的比较">三种接法的比较</a></li>
+      </ul>
+    </li>
+    <li><a href="#场效应管放大电路">场效应管放大电路</a>
+      <ul>
+        <li><a href="#场效应管放大电路等效模型">场效应管放大电路等效模型</a></li>
+        <li><a href="#四种场效应管放大电路">四种场效应管放大电路</a></li>
+      </ul>
+    </li>
+    <li><a href="#基本放大电路的派生电路">基本放大电路的派生电路</a>
+      <ul>
+        <li><a href="#复合管">复合管</a></li>
+        <li><a href="#三种复合管放大电路">三种复合管放大电路</a></li>
+        <li><a href="#含共基接法的放大电路">含共基接法的放大电路</a></li>
       </ul>
     </li>
   </ul>
@@ -563,6 +583,155 @@ $$\dot I_{e}=h_{21e}\dot I_b+h_{22e}\dot U_{ce}$$</p>
 <p>（a）中利用二极管的反向特性，温度升高时引起$I_C$和$I_R$（二极管反向电流）同时增大，由于通过$R_b$的电流几乎不变（$\frac{V_{CC}-R_{BQ}}{R_b}$），故$I_B$减小，从而$I_C$减小。参数调整合适时，增大和减小的值可以抵消，从而实现补偿。</p>
 <p>（b）中则是温度补偿和直流负反馈的结合。同理，不再赘述。</p>
 <div id="id-3"><em>end of 2023.10.11</em></div>
+<h2 id="晶体管单管放大电路的三种基本解法">晶体管单管放大电路的三种基本解法</h2>
+<p>图像法，微元法，能量的观点。</p>
+<p>当然，也可以说是共基、共射、共集</p>
+<h3 id="基本共集放大电路">基本共集放大电路</h3>
+<p><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013105401442.png"
+    data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013105401442.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013105401442.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013105401442.png 2x"
+    data-sizes="auto"
+    alt="image-20231013105401442"
+    title="image-20231013105401442"/></p>
+<p><strong>电压跟随，电流放大</strong>，故又称射极跟随器</p>
+<p>对此类电路的分析，一般采用简化h参数等效，即be之间为$r_{be}$，ce之间为流向e的CCCS（$\beta i_B$）</p>
+<h3 id="基本共基放大电路">基本共基放大电路</h3>
+<p><strong>电流跟随，电压放大且同相</strong></p>
+<h3 id="三种接法的比较">三种接法的比较</h3>
+<p><strong>输入电阻：共集&gt;共射&gt;共基</strong></p>
+<p><strong>输出电阻：共基$\approx$共射&gt;共集</strong></p>
+<p>频带：共基&gt;共集&gt;共射</p>
+<p>共基只放大电压，共集只放大电流</p>
+<h2 id="场效应管放大电路">场效应管放大电路</h2>
+<h3 id="场效应管放大电路等效模型">场效应管放大电路等效模型</h3>
+<p>无论是结型场效应管还是绝缘栅型场效应管，其放大电路的电路模型一致如下：</p>
+<a class="lightgallery" href="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013135614006.png" data-thumbnail="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013135614006.png" data-sub-html="<h2>https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013135614006.png</h2>">
+    <img
+      class="lazyload"
+      src="/svg/loading.min.svg"
+      data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013135614006.png"
+      data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013135614006.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013135614006.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013135614006.png 2x"
+      data-sizes="auto"
+      alt="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013135614006.png"
+      title="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013135614006.png" width="400"/>
+  </a>
+<p>图中$g_m$是<strong>跨导</strong>，即转移特性曲线上Q点的导数。晶体管是CCCS，而场效应管是VCCS。</p>
+<p>此处补一个在第一章漏学的知识，即场效应管的电流方程：</p>
+<ul>
+<li>
+<p>结型场效应管</p>
+<p>$$i_{\mathrm{D}}=I_{\mathrm{DSS}}\left(1-\frac{u_{\mathrm{GS}}}{U_{\mathrm{GS} \mathrm{(off)}}}\right)^{2} \quad\left(U_{\mathrm{GS}(\mathrm{ off })}&lt;u_{\mathrm{GS}}&lt;0\right)$$</p>
+<p>式中$I_{\mathrm{DSS}}$是$u_{\mathrm{GS}}=0$情况下产生预夹断时的$i_{\mathrm{D}}$，称为<strong>饱和漏极电流</strong></p>
+</li>
+<li>
+<p>绝缘栅型场效应管</p>
+<p>$$i_{\mathrm{D}}=I_{\mathrm{DO}}\left(1-\frac{u_{\mathrm{GS}}}{U_{\mathrm{GS} \mathrm{(th)}}}\right)^{2} \quad\left(u_{\mathrm{GS}}&gt;U_{\mathrm{GS}(\mathrm{th})}&gt;0\right)$$</p>
+<p>式中$I_{\mathrm{DO}}$是$u_{\mathrm{GS}}=2U_{\mathrm{GS}(\mathrm{th})}$时的$i_{\mathrm{D}}$。</p>
+</li>
+</ul>
+<p>根据以上方程，可以得到跨导$g_m$的表达式：</p>
+<p>$$\frac{2}{U_{\mathrm{GS}(\mathrm{th})}} \sqrt{I_{\mathrm{DO}} i_{\mathrm{D}}}$$</p>
+<p>而小信号作用时，可以用$I_{DQ}$近似表示$i_D$</p>
+<p>$$g_{\mathrm{m}} \approx \frac{2}{U_{\mathrm{GS}(\mathrm{th})}} \sqrt{I_{\mathrm{DO}} I_{\mathrm{DQ}}}$$</p>
+<p>$r_{ds}$表示输出特性曲线中恒流区的导数的倒数。同样地，当外电阻较小时，可以忽略其中的电流，即只有一个受控源。</p>
+<h3 id="四种场效应管放大电路">四种场效应管放大电路</h3>
+<p>如下的五种电路，都可以用以上等效电路及电流方程分析。具体电路分析不再赘述。</p>
+<ul>
+<li>
+<p>基本共源放大电路</p>
+<a class="lightgallery" href="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013145241484.png" data-thumbnail="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013145241484.png" data-sub-html="<h2>https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013145241484.png</h2>">
+        <img
+          class="lazyload"
+          src="/svg/loading.min.svg"
+          data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013145241484.png"
+          data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013145241484.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013145241484.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013145241484.png 2x"
+          data-sizes="auto"
+          alt="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013145241484.png"
+          title="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013145241484.png" width="400"/>
+      </a>
+</li>
+<li>
+<p>自给偏压共源放大电路</p>
+<a class="lightgallery" href="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013150120262.png" data-thumbnail="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013150120262.png" data-sub-html="<h2>https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013150120262.png</h2>">
+        <img
+          class="lazyload"
+          src="/svg/loading.min.svg"
+          data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013150120262.png"
+          data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013150120262.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013150120262.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013150120262.png 2x"
+          data-sizes="auto"
+          alt="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013150120262.png"
+          title="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013150120262.png" width="400"/>
+      </a>
+</li>
+<li>
+<p>分压式偏置电路</p>
+<a class="lightgallery" href="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013150246253.png" data-thumbnail="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013150246253.png" data-sub-html="<h2>https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013150246253.png</h2>">
+        <img
+          class="lazyload"
+          src="/svg/loading.min.svg"
+          data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013150246253.png"
+          data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013150246253.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013150246253.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013150246253.png 2x"
+          data-sizes="auto"
+          alt="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013150246253.png"
+          title="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013150246253.png" width="400"/>
+      </a>
+</li>
+<li>
+<p>基本共漏放大电路</p>
+<a class="lightgallery" href="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013150433340.png" data-thumbnail="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013150433340.png" data-sub-html="<h2>https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013150433340.png</h2>">
+        <img
+          class="lazyload"
+          src="/svg/loading.min.svg"
+          data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013150433340.png"
+          data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013150433340.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013150433340.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013150433340.png 2x"
+          data-sizes="auto"
+          alt="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013150433340.png"
+          title="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231013150433340.png" width="400"/>
+      </a>
+</li>
+</ul>
+<p>场效应管放大电路具有噪声低、温度稳定性好、抗辐射能力强的优点</p>
+<h2 id="基本放大电路的派生电路">基本放大电路的派生电路</h2>
+<h3 id="复合管">复合管</h3>
+<p>复合管的等效管由其第一个管的类型决定。</p>
+<p>由两个晶体管组成的复合管，放大倍数$\beta=\beta_1\beta_2$</p>
+<p>由场效应管和晶体管组成的复合管，跨导$g_{\mathrm{m}} \approx \frac{\beta_{2} g_{\mathrm{m}1}}{1+g_{\mathrm{m} 1} r_{\mathrm{be}}}$</p>
+<div id="id-4"><em>end of 2023.10.13</em></div>
+<h3 id="三种复合管放大电路">三种复合管放大电路</h3>
+<p>无论是哪种复合管，只需要画出直流通路和交流通路，就基本可以拿下。交流通路用等效电路搞一下即可。</p>
+<ol>
+<li>
+<p>复合管共射放大电路，图略</p>
+</li>
+<li>
+<p>复合管共基放大电路，图略</p>
+</li>
+<li>
+<p>复合管共源放大电路</p>
+<p><img
+    class="lazyload"
+    src="/svg/loading.min.svg"
+    data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231018174919566.png"
+    data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231018174919566.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231018174919566.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20231018174919566.png 2x"
+    data-sizes="auto"
+    alt="image-20231018174919566"
+    title="image-20231018174919566"/></p>
+</li>
+</ol>
+<h3 id="含共基接法的放大电路">含共基接法的放大电路</h3>
+<ol>
+<li>
+<p>共射-共基放大电路</p>
+<p>可以改善共射电路的高频特性，其$\dot A_u$和共射接法的晶体管单独接近似。</p>
+</li>
+<li>
+<p>共集-共基放大电路</p>
+<p>输入电阻较大，有一定的电压放大能力，有较宽的通频带。</p>
+</li>
+</ol>
+<div id="id-5">第二章完</div>
 </div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
@@ -632,7 +801,7 @@ $$\dot I_{e}=h_{21e}\dot I_b+h_{22e}\dot U_{ce}$$</p>
         </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
     <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
   </noscript>
-</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><link rel="stylesheet" href="/css/98f51d.min.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/lunr/lunr.min.js" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script src="/lib/lunr/lunr.zh.min.js" defer></script><script src="/lib/lazysizes/lazysizes.min.js" async defer></script><script src="/lib/twemoji/twemoji.min.js" defer></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="/lib/pangu/pangu.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":50},"comment":{"enable":true,"giscus":{"darkTheme":"transparent_dark","lightTheme":"light"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"enablePangu":true,"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":30,"type":"lunr"},"siteTime":"2022-09-16T09:30:34+08:00","twemoji":true};</script><script src="/js/theme.min.js" defer></script><script>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><link rel="stylesheet" href="/css/3053bf.min.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/lunr/lunr.min.js" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script src="/lib/lunr/lunr.zh.min.js" defer></script><script src="/lib/lazysizes/lazysizes.min.js" async defer></script><script src="/lib/twemoji/twemoji.min.js" defer></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="/lib/pangu/pangu.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":50},"comment":{"enable":true,"giscus":{"darkTheme":"transparent_dark","lightTheme":"light"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"enablePangu":true,"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":30,"type":"lunr"},"siteTime":"2022-09-16T09:30:34+08:00","twemoji":true};</script><script src="/js/theme.min.js" defer></script><script>
       window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
       gtag('config', 'G-SWE55VZ73Q');
     </script><script src="https://www.googletagmanager.com/gtag/js?id=G-SWE55VZ73Q" async></script></body>
