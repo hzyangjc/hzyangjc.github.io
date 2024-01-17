@@ -3,9 +3,25 @@
     <title>Andreo Y.</title>
     <link>https://andreoy.cn/</link>
     <description>To sail beyond the sunset.</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 15 Nov 2023 15:58:43 &#43;0800</lastBuildDate>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 15 Jan 2024 17:55:38 &#43;0800</lastBuildDate>
       <atom:link href="https://andreoy.cn/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>Yuzu Tangerine Mousse | 橘柚慕斯</title>
+  <link>https://andreoy.cn/posts/yuzu-tangerine-mousse-%E6%A9%98%E6%9F%9A%E6%85%95%E6%96%AF/</link>
+  <pubDate>Mon, 15 Jan 2024 17:55:38 &#43;0800</pubDate>
+  <author>Andreo Y.</author>
+  <guid>https://andreoy.cn/posts/yuzu-tangerine-mousse-%E6%A9%98%E6%9F%9A%E6%85%95%E6%96%AF/</guid>
+  <description><![CDATA[11月底的时候去虹口的His Aroma Patisserie探店，尝试了三款下午茶甜品，对其中的“橘柚桔”这款慕斯念念不忘。法式慕斯的空气感确实远远超]]></description>
+</item>
+<item>
+  <title>MATLAB自学笔记</title>
+  <link>https://andreoy.cn/posts/matlab%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/</link>
+  <pubDate>Sun, 14 Jan 2024 15:02:52 &#43;0800</pubDate>
+  <author>Andreo Y.</author>
+  <guid>https://andreoy.cn/posts/matlab%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/</guid>
+  <description><![CDATA[MATLAB，即Matrix Laboratory。但是因为我非常讨厌矩阵运算，所以不会很好去工。对此软件的学习将会浮于表面，不求精通。 入门 M]]></description>
+</item>
+<item>
   <title>日本柚子抹茶蛋糕</title>
   <link>https://andreoy.cn/posts/%E6%97%A5%E6%9C%AC%E6%9F%9A%E5%AD%90%E6%8A%B9%E8%8C%B6%E8%9B%8B%E7%B3%95/</link>
   <pubDate>Wed, 15 Nov 2023 15:58:43 &#43;0800</pubDate>
@@ -68,24 +84,6 @@
   <author>Andreo Y.</author>
   <guid>https://andreoy.cn/posts/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86%E7%BC%93%E8%80%83%E7%AA%81%E5%87%BB/</guid>
   <description><![CDATA[基于真题卷的突击，遇到不会的就攻，直到能够独立解该题，不考虑做题速度。 2011-2012-2 T7 转动惯量 角动量守恒 常见物体的转动惯量 基本原理：$J=\sum m_i]]></description>
-</item>
-<item>
-  <title>Python基础笔记</title>
-  <link>https://andreoy.cn/posts/python%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/</link>
-  <pubDate>Fri, 23 Jun 2023 19:29:41 &#43;0800</pubDate>
-  <author>Andreo Y.</author>
-  <guid>https://andreoy.cn/posts/python%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/</guid>
-  <description><![CDATA[暑假前在咖啡厅速通python的历史记录]]></description>
-</item>
-<item>
-  <title>SJTU CTF 2023-WriteUp</title>
-  <link>https://andreoy.cn/posts/sjtuctf2023-writeup/</link>
-  <pubDate>Sun, 12 Mar 2023 19:52:23 &#43;0800</pubDate>
-  <author>Andreo Y.</author>
-  <guid>https://andreoy.cn/posts/sjtuctf2023-writeup/</guid>
-  <description><![CDATA[<div class="featured-image">
-        <img src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-03-12%20195727.png" referrerpolicy="no-referrer">
-      </div>SJTU CTF 2023做出的题的WriteUp]]></description>
 </item>
 </channel>
 </rss>

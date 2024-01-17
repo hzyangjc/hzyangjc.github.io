@@ -3,7 +3,15 @@
     <title>笔记 - 标签 - Andreo Y.</title>
     <link>https://andreoy.cn/tags/%E7%AC%94%E8%AE%B0/</link>
     <description>笔记 - 标签 - Andreo Y.</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 18 Oct 2023 18:05:33 &#43;0800</lastBuildDate><atom:link href="https://andreoy.cn/tags/%E7%AC%94%E8%AE%B0/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 14 Jan 2024 15:02:52 &#43;0800</lastBuildDate><atom:link href="https://andreoy.cn/tags/%E7%AC%94%E8%AE%B0/" rel="self" type="application/rss+xml" /><item>
+  <title>MATLAB自学笔记</title>
+  <link>https://andreoy.cn/posts/matlab%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/</link>
+  <pubDate>Sun, 14 Jan 2024 15:02:52 &#43;0800</pubDate>
+  <author>Andreo Y.</author>
+  <guid>https://andreoy.cn/posts/matlab%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/</guid>
+  <description><![CDATA[MATLAB，即Matrix Laboratory。但是因为我非常讨厌矩阵运算，所以不会很好去工。对此软件的学习将会浮于表面，不求精通。 入门 M]]></description>
+</item>
+<item>
   <title>模拟电子技术-第三章 集成运算放大电路</title>
   <link>https://andreoy.cn/posts/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF-%E7%AC%AC%E4%B8%89%E7%AB%A0%E9%9B%86%E6%88%90%E8%BF%90%E7%AE%97%E6%94%BE%E5%A4%A7%E7%94%B5%E8%B7%AF/</link>
   <pubDate>Wed, 18 Oct 2023 18:05:33 &#43;0800</pubDate>
@@ -74,16 +82,6 @@
   <author>Andreo Y.</author>
   <guid>https://andreoy.cn/posts/2018-hctf-web-warmup/</guid>
   <description><![CDATA[HCTF的一道热身题，但是难度不太热身]]></description>
-</item>
-<item>
-  <title>CTFHub笔记-Misc章节</title>
-  <link>https://andreoy.cn/posts/ctfhub%E7%AC%94%E8%AE%B0-misc/</link>
-  <pubDate>Wed, 01 Feb 2023 22:04:52 &#43;0800</pubDate>
-  <author>Andreo Y.</author>
-  <guid>https://andreoy.cn/posts/ctfhub%E7%AC%94%E8%AE%B0-misc/</guid>
-  <description><![CDATA[<div class="featured-image">
-        <img src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20230115185002636.png" referrerpolicy="no-referrer">
-      </div>学习CTFHub的一些记录和备忘，用于日后复习查询]]></description>
 </item>
 </channel>
 </rss>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>MATLAB自学笔记 - Andreo Y.</title><meta name="author" content="">
+<meta name="author-link" content="">
+<meta name="description" content="MATLAB，即Matrix Laboratory。但是因为我非常讨厌矩阵运算，所以不会很好去工。对此软件的学习将会浮于表面，不求精通。 入门 M" /><meta name="keywords" content='笔记, MATLAB' /><meta itemprop="name" content="MATLAB自学笔记">
+<meta itemprop="description" content="MATLAB，即Matrix Laboratory。但是因为我非常讨厌矩阵运算，所以不会很好去工。对此软件的学习将会浮于表面，不求精通。 入门 M"><meta itemprop="datePublished" content="2024-01-14T15:02:52+08:00" />
+<meta itemprop="dateModified" content="2024-01-14T15:02:52+08:00" />
+<meta itemprop="wordCount" content="285"><meta itemprop="image" content="https://andreoy.cn/logo.png"/>
+<meta itemprop="keywords" content="笔记,MATLAB," /><meta property="og:title" content="MATLAB自学笔记" />
+<meta property="og:description" content="MATLAB，即Matrix Laboratory。但是因为我非常讨厌矩阵运算，所以不会很好去工。对此软件的学习将会浮于表面，不求精通。 入门 M" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://andreoy.cn/posts/matlab%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/" /><meta property="og:image" content="https://andreoy.cn/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-01-14T15:02:52+08:00" />
+<meta property="article:modified_time" content="2024-01-14T15:02:52+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://andreoy.cn/logo.png"/>
+
+<meta name="twitter:title" content="MATLAB自学笔记"/>
+<meta name="twitter:description" content="MATLAB，即Matrix Laboratory。但是因为我非常讨厌矩阵运算，所以不会很好去工。对此软件的学习将会浮于表面，不求精通。 入门 M"/>
+<meta name="application-name" content="Andreo Y.">
+<meta name="apple-mobile-web-app-title" content="Andreo Y."><meta name="theme-color" data-light="#ffffff" data-dark="#252627" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://andreoy.cn/posts/matlab%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/" /><link rel="prev" href="https://andreoy.cn/posts/%E6%97%A5%E6%9C%AC%E6%9F%9A%E5%AD%90%E6%8A%B9%E8%8C%B6%E8%9B%8B%E7%B3%95/" /><link rel="next" href="https://andreoy.cn/posts/yuzu-tangerine-mousse-%E6%A9%98%E6%9F%9A%E6%85%95%E6%96%AF/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><meta name="baidu-site-verification" content="code-NEqykcuT3x" /><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "MATLAB自学笔记",
+    "inLanguage": "zh-CN",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https:\/\/andreoy.cn\/posts\/matlab%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0\/"
+    },"genre": "posts","keywords": "笔记, MATLAB","wordcount":  285 ,
+    "url": "https:\/\/andreoy.cn\/posts\/matlab%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0\/","datePublished": "2024-01-14T15:02:52+08:00","dateModified": "2024-01-14T15:02:52+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Andreo Y."
+      },"description": ""
+  }
+  </script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3263382266976949"
+     crossorigin="anonymous"></script>
+
+  </head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title="Andreo Y."><img
+    class="lazyload logo"
+    src="/svg/loading.min.svg"
+    data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png"
+    data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png 2x"
+    data-sizes="auto"
+    alt="Andreo Y."
+    title="Andreo Y."/><span class="header-title-text"> Andreo Y.&#39;s Space</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item text-center">
+              <a
+                class="menu-link"
+                href="/posts/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 所有文章</a></li><li class="menu-item text-center">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-stream fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li class="menu-item text-center">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tag fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li class="menu-item text-center">
+              <a
+                class="menu-link"
+                href="/about/"
+                
+                
+              ><i class="fa-solid fa-user-circle fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li class="menu-item text-center">
+              <a
+                class="menu-link"
+                href="/friends/"
+                
+                
+              ><i class="fa-solid fa-user-friends fa-fw fa-sm" aria-hidden="true"></i> 友情链接</a></li><li class="menu-item delimiter"></li><li class="menu-item language">
+            <span role="button" aria-label="选择语言" title="选择语言"><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </span>
+            <ul class="sub-menu"><li class="menu-item">没有更多翻译</li></ul>
+          </li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="Search for everything..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title="Andreo Y."><img
+    class="lazyload logo"
+    src="/svg/loading.min.svg"
+    data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png"
+    data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png 2x"
+    data-sizes="auto"
+    alt="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png"
+    title="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/6F5d1EWoQrmCjLA.png"/><span class="header-title-text"> Andreo Y.&#39;s Space</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="Search for everything..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              取消
+            </a>
+          </li><li
+              class="menu-item text-center"
+            ><a
+                  class="menu-link"
+                  href="/posts/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> 所有文章</a></li><li
+              class="menu-item text-center"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-stream fa-fw fa-sm" aria-hidden="true"></i> 分类</a></li><li
+              class="menu-item text-center"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tag fa-fw fa-sm" aria-hidden="true"></i> 标签</a></li><li
+              class="menu-item text-center"
+            ><a
+                  class="menu-link"
+                  href="/about/"
+                  
+                  
+                ><i class="fa-solid fa-user-circle fa-fw fa-sm" aria-hidden="true"></i> 关于</a></li><li
+              class="menu-item text-center"
+            ><a
+                  class="menu-link"
+                  href="/friends/"
+                  
+                  
+                ><i class="fa-solid fa-user-friends fa-fw fa-sm" aria-hidden="true"></i> 友情链接</a></li><li class="menu-item theme-switch" title="切换主题">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li><li class="menu-item language">
+            <span role="button" aria-label="选择语言" title="选择语言"><i class="dropdown-icon fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </span>
+            <select class="language-select" onchange="location = this.value;"><option disabled>没有更多翻译</option></select>
+          </li></ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container" data-page-style="narrow"><aside class="toc" id="toc-auto"><h2 class="toc-title">目录&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content always-active" id="toc-content-auto"></div></aside>
+
+  <aside class="aside-custom">
+    
+</aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX">
+        <span>MATLAB自学笔记</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><a href="https://andreoy.cn" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img
+    class="lazyload avatar"
+    src="/svg/loading.min.svg"
+    data-src="https://gravatar.loli.net/avatar/d8234597e50620ab663b4a6e7e89bf99?s=32&amp;d="
+    data-srcset="https://gravatar.loli.net/avatar/d8234597e50620ab663b4a6e7e89bf99?s=32&amp;d=, https://gravatar.loli.net/avatar/d8234597e50620ab663b4a6e7e89bf99?s=32&amp;d= 1.5x, https://gravatar.loli.net/avatar/d8234597e50620ab663b4a6e7e89bf99?s=32&amp;d= 2x"
+    data-sizes="auto"
+    alt="Andreo Y."
+    title="Andreo Y."/>&nbsp;Andreo Y.</a></span>
+          <span class="post-category">收录于 <a href="/categories/%E6%95%B0%E5%AD%A6/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 数学</a></span></div>
+      <div class="post-meta-line"><span title=2024-01-14&#32;15:02:52><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-01-14">2024-01-14</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 285 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 1 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="MATLAB自学笔记">
+              <i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
+            </span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>目录</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#入门">入门</a>
+      <ul>
+        <li><a href="#mat文件">MAT文件</a></li>
+        <li><a href="#向量和矩阵">向量和矩阵</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+      </div><div
+      class="content"
+      id="content"
+      
+      
+    ><p>MATLAB，即Matrix Laboratory。但是因为我非常讨厌矩阵运算，所以不会很好去工。对此软件的学习将会浮于表面，不求精通。</p>
+<hr>
+<h2 id="入门">入门</h2>
+<h3 id="mat文件">MAT文件</h3>
+<p>matlab的数据存储在<code>.mat</code>文件中，使用<code>load myDataFile</code>可以将文件<code>myDataFile.mat</code>的数据加载到工作区，使用<code>save myDataFile</code>可以将当前数据存储到<code>myDataFile.mat</code>。在上述代码后添加指定变量名，可以只存储该变量。</p>
+<h3 id="向量和矩阵">向量和矩阵</h3>
+<p>行向量用空格或逗号隔开；列向量用分号隔开。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="cl"><span class="n">x</span><span class="p">=[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">x</span><span class="p">=[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">y</span><span class="p">=[</span><span class="mi">1</span><span class="p">;</span><span class="mi">2</span><span class="p">;</span><span class="mi">3</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="p">=[</span><span class="mi">1</span> <span class="mi">3</span><span class="o">-</span><span class="mi">1</span> <span class="mi">3</span><span class="p">;</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">36</span><span class="p">)]</span>
+</span></span></code></pre></div><p>要创建等间距的数值组，可用<code>:</code>和<code>linspace()</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="cl"><span class="n">x</span><span class="p">=</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span>   <span class="c">% x=[2,3,4]</span>
+</span></span><span class="line"><span class="cl"><span class="n">x</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="mi">9</span> <span class="c">% x=[1 3 5 7 9]</span>
+</span></span><span class="line"><span class="cl"><span class="n">x</span><span class="p">=</span><span class="nb">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span> <span class="c">% x=[1,3.25,5.5,7.75,10]</span>
+</span></span></code></pre></div><p>矩阵的转置：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="cl"><span class="n">x</span><span class="p">=</span><span class="n">x</span><span class="o">&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">x</span><span class="p">=(</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">)</span><span class="o">&#39;</span> <span class="c">% x=[1;3;5]</span>
+</span></span></code></pre></div></div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title=2024-01-14&#32;15:02:52>更新于 2024-01-14&nbsp;</span>
+      </div><div class="post-info-license">
+          <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
+        </div></div>
+    <div class="post-info-line">
+      <div class="post-info-md"></div>
+      <div class="post-info-share">
+        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://andreoy.cn/posts/matlab%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/" data-title="MATLAB自学笔记" data-hashtags="笔记,MATLAB"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://andreoy.cn/posts/matlab%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/" data-hashtag="笔记"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Linkedin" data-sharer="linkedin" data-url="https://andreoy.cn/posts/matlab%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/"><i class="fa-brands fa-linkedin fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Tumblr" data-sharer="tumblr" data-url="https://andreoy.cn/posts/matlab%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/" data-title="MATLAB自学笔记" data-tags="笔记,MATLAB"><i class="fa-brands fa-tumblr fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Reddit" data-sharer="reddit" data-url="https://andreoy.cn/posts/matlab%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/"><i class="fa-brands fa-reddit fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://andreoy.cn/posts/matlab%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/" data-title="MATLAB自学笔记"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://andreoy.cn/posts/matlab%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/" data-title="MATLAB自学笔记" data-description=""><i class="fa-brands fa-blogger fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://andreoy.cn/posts/matlab%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/" data-title="MATLAB自学笔记"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Skype" data-sharer="skype" data-url="https://andreoy.cn/posts/matlab%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/" data-title="MATLAB自学笔记"><i class="fa-brands fa-skype fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Trello" data-sharer="trello" data-url="https://andreoy.cn/posts/matlab%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/" data-title="MATLAB自学笔记" data-description=""><i class="fa-brands fa-trello fa-fw" aria-hidden="true"></i></a>
+  </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-info-more">
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>,&nbsp;<a href="/tags/matlab/">MATLAB</a></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/posts/%E6%97%A5%E6%9C%AC%E6%9F%9A%E5%AD%90%E6%8A%B9%E8%8C%B6%E8%9B%8B%E7%B3%95/" class="prev" rel="prev" title="日本柚子抹茶蛋糕"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>日本柚子抹茶蛋糕</a>
+      <a href="/posts/yuzu-tangerine-mousse-%E6%A9%98%E6%9F%9A%E6%85%95%E6%96%AF/" class="next" rel="next" title="Yuzu Tangerine Mousse | 橘柚慕斯">Yuzu Tangerine Mousse | 橘柚慕斯<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+<div id="comments"><div id="giscus">
+          <script
+            src="https://giscus.app/client.js"
+            data-repo="hzyangjc/hzyangjc.github.io"
+            data-repo-id="R_kgDOIAWwEQ"
+            data-category="Announcements"
+            data-category-id="DIC_kwDOIAWwEc4CRdaC"
+            data-mapping="pathname"
+            
+            data-theme="preferred_color_scheme"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-lang="zh-CN"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async
+            defer
+          ></script>
+          <noscript>
+            Please enable JavaScript to view the comments powered by <a href="https://giscus.app/" rel="external nofollow noopener noreferrer">giscus</a>.
+          </noscript>
+        </div></div></article></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.118.2">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.2.16-RC"><img class="fixit-icon" src="/fixit.min.svg" alt="FixIt logo" />&nbsp;FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="/"></a></span><span class="license footer-divider"><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div><div class="footer-line statistics"><span class="site-time" title='网站运行中 ...'><i class="fa-solid fa-heartbeat fa-fw animate-icon" aria-hidden="true"></i>&nbsp;<span class="run-times">网站运行中 ...</span></span></div><div class="footer-line ibruce">
+          <span id="busuanzi_container_site_uv" title='总访客数'><i class="fa-regular fa-user fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span><span id="busuanzi_container_site_pv" class="footer-divider" title='总访问量'><i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span></span>
+        </div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="回到顶部"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div><div class="fixed-button view-comments d-none" role="button" aria-label="查看评论"><i class="fa-solid fa-comment fa-fw" aria-hidden="true"></i></div></div><div id="mask"></div><noscript>
+    <div class="noscript-warning">FixIt 主题在启用 JavaScript 的情况下效果最佳。</div>
+  </noscript>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/lunr/lunr.min.js" defer></script><script src="/lib/lunr/lunr.stemmer.support.min.js" defer></script><script src="/lib/lunr/lunr.zh.min.js" defer></script><script src="/lib/lazysizes/lazysizes.min.js" async defer></script><script src="/lib/twemoji/twemoji.min.js" defer></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="/lib/pangu/pangu.min.js" defer></script><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async defer></script><script>window.config={"code":{"copyTitle":"复制到剪贴板","editLockTitle":"锁定可编辑代码块","editUnLockTitle":"解锁可编辑代码块","editable":true,"maxShownLines":50},"comment":{"enable":true,"giscus":{"darkTheme":"transparent_dark","lightTheme":"light"}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验。"},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"enablePWA":true,"enablePangu":true,"lightgallery":true,"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":30,"type":"lunr"},"siteTime":"2022-09-16T09:30:34+08:00","twemoji":true};</script><script src="/js/theme.min.js" defer></script><script>
+      window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+      gtag('config', 'G-SWE55VZ73Q');
+    </script><script src="https://www.googletagmanager.com/gtag/js?id=G-SWE55VZ73Q" async></script></body>
+</html>
