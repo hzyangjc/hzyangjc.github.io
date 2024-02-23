@@ -3,7 +3,15 @@
     <title>所有文章 - Andreo Y.</title>
     <link>https://andreoy.cn/posts/</link>
     <description>所有文章 | Andreo Y.</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 20 Feb 2024 18:46:13 &#43;0800</lastBuildDate><atom:link href="https://andreoy.cn/posts/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 21 Feb 2024 19:59:55 &#43;0800</lastBuildDate><atom:link href="https://andreoy.cn/posts/" rel="self" type="application/rss+xml" /><item>
+  <title>汇编语言笔记</title>
+  <link>https://andreoy.cn/posts/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%AC%94%E8%AE%B0/</link>
+  <pubDate>Wed, 21 Feb 2024 19:59:55 &#43;0800</pubDate>
+  <author>Andreo Y.</author>
+  <guid>https://andreoy.cn/posts/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%AC%94%E8%AE%B0/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
   <title>元宵灯会和23级电院团支书团建</title>
   <link>https://andreoy.cn/posts/%E5%85%83%E5%AE%B5%E7%81%AF%E4%BC%9A%E5%92%8C23%E7%BA%A7%E7%94%B5%E9%99%A2%E5%9B%A2%E6%94%AF%E4%B9%A6%E5%9B%A2%E5%BB%BA/</link>
   <pubDate>Tue, 20 Feb 2024 18:46:13 &#43;0800</pubDate>
@@ -74,14 +82,6 @@
   <author>Andreo Y.</author>
   <guid>https://andreoy.cn/posts/%E4%B8%AD%E7%A7%8B%E9%9C%B2%E6%BC%94-%E4%B8%B9%E6%A1%82%E6%A0%97%E5%AD%90%E5%A1%94%E9%A3%9F%E8%B0%B1/</guid>
   <description><![CDATA[显然桂花风味用法式慕斯呈现是更好的，但是中秋路演的售卖方式所限，就做成卡仕达酱好了。由于是脑子里想想的，没有实操过，材料设置可能偏多（好像是]]></description>
-</item>
-<item>
-  <title>模拟电子技术-绪论及第一章 常用半导体器件</title>
-  <link>https://andreoy.cn/posts/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF-%E7%BB%AA%E8%AE%BA%E5%8F%8A%E7%AC%AC%E4%B8%80%E7%AB%A0%E5%B8%B8%E7%94%A8%E5%8D%8A%E5%AF%BC%E4%BD%93%E5%99%A8%E4%BB%B6/</link>
-  <pubDate>Wed, 13 Sep 2023 13:15:49 &#43;0800</pubDate>
-  <author>Andreo Y.</author>
-  <guid>https://andreoy.cn/posts/%E6%A8%A1%E6%8B%9F%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF-%E7%BB%AA%E8%AE%BA%E5%8F%8A%E7%AC%AC%E4%B8%80%E7%AB%A0%E5%B8%B8%E7%94%A8%E5%8D%8A%E5%AF%BC%E4%BD%93%E5%99%A8%E4%BB%B6/</guid>
-  <description><![CDATA[绪论 由于听说模电难度很大，且有实验课配套，故特地为其创立文集。 分配的老师不尽人意，乃转向郑益慧老师的网课，并在此记录和整理。 基于历史顺序的教]]></description>
 </item>
 </channel>
 </rss>
