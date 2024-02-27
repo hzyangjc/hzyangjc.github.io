@@ -10,7 +10,7 @@
 <meta name="description" content="MATLAB，即Matrix Laboratory。但是因为我非常讨厌矩阵运算，所以不会很好去工。对此软件的学习将会浮于表面，不求精通。 入门 M" /><meta name="keywords" content='笔记, MATLAB' /><meta itemprop="name" content="MATLAB自学笔记">
 <meta itemprop="description" content="MATLAB，即Matrix Laboratory。但是因为我非常讨厌矩阵运算，所以不会很好去工。对此软件的学习将会浮于表面，不求精通。 入门 M"><meta itemprop="datePublished" content="2024-01-14T15:02:52+08:00" />
 <meta itemprop="dateModified" content="2024-01-14T15:02:52+08:00" />
-<meta itemprop="wordCount" content="744"><meta itemprop="image" content="https://andreoy.cn/logo.png"/>
+<meta itemprop="wordCount" content="1352"><meta itemprop="image" content="https://andreoy.cn/logo.png"/>
 <meta itemprop="keywords" content="笔记,MATLAB," /><meta property="og:title" content="MATLAB自学笔记" />
 <meta property="og:description" content="MATLAB，即Matrix Laboratory。但是因为我非常讨厌矩阵运算，所以不会很好去工。对此软件的学习将会浮于表面，不求精通。 入门 M" />
 <meta property="og:type" content="article" />
@@ -34,7 +34,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/andreoy.cn\/posts\/matlab%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0\/"
-    },"genre": "posts","keywords": "笔记, MATLAB","wordcount":  744 ,
+    },"genre": "posts","keywords": "笔记, MATLAB","wordcount":  1352 ,
     "url": "https:\/\/andreoy.cn\/posts\/matlab%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0\/","datePublished": "2024-01-14T15:02:52+08:00","dateModified": "2024-01-14T15:02:52+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -211,7 +211,7 @@
     alt="Andreo Y."
     title="Andreo Y."/>&nbsp;Andreo Y.</a></span>
           <span class="post-category">收录于 <a href="/categories/%E6%95%B0%E5%AD%A6/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 数学</a></span></div>
-      <div class="post-meta-line"><span title=2024-01-14&#32;15:02:52><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-01-14">2024-01-14</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 744 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 2 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="MATLAB自学笔记">
+      <div class="post-meta-line"><span title=2024-01-14&#32;15:02:52><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-01-14">2024-01-14</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 1352 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 3 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="MATLAB自学笔记">
               <i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
             </span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
@@ -226,9 +226,25 @@
         <li><a href="#mat文件">MAT文件</a></li>
         <li><a href="#特殊变量和常数">特殊变量和常数</a></li>
         <li><a href="#设置显示格式">设置显示格式</a></li>
-        <li><a href="#向量和矩阵">向量和矩阵</a></li>
+        <li><a href="#其他常用指令">其他常用指令</a></li>
       </ul>
     </li>
+    <li><a href="#向量和矩阵">向量和矩阵</a>
+      <ul>
+        <li><a href="#矩阵的创建">矩阵的创建</a></li>
+        <li><a href="#矩阵的转置">矩阵的转置</a></li>
+        <li><a href="#特殊矩阵">特殊矩阵</a></li>
+        <li><a href="#矩阵的索引">矩阵的索引：</a></li>
+        <li><a href="#矩阵的内部排序">矩阵的内部排序</a></li>
+        <li><a href="#矩阵的一些统计量">矩阵的一些统计量</a></li>
+        <li><a href="#矩阵的拼接">矩阵的拼接</a></li>
+        <li><a href="#三维矩阵">三维矩阵</a></li>
+        <li><a href="#矩阵的算术运算">矩阵的算术运算</a></li>
+        <li><a href="#矩阵的逻辑运算">矩阵的逻辑运算</a></li>
+        <li><a href="#判断和循环">判断和循环</a></li>
+      </ul>
+    </li>
+    <li><a href="#可视化">可视化</a></li>
   </ul>
 </nav></div>
       </div><div
@@ -252,8 +268,15 @@
 <h3 id="设置显示格式">设置显示格式</h3>
 <p>默认short(四位小数)</p>
 <p><code>format long/rat/shortE</code>，15位小数/分数/科学计数法</p>
-<h3 id="向量和矩阵">向量和矩阵</h3>
-<h4 id="矩阵的创建">矩阵的创建</h4>
+<h3 id="其他常用指令">其他常用指令</h3>
+<p>命令行清屏：<code>clc</code></p>
+<p>清空工作区：<code>clear</code>或在空格后指定要清楚的变量</p>
+<p>向上取整：<code>round()</code>向下：<code>floor()</code></p>
+<p>打印输出：<code>disp()</code></p>
+<p>计时：<code>tic</code> <code>toc</code>，用在需要计时的程序段两端</p>
+<p>换行：<code>...</code></p>
+<h2 id="向量和矩阵">向量和矩阵</h2>
+<h3 id="矩阵的创建">矩阵的创建</h3>
 <p>行向量用空格或逗号隔开；列向量用分号隔开。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="cl"><span class="n">x</span><span class="p">=[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl"><span class="n">x</span><span class="p">=[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
@@ -262,18 +285,19 @@
 </span></span></code></pre></div><p>要创建等间距的数值组，可用<code>:</code>和<code>linspace()</code></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="cl"><span class="n">x</span><span class="p">=</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span>   <span class="c">% x=[2,3,4]</span>
 </span></span><span class="line"><span class="cl"><span class="n">x</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="mi">9</span> <span class="c">% x=[1 3 5 7 9]</span>
+</span></span><span class="line"><span class="cl"><span class="n">x</span><span class="p">=</span><span class="s">&#39;a&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="s">&#39;f&#39;</span> <span class="c">% x=&#39;ace&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="n">x</span><span class="p">=</span><span class="nb">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span> <span class="c">% x=[1,3.25,5.5,7.75,10]</span>
-</span></span></code></pre></div><h4 id="矩阵的转置">矩阵的转置</h4>
+</span></span></code></pre></div><h3 id="矩阵的转置">矩阵的转置</h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="cl"><span class="n">x</span><span class="p">=</span><span class="n">x</span><span class="o">&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="n">x</span><span class="p">=(</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">)</span><span class="o">&#39;</span> <span class="c">% x=[1;3;5]</span>
-</span></span></code></pre></div><h4 id="特殊矩阵">特殊矩阵</h4>
+</span></span></code></pre></div><h3 id="特殊矩阵">特殊矩阵</h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="cl"><span class="nb">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="c">% 3*3的零矩阵</span>
 </span></span><span class="line"><span class="cl"><span class="nb">ones</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="c">% 3*2的全1矩阵</span>
 </span></span><span class="line"><span class="cl"><span class="nb">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="c">% 3*3的单位阵</span>
 </span></span><span class="line"><span class="cl"><span class="nb">magic</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="c">% 3*3的幻方矩阵</span>
 </span></span><span class="line"><span class="cl"><span class="nb">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="c">% 3*2的随机矩阵，范围(0,1)</span>
 </span></span><span class="line"><span class="cl"><span class="nb">randn</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="c">% 3*2随机矩阵~N(0,1)（标准正态）</span>
-</span></span></code></pre></div><h4 id="矩阵的索引">矩阵的索引：</h4>
+</span></span></code></pre></div><h3 id="矩阵的索引">矩阵的索引：</h3>
 <p>从1开始；</p>
 <p>访问使用小括号；</p>
 <p>小括号内的逗号表示行列，先行后列；中括号内的逗号和空格一样，表示不同元素的分隔；</p>
@@ -291,7 +315,7 @@
 </span></span><span class="line"><span class="cl"><span class="n">A</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">)=[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl"><span class="n">A</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span><span class="k">end</span><span class="p">)=[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
 </span></span></code></pre></div><p>可以认为，一个数是零维的，带冒号的表达式是一维的，向量是一维的，小括号直辖的逗号能让两个维度相加。</p>
-<h4 id="矩阵的内部排序">矩阵的内部排序</h4>
+<h3 id="矩阵的内部排序">矩阵的内部排序</h3>
 <p>与C语言不同，单独使用排序函数后，原矩阵不会改变。或者说，它是一个有返回值的函数。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="cl"><span class="n">A</span><span class="p">=[</span><span class="mi">8</span>     <span class="mi">7</span>     <span class="mi">6</span>     <span class="mi">5</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">   <span class="mi">11</span>    <span class="mi">12</span>    <span class="mi">13</span>    <span class="mi">14</span><span class="p">;</span>
@@ -299,10 +323,62 @@
 </span></span><span class="line"><span class="cl"><span class="n">sort</span><span class="p">(</span><span class="n">A</span><span class="p">)=[</span><span class="mi">4</span>     <span class="mi">3</span>     <span class="mi">2</span>     <span class="mi">1</span>
 </span></span><span class="line"><span class="cl">     	 <span class="mi">8</span>     <span class="mi">7</span>     <span class="mi">6</span>     <span class="mi">5</span>
 </span></span><span class="line"><span class="cl">    	 <span class="mi">11</span>    <span class="mi">12</span>    <span class="mi">13</span>    <span class="mi">14</span><span class="p">]</span> <span class="c">% 每列内部排序</span>
+</span></span><span class="line"><span class="cl"><span class="n">sortrows</span><span class="p">(</span><span class="n">A</span><span class="p">)=[</span><span class="mi">4</span>     <span class="mi">3</span>     <span class="mi">2</span>     <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">			<span class="mi">8</span>     <span class="mi">7</span>     <span class="mi">6</span>     <span class="mi">5</span>
+</span></span><span class="line"><span class="cl">			<span class="mi">11</span>    <span class="mi">12</span>    <span class="mi">13</span>    <span class="mi">14</span><span class="p">]</span> <span class="c">% 按第一列大小进行整行之间的排序</span>
 </span></span><span class="line"><span class="cl"><span class="n">sort</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">2</span><span class="p">)=[</span><span class="mi">5</span>     <span class="mi">6</span>     <span class="mi">7</span>     <span class="mi">8</span>
 </span></span><span class="line"><span class="cl">   		   <span class="mi">11</span>    <span class="mi">12</span>    <span class="mi">13</span>    <span class="mi">14</span>
 </span></span><span class="line"><span class="cl">     	   <span class="mi">1</span>     <span class="mi">2</span>     <span class="mi">3</span>     <span class="mi">4</span><span class="p">]</span> <span class="c">% 每行内部排序</span>
-</span></span></code></pre></div><h4 id="矩阵的基本统计量">矩阵的基本统计量</h4>
+</span></span></code></pre></div><h3 id="矩阵的一些统计量">矩阵的一些统计量</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="cl"><span class="n">max</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="c">% 每一列的最大值</span>
+</span></span><span class="line"><span class="cl"><span class="n">min</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="c">% 每一列的最小值</span>
+</span></span><span class="line"><span class="cl"><span class="n">max</span><span class="p">(</span><span class="n">max</span><span class="p">(</span><span class="n">A</span><span class="p">))</span> <span class="c">% 最大值（二维矩阵）</span>
+</span></span><span class="line"><span class="cl"><span class="n">mean</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="c">% 每列平均值</span>
+</span></span><span class="line"><span class="cl"><span class="n">sum</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="c">% 每列和</span>
+</span></span><span class="line"><span class="cl"><span class="nb">size</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="c">% [行数,列数]</span>
+</span></span><span class="line"><span class="cl"><span class="nb">length</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="c">% 行数和列数的较大值</span>
+</span></span><span class="line"><span class="cl"><span class="nb">find</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="c">% 所有非零元素的索引值，列向量</span>
+</span></span><span class="line"><span class="cl"><span class="n">A</span><span class="p">(</span><span class="nb">find</span><span class="p">(</span><span class="n">A</span><span class="p">))</span> <span class="c">% 所有非零元素，列向量</span>
+</span></span><span class="line"><span class="cl"><span class="nb">ndims</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="c">% 维度数，一个数也是2维</span>
+</span></span><span class="line"><span class="cl"><span class="nb">numel</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="c">% 有几个数</span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="c">% 标准差</span>
+</span></span><span class="line"><span class="cl"><span class="n">var</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="c">% 方差</span>
+</span></span><span class="line"><span class="cl"><span class="n">ttest</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="c">% T-Test（不知道是什么）</span>
+</span></span></code></pre></div><h3 id="矩阵的拼接">矩阵的拼接</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="cl"><span class="n">A</span><span class="p">=</span><span class="nb">zeros</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">B</span><span class="p">=</span><span class="nb">ones</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">C</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span>
+</span></span><span class="line"><span class="cl"><span class="n">D</span><span class="p">=[</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">:</span><span class="n">C</span><span class="p">]</span> <span class="c">% 结果很显然</span>
+</span></span><span class="line"><span class="cl"><span class="n">A</span><span class="p">=[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">;</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">B</span><span class="p">=[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">;</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cat</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">)</span> <span class="c">% 按列拼接,[1 2;3 4;5 6;7 8]</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cat</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">)</span> <span class="c">% 按行拼接,[1 2 3 4;5 6 7 8]</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cat</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">)</span> <span class="c">% 按层拼接,第一层[1 2;3 4]第二层[5 6;7 8]</span>
+</span></span></code></pre></div><h3 id="三维矩阵">三维矩阵</h3>
+<p>创建：先创建骨架，再写每一层内容</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="cl"><span class="n">A</span><span class="p">=</span><span class="nb">zeros</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">A</span><span class="p">[:,:,</span><span class="mi">1</span><span class="p">]=[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">;</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">;</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">;</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">;</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">;</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="c">% 后略</span>
+</span></span></code></pre></div><h3 id="矩阵的算术运算">矩阵的算术运算</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="cl"><span class="c">% 以下大写代表向量/矩阵，小写代表一个数</span>
+</span></span><span class="line"><span class="cl"><span class="n">A</span><span class="o">+</span><span class="n">a</span> <span class="c">% 每个数加a</span>
+</span></span><span class="line"><span class="cl"><span class="n">A</span><span class="o">-</span><span class="n">a</span> <span class="c">% 每个数减a</span>
+</span></span><span class="line"><span class="cl"><span class="n">A</span><span class="o">+</span><span class="n">B</span> <span class="c">% 对应数相加，减同理</span>
+</span></span><span class="line"><span class="cl"><span class="n">A</span><span class="o">*</span><span class="n">B</span> <span class="c">% 矩阵乘法</span>
+</span></span><span class="line"><span class="cl"><span class="n">A</span><span class="o">.*</span><span class="n">B</span> <span class="c">% 对应数相乘，得一个矩阵</span>
+</span></span><span class="line"><span class="cl"><span class="n">A</span><span class="o">./</span><span class="n">B</span> <span class="c">% 对应数相除，A除以B</span>
+</span></span><span class="line"><span class="cl"><span class="n">A</span><span class="o">.\</span><span class="n">B</span> <span class="c">% 对应数相除，B除以A</span>
+</span></span><span class="line"><span class="cl"><span class="n">A</span><span class="o">.^</span><span class="n">B</span> <span class="c">% 对应数乘方，B是指数</span>
+</span></span><span class="line"><span class="cl"><span class="nb">rem</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">b</span><span class="p">)</span> <span class="c">% 每个数对b取余</span>
+</span></span></code></pre></div><h3 id="矩阵的逻辑运算">矩阵的逻辑运算</h3>
+<p>除了<code>!</code>改成<code>~</code>之外，和C完全一致（仅限基本运算）</p>
+<h3 id="判断和循环">判断和循环</h3>
+<p>没有冒号，没有大括号，结束语句用分号</p>
+<p>判断：<code>if-elseif-else-end</code></p>
+<p>循环：<code>while 1=1  -  end</code>，<code>for variable=atart:increment:end  -  end</code></p>
+<p>使用for循环时，提前创建好矩阵骨架比逐渐扩展要快</p>
+<h2 id="可视化">可视化</h2>
+<p>勾始可视化，不如origin</p>
 </div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
