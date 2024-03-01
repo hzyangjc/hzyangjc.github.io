@@ -3,7 +3,15 @@
     <title>前端 - 标签 - Andreo Y.</title>
     <link>https://andreoy.cn/tags/%E5%89%8D%E7%AB%AF/</link>
     <description>前端 - 标签 - Andreo Y.</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 16 Sep 2022 14:02:03 &#43;0800</lastBuildDate><atom:link href="https://andreoy.cn/tags/%E5%89%8D%E7%AB%AF/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 01 Mar 2024 21:18:43 &#43;0800</lastBuildDate><atom:link href="https://andreoy.cn/tags/%E5%89%8D%E7%AB%AF/" rel="self" type="application/rss+xml" /><item>
+  <title>Keil中一些问题的解决方案</title>
+  <link>https://andreoy.cn/posts/keil%E4%B8%AD%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</link>
+  <pubDate>Fri, 01 Mar 2024 21:18:43 &#43;0800</pubDate>
+  <author>Andreo Y.</author>
+  <guid>https://andreoy.cn/posts/keil%E4%B8%AD%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</guid>
+  <description><![CDATA[嵌入式开发中，虽然有千奇百怪的平替方案，但Keil还是比较方便高效的一个应用。针对使用中的一些令人难受的问题，本文将给出一些可行的解决方案。]]></description>
+</item>
+<item>
   <title>新的开始</title>
   <link>https://andreoy.cn/posts/%E6%96%B0%E7%9A%84%E5%BC%80%E5%A7%8B/</link>
   <pubDate>Fri, 16 Sep 2022 14:02:03 &#43;0800</pubDate>
