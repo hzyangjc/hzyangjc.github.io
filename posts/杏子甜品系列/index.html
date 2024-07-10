@@ -5,37 +5,37 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
     <meta name="robots" content="noodp" />
-    <title>Keil中一些问题的解决方案 - Andreo Y.</title><meta name="author" content="">
+    <title>杏子甜品系列 - Andreo Y.</title><meta name="author" content="">
 <meta name="author-link" content="">
-<meta name="description" content="嵌入式开发中，虽然有千奇百怪的平替方案，但Keil还是比较方便高效的一个应用。针对使用中的一些令人难受的问题，本文将给出一些可行的解决方案。" /><meta name="keywords" content='前端, Keil, 嵌入式' /><meta itemprop="name" content="Keil中一些问题的解决方案">
-<meta itemprop="description" content="嵌入式开发中，虽然有千奇百怪的平替方案，但Keil还是比较方便高效的一个应用。针对使用中的一些令人难受的问题，本文将给出一些可行的解决方案。"><meta itemprop="datePublished" content="2024-03-01T21:18:43+08:00" />
-<meta itemprop="dateModified" content="2024-03-01T21:18:43+08:00" />
-<meta itemprop="wordCount" content="522"><meta itemprop="image" content="https://andreoy.cn/logo.png"/>
-<meta itemprop="keywords" content="前端,Keil,嵌入式," /><meta property="og:title" content="Keil中一些问题的解决方案" />
-<meta property="og:description" content="嵌入式开发中，虽然有千奇百怪的平替方案，但Keil还是比较方便高效的一个应用。针对使用中的一些令人难受的问题，本文将给出一些可行的解决方案。" />
+<meta name="description" content="之前从来没试过用杏子做甜品，自从1月份在东京名店Asterisque吃到杏桃风味的切件蛋糕后念念不忘，终于在夏天得以尝试。现在也是杏子成熟的" /><meta name="keywords" content='烘焙, 法式甜品, 慕斯, 水果蛋糕, 塔, 马卡龙' /><meta itemprop="name" content="杏子甜品系列">
+<meta itemprop="description" content="之前从来没试过用杏子做甜品，自从1月份在东京名店Asterisque吃到杏桃风味的切件蛋糕后念念不忘，终于在夏天得以尝试。现在也是杏子成熟的"><meta itemprop="datePublished" content="2024-07-10T21:46:34+08:00" />
+<meta itemprop="dateModified" content="2024-07-10T21:46:34+08:00" />
+<meta itemprop="wordCount" content="1117"><meta itemprop="image" content="https://andreoy.cn/logo.png"/>
+<meta itemprop="keywords" content="烘焙,法式甜品,慕斯,水果蛋糕,塔,马卡龙," /><meta property="og:title" content="杏子甜品系列" />
+<meta property="og:description" content="之前从来没试过用杏子做甜品，自从1月份在东京名店Asterisque吃到杏桃风味的切件蛋糕后念念不忘，终于在夏天得以尝试。现在也是杏子成熟的" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://andreoy.cn/posts/keil%E4%B8%AD%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" /><meta property="og:image" content="https://andreoy.cn/logo.png"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2024-03-01T21:18:43+08:00" />
-<meta property="article:modified_time" content="2024-03-01T21:18:43+08:00" />
+<meta property="og:url" content="https://andreoy.cn/posts/%E6%9D%8F%E5%AD%90%E7%94%9C%E5%93%81%E7%B3%BB%E5%88%97/" /><meta property="og:image" content="https://andreoy.cn/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-07-10T21:46:34+08:00" />
+<meta property="article:modified_time" content="2024-07-10T21:46:34+08:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://andreoy.cn/logo.png"/>
 
-<meta name="twitter:title" content="Keil中一些问题的解决方案"/>
-<meta name="twitter:description" content="嵌入式开发中，虽然有千奇百怪的平替方案，但Keil还是比较方便高效的一个应用。针对使用中的一些令人难受的问题，本文将给出一些可行的解决方案。"/>
+<meta name="twitter:title" content="杏子甜品系列"/>
+<meta name="twitter:description" content="之前从来没试过用杏子做甜品，自从1月份在东京名店Asterisque吃到杏桃风味的切件蛋糕后念念不忘，终于在夏天得以尝试。现在也是杏子成熟的"/>
 <meta name="application-name" content="Andreo Y.">
 <meta name="apple-mobile-web-app-title" content="Andreo Y."><meta name="theme-color" data-light="#ffffff" data-dark="#252627" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://andreoy.cn/posts/keil%E4%B8%AD%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" /><link rel="prev" href="https://andreoy.cn/posts/%E5%85%83%E5%AE%B5%E7%81%AF%E4%BC%9A%E5%92%8C23%E7%BA%A7%E7%94%B5%E9%99%A2%E5%9B%A2%E6%94%AF%E4%B9%A6%E5%9B%A2%E5%BB%BA/" /><link rel="next" href="https://andreoy.cn/posts/%E6%9D%8F%E5%AD%90%E7%94%9C%E5%93%81%E7%B3%BB%E5%88%97/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><meta name="baidu-site-verification" content="code-NEqykcuT3x" /><script type="application/ld+json">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://andreoy.cn/posts/%E6%9D%8F%E5%AD%90%E7%94%9C%E5%93%81%E7%B3%BB%E5%88%97/" /><link rel="prev" href="https://andreoy.cn/posts/keil%E4%B8%AD%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><meta name="baidu-site-verification" content="code-NEqykcuT3x" /><script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
-    "headline": "Keil中一些问题的解决方案",
+    "headline": "杏子甜品系列",
     "inLanguage": "zh-CN",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https:\/\/andreoy.cn\/posts\/keil%E4%B8%AD%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88\/"
-    },"genre": "posts","keywords": "前端, Keil, 嵌入式","wordcount":  522 ,
-    "url": "https:\/\/andreoy.cn\/posts\/keil%E4%B8%AD%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88\/","datePublished": "2024-03-01T21:18:43+08:00","dateModified": "2024-03-01T21:18:43+08:00","publisher": {
+      "@id": "https:\/\/andreoy.cn\/posts\/%E6%9D%8F%E5%AD%90%E7%94%9C%E5%93%81%E7%B3%BB%E5%88%97\/"
+    },"genre": "posts","keywords": "烘焙, 法式甜品, 慕斯, 水果蛋糕, 塔, 马卡龙","wordcount":  1117 ,
+    "url": "https:\/\/andreoy.cn\/posts\/%E6%9D%8F%E5%AD%90%E7%94%9C%E5%93%81%E7%B3%BB%E5%88%97\/","datePublished": "2024-07-10T21:46:34+08:00","dateModified": "2024-07-10T21:46:34+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -200,7 +200,7 @@
 
   <article class="page single">
     <div class="header"><h1 class="single-title animate__animated animate__flipInX">
-        <span>Keil中一些问题的解决方案</span>
+        <span>杏子甜品系列</span>
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><a href="https://andreoy.cn" title="作者"target="_blank" rel="external nofollow noopener noreferrer author" class="author"><img
     class="lazyload avatar"
@@ -210,8 +210,8 @@
     data-sizes="auto"
     alt="Andreo Y."
     title="Andreo Y."/>&nbsp;Andreo Y.</a></span>
-          <span class="post-category">收录于 <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 程序设计</a></span></div>
-      <div class="post-meta-line"><span title=2024-03-01&#32;21:18:43><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-03-01">2024-03-01</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 522 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 2 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="Keil中一些问题的解决方案">
+          <span class="post-category">收录于 <a href="/categories/%E6%97%A5%E5%B8%B8/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 日常</a></span></div>
+      <div class="post-meta-line"><span title=2024-07-10&#32;21:46:34><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-07-10">2024-07-10</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 1117 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 3 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="杏子甜品系列">
               <i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
             </span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
@@ -221,9 +221,26 @@
         </div>
         <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#软件界面模糊">软件界面模糊</a></li>
-    <li><a href="#光标对齐不准确选中代码偏移">光标对齐不准确/选中代码偏移</a></li>
-    <li><a href="#编辑器配色字体">编辑器配色/字体</a></li>
+    <li><a href="#周四">周四</a>
+      <ul>
+        <li><a href="#杏子酱">杏子酱</a></li>
+      </ul>
+    </li>
+    <li><a href="#周五">周五</a>
+      <ul>
+        <li><a href="#杏仁达克瓦兹">杏仁达克瓦兹</a></li>
+        <li><a href="#甜杏慕斯">甜杏慕斯</a></li>
+        <li><a href="#酸奶慕斯">酸奶慕斯</a></li>
+      </ul>
+    </li>
+    <li><a href="#周六">周六</a>
+      <ul>
+        <li><a href="#马卡龙壳">马卡龙壳</a></li>
+        <li><a href="#柠檬杏子奶酱">柠檬杏子奶酱</a></li>
+        <li><a href="#淋面">淋面</a></li>
+      </ul>
+    </li>
+    <li><a href="#周日">周日</a></li>
   </ul>
 </nav></div>
       </div><div
@@ -231,111 +248,112 @@
       id="content"
       
       
-    ><p>嵌入式开发中，虽然有千奇百怪的平替方案，但Keil还是比较方便高效的一个应用。针对使用中的一些令人难受的问题，本文将给出一些可行的解决方案。</p>
-<blockquote>
-<p>Keil版本：V5.22.0.0</p>
-</blockquote>
-<h2 id="软件界面模糊">软件界面模糊</h2>
-<p>高分辨率会遇到的常见问题。</p>
+    ><p>之前从来没试过用杏子做甜品，自从1月份在东京名店Asterisque吃到杏桃风味的切件蛋糕后念念不忘，终于在夏天得以尝试。现在也是杏子成熟的季节，可以用到当季鲜果作为食材，风味更佳。</p>
+<hr>
+<h2 id="周四">周四</h2>
+<h3 id="杏子酱">杏子酱</h3>
 <ol>
-<li>
-<p>打开Keil的安装文件夹，打开其中的<code>UV4</code>文件夹，找到<code>UV4.exe</code></p>
-</li>
-<li>
-<p>右键该文件，选择<strong>属性-兼容性-更改高DPI设置</strong></p>
-<a class="lightgallery" href="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20240301224335806.png" data-thumbnail="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20240301224335806.png" data-sub-html="<h2>https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20240301224335806.png</h2>">
-        <img
-          class="lazyload"
-          src="/svg/loading.min.svg"
-          data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20240301224335806.png"
-          data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20240301224335806.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20240301224335806.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20240301224335806.png 2x"
-          data-sizes="auto"
-          alt="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20240301224335806.png"
-          title="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20240301224335806.png" width="400"/>
-      </a>
-</li>
-<li>
-<p>勾选<strong>替代高DPI缩放行为</strong>，并将<strong>缩放执行</strong>修改为<strong>系统（增强）</strong>，点击确定</p>
-<a class="lightgallery" href="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20240301224809134.png" data-thumbnail="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20240301224809134.png" data-sub-html="<h2>https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20240301224809134.png</h2>">
-        <img
-          class="lazyload"
-          src="/svg/loading.min.svg"
-          data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20240301224809134.png"
-          data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20240301224809134.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20240301224809134.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20240301224809134.png 2x"
-          data-sizes="auto"
-          alt="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20240301224809134.png"
-          title="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20240301224809134.png" width="600"/>
-      </a>
-<p>此处，若缩放执行选择的是“应用程序”，可以使整个程序界面都变得清晰，但是图标会变得很小，不适合操作。而系统（增强）虽然图标不够清楚，但常用的编辑器区域清晰度高，而图标足够大，更方便使用。</p>
-</li>
-<li>
-<p>重启Keil即可</p>
-</li>
+<li>15g砂糖，6gNH果胶混合均匀</li>
+<li>300g杏子果茸和10g柠檬汁加热到50℃，加入果胶和砂糖混合物，不停搅拌直到沸腾，离火贴面冷藏</li>
+<li>取出后用均质机打匀，再加入约90g杏丁，搅拌均匀</li>
+<li>约40%挤入小圆柱，抹平冷冻，剩余冷藏</li>
 </ol>
-<h2 id="光标对齐不准确选中代码偏移">光标对齐不准确/选中代码偏移</h2>
-<p>Energia也有这个问题，当时就很烦，虽然影响好像不是很大但是就是很烦。</p>
+<h2 id="周五">周五</h2>
+<h3 id="杏仁达克瓦兹">杏仁达克瓦兹</h3>
 <ol>
-<li>
-<p>打开Keil的安装文件夹，用任意编辑器打开<code>TOOLS.INI</code></p>
-<p><img
-    class="lazyload"
-    src="/svg/loading.min.svg"
-    data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20240301225415970.png"
-    data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20240301225415970.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20240301225415970.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20240301225415970.png 2x"
-    data-sizes="auto"
-    alt="image-20240301225415970"
-    title="image-20240301225415970"/></p>
-</li>
-<li>
-<p>在EMAIL后插入一行<code>ANSI=1</code>并保存即可</p>
-<p><img
-    class="lazyload"
-    src="/svg/loading.min.svg"
-    data-src="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20240301225708208.png"
-    data-srcset="https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20240301225708208.png, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20240301225708208.png 1.5x, https://pigco-1313228125.cos.ap-shanghai.myqcloud.com/img/image-20240301225708208.png 2x"
-    data-sizes="auto"
-    alt="image-20240301225708208"
-    title="image-20240301225708208"/></p>
-</li>
+<li>90g杏仁粉和40g糖粉（过筛）混合均匀</li>
+<li>120g蛋白+45g细砂糖打至硬性发泡</li>
+<li>预热170度，分两次加入粉类搅拌均匀，挤在油纸上，至少16个4cm左右，可用慕斯圈</li>
+<li>170度15分钟</li>
 </ol>
-<h2 id="编辑器配色字体">编辑器配色/字体</h2>
-<p>这就见仁见智了，如果是2022届及以前的浙江技术选考生，VB入门编程的话不见得觉得这个编辑器的颜色很难受。</p>
-<p>你可以在网上直接下载配色方案，也可以在<code>Edit - Configuration - Colors &amp; Fonts - C/C++ Editor Files</code>里面一个个改。一劳永逸的事情，我也就调了一个小时。</p>
+<h3 id="甜杏慕斯">甜杏慕斯</h3>
+<ol>
+<li>杏子果茸240g，加入砂糖75g，小火加热至冒泡后离火</li>
+<li>降温到50度加入10g吉利丁搅拌均匀</li>
+<li>250g淡奶油打至八分发，2倒入3中混合均匀</li>
+<li>8个倒入圆饼中，配合杏子酱、达克瓦兹组装成蛋糕体，冷冻</li>
+<li>剩余的倒入圆柱中，至少8个，冷冻</li>
+</ol>
+<h3 id="酸奶慕斯">酸奶慕斯</h3>
+<ol>
+<li>60g淡奶油打发至酸奶状备用</li>
+<li>6g吉利丁泡软</li>
+<li>30g蛋白和60g糖隔水搅拌到55℃，打发至硬性（瑞士蛋白霜）</li>
+<li>3中加入100g酸奶</li>
+<li>取4中少量液体，加入吉利丁，加热溶解（应温度偏高）</li>
+<li>4和5拌匀，再加入淡奶油拌匀</li>
+<li>挤入蚊香模具中，越多越好，脱模容易失败，冷冻</li>
+</ol>
+<h2 id="周六">周六</h2>
+<h3 id="马卡龙壳">马卡龙壳</h3>
+<p>60g杏仁粉，60g糖粉，25g新鲜蛋白</p>
+<p>22g蛋白，6g砂糖，0.5g蛋白粉</p>
+<p>20g水，50g白砂糖</p>
+<p>8分钟+8分钟</p>
+<p>145℃ 17分钟</p>
+<p>具体略，做了无数遍了</p>
+<h3 id="柠檬杏子奶酱">柠檬杏子奶酱</h3>
+<ol>
+<li>100g牛奶加热至60度，加入65g蛋黄和25g砂糖，煮至酸奶状，过筛</li>
+<li>搅拌降温，加入230g黄油混合均匀</li>
+<li>剩余的杏子酱取100g，过筛（去掉杏子丁）后加入20g柠檬汁、2个柠檬皮屑搅拌均匀</li>
+<li>3加入2中搅拌均匀</li>
+<li>组装马卡龙，一半的壳沾水沾砂糖，用火枪烤成焦糖，冷却后挤入奶酱并组装，馅中馅直接用杏子酱</li>
+</ol>
+<h3 id="淋面">淋面</h3>
+<ol>
+<li>25g吉利丁泡软，210g代可可脂白巧克力切碎，和125g炼乳放在一个盆内</li>
+<li>95g水+188g糖煮开，离火加入188g葡萄糖浆，搅匀继续煮至103度（必须）</li>
+<li>2加入巧克力和炼乳中拌匀</li>
+<li>吉利丁隔水加热化开，加入3中</li>
+<li>加入250g镜面果胶拌匀，贴面冷藏</li>
+<li>组装前取出，加热冷却至35度左右，加入色粉均质、淋面</li>
+</ol>
+<h2 id="周日">周日</h2>
+<ol>
+<li>挞壳加入达克瓦兹，风炉复烤160℃ 5min上色</li>
+<li>马卡龙取出回温</li>
+<li>挤入剩余的柠檬杏子奶酱，抹平</li>
+<li>打发约100g奶油至7成（裱花）</li>
+<li>给小甜杏慕斯和大甜杏慕斯适当回温后，取出淋面，加热冷却至35度左右，加入色粉均质、淋面，其中大慕斯淋面不需要淋中间。</li>
+<li>大慕斯用牙签移入盘中后放上酸奶慕斯，放上叶子，底部边缘放上少量杏子丁，出品</li>
+<li>小慕斯放在塔上，SN7067圆嘴裱一圈，放上杏丁和叶子，出品</li>
+<li>马卡龙回温完成，出品</li>
+</ol>
 </div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
-        <span title=2024-03-01&#32;21:18:43>更新于 2024-03-01&nbsp;</span>
+        <span title=2024-07-10&#32;21:46:34>更新于 2024-07-10&nbsp;</span>
       </div><div class="post-info-license">
           <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span>
         </div></div>
     <div class="post-info-line">
       <div class="post-info-md"></div>
       <div class="post-info-share">
-        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://andreoy.cn/posts/keil%E4%B8%AD%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" data-title="Keil中一些问题的解决方案" data-hashtags="前端,Keil,嵌入式"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://andreoy.cn/posts/keil%E4%B8%AD%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" data-hashtag="前端"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Linkedin" data-sharer="linkedin" data-url="https://andreoy.cn/posts/keil%E4%B8%AD%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"><i class="fa-brands fa-linkedin fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Tumblr" data-sharer="tumblr" data-url="https://andreoy.cn/posts/keil%E4%B8%AD%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" data-title="Keil中一些问题的解决方案" data-tags="前端,Keil,嵌入式"><i class="fa-brands fa-tumblr fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Reddit" data-sharer="reddit" data-url="https://andreoy.cn/posts/keil%E4%B8%AD%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"><i class="fa-brands fa-reddit fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://andreoy.cn/posts/keil%E4%B8%AD%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" data-title="Keil中一些问题的解决方案"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://andreoy.cn/posts/keil%E4%B8%AD%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" data-title="Keil中一些问题的解决方案" data-description=""><i class="fa-brands fa-blogger fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://andreoy.cn/posts/keil%E4%B8%AD%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" data-title="Keil中一些问题的解决方案"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Skype" data-sharer="skype" data-url="https://andreoy.cn/posts/keil%E4%B8%AD%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" data-title="Keil中一些问题的解决方案"><i class="fa-brands fa-skype fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="分享到 Trello" data-sharer="trello" data-url="https://andreoy.cn/posts/keil%E4%B8%AD%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" data-title="Keil中一些问题的解决方案" data-description=""><i class="fa-brands fa-trello fa-fw" aria-hidden="true"></i></a>
+        <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://andreoy.cn/posts/%E6%9D%8F%E5%AD%90%E7%94%9C%E5%93%81%E7%B3%BB%E5%88%97/" data-title="杏子甜品系列" data-hashtags="烘焙,法式甜品,慕斯,水果蛋糕,塔,马卡龙"><i class="fa-brands fa-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://andreoy.cn/posts/%E6%9D%8F%E5%AD%90%E7%94%9C%E5%93%81%E7%B3%BB%E5%88%97/" data-hashtag="烘焙"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Linkedin" data-sharer="linkedin" data-url="https://andreoy.cn/posts/%E6%9D%8F%E5%AD%90%E7%94%9C%E5%93%81%E7%B3%BB%E5%88%97/"><i class="fa-brands fa-linkedin fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Tumblr" data-sharer="tumblr" data-url="https://andreoy.cn/posts/%E6%9D%8F%E5%AD%90%E7%94%9C%E5%93%81%E7%B3%BB%E5%88%97/" data-title="杏子甜品系列" data-tags="烘焙,法式甜品,慕斯,水果蛋糕,塔,马卡龙"><i class="fa-brands fa-tumblr fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Reddit" data-sharer="reddit" data-url="https://andreoy.cn/posts/%E6%9D%8F%E5%AD%90%E7%94%9C%E5%93%81%E7%B3%BB%E5%88%97/"><i class="fa-brands fa-reddit fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://andreoy.cn/posts/%E6%9D%8F%E5%AD%90%E7%94%9C%E5%93%81%E7%B3%BB%E5%88%97/" data-title="杏子甜品系列"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://andreoy.cn/posts/%E6%9D%8F%E5%AD%90%E7%94%9C%E5%93%81%E7%B3%BB%E5%88%97/" data-title="杏子甜品系列" data-description=""><i class="fa-brands fa-blogger fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://andreoy.cn/posts/%E6%9D%8F%E5%AD%90%E7%94%9C%E5%93%81%E7%B3%BB%E5%88%97/" data-title="杏子甜品系列"><i class="fa-brands fa-evernote fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Skype" data-sharer="skype" data-url="https://andreoy.cn/posts/%E6%9D%8F%E5%AD%90%E7%94%9C%E5%93%81%E7%B3%BB%E5%88%97/" data-title="杏子甜品系列"><i class="fa-brands fa-skype fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="分享到 Trello" data-sharer="trello" data-url="https://andreoy.cn/posts/%E6%9D%8F%E5%AD%90%E7%94%9C%E5%93%81%E7%B3%BB%E5%88%97/" data-title="杏子甜品系列" data-description=""><i class="fa-brands fa-trello fa-fw" aria-hidden="true"></i></a>
   </span>
       </div>
     </div>
   </div>
 
   <div class="post-info-more">
-    <section class="post-tags"><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/%E5%89%8D%E7%AB%AF/">前端</a>,&nbsp;<a href="/tags/keil/">Keil</a>,&nbsp;<a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/">嵌入式</a></section>
+    <section class="post-tags"><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/%E7%83%98%E7%84%99/">烘焙</a>,&nbsp;<a href="/tags/%E6%B3%95%E5%BC%8F%E7%94%9C%E5%93%81/">法式甜品</a>,&nbsp;<a href="/tags/%E6%85%95%E6%96%AF/">慕斯</a>,&nbsp;<a href="/tags/%E6%B0%B4%E6%9E%9C%E8%9B%8B%E7%B3%95/">水果蛋糕</a>,&nbsp;<a href="/tags/%E5%A1%94/">塔</a>,&nbsp;<a href="/tags/%E9%A9%AC%E5%8D%A1%E9%BE%99/">马卡龙</a></section>
     <section>
       <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
     </section>
   </div>
 
-  <div class="post-nav"><a href="/posts/%E5%85%83%E5%AE%B5%E7%81%AF%E4%BC%9A%E5%92%8C23%E7%BA%A7%E7%94%B5%E9%99%A2%E5%9B%A2%E6%94%AF%E4%B9%A6%E5%9B%A2%E5%BB%BA/" class="prev" rel="prev" title="元宵灯会和23级电院团支书团建"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>元宵灯会和23级电院团支书团建</a>
-      <a href="/posts/%E6%9D%8F%E5%AD%90%E7%94%9C%E5%93%81%E7%B3%BB%E5%88%97/" class="next" rel="next" title="杏子甜品系列">杏子甜品系列<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+  <div class="post-nav"><a href="/posts/keil%E4%B8%AD%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" class="prev" rel="prev" title="Keil中一些问题的解决方案"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>Keil中一些问题的解决方案</a></div>
 </div>
 <div id="comments"><div id="giscus">
           <script

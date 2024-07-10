@@ -3,9 +3,17 @@
     <title>Andreo Y.</title>
     <link>https://andreoy.cn/</link>
     <description>To sail beyond the sunset.</description>
-    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 01 Mar 2024 21:18:43 &#43;0800</lastBuildDate>
+    <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 10 Jul 2024 21:46:34 &#43;0800</lastBuildDate>
       <atom:link href="https://andreoy.cn/index.xml" rel="self" type="application/rss+xml" />
     <item>
+  <title>杏子甜品系列</title>
+  <link>https://andreoy.cn/posts/%E6%9D%8F%E5%AD%90%E7%94%9C%E5%93%81%E7%B3%BB%E5%88%97/</link>
+  <pubDate>Wed, 10 Jul 2024 21:46:34 &#43;0800</pubDate>
+  <author>Andreo Y.</author>
+  <guid>https://andreoy.cn/posts/%E6%9D%8F%E5%AD%90%E7%94%9C%E5%93%81%E7%B3%BB%E5%88%97/</guid>
+  <description><![CDATA[之前从来没试过用杏子做甜品，自从1月份在东京名店Asterisque吃到杏桃风味的切件蛋糕后念念不忘，终于在夏天得以尝试。现在也是杏子成熟的]]></description>
+</item>
+<item>
   <title>Keil中一些问题的解决方案</title>
   <link>https://andreoy.cn/posts/keil%E4%B8%AD%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</link>
   <pubDate>Fri, 01 Mar 2024 21:18:43 &#43;0800</pubDate>
@@ -76,14 +84,6 @@
   <author>Andreo Y.</author>
   <guid>https://andreoy.cn/posts/%E7%94%B5%E5%9C%BA%E5%BC%BA%E5%BA%A6%E5%92%8C%E7%94%B5%E5%8A%BF/</guid>
   <description><![CDATA[一些常见均匀带电几何体在常见位置的电场强度和电势 针对高中物理衔接，$k=\frac{1}{4\pi\varepsilon_0}$ 电场强度 点电]]></description>
-</item>
-<item>
-  <title>中秋露演-丹桂栗子塔食谱</title>
-  <link>https://andreoy.cn/posts/%E4%B8%AD%E7%A7%8B%E9%9C%B2%E6%BC%94-%E4%B8%B9%E6%A1%82%E6%A0%97%E5%AD%90%E5%A1%94%E9%A3%9F%E8%B0%B1/</link>
-  <pubDate>Sun, 17 Sep 2023 15:54:05 &#43;0800</pubDate>
-  <author>Andreo Y.</author>
-  <guid>https://andreoy.cn/posts/%E4%B8%AD%E7%A7%8B%E9%9C%B2%E6%BC%94-%E4%B8%B9%E6%A1%82%E6%A0%97%E5%AD%90%E5%A1%94%E9%A3%9F%E8%B0%B1/</guid>
-  <description><![CDATA[显然桂花风味用法式慕斯呈现是更好的，但是中秋路演的售卖方式所限，就做成卡仕达酱好了。由于是脑子里想想的，没有实操过，材料设置可能偏多（好像是]]></description>
 </item>
 </channel>
 </rss>

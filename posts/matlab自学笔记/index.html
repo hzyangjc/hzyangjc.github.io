@@ -10,7 +10,7 @@
 <meta name="description" content="MATLAB，即Matrix Laboratory。但是因为我非常讨厌矩阵运算，所以不会很好去工。对此软件的学习将会浮于表面，不求精通。 入门 M" /><meta name="keywords" content='笔记, MATLAB, 线性代数' /><meta itemprop="name" content="MATLAB自学笔记">
 <meta itemprop="description" content="MATLAB，即Matrix Laboratory。但是因为我非常讨厌矩阵运算，所以不会很好去工。对此软件的学习将会浮于表面，不求精通。 入门 M"><meta itemprop="datePublished" content="2024-01-14T15:02:52+08:00" />
 <meta itemprop="dateModified" content="2024-01-14T15:02:52+08:00" />
-<meta itemprop="wordCount" content="1352"><meta itemprop="image" content="https://andreoy.cn/logo.png"/>
+<meta itemprop="wordCount" content="1351"><meta itemprop="image" content="https://andreoy.cn/logo.png"/>
 <meta itemprop="keywords" content="笔记,MATLAB,线性代数," /><meta property="og:title" content="MATLAB自学笔记" />
 <meta property="og:description" content="MATLAB，即Matrix Laboratory。但是因为我非常讨厌矩阵运算，所以不会很好去工。对此软件的学习将会浮于表面，不求精通。 入门 M" />
 <meta property="og:type" content="article" />
@@ -34,7 +34,7 @@
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https:\/\/andreoy.cn\/posts\/matlab%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0\/"
-    },"genre": "posts","keywords": "笔记, MATLAB, 线性代数","wordcount":  1352 ,
+    },"genre": "posts","keywords": "笔记, MATLAB, 线性代数","wordcount":  1351 ,
     "url": "https:\/\/andreoy.cn\/posts\/matlab%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0\/","datePublished": "2024-01-14T15:02:52+08:00","dateModified": "2024-01-14T15:02:52+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
@@ -211,7 +211,7 @@
     alt="Andreo Y."
     title="Andreo Y."/>&nbsp;Andreo Y.</a></span>
           <span class="post-category">收录于 <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 程序设计</a></span></div>
-      <div class="post-meta-line"><span title=2024-01-14&#32;15:02:52><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-01-14">2024-01-14</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 1352 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 3 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="MATLAB自学笔记">
+      <div class="post-meta-line"><span title=2024-01-14&#32;15:02:52><i class="fa-regular fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-01-14">2024-01-14</time></span>&nbsp;<span><i class="fa-solid fa-pencil-alt fa-fw" aria-hidden="true"></i> 约 1351 字</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw" aria-hidden="true"></i> 预计阅读 3 分钟</span>&nbsp;<span id="busuanzi_container_page_pv" class="busuanzi_visitors comment-visitors" data-flag-title="MATLAB自学笔记">
               <i class="fa-regular fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv">-</span>&nbsp;次阅读
             </span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
@@ -234,7 +234,7 @@
         <li><a href="#矩阵的创建">矩阵的创建</a></li>
         <li><a href="#矩阵的转置">矩阵的转置</a></li>
         <li><a href="#特殊矩阵">特殊矩阵</a></li>
-        <li><a href="#矩阵的索引">矩阵的索引：</a></li>
+        <li><a href="#矩阵的索引">矩阵的索引</a></li>
         <li><a href="#矩阵的内部排序">矩阵的内部排序</a></li>
         <li><a href="#矩阵的一些统计量">矩阵的一些统计量</a></li>
         <li><a href="#矩阵的拼接">矩阵的拼接</a></li>
@@ -297,7 +297,7 @@
 </span></span><span class="line"><span class="cl"><span class="nb">magic</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="c">% 3*3的幻方矩阵</span>
 </span></span><span class="line"><span class="cl"><span class="nb">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="c">% 3*2的随机矩阵，范围(0,1)</span>
 </span></span><span class="line"><span class="cl"><span class="nb">randn</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="c">% 3*2随机矩阵~N(0,1)（标准正态）</span>
-</span></span></code></pre></div><h3 id="矩阵的索引">矩阵的索引：</h3>
+</span></span></code></pre></div><h3 id="矩阵的索引">矩阵的索引</h3>
 <p>从1开始；</p>
 <p>访问使用小括号；</p>
 <p>小括号内的逗号表示行列，先行后列；中括号内的逗号和空格一样，表示不同元素的分隔；</p>
@@ -348,11 +348,11 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="cl"><span class="n">A</span><span class="p">=</span><span class="nb">zeros</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="n">B</span><span class="p">=</span><span class="nb">ones</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="n">C</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span>
-</span></span><span class="line"><span class="cl"><span class="n">D</span><span class="p">=[</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">:</span><span class="n">C</span><span class="p">]</span> <span class="c">% 结果很显然</span>
+</span></span><span class="line"><span class="cl"><span class="n">D</span><span class="p">=[</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">;</span><span class="n">C</span><span class="p">]</span> <span class="c">% 结果很显然</span>
 </span></span><span class="line"><span class="cl"><span class="n">A</span><span class="p">=[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">;</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl"><span class="n">B</span><span class="p">=[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">;</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl"><span class="nb">cat</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">)</span> <span class="c">% 按列拼接,[1 2;3 4;5 6;7 8]</span>
-</span></span><span class="line"><span class="cl"><span class="nb">cat</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">)</span> <span class="c">% 按行拼接,[1 2 3 4;5 6 7 8]</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cat</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">)</span> <span class="c">% 按行拼接,[1 2 5 6;3 4 7 8]</span>
 </span></span><span class="line"><span class="cl"><span class="nb">cat</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">)</span> <span class="c">% 按层拼接,第一层[1 2;3 4]第二层[5 6;7 8]</span>
 </span></span></code></pre></div><h3 id="三维矩阵">三维矩阵</h3>
 <p>创建：先创建骨架，再写每一层内容</p>
